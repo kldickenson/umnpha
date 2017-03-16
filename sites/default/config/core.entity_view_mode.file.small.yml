@@ -1,0 +1,10 @@
+uuid: c24b9845-81b0-4649-a19f-995c80a1e5e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+id: file.small
+label: Small
+targetEntityType: file
+cache: true

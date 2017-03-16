@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.file.image.field_image_alt_text
+    - field.field.file.image.field_image_title_text
+    - file_entity.type.image
+  module:
+    - file_entity
+_core:
+  default_config_hash: _Bf428kqU4oErwcNNTL2Wj4HQfES94Bs4usKnK3iL2Q
+id: file.image.default
+targetEntityType: file
+bundle: image
+mode: default
+content:
+  uri:
+    type: file_image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_image_alt_text: true
+  field_image_title_text: true
+  filemime: true
+  filename: true
+  filesize: true
+  uid: true

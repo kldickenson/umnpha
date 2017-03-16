@@ -1,0 +1,10 @@
+uuid: 156c4620-beae-4330-9486-68283842e2ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.teaser
+label: Teaser
+targetEntityType: contact_message
+cache: true

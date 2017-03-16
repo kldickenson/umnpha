@@ -1,0 +1,10 @@
+uuid: 36800781-0f89-45d6-b197-7b5cd761a3ef
+langcode: en
+status: true
+dependencies:
+  module:
+    - tour
+id: tour.teaser
+label: Teaser
+targetEntityType: tour
+cache: true

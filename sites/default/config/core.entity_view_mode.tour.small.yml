@@ -1,0 +1,10 @@
+uuid: 25796ed2-60b8-4d1b-b589-42aa2c3d209d
+langcode: en
+status: true
+dependencies:
+  module:
+    - tour
+id: tour.small
+label: Small
+targetEntityType: tour
+cache: true

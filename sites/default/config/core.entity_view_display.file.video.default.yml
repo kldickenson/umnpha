@@ -1,0 +1,27 @@
+uuid: 30500f84-d967-4f9c-afae-1e5318f9af26
+langcode: en
+status: true
+dependencies:
+  config:
+    - file_entity.type.video
+  module:
+    - file
+_core:
+  default_config_hash: pDS5i8Uzz0N2KplRcHzyoSyKJb3ni8Bdojgxgv_q3eE
+id: file.video.default
+targetEntityType: file
+bundle: video
+mode: default
+content:
+  filename:
+    type: file_link
+    label: hidden
+    weight: -5
+    settings:
+      link_to_file: true
+    third_party_settings: {  }
+hidden:
+  filemime: true
+  filesize: true
+  uid: true
+  uri: true

@@ -1,0 +1,10 @@
+uuid: 8d90e7d1-6a89-47b4-94e1-035b25944e2b
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.small
+label: Small
+targetEntityType: node
+cache: true

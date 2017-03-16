@@ -1,0 +1,20 @@
+uuid: b1262d3e-df1b-4de4-9a88-fd77d107f639
+langcode: en
+status: true
+dependencies:
+  theme:
+    - compro_adminimal
+_core:
+  default_config_hash: VVO9RMYnRRfOAaPM-Rm1smEaLOP1yqidUPDD5t9slZY
+id: compro_adminimal_local_actions
+theme: compro_adminimal
+region: content
+weight: -4
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

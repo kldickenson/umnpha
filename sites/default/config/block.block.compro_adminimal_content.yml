@@ -1,0 +1,22 @@
+uuid: f293c8f8-9668-48c6-8eee-1965fd0c68c1
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - compro_adminimal
+_core:
+  default_config_hash: lDbz4qFtXKB_jXQt7-z6fbO6zwALnXkF82UpOgSkaEQ
+id: compro_adminimal_content
+theme: compro_adminimal
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

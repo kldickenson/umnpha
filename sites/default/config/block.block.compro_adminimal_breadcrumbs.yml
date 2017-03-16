@@ -1,0 +1,22 @@
+uuid: 0a52160d-f634-4883-bea2-f55a29851293
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - compro_adminimal
+_core:
+  default_config_hash: Eg6jz4QcxeB5lvU06GoB_VIbcGkizaeFEg6mhAor67Y
+id: compro_adminimal_breadcrumbs
+theme: compro_adminimal
+region: content_top
+weight: -6
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }
