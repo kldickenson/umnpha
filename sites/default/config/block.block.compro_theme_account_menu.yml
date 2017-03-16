@@ -1,4 +1,4 @@
-uuid: f6f9a591-c4af-4ffc-924e-127f9200248a
+uuid: 898faca5-47c5-458e-994a-f8c7597eec17
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - compro_theme
 _core:
   default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
-id: bartik_account_menu
-theme: bartik
-region: secondary_menu
+id: compro_theme_account_menu
+theme: compro_theme
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:account'
