@@ -1,0 +1,24 @@
+name: Compro Theme
+type: theme
+base theme: classy
+description: Commercial Progression's theme base
+screenshot: images/optimized/screenshot.png
+core: 8.x
+libraries:
+  - compro_theme/global-styling
+regions:
+  page_top: Page top
+  header: Header
+  nav: Nav
+  pre_content: Pre-content
+  content: Content
+  post_content: Post-content
+  pre_footer: Pre-footer
+  footer: Footer
+  post_footer: Post-footer
+  page_bottom: Page bottom
+features:
+  - logo
+  - favicon
+settings:
+  compro_theme_disable_core_css: 0

@@ -1,0 +1,16 @@
+//----------------- Spacing | Gutters | Margins
+
+$gutters: (
+	xsm: rem(10),
+	sm: rem(20),
+	md: rem(50),
+	lg: rem(70),
+	xlg: rem(100),
+);
+@each $gutters, $value in $gutters {
+	body .gutter__#{$gutters}_top {padding-top: $value}
+	body .gutter__#{$gutters}_bottom {padding-top: $value}
+	body .gutter__#{$gutters}_top-bottom {padding-top: $value; padding-bottom: $value}
+}
+
+
