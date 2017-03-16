@@ -1,4 +1,4 @@
-uuid: f6160ba1-138d-4c59-b91d-1f9a036b4b85
+uuid: 6977cf8f-cfd8-451d-a2ad-88b86c1fa059
 langcode: en
 status: true
 dependencies:
@@ -7,12 +7,12 @@ dependencies:
   module:
     - system
   theme:
-    - bartik
+    - compro_theme
 _core:
   default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
-id: bartik_tools
-theme: bartik
-region: sidebar_first
+id: compro_theme_tools
+theme: compro_theme
+region: header
 weight: 0
 provider: null
 plugin: 'system_menu_block:tools'

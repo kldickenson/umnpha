@@ -1,15 +1,15 @@
-uuid: 1fb6ed01-9a4a-4039-9421-1c44c5f18899
+uuid: b341a63e-e573-4f68-b380-363bee4b183a
 langcode: en
 status: true
 dependencies:
   module:
     - help
   theme:
-    - bartik
+    - compro_theme
 _core:
   default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
-id: bartik_help
-theme: bartik
+id: compro_theme_help
+theme: compro_theme
 region: content
 weight: -30
 provider: null

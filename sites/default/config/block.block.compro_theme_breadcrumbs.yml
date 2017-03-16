@@ -1,16 +1,16 @@
-uuid: 9f85aec2-0f7d-40be-9d1a-8528b17055f1
+uuid: 1b41cbda-4cb8-4e00-b961-5dc2aba8b8cc
 langcode: en
 status: true
 dependencies:
   module:
     - system
   theme:
-    - bartik
+    - compro_theme
 _core:
   default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
-id: bartik_breadcrumbs
-theme: bartik
-region: breadcrumb
+id: compro_theme_breadcrumbs
+theme: compro_theme
+region: header
 weight: 0
 provider: null
 plugin: system_breadcrumb_block
