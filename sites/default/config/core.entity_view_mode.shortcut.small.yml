@@ -1,0 +1,10 @@
+uuid: 0a4068e8-a248-4e50-b5dc-989d6a709c15
+langcode: en
+status: true
+dependencies:
+  module:
+    - shortcut
+id: shortcut.small
+label: Small
+targetEntityType: shortcut
+cache: true

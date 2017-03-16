@@ -1,0 +1,10 @@
+uuid: 97a910ba-2e98-4cc7-8124-8c8b002c7a7c
+langcode: en
+status: true
+dependencies:
+  module:
+    - shortcut
+id: shortcut.teaser
+label: Teaser
+targetEntityType: shortcut
+cache: true

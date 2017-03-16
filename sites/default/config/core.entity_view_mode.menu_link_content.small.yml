@@ -1,0 +1,10 @@
+uuid: 84dee1da-c4ff-4138-8982-971424aa136b
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_link_content
+id: menu_link_content.small
+label: Small
+targetEntityType: menu_link_content
+cache: true

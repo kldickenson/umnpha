@@ -1,0 +1,10 @@
+uuid: 79b24ae0-d3ba-45ce-bd34-a41e20761180
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: SmcjNBxZx1nWiJlEB_-uBF7E1bSSmGIqlYFhjXR5Ni8
+name: Passthrough
+format: passthrough
+weight: 0
+filters: {  }

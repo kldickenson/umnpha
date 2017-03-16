@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: toi8SX8-7O2QWN328nCkhPDxMm5azqEy2qbQTMGFWXg
+name: viewport
+label: Viewport
+effects:
+  f8677d80-e9b6-4335-a200-c1ce48c0ecec:
+    uuid: f8677d80-e9b6-4335-a200-c1ce48c0ecec
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: true

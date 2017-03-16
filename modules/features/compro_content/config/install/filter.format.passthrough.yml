@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: I2G6lLQV7CStt1BgNkI268z0n_t64Pp_yAzsHBC1ADE
+name: Passthrough
+format: passthrough
+weight: 0
+filters: {  }

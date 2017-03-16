@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: u5_5YapxqWJ0VtkjteVEo6scwumhu-SDnkH464gbOlo
+name: content_area
+label: 'Content area'
+effects:
+  d0cd4ff8-8bb6-4bcc-9300-0beb42fe6579:
+    uuid: d0cd4ff8-8bb6-4bcc-9300-0beb42fe6579
+    id: image_scale
+    weight: 1
+    data:
+      width: 1280
+      height: null
+      upscale: false
