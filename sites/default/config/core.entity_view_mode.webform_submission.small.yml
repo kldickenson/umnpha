@@ -1,0 +1,10 @@
+uuid: b26c774f-7853-465d-984c-ba9c4f7301ca
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+id: webform_submission.small
+label: Small
+targetEntityType: webform_submission
+cache: true
