@@ -1,0 +1,10 @@
+uuid: 10e02a0f-e2a4-404d-b9e7-a947310a69cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+id: webform_submission.teaser
+label: Teaser
+targetEntityType: webform_submission
+cache: true
