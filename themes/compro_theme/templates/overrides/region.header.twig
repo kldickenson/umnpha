@@ -1,0 +1,6 @@
+{% extends "region.html.twig" %}
+{% if content %}
+  <header{{ attributes.addClass(classes) }}><div class="inner">
+    {{ content }}
+  </div></header>
+{% endif %}
