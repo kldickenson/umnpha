@@ -3,7 +3,6 @@ description: 'Image styles, WYSIWYG profiles, content entry general settings'
 type: module
 core: 8.x
 dependencies:
-  - file_entity
 version: 8.x-1.0
 package: Compro
 features:
@@ -13,8 +12,6 @@ features:
     - core.entity_view_display.file.document.default
     - core.entity_view_display.file.image.default
     - core.entity_view_display.file.video.default
-    - field.field.file.image.field_image_alt_text
-    - field.field.file.image.field_image_title_text
     - image.style.content_area
     - image.style.square_thumbnail
     - image.style.viewport
