@@ -1,6 +1,6 @@
 uuid: 6977cf8f-cfd8-451d-a2ad-88b86c1fa059
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.tools
@@ -12,8 +12,8 @@ _core:
   default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
 id: compro_theme_tools
 theme: compro_theme
-region: header
-weight: 0
+region: '-1'
+weight: 1
 provider: null
 plugin: 'system_menu_block:tools'
 settings:
