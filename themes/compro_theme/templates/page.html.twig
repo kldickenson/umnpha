@@ -84,10 +84,18 @@
 
   </main>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
-  {% endif %}
+  <footer role="contentinfo" class="footer-wrapper">
+
+    {% if page.pre_footer %}
+        {{ page.pre_footer }}
+    {% endif %}
+    {% if page.footer %}
+        {{ page.footer }}
+    {% endif %}
+      {% if page.post_footer %}
+          {{ page.post_footer }}
+      {% endif %}
+
+  </footer>
 
 </div>{# /.layout-container #}
