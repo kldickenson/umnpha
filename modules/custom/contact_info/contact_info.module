@@ -419,7 +419,7 @@ function _contact_info_social_draggable_table($social_table, &$form, FormStateIn
     );
 
     // Add icon if any social media rows are present.
-    if (isset($social_table[$i]['url'])) {
+    if (isset($social_table[$i]['url']) && !empty($social_table[$i]['url'])) {
       $form['contact_info']['social']['table'][$i]['icon']['link']
         = Link::fromTextAndUrl($social_table[$i]['name'],
           Url::fromUri($social_table[$i]['url']))->toRenderable();
