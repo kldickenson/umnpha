@@ -3,13 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.webform.body
-    - field.field.node.webform.webform
+    - field.field.node.webform.field_form_image
+    - field.field.node.webform.field_form_sections
+    - field.field.node.webform.field_form_text
     - node.type.webform
   module:
     - path
     - text
-    - webform
 _core:
   default_config_hash: A3evv2pt6d-bKCPcgjXA5VGTemXWOxG3lSXvWiRWcck
 id: node.webform.default
@@ -17,14 +17,6 @@ targetEntityType: node
 bundle: webform
 mode: default
 content:
-  body:
-    type: text_textarea_with_summary
-    weight: 0
-    settings:
-      rows: 9
-      summary_rows: 3
-      placeholder: ''
-    third_party_settings: {  }
   compro_submitted:
     weight: 0
   created:
@@ -32,6 +24,29 @@ content:
     weight: 10
     settings: {  }
     third_party_settings: {  }
+  field_form_image:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_form_sections:
+    weight: 33
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+  field_form_text:
+    weight: 31
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
   path:
     type: path
     weight: 30
@@ -64,9 +79,4 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  webform:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-    type: webform_entity_reference_select
 hidden: {  }
