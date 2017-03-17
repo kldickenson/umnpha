@@ -5,7 +5,17 @@ dependencies: {  }
 _core:
   default_config_hash: 91po1sfh6yCPu6D9PtTJ_B2ULxNINkR8vON_xBCvvgA
 id: author
-label: author
-weight: 4
+label: seo
+weight: -6
 is_admin: null
-permissions: {  }
+permissions:
+  - 'view own unpublished content'
+  - 'edit any webform content'
+  - 'edit own webform content'
+  - 'administer url aliases'
+  - 'create url aliases'
+  - 'administer pathauto'
+  - 'access in-place editing'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer site configuration'

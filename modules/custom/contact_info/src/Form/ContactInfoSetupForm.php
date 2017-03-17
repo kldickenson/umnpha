@@ -236,7 +236,9 @@ class ContactInfoSetupForm extends ConfigFormBase {
       )));
 
     foreach ($form_state->getValue(array('contact_info', 'social', 'table')) as $key => $value) {
-      $config->set('social.table.' . $key, $value);
+      if (!empty($value['name']) && !empty($value['url'])) {
+        $config->set('social.table.' . $key, $value);
+      }
     }
 
     $config->save();
