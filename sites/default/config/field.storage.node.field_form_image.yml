@@ -1,0 +1,20 @@
+uuid: e24c05b6-d9b2-446b-b9fe-87939e5e07c2
+langcode: en
+status: true
+dependencies:
+  module:
+    - image
+    - node
+id: node.field_form_image
+field_name: field_form_image
+entity_type: node
+type: entity_reference
+settings:
+  target_type: image_style
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

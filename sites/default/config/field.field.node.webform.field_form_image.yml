@@ -1,0 +1,21 @@
+uuid: 20452486-40f8-4b5b-9623-ba43c9e2473f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_form_image
+    - node.type.webform
+id: node.webform.field_form_image
+field_name: field_form_image
+entity_type: node
+bundle: webform
+label: Image
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:image_style'
+  handler_settings: {  }
+field_type: entity_reference
