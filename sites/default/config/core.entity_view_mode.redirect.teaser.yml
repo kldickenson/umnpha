@@ -1,0 +1,10 @@
+uuid: 72566168-73bd-4afe-a106-33bf5e6bcb87
+langcode: en
+status: true
+dependencies:
+  module:
+    - redirect
+id: redirect.teaser
+label: Teaser
+targetEntityType: redirect
+cache: true

@@ -1,6 +1,6 @@
 uuid: e43f0e76-f579-44a7-b976-1ee7f43ca500
 langcode: en
-status: true
+status: false
 dependencies:
   theme:
     - compro_theme
@@ -8,8 +8,8 @@ _core:
   default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
 id: compro_theme_local_actions
 theme: compro_theme
-region: content
-weight: -20
+region: '-1'
+weight: 2
 provider: null
 plugin: local_actions_block
 settings:

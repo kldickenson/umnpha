@@ -1,6 +1,6 @@
 uuid: 898faca5-47c5-458e-994a-f8c7597eec17
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.account
@@ -12,7 +12,7 @@ _core:
   default_config_hash: DweBpscQZdG0-fHkSpUzdYucrNH45G_KF7Z82V-oyQM
 id: compro_theme_account_menu
 theme: compro_theme
-region: header
+region: '-1'
 weight: 0
 provider: null
 plugin: 'system_menu_block:account'
