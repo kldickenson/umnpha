@@ -1,0 +1,20 @@
+uuid: cfbfbfda-d20b-49c8-bde4-dc92fe2e07cf
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - responsive_image
+id: section_type.field_highlight_media
+field_name: field_highlight_media
+entity_type: section_type
+type: entity_reference
+settings:
+  target_type: responsive_image_style
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
