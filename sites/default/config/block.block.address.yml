@@ -9,7 +9,7 @@ dependencies:
 id: address
 theme: compro_theme
 region: footer
-weight: -7
+weight: -6
 provider: null
 plugin: address
 settings:
