@@ -1,12 +1,12 @@
-uuid: c49ed4c1-493f-4ee8-bde4-324e87ba7615
+uuid: a29fed54-ed8f-4454-b1c9-628d7c883449
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - text
-id: section_type.field_highlight_text
-field_name: field_highlight_text
+id: section_type.field_primary_sponsor_label
+field_name: field_primary_sponsor_label
 entity_type: section_type
 type: text
 settings:

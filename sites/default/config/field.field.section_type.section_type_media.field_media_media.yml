@@ -1,0 +1,23 @@
+uuid: 49f873e2-9e7e-48a3-aa43-83f9e9fa0dcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_media
+    - field.storage.section_type.field_media_media
+id: section_type.section_type_media.field_media_media
+field_name: field_media_media
+entity_type: section_type
+bundle: section_type_media
+label: Media
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:responsive_image_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

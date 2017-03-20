@@ -1,0 +1,22 @@
+uuid: 2d25f07d-04a0-42b1-bbec-7f16d9c9e51e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_testimonial
+    - field.storage.section_type.field_testimonial_text_color
+  module:
+    - color_field
+id: section_type.section_type_testimonial.field_testimonial_text_color
+field_name: field_testimonial_text_color
+entity_type: section_type
+bundle: section_type_testimonial
+label: 'Text Color'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

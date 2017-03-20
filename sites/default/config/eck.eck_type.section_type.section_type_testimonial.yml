@@ -1,0 +1,9 @@
+uuid: 063d09f8-1ba0-4fb2-afac-d074f04f2e67
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Testimonial
+type: section_type_testimonial
+description: ''

@@ -1,12 +1,12 @@
-uuid: c49ed4c1-493f-4ee8-bde4-324e87ba7615
+uuid: ccab9bf9-b9e6-42df-88a8-3e3948ca8b10
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - text
-id: section_type.field_highlight_text
-field_name: field_highlight_text
+id: section_type.field_pull_quote_author
+field_name: field_pull_quote_author
 entity_type: section_type
 type: text
 settings:

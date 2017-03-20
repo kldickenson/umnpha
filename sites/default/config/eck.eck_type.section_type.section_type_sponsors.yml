@@ -1,0 +1,9 @@
+uuid: 27bb9f3f-dbee-4b32-bad6-3a065683a929
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Sponsors
+type: section_type_sponsors
+description: ''

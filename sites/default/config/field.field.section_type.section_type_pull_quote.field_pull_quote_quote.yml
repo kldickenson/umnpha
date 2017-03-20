@@ -1,0 +1,21 @@
+uuid: 02f00d4f-a8fe-4a50-90da-b28f3fcb1224
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_pull_quote
+    - field.storage.section_type.field_pull_quote_quote
+  module:
+    - text
+id: section_type.section_type_pull_quote.field_pull_quote_quote
+field_name: field_pull_quote_quote
+entity_type: section_type
+bundle: section_type_pull_quote
+label: Quote
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

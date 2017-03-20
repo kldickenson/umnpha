@@ -1,12 +1,12 @@
-uuid: 826bd9f8-25ef-4a71-8da8-b27a56a7ad42
+uuid: 0f7f00dd-91fe-47e4-877c-ea9e1cae1997
 langcode: en
 status: true
 dependencies:
   module:
     - compro_custom
     - eck
-id: section_type.field__heading_heading
-field_name: field__heading_heading
+id: section_type.field_heading_heading
+field_name: field_heading_heading
 entity_type: section_type
 type: heading_text
 settings:

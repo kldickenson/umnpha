@@ -1,0 +1,21 @@
+uuid: d695c230-c3e9-43b0-9391-17c9a47b8bd1
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_infographic
+    - field.storage.section_type.field_infographic_caption
+  module:
+    - text
+id: section_type.section_type_infographic.field_infographic_caption
+field_name: field_infographic_caption
+entity_type: section_type
+bundle: section_type_infographic
+label: Caption
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

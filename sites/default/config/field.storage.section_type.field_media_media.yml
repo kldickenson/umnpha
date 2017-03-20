@@ -1,17 +1,17 @@
-uuid: c49ed4c1-493f-4ee8-bde4-324e87ba7615
+uuid: ef3c72bc-efd6-48e2-a88a-1cd9d4acd37e
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - text
-id: section_type.field_highlight_text
-field_name: field_highlight_text
+    - responsive_image
+id: section_type.field_media_media
+field_name: field_media_media
 entity_type: section_type
-type: text
+type: entity_reference
 settings:
-  max_length: 255
-module: text
+  target_type: responsive_image_style
+module: core
 locked: false
 cardinality: 1
 translatable: true
