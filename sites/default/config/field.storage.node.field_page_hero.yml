@@ -1,0 +1,20 @@
+uuid: 4322e0b3-c33e-4520-8f4c-79e34cc6b6dc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - responsive_image
+id: node.field_page_hero
+field_name: field_page_hero
+entity_type: node
+type: entity_reference
+settings:
+  target_type: responsive_image_style
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
