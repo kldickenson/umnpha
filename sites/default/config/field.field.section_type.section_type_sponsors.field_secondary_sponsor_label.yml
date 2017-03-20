@@ -1,0 +1,24 @@
+uuid: b6d316a3-8868-42d5-9b36-a4b617d1ffc3
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_sponsors
+    - field.storage.section_type.field_secondary_sponsor_label
+  module:
+    - text
+id: section_type.section_type_sponsors.field_secondary_sponsor_label
+field_name: field_secondary_sponsor_label
+entity_type: section_type
+bundle: section_type_sponsors
+label: 'Secondary Sponsor Label'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'Sponsored by'
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text

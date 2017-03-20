@@ -1,0 +1,20 @@
+uuid: 556c3ba2-9a1d-410d-84e7-2de4f8be75a8
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - eck
+id: section_type.field_testimonial_text_color
+field_name: field_testimonial_text_color
+entity_type: section_type
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

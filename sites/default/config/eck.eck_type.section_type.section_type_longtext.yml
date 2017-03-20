@@ -1,0 +1,9 @@
+uuid: 854ce9e4-6d6e-43c7-bdef-099dc4ac4fab
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Longtext
+type: section_type_longtext
+description: ''

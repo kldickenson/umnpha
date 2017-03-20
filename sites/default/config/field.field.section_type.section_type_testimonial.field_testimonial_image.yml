@@ -1,0 +1,23 @@
+uuid: ed5df531-7eb9-4568-b41a-a18d70299aa4
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_testimonial
+    - field.storage.section_type.field_testimonial_image
+id: section_type.section_type_testimonial.field_testimonial_image
+field_name: field_testimonial_image
+entity_type: section_type
+bundle: section_type_testimonial
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:responsive_image_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

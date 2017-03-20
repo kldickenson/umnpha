@@ -1,12 +1,12 @@
-uuid: c49ed4c1-493f-4ee8-bde4-324e87ba7615
+uuid: ff8fadb6-332e-43c7-b523-eb0ae1ef51c1
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - text
-id: section_type.field_highlight_text
-field_name: field_highlight_text
+id: section_type.field_infographic_caption
+field_name: field_infographic_caption
 entity_type: section_type
 type: text
 settings:

@@ -1,0 +1,21 @@
+uuid: 1ccf6a2a-625a-40ad-adb9-ecfa08145496
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_sponsors
+    - field.storage.section_type.field_sponsors_secondary_sponsor
+id: section_type.section_type_sponsors.field_sponsors_secondary_sponsor
+field_name: field_sponsors_secondary_sponsor
+entity_type: section_type
+bundle: section_type_sponsors
+label: 'Secondary Sponsors'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:eck_entity_bundle'
+  handler_settings: {  }
+field_type: entity_reference

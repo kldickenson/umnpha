@@ -1,0 +1,20 @@
+uuid: 1e648f63-c5ff-4752-9caa-5027366332d6
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - responsive_image
+id: section_type.field_testimonial_image
+field_name: field_testimonial_image
+entity_type: section_type
+type: entity_reference
+settings:
+  target_type: responsive_image_style
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

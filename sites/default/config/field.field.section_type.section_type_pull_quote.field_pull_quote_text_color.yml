@@ -1,0 +1,22 @@
+uuid: 1fc63a87-e643-4104-bf56-6976c1dc17dd
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_pull_quote
+    - field.storage.section_type.field_pull_quote_text_color
+  module:
+    - color_field
+id: section_type.section_type_pull_quote.field_pull_quote_text_color
+field_name: field_pull_quote_text_color
+entity_type: section_type
+bundle: section_type_pull_quote
+label: 'Text Color'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 1
+field_type: color_field_type

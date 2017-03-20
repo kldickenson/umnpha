@@ -1,12 +1,12 @@
-uuid: c49ed4c1-493f-4ee8-bde4-324e87ba7615
+uuid: b3676b96-be95-4c8d-9c86-ea1baf7dd0e0
 langcode: en
 status: true
 dependencies:
   module:
     - eck
     - text
-id: section_type.field_highlight_text
-field_name: field_highlight_text
+id: section_type.field_testimonial_author
+field_name: field_testimonial_author
 entity_type: section_type
 type: text
 settings:

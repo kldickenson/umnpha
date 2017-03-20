@@ -1,17 +1,17 @@
-uuid: c49ed4c1-493f-4ee8-bde4-324e87ba7615
+uuid: 52de9fc1-5dc7-4c8b-afe6-309020b95530
 langcode: en
 status: true
 dependencies:
   module:
+    - color_field
     - eck
-    - text
-id: section_type.field_highlight_text
-field_name: field_highlight_text
+id: section_type.field_pull_quote_text_color
+field_name: field_pull_quote_text_color
 entity_type: section_type
-type: text
+type: color_field_type
 settings:
-  max_length: 255
-module: text
+  format: '#HEXHEX'
+module: color_field
 locked: false
 cardinality: 1
 translatable: true
