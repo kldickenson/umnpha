@@ -1,0 +1,23 @@
+uuid: bcf5ab42-a2cc-4176-bb04-57dfd50e63c1
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_featured_report
+    - field.storage.section_type.field_featured_report_image
+id: section_type.section_type_featured_report.field_featured_report_image
+field_name: field_featured_report_image
+entity_type: section_type
+bundle: section_type_featured_report
+label: Image
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:responsive_image_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

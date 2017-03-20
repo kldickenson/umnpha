@@ -1,0 +1,23 @@
+uuid: cab58ac3-23eb-44fe-86dd-19a4f9d8222b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_featured_report
+    - field.storage.section_type.field_featured_report_button
+  module:
+    - link
+id: section_type.section_type_featured_report.field_featured_report_button
+field_name: field_featured_report_button
+entity_type: section_type
+bundle: section_type_featured_report
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

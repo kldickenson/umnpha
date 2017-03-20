@@ -1,0 +1,19 @@
+uuid: 3c2387f4-7bb5-4845-b55c-1fd50c5d1f08
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - link
+id: section_type.field_featured_report_button
+field_name: field_featured_report_button
+entity_type: section_type
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

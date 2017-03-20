@@ -1,0 +1,9 @@
+uuid: 6bbb37e6-a2c2-43aa-a6c2-6e91c577066b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: 'Featured Report'
+type: section_type_featured_report
+description: 'This will be a hero section containing an image, title, a customizable background color, and a button with customizable colors.'
