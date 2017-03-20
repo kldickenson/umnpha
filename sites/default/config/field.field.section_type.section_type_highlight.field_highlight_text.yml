@@ -1,0 +1,21 @@
+uuid: 638eb8f8-62c4-4b09-8bf5-ce881e7257f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_highlight
+    - field.storage.section_type.field_highlight_text
+  module:
+    - text
+id: section_type.section_type_highlight.field_highlight_text
+field_name: field_highlight_text
+entity_type: section_type
+bundle: section_type_highlight
+label: Text
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

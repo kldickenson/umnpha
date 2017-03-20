@@ -1,0 +1,21 @@
+uuid: fcf24ccf-3c39-4e9a-9a53-10b35b33f4cc
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_highlight
+    - field.storage.section_type.field_highlight_title
+  module:
+    - text
+id: section_type.section_type_highlight.field_highlight_title
+field_name: field_highlight_title
+entity_type: section_type
+bundle: section_type_highlight
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

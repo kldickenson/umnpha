@@ -1,0 +1,9 @@
+uuid: b83304f2-fbed-4471-b066-3f85c18fa408
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Heading
+type: heading
+description: 'This is for headings of sections.'
