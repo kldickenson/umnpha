@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.webform.field_form_image
     - field.field.node.webform.field_form_sections
     - field.field.node.webform.field_form_text
+    - field.field.node.webform.field_form_title
     - node.type.webform
   module:
     - text
@@ -49,4 +50,5 @@ content:
     weight: 100
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_form_title: true

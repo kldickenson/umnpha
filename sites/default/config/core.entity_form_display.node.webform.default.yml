@@ -6,6 +6,7 @@ dependencies:
     - field.field.node.webform.field_form_image
     - field.field.node.webform.field_form_sections
     - field.field.node.webform.field_form_text
+    - field.field.node.webform.field_form_title
     - node.type.webform
   module:
     - path
@@ -47,6 +48,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
+  field_form_title:
+    weight: 34
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
   path:
     type: path
     weight: 30
