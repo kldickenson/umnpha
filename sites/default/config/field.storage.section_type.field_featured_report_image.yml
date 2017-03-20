@@ -1,0 +1,20 @@
+uuid: 350409c0-5c94-44bb-9e36-a368c57c8d01
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - responsive_image
+id: section_type.field_featured_report_image
+field_name: field_featured_report_image
+entity_type: section_type
+type: entity_reference
+settings:
+  target_type: responsive_image_style
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

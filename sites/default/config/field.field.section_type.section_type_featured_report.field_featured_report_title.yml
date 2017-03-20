@@ -1,0 +1,21 @@
+uuid: 6ed2baf5-09b1-48d1-a55d-f01113d62dcb
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_featured_report
+    - field.storage.section_type.field_featured_report_title
+  module:
+    - text
+id: section_type.section_type_featured_report.field_featured_report_title
+field_name: field_featured_report_title
+entity_type: section_type
+bundle: section_type_featured_report
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
