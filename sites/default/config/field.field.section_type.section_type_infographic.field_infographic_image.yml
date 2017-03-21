@@ -1,19 +1,19 @@
-uuid: f0744a11-4d00-4e95-97fd-9c48380fd837
+uuid: 1bd97f8f-9098-4a6b-92c0-b6cfdf0577e1
 langcode: en
 status: true
 dependencies:
   config:
-    - eck.eck_type.section_type.section_type_featured_report
-    - field.storage.section_type.field_featured_report_image
+    - eck.eck_type.section_type.section_type_infographic
+    - field.storage.section_type.field_infographic_image
   module:
     - image
-id: section_type.section_type_featured_report.field_featured_report_image
-field_name: field_featured_report_image
+id: section_type.section_type_infographic.field_infographic_image
+field_name: field_infographic_image
 entity_type: section_type
-bundle: section_type_featured_report
+bundle: section_type_infographic
 label: Image
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

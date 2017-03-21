@@ -1,4 +1,4 @@
-uuid: c8b3ac12-23e6-4c6b-9995-a5f4a81fc80f
+uuid: 23c8bf62-0057-4932-9091-29ea10623e54
 langcode: en
 status: true
 dependencies:
@@ -6,8 +6,8 @@ dependencies:
     - eck
     - file
     - image
-id: section_type.field_featured_report_image
-field_name: field_featured_report_image
+id: section_type.field_infographic_image
+field_name: field_infographic_image
 entity_type: section_type
 type: image
 settings:
