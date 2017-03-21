@@ -1,0 +1,49 @@
+diff --git a/js/color_field_widget_box.jquery.js b/js/color_field_widget_box.jquery.js
+index 23bef75..d34e197 100644
+--- a/js/color_field_widget_box.jquery.js
++++ b/js/color_field_widget_box.jquery.js
+@@ -20,14 +20,15 @@
+ 
+             var $context = $(context);
+ 
+-            var default_colors = settings.color_field.color_field_widget_box.settings.default_colors;
++            var default_colors = settings.color_field.color_field_widget_box.settings;
+ 
+             $context.find('.color-field-widget-box-form').each(function (index, element) {
+                 var $element = $(element);
+                 var $input = $element.prev().find('input');
++                var palette = $input.attr('palette');
+                 $element.empty().addColorPicker({
+                     currentColor: $input.val(),
+-                    colors: default_colors,
++                    colors: default_colors[palette].palette,
+                     blotchClass:'color_field_widget_box__square',
+                     blotchTransparentClass:'color_field_widget_box__square--transparent',
+                     clickCallback: function(color) {
+diff --git a/src/Plugin/Field/FieldWidget/ColorFieldWidgetBox.php b/src/Plugin/Field/FieldWidget/ColorFieldWidgetBox.php
+index 8268704..483ab5a 100644
+--- a/src/Plugin/Field/FieldWidget/ColorFieldWidgetBox.php
++++ b/src/Plugin/Field/FieldWidget/ColorFieldWidgetBox.php
+@@ -98,7 +98,7 @@ class ColorFieldWidgetBox extends WidgetBase {
+     foreach ($default_colors as $color) {
+       $settings['palette'][] = $color[0];
+     }
+-    $element['#attached']['drupalSettings']['color_field']['color_field_widget_box']['settings'] = $settings;
++    $element['#attached']['drupalSettings']['color_field']['color_field_widget_box']['settings'][md5(serialize($default_colors))] = $settings;
+ 
+     // Retrieve field label and description.
+     $element['#title'] = $this->fieldDefinition->getLabel();;
+@@ -118,8 +118,11 @@ class ColorFieldWidgetBox extends WidgetBase {
+       '#size' => 7,
+       '#type' => 'textfield',
+       '#default_value' => $color,
+-      '#attributes' => array('class' => array('visually-hidden')),
+-   );
++      '#attributes' => array(
++        'class' => array('visually-hidden'),
++        'palette' => md5(serialize($default_colors))
++      ),
++    );
+     $element['color']['#suffix'] = "<div class='color-field-widget-box-form'></div>";
+ 
+     if ($this->getFieldSetting('opacity')) {

@@ -1,9 +1,0 @@
-uuid: e3b85c3b-ae1e-4569-b8e1-65c2fe706a4a
-langcode: en
-status: true
-dependencies: {  }
-id: document
-label: Document
-description: ''
-mimetypes:
-  - ''

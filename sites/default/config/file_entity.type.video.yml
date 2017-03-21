@@ -1,9 +1,0 @@
-uuid: 8e08a5ed-40dd-4058-8d9a-e86e06bc2575
-langcode: en
-status: true
-dependencies: {  }
-id: video
-label: Video
-description: ''
-mimetypes:
-  - ''

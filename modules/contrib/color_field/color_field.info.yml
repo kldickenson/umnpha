@@ -6,8 +6,8 @@ package: Field types
 dependencies:
   - field
 
-# Information added by Drupal.org packaging script on 2015-11-14
-version: '8.x-2.0-rc1'
+# Information added by Drupal.org packaging script on 2015-11-27
+version: '8.x-2.0-rc1+6-dev'
 core: '8.x'
 project: 'color_field'
-datestamp: 1447537141
+datestamp: 1448633308

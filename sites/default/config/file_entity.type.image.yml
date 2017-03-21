@@ -1,9 +1,0 @@
-uuid: 262301e4-f80c-45b1-89f0-c85ce43635fc
-langcode: en
-status: true
-dependencies: {  }
-id: image
-label: Image
-description: ''
-mimetypes:
-  - ''
