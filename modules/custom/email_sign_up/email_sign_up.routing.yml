@@ -1,0 +1,7 @@
+email_sign_up.form:
+  path: 'admin/content/email-sign-up'
+  defaults:
+    _form: 'Drupal\email_sign_up\Form\EmailSignUpForm'
+    _title: 'Email Sign Up Button'
+  requirements:
+    _permission: 'modify contact info'
