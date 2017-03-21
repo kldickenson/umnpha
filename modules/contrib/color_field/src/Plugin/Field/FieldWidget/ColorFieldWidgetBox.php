@@ -98,19 +98,31 @@ class ColorFieldWidgetBox extends WidgetBase {
     foreach ($default_colors as $color) {
       $settings['palette'][] = $color[0];
     }
-    $element['#attached']['drupalSettings']['color_field']['color_field_widget_box']['settings'] = $settings;
+    $element['#attached']['drupalSettings']['color_field']['color_field_widget_box']['settings'][md5(serialize($default_colors))] = $settings;
 
     // Retrieve field label and description.
     $element['#title'] = $this->fieldDefinition->getLabel();;
     $element['#description'] = $this->fieldDefinition->getDescription();
 
+    // Prepare color.
+    $color = NULL;
+    if (isset($items[$delta]->color)) {
+      $color = $items[$delta]->color;
+      if (substr($color, 0, 1) !== '#') {
+        $color = '#' . $color;
+      }
+    }
+
     $element['color'] = array(
       '#maxlength' => 7,
       '#size' => 7,
       '#type' => 'textfield',
-      '#default_value' => isset($items[$delta]->color) ? $items[$delta]->color : NULL,
-      '#attributes' => array('class' => array('visually-hidden')),
-   );
+      '#default_value' => $color,
+      '#attributes' => array(
+        'class' => array('visually-hidden'),
+        'palette' => md5(serialize($default_colors))
+      ),
+    );
     $element['color']['#suffix'] = "<div class='color-field-widget-box-form'></div>";
 
     if ($this->getFieldSetting('opacity')) {
