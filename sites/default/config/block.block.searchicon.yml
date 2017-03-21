@@ -1,0 +1,20 @@
+uuid: 9d4cddbc-7bb2-475c-9e29-796e8bf3f6e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - compro_custom
+  theme:
+    - compro_theme
+id: searchicon
+theme: compro_theme
+region: header
+weight: -7
+provider: null
+plugin: search_icon_block
+settings:
+  id: search_icon_block
+  label: 'Search Icon'
+  provider: compro_custom
+  label_display: '0'
+visibility: {  }

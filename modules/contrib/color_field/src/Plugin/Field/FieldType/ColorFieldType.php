@@ -13,6 +13,7 @@ use Drupal\Core\Field\FieldStorageDefinitionInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\TranslationWrapper;
 use Drupal\Core\TypedData\DataDefinition;
+use Drupal\color_field\ColorHex;
 
 /**
  * Plugin implementation of the 'color_type' field type.
@@ -48,31 +49,55 @@ class ColorFieldType extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
-  public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
-    // Prevent early t() calls by using the TranslationWrapper.
-    $properties['color'] = DataDefinition::create('string')
-      ->setLabel(new TranslationWrapper('Color'));
-    // ->setSetting('case_sensitive', $field_definition->getSetting('case_sensitive'))
-    // ->setRequired(TRUE);
+  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data) {
+    $element = [];
 
-    $properties['opacity'] = DataDefinition::create('float')
-      ->setLabel(new TranslationWrapper('Opacity'));
-    // ->setSetting('case_sensitive', $field_definition->getSetting('case_sensitive'))
-    // ->setRequired(TRUE);
+    $element['format'] = array(
+      '#type' => 'select',
+      '#title' => t('Format storage'),
+      '#description' => t('Choose how to store the color.'),
+      '#default_value' => $this->getSetting('format'),
+      '#options' => array(
+        '#HEXHEX' => t('#123ABC'),
+        'HEXHEX' => t('123ABC'),
+        '#hexhex' => t('#123abc'),
+        'hexhex' => t('123abc'),
+      ),
+    );
 
-    return $properties;
+    $element += parent::storageSettingsForm($form, $form_state, $has_data);
+
+    return $element;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
+    $element = [];
+
+    $element['opacity'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Record opacity'),
+      '#description' => t('Whether or not to record.'),
+      '#default_value' => $this->getSetting('opacity'),
+    );
+
+    return $element;
   }
 
   /**
    * {@inheritdoc}
    */
   public static function schema(FieldStorageDefinitionInterface $field_definition) {
+    $format = $field_definition->getSetting('format');
+    $color_length = isset($format) ? strlen($format) : 7 ;
     return array(
       'columns' => array(
         'color' => array(
-          'description' => 'The RGB hex values starting by the #',
+          'description' => 'The color value',
           'type' => 'varchar',
-          'length' => 7,
+          'length' => $color_length,
           'not null' => FALSE,
         ),
         'opacity' => array(
@@ -91,6 +116,20 @@ class ColorFieldType extends FieldItemBase {
   /**
    * {@inheritdoc}
    */
+  public static function propertyDefinitions(FieldStorageDefinitionInterface $field_definition) {
+    // Prevent early t() calls by using the TranslationWrapper.
+    $properties['color'] = DataDefinition::create('string')
+      ->setLabel(new TranslationWrapper('Color'));
+
+    $properties['opacity'] = DataDefinition::create('float')
+      ->setLabel(new TranslationWrapper('Opacity'));
+
+    return $properties;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function isEmpty() {
     $value = $this->get('color')->getValue();
     return $value === NULL || $value === '';
@@ -103,10 +142,17 @@ class ColorFieldType extends FieldItemBase {
     $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
     $constraints = parent::getConstraints();
 
-    $settings = $this->getSettings();
     $label = $this->getFieldDefinition()->getLabel();
 
-    if (!empty($settings['opacity'])) {
+    $constraints[] = $constraint_manager->create('ComplexData', array(
+      'color' => array(
+        'Regex' => array(
+          'pattern' => '/^#?(([0-9a-fA-F]{2}){3}|([0-9a-fA-F]){3})$/i',
+        )
+      ),
+    ));
+
+    if ($opacity = $this->getSetting('opacity')) {
       $min = 0;
       $constraints[] = $constraint_manager->create('ComplexData', array(
         'opacity' => array(
@@ -128,15 +174,6 @@ class ColorFieldType extends FieldItemBase {
       ));
     }
 
-    // @todo: Adapt constraint based on storage.
-    //$constraints[] = $constraint_manager->create('ComplexData', array(
-    //  'color' => array(
-    //    'Regex' => array(
-    //      'pattern' => '/^#(\d+)$/i',
-    //    )
-    //  ),
-    //));
-
     return $constraints;
   }
 
@@ -144,36 +181,63 @@ class ColorFieldType extends FieldItemBase {
    * {@inheritdoc}
    */
   public static function generateSampleValue(FieldDefinitionInterface $field_definition) {
-    //$random = new Random();
-    //$values['color'] = $random->word(mt_rand(1, $field_definition->getSetting('max_length')));
-    //$values['opacity'] = $random->word(mt_rand(1, $field_definition->getSetting('max_length')));
-    //return $values;
-    return '';
+    $settings = $field_definition->getSettings();
+
+    if ($format = $settings['format']) {
+      switch ($format) {
+        case '#HEXHEX':
+          $values['color'] = '#111AAA';
+          break;
+        case 'HEXHEX':
+          $values['color'] = '111111';
+          break;
+        case '#hexhex':
+          $values['color'] = '#111aaa';
+          break;
+        case 'hexhex':
+          $values['color'] = '111111';
+          break;
+      }
+    }
+
+    $values['opacity'] = 1;
+
+    return $values;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function storageSettingsForm(array &$form, FormStateInterface $form_state, $has_data) {
-    $element = array();
-    // Control the storage.
-    return $element;
+  public function preSave() {
+    parent::preSave();
+
+    if ($format = $this->getSetting('format')) {
+      $color = $this->color;
+
+      // Clean up data and format it.
+      $color = trim($color);
+
+      if (substr($color, 0, 1) === '#') {
+        $color = substr($color, 1);
+      }
+
+      switch ($format) {
+        case '#HEXHEX':
+          $color = '#' . strtoupper($color);
+          break;
+        case 'HEXHEX':
+          $color = strtoupper($color);
+          break;
+        case '#hexhex':
+          $color = '#' . strtolower($color);
+          break;
+        case 'hexhex':
+          $color = strtolower($color);
+          break;
+      }
+
+      $this->color = $color;
+    }
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function fieldSettingsForm(array $form, FormStateInterface $form_state) {
-    $element = array();
-    $settings = $this->getSettings();
-
-    $element['opacity'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Record opacity'),
-      '#description' => t('Whether or not to record.'),
-      '#default_value' => $settings['opacity'],
-    );
-
-    return $element;
-  }
 }

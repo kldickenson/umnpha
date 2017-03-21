@@ -1,0 +1,64 @@
+uuid: 92955bff-79f7-4337-ad31-49816e3d7ca2
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_featured_report
+    - field.field.section_type.section_type_featured_report.field_button_text_color
+    - field.field.section_type.section_type_featured_report.field_featured_report_button
+    - field.field.section_type.section_type_featured_report.field_featured_report_image
+    - field.field.section_type.section_type_featured_report.field_featured_report_subtitle
+    - field.field.section_type.section_type_featured_report.field_featured_report_title
+  module:
+    - color_field
+    - link
+    - text
+id: section_type.section_type_featured_report.default
+targetEntityType: section_type
+bundle: section_type_featured_report
+mode: default
+content:
+  field_button_text_color:
+    type: color_field_formatter_css
+    weight: 4
+    label: hidden
+    settings:
+      selector: .field--name-field-featured-report-button
+      property: background-color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+  field_featured_report_button:
+    type: link
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_featured_report_image:
+    type: entity_reference_label
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+  field_featured_report_subtitle:
+    type: text_trimmed
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+  field_featured_report_title:
+    type: text_trimmed
+    weight: 1
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+hidden:
+  title: true

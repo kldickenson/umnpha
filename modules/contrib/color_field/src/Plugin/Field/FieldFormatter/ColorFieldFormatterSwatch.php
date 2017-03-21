@@ -7,7 +7,9 @@
 
 namespace Drupal\color_field\Plugin\Field\FieldFormatter;
 
+use Drupal\color_field\Plugin\Field\FieldType\ColorFieldType;
 use Drupal\Core\Field\FormatterBase;
+use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\color_field\ColorHex;
@@ -18,7 +20,7 @@ use Drupal\color_field\ColorHex;
  * @FieldFormatter(
  *   id = "color_field_formatter_swatch",
  *   module = "color_field",
- *   label = @Translation("Color Swatch"),
+ *   label = @Translation("Color swatch"),
  *   field_types = {
  *     "color_field_type"
  *   }
@@ -146,7 +148,7 @@ class ColorFieldFormatterSwatch extends FormatterBase {
   /**
    * {@inheritdoc}
    */
-  protected function viewValue(FieldItemInterface $item) {
+  protected function viewValue(ColorFieldType $item) {
     $opacity = $this->getFieldSetting('opacity');
     $settings = $this->getSettings();
 

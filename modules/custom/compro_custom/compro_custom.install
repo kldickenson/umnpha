@@ -11,3 +11,14 @@
 function compro_custom_install() {
   compro_custom_add_view_modes();
 }
+
+/**
+ * Add Email Sign Up schema.
+ */
+function compro_custom_update_8001() {
+  $config_factory = \Drupal::configFactory();
+  $config = $config_factory->getEditable('email_sign_up.setup');
+  $config->set('text', 'Email Sign Up')
+    ->set('link', '/');
+  $config->save(TRUE);
+}
