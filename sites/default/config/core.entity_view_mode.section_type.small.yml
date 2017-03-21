@@ -1,0 +1,10 @@
+uuid: 748161c6-6831-4ea7-af5b-cf5653cb1b20
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: section_type.small
+label: Small
+targetEntityType: section_type
+cache: true

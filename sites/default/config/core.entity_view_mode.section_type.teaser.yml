@@ -1,0 +1,10 @@
+uuid: 8192a484-303c-45c6-9529-0261d4eb5b02
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: section_type.teaser
+label: Teaser
+targetEntityType: section_type
+cache: true

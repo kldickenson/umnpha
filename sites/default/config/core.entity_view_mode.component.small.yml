@@ -1,0 +1,10 @@
+uuid: ea63c877-f86f-4371-b3de-3c6916502d87
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: component.small
+label: Small
+targetEntityType: component
+cache: true

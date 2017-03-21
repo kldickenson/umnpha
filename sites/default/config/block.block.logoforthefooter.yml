@@ -1,0 +1,25 @@
+uuid: 293f94a8-22c4-4d1d-960e-c25bf5713276
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:d9902321-977f-4055-9186-39fe5a4eb771'
+  module:
+    - block_content
+  theme:
+    - compro_theme
+id: logoforthefooter
+theme: compro_theme
+region: footer
+weight: -9
+provider: null
+plugin: 'block_content:d9902321-977f-4055-9186-39fe5a4eb771'
+settings:
+  id: 'block_content:d9902321-977f-4055-9186-39fe5a4eb771'
+  label: 'Logo for the footer'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }
