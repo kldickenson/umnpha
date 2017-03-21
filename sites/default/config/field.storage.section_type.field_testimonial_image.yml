@@ -1,17 +1,27 @@
-uuid: 1e648f63-c5ff-4752-9caa-5027366332d6
+uuid: 26ce3f7b-056d-4264-b154-6a72e382571e
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - responsive_image
+    - file
+    - image
 id: section_type.field_testimonial_image
 field_name: field_testimonial_image
 entity_type: section_type
-type: entity_reference
+type: image
 settings:
-  target_type: responsive_image_style
-module: core
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
 locked: false
 cardinality: 1
 translatable: true
