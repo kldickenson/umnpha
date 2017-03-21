@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\compro_custom\Form\EmailSignUpForm.
+ * Contains \Drupal\email_sign_up\Form\EmailSignUpForm.
  */
 
-namespace Drupal\compro_custom\Form;
+namespace Drupal\email_sign_up\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;

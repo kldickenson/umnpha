@@ -2,10 +2,10 @@
 
 /**
  * @file
- * Contains \Drupal\compro_custom\Plugin\Block\EmailSignUp.
+ * Contains \Drupal\email_sign_up\Plugin\Block\EmailSignUp.
  */
 
-namespace Drupal\compro_custom\Plugin\Block;
+namespace Drupal\email_sign_up\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;

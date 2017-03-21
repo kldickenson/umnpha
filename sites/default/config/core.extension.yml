@@ -16,6 +16,7 @@ module:
   compro_credit: 0
   compro_custom: 0
   config: 0
+  config_ignore: 0
   config_update: 0
   contact: 0
   contact_info: 0
@@ -28,6 +29,7 @@ module:
   dynamic_page_cache: 0
   eck: 0
   editor: 0
+  email_sign_up: 0
   entity: 0
   features: 0
   features_ui: 0
