@@ -15,7 +15,7 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides an icon to search on the site.
  *
  * @Block(
- *   id = "email_sign_up",
+ *   id = "email_sign_up_form",
  *   admin_label = @Translation("Email Sign Up"),
  * )
  */
