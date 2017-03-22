@@ -1,17 +1,20 @@
-uuid: ef3c72bc-efd6-48e2-a88a-1cd9d4acd37e
+uuid: 6fa919b8-8448-47a0-af67-458e358b5597
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - responsive_image
+    - file
 id: section_type.field_media_media
 field_name: field_media_media
 entity_type: section_type
-type: entity_reference
+type: file
 settings:
-  target_type: responsive_image_style
-module: core
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
 locked: false
 cardinality: 1
 translatable: true

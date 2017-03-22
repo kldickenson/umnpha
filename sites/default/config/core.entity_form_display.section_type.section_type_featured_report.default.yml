@@ -9,8 +9,10 @@ dependencies:
     - field.field.section_type.section_type_featured_report.field_featured_report_image
     - field.field.section_type.section_type_featured_report.field_featured_report_subtitle
     - field.field.section_type.section_type_featured_report.field_featured_report_title
+    - image.style.thumbnail
   module:
     - color_field
+    - image
     - link
     - text
 id: section_type.section_type_featured_report.default
@@ -32,9 +34,11 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_featured_report_image:
-    type: options_select
+    type: image_image
     weight: 3
-    settings: {  }
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
   field_featured_report_subtitle:
     type: text_textfield
