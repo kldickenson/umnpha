@@ -1,17 +1,18 @@
-uuid: ff8fadb6-332e-43c7-b523-eb0ae1ef51c1
+uuid: 7e708394-60a3-4e52-9892-43ae47ab9f93
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - text
 id: section_type.field_infographic_caption
 field_name: field_infographic_caption
 entity_type: section_type
-type: text
+type: string
 settings:
   max_length: 255
-module: text
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

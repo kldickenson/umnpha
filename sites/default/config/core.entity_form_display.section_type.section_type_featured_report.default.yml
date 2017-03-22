@@ -39,7 +39,7 @@ content:
     type: color_field_widget_box
     weight: 6
     settings:
-      default_colors: '#79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
     third_party_settings: {  }
   field_featured_report_button:
     type: link_default

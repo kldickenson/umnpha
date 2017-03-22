@@ -14,7 +14,6 @@ dependencies:
     - field_group
     - link
     - responsive_image
-    - text
 third_party_settings:
   field_group:
     group_featured_report_text:
@@ -71,17 +70,18 @@ content:
       image_link: ''
     third_party_settings: {  }
   field_featured_report_subtitle:
-    type: text_default
+    type: string
     weight: 2
     label: hidden
-    settings: {  }
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
   field_featured_report_title:
-    type: text_trimmed
+    type: string
     weight: 1
     label: hidden
     settings:
-      trim_length: 600
+      link_to_entity: false
     third_party_settings: {  }
 hidden:
   title: true
