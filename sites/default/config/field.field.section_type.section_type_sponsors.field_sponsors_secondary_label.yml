@@ -1,14 +1,12 @@
-uuid: b6d316a3-8868-42d5-9b36-a4b617d1ffc3
+uuid: 2c351fd0-17d2-4978-b98f-c3f6d9888565
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.section_type.section_type_sponsors
-    - field.storage.section_type.field_secondary_sponsor_label
-  module:
-    - text
-id: section_type.section_type_sponsors.field_secondary_sponsor_label
-field_name: field_secondary_sponsor_label
+    - field.storage.section_type.field_sponsors_secondary_label
+id: section_type.section_type_sponsors.field_sponsors_secondary_label
+field_name: field_sponsors_secondary_label
 entity_type: section_type
 bundle: section_type_sponsors
 label: 'Secondary Sponsor Label'
@@ -18,7 +16,6 @@ translatable: false
 default_value:
   -
     value: 'Sponsored by'
-    format: basic_html
 default_value_callback: ''
 settings: {  }
 field_type: string

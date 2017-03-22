@@ -49,12 +49,9 @@ content:
     third_party_settings: {  }
     type: image_image
   field_page_sections:
-    type: entity_reference_autocomplete_tags
+    type: options_select
     weight: 4
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
   field_page_title:
     type: string_textfield

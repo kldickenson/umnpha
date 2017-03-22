@@ -1,17 +1,18 @@
-uuid: c5305dea-2e67-4308-8592-d7c751bdc25c
+uuid: c034bf36-1d17-47c8-a056-586198809366
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - text
-id: section_type.field_secondary_sponsor_label
-field_name: field_secondary_sponsor_label
+id: section_type.field_sponsors_secondary_label
+field_name: field_sponsors_secondary_label
 entity_type: section_type
-type: text
+type: string
 settings:
   max_length: 255
-module: text
+  is_ascii: false
+  case_sensitive: false
+module: core
 locked: false
 cardinality: 1
 translatable: true

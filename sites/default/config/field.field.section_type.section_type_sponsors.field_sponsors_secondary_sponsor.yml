@@ -16,6 +16,6 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:component_type'
+  handler: 'default:eck_entity_bundle'
   handler_settings: {  }
 field_type: entity_reference

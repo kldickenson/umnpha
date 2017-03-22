@@ -1,14 +1,12 @@
-uuid: 6e606aec-bd46-471b-8aea-116e2dba2872
+uuid: fe80b5d6-f3bc-4cb0-87cf-f69e98d31e1e
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.section_type.section_type_sponsors
-    - field.storage.section_type.field_primary_sponsor_label
-  module:
-    - text
-id: section_type.section_type_sponsors.field_primary_sponsor_label
-field_name: field_primary_sponsor_label
+    - field.storage.section_type.field_sponsors_primary__label
+id: section_type.section_type_sponsors.field_sponsors_primary__label
+field_name: field_sponsors_primary__label
 entity_type: section_type
 bundle: section_type_sponsors
 label: 'Primary Sponsor Label'
@@ -18,7 +16,6 @@ translatable: false
 default_value:
   -
     value: 'Directed by'
-    format: basic_html
 default_value_callback: ''
 settings: {  }
 field_type: string
