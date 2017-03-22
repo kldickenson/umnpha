@@ -18,37 +18,34 @@ targetEntityType: node
 bundle: webform
 mode: default
 content:
-  compro_links:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
-  compro_submitted:
-    weight: 0
-    settings: {  }
-    third_party_settings: {  }
   field_form_image:
-    weight: 102
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_form_sections:
-    weight: 103
-    label: above
+    weight: 3
+    label: hidden
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
   field_form_text:
-    weight: 101
-    label: above
+    weight: 1
+    label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  links:
-    weight: 100
-    settings: {  }
+  field_form_title:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
 hidden:
-  field_form_title: true
+  compro_links: true
+  compro_submitted: true
+  links: true

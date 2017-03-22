@@ -8,7 +8,7 @@ dependencies:
 id: section_type.field_primary_sponsor_label
 field_name: field_primary_sponsor_label
 entity_type: section_type
-type: string
+type: text
 settings:
   max_length: 255
 module: text
