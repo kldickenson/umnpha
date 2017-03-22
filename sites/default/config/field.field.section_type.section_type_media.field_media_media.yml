@@ -1,10 +1,12 @@
-uuid: 49f873e2-9e7e-48a3-aa43-83f9e9fa0dcb
+uuid: 0626fa04-397d-4a07-bcf5-f5c9126a5dc5
 langcode: en
 status: true
 dependencies:
   config:
     - eck.eck_type.section_type.section_type_media
     - field.storage.section_type.field_media_media
+  module:
+    - file
 id: section_type.section_type_media.field_media_media
 field_name: field_media_media
 entity_type: section_type
@@ -16,8 +18,10 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:responsive_image_style'
-  handler_settings:
-    target_bundles: null
-    auto_create: false
-field_type: entity_reference
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt jpg jpeg png gif mp4 webm'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

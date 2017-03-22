@@ -11,8 +11,31 @@ dependencies:
     - field.field.section_type.section_type_featured_report.field_featured_report_title
   module:
     - color_field
+    - field_group
     - link
+    - responsive_image
     - text
+third_party_settings:
+  field_group:
+    group_featured_report_text:
+      children:
+        - field_featured_report_title
+        - field_featured_report_subtitle
+        - field_featured_report_button
+        - field_button_text_color
+      parent_name: ''
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: featured_report_text
 id: section_type.section_type_featured_report.default
 targetEntityType: section_type
 bundle: section_type_featured_report
@@ -40,18 +63,18 @@ content:
       target: ''
     third_party_settings: {  }
   field_featured_report_image:
-    type: entity_reference_label
+    type: responsive_image
     weight: 0
     label: hidden
     settings:
-      link: true
+      responsive_image_style: ''
+      image_link: ''
     third_party_settings: {  }
   field_featured_report_subtitle:
-    type: text_trimmed
+    type: text_default
     weight: 2
     label: hidden
-    settings:
-      trim_length: 600
+    settings: {  }
     third_party_settings: {  }
   field_featured_report_title:
     type: text_trimmed

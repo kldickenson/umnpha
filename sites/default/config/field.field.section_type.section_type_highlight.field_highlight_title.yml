@@ -11,7 +11,7 @@ id: section_type.section_type_highlight.field_highlight_title
 field_name: field_highlight_title
 entity_type: section_type
 bundle: section_type_highlight
-label: Title
+label: 'Display Title'
 description: ''
 required: true
 translatable: false
