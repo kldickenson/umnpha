@@ -8,7 +8,7 @@ dependencies:
 id: node.field_form_title
 field_name: field_form_title
 entity_type: node
-type: string
+type: text
 settings:
   max_length: 255
 module: text

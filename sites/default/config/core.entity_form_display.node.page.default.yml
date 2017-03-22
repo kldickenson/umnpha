@@ -6,42 +6,66 @@ dependencies:
     - field.field.node.page.field_page_hero
     - field.field.node.page.field_page_sections
     - field.field.node.page.field_page_title
+    - image.style.thumbnail
     - node.type.page
   module:
+    - field_group
+    - image
     - path
+third_party_settings:
+  field_group:
+    group_page_hero:
+      children:
+        - field_page_title
+        - field_page_hero
+      parent_name: ''
+      weight: 1
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: true
+      label: Hero
 id: node.page.default
 targetEntityType: node
 bundle: page
 mode: default
 content:
   compro_submitted:
-    weight: 3
+    weight: 5
     settings: {  }
     third_party_settings: {  }
   created:
     type: datetime_timestamp
-    weight: 5
+    weight: 7
     settings: {  }
     third_party_settings: {  }
   field_page_hero:
+    weight: 4
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_page_sections:
     type: entity_reference_autocomplete_tags
-    weight: 1
+    weight: 4
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-  field_page_sections:
-    type: entity_reference_autocomplete_tags
-    weight: 2
+  field_page_title:
+    type: string_textfield
+    weight: 3
     settings:
-      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
   path:
     type: path
-    weight: 6
+    weight: 8
     settings: {  }
     third_party_settings: {  }
   title:
@@ -53,13 +77,12 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 4
+    weight: 6
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
 hidden:
-  field_page_title: true
   promote: true
   sticky: true
