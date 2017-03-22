@@ -1,0 +1,8 @@
+uuid: a4458773-2143-4a40-b2a5-ff395c34dd21
+langcode: en
+status: true
+dependencies: {  }
+id: menu-footer-menu
+label: 'Footer Menu'
+description: 'Menu Links to Display in the Footer'
+locked: false
