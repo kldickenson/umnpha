@@ -1,0 +1,75 @@
+uuid: a5777a10-23f2-4c51-96e5-63a0e842cabe
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_highlight
+    - field.field.section_type.section_type_highlight.field_highlight_button
+    - field.field.section_type.section_type_highlight.field_highlight_media
+    - field.field.section_type.section_type_highlight.field_highlight_text
+    - field.field.section_type.section_type_highlight.field_highlight_title
+  module:
+    - field_group
+    - file
+    - link
+    - title
+third_party_settings:
+  field_group:
+    group_highlight_text:
+      children:
+        - field_highlight_title
+        - field_highlight_text
+        - field_highlight_button
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-highlight-text
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Highlight Text'
+id: section_type.section_type_highlight.default
+targetEntityType: section_type
+bundle: section_type_highlight
+mode: default
+content:
+  field_highlight_button:
+    type: link
+    weight: 4
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_highlight_media:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+  field_highlight_text:
+    type: string
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_highlight_title:
+    type: linked_and_wrapped
+    weight: 2
+    label: hidden
+    settings:
+      tag: h2
+      linked: true
+      classes: ''
+    third_party_settings: {  }
+hidden:
+  title: true

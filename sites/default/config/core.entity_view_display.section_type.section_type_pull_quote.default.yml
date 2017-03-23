@@ -1,4 +1,4 @@
-uuid: b8db2992-f8a4-40c8-b310-c045641a1390
+uuid: b71504a2-1244-400d-8d16-e20e2836213b
 langcode: en
 status: true
 dependencies:
@@ -16,37 +16,35 @@ bundle: section_type_pull_quote
 mode: default
 content:
   field_pull_quote_author:
-    type: string_textfield
+    type: string
     weight: 3
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
   field_pull_quote_credentials:
-    type: string_textfield
-    weight: 4
+    type: string
+    weight: 2
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
   field_pull_quote_quote:
-    type: string_textfield
-    weight: 1
+    type: string
+    weight: 0
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
   field_pull_quote_text_color:
-    type: color_field_widget_box
-    weight: 2
+    type: color_field_formatter_css
+    weight: 1
+    label: hidden
     settings:
-      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+      selector: .field-pull-quote-quote
+      property: color
+      important: '1'
+      opacity: '1'
     third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  title: true

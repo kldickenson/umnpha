@@ -1,4 +1,4 @@
-uuid: 5a873732-4786-47e4-a694-cc51b8868929
+uuid: 096ce4d6-488c-4dba-9081-f31e8f7ed195
 langcode: en
 status: true
 dependencies:
@@ -9,54 +9,52 @@ dependencies:
     - field.field.section_type.section_type_testimonial.field_testimonial_image
     - field.field.section_type.section_type_testimonial.field_testimonial_quote
     - field.field.section_type.section_type_testimonial.field_testimonial_text_color
-    - image.style.thumbnail
   module:
     - color_field
-    - image
+    - responsive_image
 id: section_type.section_type_testimonial.default
 targetEntityType: section_type
 bundle: section_type_testimonial
 mode: default
 content:
   field_testimonial_author:
-    type: string_textfield
-    weight: 3
+    type: string
+    weight: 4
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
   field_testimonial_credentials:
-    type: string_textfield
-    weight: 4
+    type: string
+    weight: 3
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
   field_testimonial_image:
-    type: image_image
-    weight: 5
+    type: responsive_image
+    weight: 2
+    label: hidden
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      responsive_image_style: ''
+      image_link: ''
     third_party_settings: {  }
   field_testimonial_quote:
-    type: string_textfield
-    weight: 1
+    type: string
+    weight: 0
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
   field_testimonial_text_color:
-    type: color_field_widget_box
-    weight: 2
+    type: color_field_formatter_css
+    weight: 1
+    label: hidden
     settings:
-      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+      selector: .field-testimonial-quote
+      property: color
+      important: '1'
+      opacity: '1'
     third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-hidden: {  }
+hidden:
+  title: true
