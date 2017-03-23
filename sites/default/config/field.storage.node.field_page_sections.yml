@@ -10,7 +10,7 @@ field_name: field_page_sections
 entity_type: node
 type: entity_reference
 settings:
-  target_type: eck_entity_bundle
+  target_type: section_type
 module: core
 locked: false
 cardinality: 1
