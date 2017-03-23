@@ -22,7 +22,7 @@ third_party_settings:
         - field_featured_report_button
         - field_button_text_color
       parent_name: ''
-      weight: 3
+      weight: 4
       format_type: fieldset
       format_settings:
         id: ''
@@ -50,7 +50,7 @@ content:
     third_party_settings: {  }
   field_featured_report_image:
     type: image_image
-    weight: 4
+    weight: 3
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail

@@ -8,9 +8,8 @@ dependencies:
     - field.field.section_type.section_type_highlight.field_highlight_media
     - field.field.section_type.section_type_highlight.field_highlight_text
     - field.field.section_type.section_type_highlight.field_highlight_title
-    - image.style.thumbnail
   module:
-    - image
+    - file
     - link
 id: section_type.section_type_highlight.default
 targetEntityType: section_type
@@ -25,12 +24,11 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
   field_highlight_media:
-    type: image_image
-    weight: 3
+    weight: 5
     settings:
       progress_indicator: throbber
-      preview_image_style: thumbnail
     third_party_settings: {  }
+    type: file_generic
   field_highlight_text:
     type: string_textfield
     weight: 2

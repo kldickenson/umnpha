@@ -26,14 +26,15 @@ third_party_settings:
       weight: 20
       format_type: html_element
       format_settings:
-        id: ''
-        classes: ''
+        label: featured_report_text
         element: div
         show_label: false
         label_element: h3
         attributes: ''
         effect: none
         speed: fast
+        id: ''
+        classes: featured_report_text
       label: featured_report_text
 id: section_type.section_type_featured_report.default
 targetEntityType: section_type
@@ -45,7 +46,7 @@ content:
     weight: 4
     label: hidden
     settings:
-      selector: .field--name-field-featured-report-button
+      selector: '.field--name-field-featured-report-button .featured_report_text'
       property: background-color
       important: '1'
       opacity: '1'
