@@ -6,11 +6,35 @@ dependencies:
     - field.field.node.webform.field_form_image
     - field.field.node.webform.field_form_sections
     - field.field.node.webform.field_form_text
+    - field.field.node.webform.field_form_webform
     - node.type.webform
   module:
+    - field_group
     - image
     - text
+    - title
     - user
+    - webform
+third_party_settings:
+  field_group:
+    group_form_text:
+      children:
+        - title
+        - field_form_text
+        - field_form_webform
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: ''
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Form Text'
 _core:
   default_config_hash: 3r1i0UMUbeNHhvmiqHDYznoS4G9XR1jq6lQ49r80lDE
 id: node.webform.default
@@ -19,32 +43,41 @@ bundle: webform
 mode: default
 content:
   field_form_image:
-    weight: 4
-    label: above
+    weight: 0
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
     type: image
   field_form_sections:
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link: true
+      view_mode: default
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
   field_form_text:
-    weight: 1
+    weight: 2
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  title:
+  field_form_webform:
+    weight: 3
     label: hidden
-    type: string
-    weight: -5
+    settings: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+  title:
+    type: linked_and_wrapped
     settings:
-      link_to_entity: false
+      tag: h2
+      classes: ''
+      linked: false
+    weight: 1
+    label: hidden
     third_party_settings: {  }
 hidden:
   compro_links: true
