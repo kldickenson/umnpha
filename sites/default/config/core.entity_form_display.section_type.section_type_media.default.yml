@@ -1,0 +1,30 @@
+uuid: 78188a09-53b9-49ba-8dbd-c7b3b62c8d63
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_media
+    - field.field.section_type.section_type_media.field_media_media
+    - image.style.thumbnail
+  module:
+    - image
+id: section_type.section_type_media.default
+targetEntityType: section_type
+bundle: section_type_media
+mode: default
+content:
+  field_media_media:
+    type: image_image
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

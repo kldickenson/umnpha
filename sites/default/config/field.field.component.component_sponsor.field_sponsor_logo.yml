@@ -13,7 +13,7 @@ entity_type: component
 bundle: component_sponsor
 label: Logo
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

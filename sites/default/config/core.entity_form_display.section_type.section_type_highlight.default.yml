@@ -1,0 +1,55 @@
+uuid: a5e93ebb-bdb9-4282-8121-2a58808f520a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_highlight
+    - field.field.section_type.section_type_highlight.field_highlight_button
+    - field.field.section_type.section_type_highlight.field_highlight_media
+    - field.field.section_type.section_type_highlight.field_highlight_text
+    - field.field.section_type.section_type_highlight.field_highlight_title
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+id: section_type.section_type_highlight.default
+targetEntityType: section_type
+bundle: section_type_highlight
+mode: default
+content:
+  field_highlight_button:
+    type: link_default
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+  field_highlight_media:
+    type: image_image
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_highlight_text:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_highlight_title:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

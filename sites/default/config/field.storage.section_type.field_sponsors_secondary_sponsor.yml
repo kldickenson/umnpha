@@ -9,7 +9,7 @@ field_name: field_sponsors_secondary_sponsor
 entity_type: section_type
 type: entity_reference
 settings:
-  target_type: eck_entity_bundle
+  target_type: component
 module: core
 locked: false
 cardinality: -1
