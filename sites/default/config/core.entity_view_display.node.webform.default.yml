@@ -6,9 +6,9 @@ dependencies:
     - field.field.node.webform.field_form_image
     - field.field.node.webform.field_form_sections
     - field.field.node.webform.field_form_text
-    - field.field.node.webform.field_form_title
     - node.type.webform
   module:
+    - image
     - text
     - user
 _core:
@@ -19,12 +19,13 @@ bundle: webform
 mode: default
 content:
   field_form_image:
-    weight: 2
-    label: hidden
+    weight: 4
+    label: above
     settings:
-      link: true
+      image_style: ''
+      image_link: ''
     third_party_settings: {  }
-    type: entity_reference_label
+    type: image
   field_form_sections:
     weight: 3
     label: hidden
@@ -38,10 +39,10 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: text_default
-  field_form_title:
-    type: string
-    weight: 0
+  title:
     label: hidden
+    type: string
+    weight: -5
     settings:
       link_to_entity: false
     third_party_settings: {  }
