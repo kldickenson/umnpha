@@ -1,17 +1,27 @@
-uuid: e24c05b6-d9b2-446b-b9fe-87939e5e07c2
+uuid: a76671fc-41eb-4f70-899c-ec7eb2dade45
 langcode: en
 status: true
 dependencies:
   module:
+    - file
     - image
     - node
 id: node.field_form_image
 field_name: field_form_image
 entity_type: node
-type: entity_reference
+type: image
 settings:
-  target_type: image_style
-module: core
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
 locked: false
 cardinality: 1
 translatable: true
