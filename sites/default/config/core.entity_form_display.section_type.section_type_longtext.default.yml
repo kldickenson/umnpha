@@ -1,0 +1,29 @@
+uuid: 048614aa-7efa-4504-82f8-f41587eee8c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_longtext
+    - field.field.section_type.section_type_longtext.field_longtext_text
+  module:
+    - text
+id: section_type.section_type_longtext.default
+targetEntityType: section_type
+bundle: section_type_longtext
+mode: default
+content:
+  field_longtext_text:
+    type: text_textarea
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }
