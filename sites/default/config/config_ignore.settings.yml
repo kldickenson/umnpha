@@ -1,3 +1,8 @@
-ignored_config_entities: {  }
+ignored_config_entities:
+  0: system.site
+  2: user.role.anonymous
+  4: user.role.authenticated
+  6: user.role.seo
+  8: user.role.editor
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

@@ -5,10 +5,6 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     watch: {
-      images: {
-        files: ['images/source/*.{png,jpg,gif}'],
-        tasks: ['newer:imagemin']
-      },
 
       css: {
         files: ['sass/**/*.scss'],
@@ -18,17 +14,6 @@ module.exports = function(grunt) {
       templates: {
         files: 'templates/**/*.tpl.php',
         tasks: ['drush:cc_theme_registry']
-      }
-    },
-
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: 'images/source/',
-          src: ['**/*.{png,jpg,gif}'],
-          dest: 'images/optimized/'
-        }]
       }
     },
 
@@ -45,13 +30,15 @@ module.exports = function(grunt) {
     },
 
     browserSync: {
-      dev: {
+      dist: {
         bsFiles: {
           src: ['css/*.css']
         },
         options: {
           watchTask: true,
-          injectChanges: false
+          injectChanges: false,
+          proxy: 'localhost:8000',
+          notify: false
         }
       }
     },
@@ -64,10 +51,8 @@ module.exports = function(grunt) {
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
-  grunt.loadNpmTasks('grunt-newer');
-  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-drush');
 
