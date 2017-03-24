@@ -67,6 +67,14 @@ class EmailSignUpForm extends ConfigFormBase {
     return parent::buildForm($form, $form_state);
   }
 
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $user_input = $form_state->getValue(array('link'));
+    if ((strpos($user_input, '/') !== 0) && (strpos($user_input, '#') !== 0) && (strpos($user_input, '?') !== 0)) {
+      $form_state->setErrorByName('link', $this->t("The URL must begin with a '/'."));
+    }
+    parent::validateForm($form, $form_state);
+  }
+
   /**
    * {@inheritdoc}
    */
