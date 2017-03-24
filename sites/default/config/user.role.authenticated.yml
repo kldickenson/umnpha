@@ -19,3 +19,4 @@ permissions:
   - 'search content'
   - 'administer eck entity types'
   - 'view media'
+  - 'search Google CSE'
