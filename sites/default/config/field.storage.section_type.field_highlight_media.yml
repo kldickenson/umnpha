@@ -1,27 +1,17 @@
-uuid: bf12f2d7-07c7-4943-85e7-b8ca78ec2747
+uuid: 0047c97b-8216-4213-b252-60ec74ec830c
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - file
-    - image
+    - media_entity
 id: section_type.field_highlight_media
 field_name: field_highlight_media
 entity_type: section_type
-type: image
+type: entity_reference
 settings:
-  uri_scheme: public
-  default_image:
-    uuid: ''
-    alt: ''
-    title: ''
-    width: null
-    height: null
-  target_type: file
-  display_field: false
-  display_default: false
-module: image
+  target_type: media
+module: core
 locked: false
 cardinality: 1
 translatable: true

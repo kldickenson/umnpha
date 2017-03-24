@@ -8,4 +8,25 @@ id: administrator
 label: Administrator
 weight: -7
 is_admin: false
-permissions: {  }
+permissions:
+  - 'access content overview'
+  - 'view own unpublished content'
+  - 'edit any webform content'
+  - 'edit own webform content'
+  - 'create url aliases'
+  - 'access in-place editing'
+  - 'administer redirects'
+  - 'administer nodes'
+  - 'create webform content'
+  - 'delete any webform content'
+  - 'delete own webform content'
+  - 'create page content'
+  - 'delete own page content'
+  - 'edit any page content'
+  - 'edit own page content'
+  - 'create media'
+  - 'delete any media'
+  - 'delete media'
+  - 'update any media'
+  - 'update media'
+  - 'view media'
