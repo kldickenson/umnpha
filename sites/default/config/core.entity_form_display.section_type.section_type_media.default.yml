@@ -5,21 +5,25 @@ dependencies:
   config:
     - eck.eck_type.section_type.section_type_media
     - field.field.section_type.section_type_media.field_media_media
-    - image.style.thumbnail
   module:
-    - image
+    - inline_entity_form
 id: section_type.section_type_media.default
 targetEntityType: section_type
 bundle: section_type_media
 mode: default
 content:
   field_media_media:
-    type: image_image
-    weight: 1
+    weight: 3
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
     third_party_settings: {  }
+    type: inline_entity_form_complex
   title:
     type: string_textfield
     weight: 0

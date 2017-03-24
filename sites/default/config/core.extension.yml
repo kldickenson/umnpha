@@ -30,7 +30,9 @@ module:
   eck: 0
   editor: 0
   email_sign_up: 0
+  embed: 0
   entity: 0
+  entity_embed: 0
   features: 0
   features_ui: 0
   field: 0
@@ -47,6 +49,8 @@ module:
   libraries: 0
   link: 0
   linked_field: 0
+  media_entity: 0
+  media_entity_image: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -71,6 +75,8 @@ module:
   tour: 0
   update: 0
   user: 0
+  video_embed_field: 0
+  video_embed_media: 0
   views_ui: 0
   webform: 0
   webform_devel: 0

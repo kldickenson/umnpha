@@ -10,7 +10,6 @@ dependencies:
     - field.field.section_type.section_type_highlight.field_highlight_title
   module:
     - field_group
-    - file
     - link
     - title
 third_party_settings:
@@ -50,11 +49,13 @@ content:
       target: ''
     third_party_settings: {  }
   field_highlight_media:
-    weight: 5
-    label: above
-    settings: {  }
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
     third_party_settings: {  }
-    type: file_default
+    type: entity_reference_entity_view
   field_highlight_text:
     type: string
     weight: 3

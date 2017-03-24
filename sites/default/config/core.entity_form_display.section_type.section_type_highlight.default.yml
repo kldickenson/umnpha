@@ -9,7 +9,7 @@ dependencies:
     - field.field.section_type.section_type_highlight.field_highlight_text
     - field.field.section_type.section_type_highlight.field_highlight_title
   module:
-    - file
+    - inline_entity_form
     - link
 id: section_type.section_type_highlight.default
 targetEntityType: section_type
@@ -18,17 +18,23 @@ mode: default
 content:
   field_highlight_button:
     type: link_default
-    weight: 4
+    weight: 3
     settings:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
   field_highlight_media:
-    weight: 5
+    weight: 4
     settings:
-      progress_indicator: throbber
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
     third_party_settings: {  }
-    type: file_generic
+    type: inline_entity_form_complex
   field_highlight_text:
     type: string_textfield
     weight: 2
