@@ -3,7 +3,7 @@ langcode: en
 status: true
 dependencies:
   module:
-    - compro_custom
+    - email_sign_up
   theme:
     - compro_theme
 id: emailsignup

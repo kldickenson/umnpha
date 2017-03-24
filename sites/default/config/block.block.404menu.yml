@@ -1,0 +1,29 @@
+uuid: 352b9127-c7f8-4ce9-91a3-174778ae8f38
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.menu-404-menu
+  module:
+    - system
+  theme:
+    - compro_theme
+id: 404menu
+theme: compro_theme
+region: content
+weight: 0
+provider: null
+plugin: 'system_menu_block:menu-404-menu'
+settings:
+  id: 'system_menu_block:menu-404-menu'
+  label: 'Suggested Links'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility:
+  request_path:
+    id: request_path
+    pages: node/3
+    negate: false
+    context_mapping: {  }

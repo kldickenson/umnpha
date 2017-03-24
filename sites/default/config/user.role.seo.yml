@@ -1,17 +1,24 @@
-uuid: b6e43770-cb5b-4adf-a41b-53aa9f5a1c92
+uuid: 3a51b57b-6ae8-4d93-bb76-4e812d150d7d
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 91po1sfh6yCPu6D9PtTJ_B2ULxNINkR8vON_xBCvvgA
-id: author
+id: seo
 label: seo
 weight: -6
 is_admin: null
 permissions:
+  - 'access content overview'
+  - 'administer nodes'
   - 'view own unpublished content'
+  - 'create webform content'
+  - 'delete any webform content'
+  - 'delete own webform content'
   - 'edit any webform content'
   - 'edit own webform content'
+  - 'create page content'
+  - 'delete own page content'
+  - 'edit any page content'
+  - 'edit own page content'
   - 'administer url aliases'
   - 'create url aliases'
   - 'administer pathauto'
@@ -19,3 +26,5 @@ permissions:
   - 'administer redirect settings'
   - 'administer redirects'
   - 'administer site configuration'
+  - 'edit any webform'
+  - 'edit own webform'

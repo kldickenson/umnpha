@@ -43,3 +43,4 @@ hidden:
   field_form_image: true
   field_form_sections: true
   field_form_text: true
+  field_form_webform: true
