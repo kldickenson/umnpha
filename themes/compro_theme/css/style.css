@@ -6,13 +6,13 @@ html {
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
   appearance: none;
-  background-color: #00afef;
+  background-color: #0c57aa;
   border: 0;
   border-radius: 3px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "open-sans";
+  font-family: "Montserrat", sans-serif;
   font-size: 1em;
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
@@ -24,17 +24,17 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   vertical-align: middle;
   white-space: nowrap; }
   button:hover, button:focus, input[type="button"]:hover, input[type="button"]:focus, input[type="reset"]:hover, input[type="reset"]:focus, input[type="submit"]:hover, input[type="submit"]:focus {
-    background-color: #008cbf;
+    background-color: #0a4688;
     color: #fff; }
   button:disabled, input[type="button"]:disabled, input[type="reset"]:disabled, input[type="submit"]:disabled {
     cursor: not-allowed;
     opacity: 0.5; }
     button:disabled:hover, input[type="button"]:disabled:hover, input[type="reset"]:disabled:hover, input[type="submit"]:disabled:hover {
-      background-color: #00afef; }
+      background-color: #0c57aa; }
 
 fieldset {
-  background-color: #f4f5f5;
-  border: 1px solid #d4d5d6;
+  background-color: #ececec;
+  border: 1px solid #b3b3b3;
   margin: 0 0 0.75em;
   padding: 1.5em; }
 
@@ -42,7 +42,7 @@ input,
 label,
 select {
   display: block;
-  font-family: "open-sans";
+  font-family: "Montserrat", sans-serif;
   font-size: 1em; }
 
 label {
@@ -56,11 +56,11 @@ label {
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea,
 select[multiple=multiple] {
   background-color: #fff;
-  border: 1px solid #d4d5d6;
+  border: 1px solid #b3b3b3;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  font-family: "open-sans";
+  font-family: "Montserrat", sans-serif;
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em;
@@ -68,11 +68,11 @@ select[multiple=multiple] {
   width: 100%; }
   input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
   select[multiple=multiple]:hover {
-    border-color: #aaaaab; }
+    border-color: #8f8f8f; }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus,
   select[multiple=multiple]:focus {
-    border-color: #00afef;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(0, 156, 214, 0.7);
+    border-color: #0c57aa;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(10, 75, 146, 0.7);
     outline: none; }
   input[type="color"]:disabled, input[type="date"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="email"]:disabled, input[type="month"]:disabled, input[type="number"]:disabled, input[type="password"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="text"]:disabled, input[type="time"]:disabled, input[type="url"]:disabled, input[type="week"]:disabled, input:not([type]):disabled, textarea:disabled,
   select[multiple=multiple]:disabled {
@@ -80,7 +80,7 @@ select[multiple=multiple] {
     cursor: not-allowed; }
     input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,
     select[multiple=multiple]:disabled:hover {
-      border: 1px solid #d4d5d6; }
+      border: 1px solid #b3b3b3; }
 
 textarea {
   resize: vertical; }
@@ -126,13 +126,13 @@ table {
   width: 100%; }
 
 th {
-  border-bottom: 1px solid #9fa0a1;
+  border-bottom: 1px solid #868686;
   font-weight: 600;
   padding: 0.75em 0;
   text-align: left; }
 
 td {
-  border-bottom: 1px solid #d4d5d6;
+  border-bottom: 1px solid #b3b3b3;
   padding: 0.75em 0; }
 
 tr,
@@ -146,8 +146,8 @@ th {
   font-weight: normal;
   src: url("../fonts/opensans/opensans/opensans.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/opensans/opensans.woff2") format("woff2"), url("../fonts/opensans/opensans/opensans.woff") format("woff"); }
 body {
-  color: #5f6062;
-  font-family: "open-sans";
+  color: #5f5f5f;
+  font-family: "Montserrat", sans-serif;
   font-size: 1em;
   line-height: 1.5; }
 
@@ -157,7 +157,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "open-sans";
+  font-family: "Montserrat bold";
   font-size: 1em;
   line-height: 1.2;
   margin: 0 0 0.75em; }
@@ -166,14 +166,14 @@ p {
   margin: 0 0 0.75em; }
 
 a {
-  color: #00afef;
+  color: #0c57aa;
   text-decoration: none;
   transition: color 150ms ease; }
   a:active, a:focus, a:hover {
-    color: #0083b3; }
+    color: #094180; }
 
 hr {
-  border-bottom: 1px solid #d4d5d6;
+  border-bottom: 1px solid #b3b3b3;
   border-left: 0;
   border-right: 0;
   border-top: 0;
@@ -292,7 +292,7 @@ div.warning {
     display: table; }
   #tabs ul {
     padding: 0;
-    border-color: #d4d5d6; }
+    border-color: #b3b3b3; }
   #tabs li {
     list-style: none; }
     @media screen and (min-width: 960px) {
@@ -300,8 +300,8 @@ div.warning {
         display: inline; } }
   #tabs a {
     background-color: #fff;
-    border-top: 1px solid #d4d5d6;
-    color: #5f6062;
+    border-top: 1px solid #b3b3b3;
+    color: #5f5f5f;
     display: block;
     font-weight: 400;
     padding: 0.75em 1.618em;
@@ -311,27 +311,16 @@ div.warning {
         display: inline-block;
         border: 0; } }
     #tabs a:hover {
-      color: #00afef; }
+      color: #0c57aa; }
     #tabs a:focus {
       outline: none; }
     #tabs a.active {
       border-bottom: 0; }
       @media screen and (min-width: 960px) {
         #tabs a.active {
-          border: 1px solid #d4d5d6;
+          border: 1px solid #b3b3b3;
           border-bottom-color: #fff;
           margin-bottom: -1px; } }
-
-header {
-  background: #d4d5d6;
-  min-height: 100px;
-  padding-top: 29px;
-  position: relative; }
-
-.region-header {
-  max-width: 940px;
-  margin: 0 auto;
-  padding: 0 10px; }
 
 .region .inner {
   max-width: 1200px;
@@ -342,6 +331,12 @@ header {
     clear: both;
     content: "";
     display: table; }
+
+.region-footer {
+  background-color: #37383A; }
+
+.region-post-footer {
+  background-color: #292a2c; }
 
 body .gutter__xsm_top {
   padding-top: 0.625rem; }
