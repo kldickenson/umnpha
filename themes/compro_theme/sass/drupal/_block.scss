@@ -1,11 +1,13 @@
 /*
-* #BLOCKS
+*
+*   #BLOCKS
 *
 *
-*
-*
-*
- */
+**/
+
+
+
+
 
 /*Header Blocks & Gen Menu*/
 .block-system-branding-block {
@@ -21,7 +23,7 @@
     display: inline;
     margin: 0 15px;
 
-    a.is-active {
+    a {
       color: $um-blue;
       text-transform: uppercase;
 
@@ -63,8 +65,8 @@
 
 
 /*Footer Blocks*/
-#block-logoforthefooter {   //check this block's config and revise, if no better alternative, choose better selector
-  display: inline-block;   //actually this block is the wrong img
+#block-logoforthefooter {   //this block needs to be re-created, find better selector
+  display: inline-block;
   margin: 0 0 0 35px;
 }
 
@@ -96,7 +98,7 @@
   display: inline-block;
 }
 
-.block-contact-info.block-social {
+.block-contact-info.block-social {      //needs fontello content
   float: right;
 
   a {

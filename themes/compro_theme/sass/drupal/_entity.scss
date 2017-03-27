@@ -1,0 +1,131 @@
+/*
+*   #Entity/Section-Types
+*
+*
+**/
+
+
+
+
+
+
+/*Media*/
+.field--name-field-media-media {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 55%;
+
+  img {
+    height: 350px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+/*Longtext*/
+.field--name-field-longtext-text {
+  margin: 0 auto;
+  width: 55%;
+
+  p {
+    margin-bottom: 25px;
+  }
+
+  p:last-child {
+    margin-bottom: 40px;
+  }
+
+}
+
+
+
+
+
+/*Infographics*/
+    //[1] uuhhh, y?? look to add class names out machine_names
+    // check modules/contrib/eck -> /templates/...html.twig generates markups
+    // refer to htmlelement.php in modules/contrib/field_group/src/field_group/...
+
+div[data-quickedit-entity-id="section_type/12"] { //[1]
+  margin-bottom: 40px;
+}
+
+  .field--name-field-infographic-image {
+    margin: 0 auto;
+    width: 55%;
+
+    img {
+      height: 350px;
+      object-fit: cover;
+    }
+
+  }
+
+  .field--name-field-infographic-caption {
+    font-size: rem(14);
+    font-style: normal;
+    margin: 0 auto;
+    width: 55%;
+  }
+
+
+
+
+
+/*Sponsors*/
+  //[1] Aligns multiple images inline
+.field-group-sponsors-primary {
+  display: inline-block;
+  margin: 35px 0 60px 3rem;
+  padding: 40px 0 0 0;
+
+  .field--name-field-sponsors-primary__label {
+    color: $um-blue;
+    margin-bottom: 30px;
+  }
+
+  img {
+    height: 40px;
+    object-fit: contain;
+  }
+}
+
+.field-group-sponsors-secondary {
+  display: inline-block;
+  margin: 35px 3rem 60px 0;
+  padding: 40px 0 0 0;
+
+
+  div.field__item { //[1]
+    display: inline-block;
+
+    div {
+      display: inline-block;
+    }
+
+  }
+
+  .field--name-field-sponsors-secondary-label {
+    color: $um-blue;
+    margin-bottom: 30px;
+  }
+
+  img {
+    height: 40px;
+    object-fit: contain;
+    padding: 0 15px;
+  }
+
+}
+
+
+
+
+
+/*Featured Report Section-Type*/
