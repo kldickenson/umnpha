@@ -54,34 +54,30 @@ bundle: section_type_sponsors
 mode: default
 content:
   field_sponsors_primary__label:
-    type: linked_and_wrapped
-    weight: 0
+    weight: 21
     label: hidden
     settings:
-      tag: div
-      classes: ''
-      linked: false
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
   field_sponsors_primary_sponsors:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 22
     label: hidden
     settings:
       view_mode: default
       link: false
     third_party_settings: {  }
   field_sponsors_secondary_label:
-    type: linked_and_wrapped
-    weight: 0
+    weight: 22
     label: hidden
     settings:
-      tag: div
-      classes: ''
-      linked: false
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
   field_sponsors_secondary_sponsor:
     type: entity_reference_entity_view
-    weight: 1
+    weight: 23
     label: hidden
     settings:
       link: true

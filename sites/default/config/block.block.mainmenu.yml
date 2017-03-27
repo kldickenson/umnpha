@@ -11,7 +11,7 @@ dependencies:
 id: mainmenu
 theme: compro_theme
 region: header
-weight: -9
+weight: -7
 provider: null
 plugin: 'system_menu_block:menu-main-menu'
 settings:

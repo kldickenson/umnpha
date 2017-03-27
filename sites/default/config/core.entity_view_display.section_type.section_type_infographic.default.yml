@@ -14,14 +14,12 @@ bundle: section_type_infographic
 mode: default
 content:
   field_infographic_caption:
-    type: linked_and_wrapped
-    weight: 1
-    label: hidden
+    weight: 2
+    label: above
     settings:
-      tag: h2
-      classes: ''
-      linked: false
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
   field_infographic_image:
     type: responsive_image
     weight: 0

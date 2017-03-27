@@ -19,7 +19,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   line-height: 1;
   padding: 0.75em 1.5em;
   text-decoration: none;
-  transition: background-color 150ms ease;
+  transition: background-color 250ms ease-in-out;
   user-select: none;
   vertical-align: middle;
   white-space: nowrap; }
@@ -64,7 +64,7 @@ select[multiple=multiple] {
   font-size: 1em;
   margin-bottom: 0.75em;
   padding: 0.5em;
-  transition: border-color 150ms ease;
+  transition: border-color 250ms ease-in-out;
   width: 100%; }
   input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover,
   select[multiple=multiple]:hover {
@@ -188,7 +188,7 @@ p {
 a {
   color: #0c57aa;
   text-decoration: none;
-  transition: color 150ms ease; }
+  transition: color 250ms ease-in-out; }
   a:active, a:focus, a:hover {
     color: #094180; }
 
@@ -435,21 +435,19 @@ div.warning {
     margin-bottom: 40px; }
 
 /*Infographics*/
-div[data-quickedit-entity-id="section_type/12"] {
+.section-type-infographic {
   margin-bottom: 40px; }
-
-.field--name-field-infographic-image {
-  margin: 0 auto;
-  width: 55%; }
-  .field--name-field-infographic-image img {
-    height: 350px;
-    object-fit: cover; }
-
-.field--name-field-infographic-caption {
-  font-size: 0.875rem;
-  font-style: normal;
-  margin: 0 auto;
-  width: 55%; }
+  .section-type-infographic .field--name-field-infographic-image {
+    margin: 0 auto;
+    width: 55%; }
+    .section-type-infographic .field--name-field-infographic-image img {
+      height: 350px;
+      object-fit: cover; }
+  .section-type-infographic .field--name-field-infographic-caption {
+    font-size: 0.875rem;
+    font-style: normal;
+    margin: 0 auto;
+    width: 55%; }
 
 /*Sponsors*/
 .field-group-sponsors-primary {
@@ -479,7 +477,42 @@ div[data-quickedit-entity-id="section_type/12"] {
     object-fit: contain;
     padding: 0 15px; }
 
-/*Featured Report Section-Type*/
+/*Featured Report*/
+.section-type-featured-report {
+  background-color: #431D16;
+  color: white;
+  float: left;
+  width: 100%; }
+  .section-type-featured-report .field--name-field-featured-report-image {
+    float: left;
+    width: 44%; }
+    .section-type-featured-report .field--name-field-featured-report-image img {
+      height: auto;
+      object-fit: stretch;
+      width: 100%; }
+  .section-type-featured-report .featured_report_text {
+    padding: 100px 9% 60px 2%;
+    float: right;
+    width: 50%; }
+    .section-type-featured-report .featured_report_text .field--name-field-featured-report-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin: 0 0 30px 0;
+      width: 70%; }
+    .section-type-featured-report .featured_report_text .field--name-field-featured-report-subtitle {
+      font-family: 'Lora', serif;
+      font-size: 1.125rem;
+      margin: 0 0 52px 0;
+      width: 70%; }
+    .section-type-featured-report .featured_report_text .field--name-field-featured-report-button a {
+      background-color: #ffcc05;
+      color: #431D16;
+      display: inline;
+      font-family: "Montserrat Bold";
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      text-align: center; }
+
 /*
 *
  */

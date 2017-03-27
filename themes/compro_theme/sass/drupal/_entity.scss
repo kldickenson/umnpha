@@ -48,13 +48,10 @@
 
 
 /*Infographics*/
-    //[1] uuhhh, y?? look to add class names out machine_names
-    // check modules/contrib/eck -> /templates/...html.twig generates markups
-    // refer to htmlelement.php in modules/contrib/field_group/src/field_group/...
+    //[1] Fixed by Devmaster Hillary
 
-div[data-quickedit-entity-id="section_type/12"] { //[1]
+.section-type-infographic { //[1]
   margin-bottom: 40px;
-}
 
   .field--name-field-infographic-image {
     margin: 0 auto;
@@ -74,7 +71,7 @@ div[data-quickedit-entity-id="section_type/12"] { //[1]
     width: 55%;
   }
 
-
+}
 
 
 
@@ -128,4 +125,59 @@ div[data-quickedit-entity-id="section_type/12"] { //[1]
 
 
 
-/*Featured Report Section-Type*/
+/*Featured Report*/
+.section-type-featured-report {
+  background-color: $cedar;
+  color: white;
+  float: left;
+  width: 100%;
+
+  .field--name-field-featured-report-image {
+    float: left;
+    width: 44%;
+
+    img {
+      height: auto;
+      object-fit: stretch;
+      width: 100%;
+    }
+
+  }
+
+  .featured_report_text {
+    padding: 100px 9% 60px 2%;
+    float: right;
+    width:50%;
+
+    .field--name-field-featured-report-title {
+      font-size: rem(40);
+      font-weight: bold;
+      margin: 0 0 30px 0;
+      width: 70%;
+    }
+
+    .field--name-field-featured-report-subtitle {
+      font-family: 'Lora', serif;
+      font-size: rem(18);
+      margin: 0 0 52px 0;
+      width: 70%;
+    }
+
+    .field--name-field-featured-report-button {
+
+
+
+      a {
+        background-color: $yellow;
+        color: $cedar;
+        display: inline;
+        font-family: "Montserrat Bold";
+        font-size: rem(16);
+        padding: rem(16) rem(32);
+        text-align: center;
+      }
+
+    }
+  }
+
+}
