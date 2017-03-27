@@ -11,3 +11,17 @@
 function compro_custom_install() {
   compro_custom_add_view_modes();
 }
+
+/**
+ * Auto-add the titles in for the new field.
+ */
+function compro_custom_update_8002() {
+  $nids = \Drupal::entityQuery('node')->execute();
+  $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+
+  foreach($nodes as $node) {
+    $title = $node->getTitle();
+    $node->set('field_title', $title);
+    $node->save();
+  }
+}

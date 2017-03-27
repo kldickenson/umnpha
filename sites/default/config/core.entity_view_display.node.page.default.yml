@@ -5,17 +5,17 @@ dependencies:
   config:
     - field.field.node.page.field_page_hero
     - field.field.node.page.field_page_sections
+    - field.field.node.page.field_title
     - node.type.page
   module:
     - field_group
     - image
-    - title
     - user
 third_party_settings:
   field_group:
     group_page_hero:
       children:
-        - title
+        - field_title
         - field_page_hero
       parent_name: ''
       weight: 0
@@ -37,29 +37,27 @@ mode: default
 content:
   field_page_hero:
     type: image
-    weight: -4
+    weight: 2
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
   field_page_sections:
     type: entity_reference_entity_view
     weight: 1
     label: hidden
     settings:
+      link: true
       view_mode: default
-      link: false
     third_party_settings: {  }
-  title:
-    type: linked_and_wrapped
-    settings:
-      tag: h1
-      linked: false
-      classes: ''
-    weight: -5
+  field_title:
+    weight: 1
     label: hidden
+    settings:
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
 hidden:
   compro_links: true
   compro_submitted: true
