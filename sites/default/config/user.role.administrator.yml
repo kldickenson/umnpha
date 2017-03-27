@@ -8,10 +8,4 @@ id: administrator
 label: Administrator
 weight: -7
 is_admin: false
-permissions:
-  - 'create media'
-  - 'delete any media'
-  - 'delete media'
-  - 'update any media'
-  - 'update media'
-  - 'view media'
+permissions: {  }

@@ -24,7 +24,3 @@ permissions:
   - 'delete own page content'
   - 'edit any page content'
   - 'edit own page content'
-  - 'create media'
-  - 'update any media'
-  - 'update media'
-  - 'view media'

@@ -1,0 +1,108 @@
+/*
+* #BLOCKS
+*
+*
+*
+*
+*
+ */
+
+/*Header Blocks & Gen Menu*/
+.block-system-branding-block {
+  display: inline-block;
+  margin: 0 0 0 35px;
+}
+
+.block-menu {
+  display: inline-block;
+  float: right;
+
+  ul li {
+    display: inline;
+    margin: 0 15px;
+
+    a.is-active {
+      color: $um-blue;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $blue;
+      }
+
+    }
+
+  }
+
+}
+
+.block-search-icon-block {
+
+  display: inline-block;
+
+  float: right;
+  height: 25px;
+  margin: 0 20px 0 15px;
+  width: 25px;
+
+  span {
+    content: '\1f50d';
+    font-family: "fontello";
+    font-size: rem(32);
+  }
+
+}
+
+.block-email-sign-up {
+  display: inline-block;
+  float: right;
+  margin: 0 0 0 20px;
+  text-transform: uppercase;
+}
+
+
+
+
+/*Footer Blocks*/
+#block-logoforthefooter {   //check this block's config and revise, if no better alternative, choose better selector
+  display: inline-block;   //actually this block is the wrong img
+  margin: 0 0 0 35px;
+}
+
+.block-menu.menu--menu-footer-menu {
+
+  ul li a {
+    color: $medium-gray;
+
+    &:hover {
+      color: $yellow;
+    }
+
+  }
+
+}
+
+.block-address {
+  position: relative;
+  text-align: right;
+
+  address {
+    font-size: rem(11);
+    font-style: normal;
+  }
+
+}
+
+.block-copyright-block {
+  display: inline-block;
+}
+
+.block-contact-info.block-social {
+  float: right;
+
+  a {
+    height: 16px;
+    margin: 0px 15px;
+    text-indent: -5000px;
+  }
+
+}
