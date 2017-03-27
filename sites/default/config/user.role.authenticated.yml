@@ -18,5 +18,5 @@ permissions:
   - 'access shortcuts'
   - 'search content'
   - 'administer eck entity types'
-  - 'view media'
-  - 'search Google CSE'
+  - 'view any component entities'
+  - 'view any section_type entities'
