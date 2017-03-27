@@ -9,7 +9,7 @@ dependencies:
 id: emailsignup
 theme: compro_theme
 region: header
-weight: -6
+weight: -9
 provider: null
 plugin: email_sign_up
 settings:

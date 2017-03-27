@@ -1,5 +1,9 @@
 // Fonts
 @include font-face("open-sans", "../fonts/opensans/opensans/opensans", normal, $file-formats: eot woff woff2);
+@include font-face("Montserrat", "../fonts/Montserrat/Montserrat-Regular", normal, $file-formats: ttf);
+@include font-face("Montserrat Bold", "../fonts/Montserrat/Montserrat-Bold", bold, $file-formats: ttf);
+@include font-face("Lora", "../fonts/Lora/Lora-Regular", normal, $file-formats: ttf);
+@include font-face("Lora Italic", "../fonts/Lora/Lora-Italic", italic, $file-formats: ttf);
 
 body {
   color: $base-font-color;

@@ -28,8 +28,3 @@ permissions:
   - 'administer site configuration'
   - 'edit any webform'
   - 'edit own webform'
-  - 'create media'
-  - 'delete any media'
-  - 'update any media'
-  - 'update media'
-  - 'view media'
