@@ -343,13 +343,11 @@ div.warning {
           margin-bottom: -1px; } }
 
 /*
-* #BLOCKS
+*
+*   #BLOCKS
 *
 *
-*
-*
-*
- */
+**/
 /*Header Blocks & Gen Menu*/
 .block-system-branding-block {
   display: inline-block;
@@ -361,10 +359,10 @@ div.warning {
   .block-menu ul li {
     display: inline;
     margin: 0 15px; }
-    .block-menu ul li a.is-active {
+    .block-menu ul li a {
       color: #00264b;
       text-transform: uppercase; }
-      .block-menu ul li a.is-active:hover {
+      .block-menu ul li a:hover {
         color: #0c57aa; }
 
 .block-search-icon-block {
@@ -410,6 +408,98 @@ div.warning {
     height: 16px;
     margin: 0px 15px;
     text-indent: -5000px; }
+
+/*
+*   #Entity/Section-Types
+*
+*
+**/
+/*Media*/
+.field--name-field-media-media {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 55%; }
+  .field--name-field-media-media img {
+    height: 350px;
+    object-fit: cover;
+    width: 100%; }
+
+/*Longtext*/
+.field--name-field-longtext-text {
+  margin: 0 auto;
+  width: 55%; }
+  .field--name-field-longtext-text p {
+    margin-bottom: 25px; }
+  .field--name-field-longtext-text p:last-child {
+    margin-bottom: 40px; }
+
+/*Infographics*/
+div[data-quickedit-entity-id="section_type/12"] {
+  margin-bottom: 40px; }
+
+.field--name-field-infographic-image {
+  margin: 0 auto;
+  width: 55%; }
+  .field--name-field-infographic-image img {
+    height: 350px;
+    object-fit: cover; }
+
+.field--name-field-infographic-caption {
+  font-size: 0.875rem;
+  font-style: normal;
+  margin: 0 auto;
+  width: 55%; }
+
+/*Sponsors*/
+.field-group-sponsors-primary {
+  display: inline-block;
+  margin: 35px 0 60px 3rem;
+  padding: 40px 0 0 0; }
+  .field-group-sponsors-primary .field--name-field-sponsors-primary__label {
+    color: #00264b;
+    margin-bottom: 30px; }
+  .field-group-sponsors-primary img {
+    height: 40px;
+    object-fit: contain; }
+
+.field-group-sponsors-secondary {
+  display: inline-block;
+  margin: 35px 3rem 60px 0;
+  padding: 40px 0 0 0; }
+  .field-group-sponsors-secondary div.field__item {
+    display: inline-block; }
+    .field-group-sponsors-secondary div.field__item div {
+      display: inline-block; }
+  .field-group-sponsors-secondary .field--name-field-sponsors-secondary-label {
+    color: #00264b;
+    margin-bottom: 30px; }
+  .field-group-sponsors-secondary img {
+    height: 40px;
+    object-fit: contain;
+    padding: 0 15px; }
+
+/*Featured Report Section-Type*/
+/*
+*
+ */
+/*Page Hero Fields*/
+.node--type-page .field--name-field-page-hero {
+  margin: 0 0 60px 0; }
+  .node--type-page .field--name-field-page-hero .field-type-text {
+    display: inline-block;
+    margin: 0 auto;
+    width: 35%; }
+  .node--type-page .field--name-field-page-hero.field--type-image {
+    height: 300px;
+    max-height: 300px;
+    min-width: 100%;
+    width: 100%; }
+    .node--type-page .field--name-field-page-hero.field--type-image img {
+      max-height: 300px;
+      object-fit: cover;
+      object-position: 0px;
+      width: 100%; }
 
 .region-header {
   padding: 40px 3rem;
