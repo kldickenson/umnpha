@@ -7,19 +7,19 @@ dependencies:
     - field.field.node.webform.field_form_sections
     - field.field.node.webform.field_form_text
     - field.field.node.webform.field_form_webform
+    - field.field.node.webform.field_title
     - node.type.webform
   module:
     - field_group
     - image
     - text
-    - title
     - user
     - webform
 third_party_settings:
   field_group:
     group_form_text:
       children:
-        - title
+        - field_title
         - field_form_text
         - field_form_webform
       parent_name: ''
@@ -43,42 +43,40 @@ bundle: webform
 mode: default
 content:
   field_form_image:
+    type: image
     weight: 0
     label: hidden
     settings:
-      image_style: ''
       image_link: ''
+      image_style: ''
     third_party_settings: {  }
-    type: image
   field_form_sections:
+    type: entity_reference_entity_view
     weight: 2
     label: hidden
     settings:
       link: true
       view_mode: default
     third_party_settings: {  }
-    type: entity_reference_entity_view
   field_form_text:
-    weight: 2
+    type: text_default
+    weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
-    type: text_default
   field_form_webform:
+    type: webform_entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_title:
     weight: 3
     label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: webform_entity_reference_entity_view
-  title:
-    type: linked_and_wrapped
     settings:
-      tag: h2
-      classes: ''
-      linked: false
-    weight: 1
-    label: hidden
+      link_to_entity: false
     third_party_settings: {  }
+    type: string
 hidden:
   compro_links: true
   compro_submitted: true

@@ -7,14 +7,11 @@ dependencies:
       - webform
   module:
     - menu_ui
-    - title
 third_party_settings:
   menu_ui:
     available_menus:
       - main
     parent: 'main:'
-  title:
-    display_configurable_title: true
 _core:
   default_config_hash: e0BoXlrxD4xhZMqJm5A1gTUkmntzhvyhDNY-3Y4glyc
 name: Form

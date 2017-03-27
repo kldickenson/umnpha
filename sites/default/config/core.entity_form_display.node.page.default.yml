@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.page.field_page_hero
     - field.field.node.page.field_page_sections
+    - field.field.node.page.field_title
     - image.style.thumbnail
     - node.type.page
   module:
@@ -16,7 +17,7 @@ third_party_settings:
   field_group:
     group_page_hero:
       children:
-        - title
+        - field_title
         - field_page_hero
       parent_name: ''
       weight: 0
@@ -43,7 +44,7 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_page_hero:
-    weight: 1
+    weight: 7
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
@@ -63,17 +64,17 @@ content:
       collapsible: false
       collapsed: false
     third_party_settings: {  }
+  field_title:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   path:
     type: path
     weight: 5
     settings: {  }
-    third_party_settings: {  }
-  title:
-    type: string_textfield
-    weight: 0
-    settings:
-      size: 60
-      placeholder: ''
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
@@ -86,3 +87,4 @@ content:
 hidden:
   promote: true
   sticky: true
+  title: true

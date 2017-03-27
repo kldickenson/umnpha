@@ -12,7 +12,7 @@ module.exports = function(grunt) {
       },
 
       templates: {
-        files: 'templates/**/*.tpl.php',
+        files: 'templates/**/*.html.twig',
         tasks: ['drush:cc_theme_registry']
       }
     },

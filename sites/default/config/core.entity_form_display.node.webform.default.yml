@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.webform.field_form_sections
     - field.field.node.webform.field_form_text
     - field.field.node.webform.field_form_webform
+    - field.field.node.webform.field_title
     - image.style.thumbnail
     - node.type.webform
   module:
@@ -62,17 +63,17 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: webform_entity_reference_select
-  path:
-    type: path
-    weight: 8
-    settings: {  }
-    third_party_settings: {  }
-  title:
-    type: string_textfield
+  field_title:
     weight: 0
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  path:
+    type: path
+    weight: 8
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
@@ -85,3 +86,4 @@ content:
 hidden:
   promote: true
   sticky: true
+  title: true
