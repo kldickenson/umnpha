@@ -10,7 +10,6 @@ dependencies:
     - field.field.section_type.section_type_sponsors.field_sponsors_secondary_sponsor
   module:
     - field_group
-    - title
 third_party_settings:
   field_group:
     group_sponsors_primary:

@@ -8,7 +8,6 @@ dependencies:
     - field.field.section_type.section_type_infographic.field_infographic_image
   module:
     - responsive_image
-    - title
 id: section_type.section_type_infographic.default
 targetEntityType: section_type
 bundle: section_type_infographic
