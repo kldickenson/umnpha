@@ -18,8 +18,8 @@ third_party_settings:
     group_testimonial_text:
       children:
         - field_testimonial_quote
-        - field_testimonial_credentials
         - field_testimonial_author
+        - field_testimonial_credentials
         - field_testimonial_text_color
       parent_name: ''
       weight: 0
@@ -57,14 +57,14 @@ mode: default
 content:
   field_testimonial_author:
     type: string
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   field_testimonial_credentials:
     type: string
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
