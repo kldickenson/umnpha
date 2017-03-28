@@ -412,6 +412,8 @@ div.warning {
 /*
 *   #Entity/Section-Types
 *
+*   - may want to move .field--.... into _field.scss and use this just for
+*     section-types now that there are classes for that
 *
 **/
 /*Media*/
@@ -485,25 +487,25 @@ div.warning {
   width: 100%; }
   .section-type-featured-report .field--name-field-featured-report-image {
     float: left;
-    width: 44%; }
+    line-height: 0px;
+    width: 45%; }
     .section-type-featured-report .field--name-field-featured-report-image img {
-      height: auto;
-      object-fit: stretch;
+      height: 100%;
+      line-height: 0px;
+      object-fit: cover;
       width: 100%; }
   .section-type-featured-report .featured_report_text {
-    padding: 100px 9% 60px 2%;
+    padding: 100px 10% 60px 2%;
     float: right;
     width: 50%; }
     .section-type-featured-report .featured_report_text .field--name-field-featured-report-title {
       font-size: 2.5rem;
       font-weight: bold;
-      margin: 0 0 30px 0;
-      width: 70%; }
+      margin: 0 0 30px 0; }
     .section-type-featured-report .featured_report_text .field--name-field-featured-report-subtitle {
       font-family: 'Lora', serif;
       font-size: 1.125rem;
-      margin: 0 0 52px 0;
-      width: 70%; }
+      margin: 0 0 52px 0; }
     .section-type-featured-report .featured_report_text .field--name-field-featured-report-button a {
       background-color: #ffcc05;
       color: #431D16;
