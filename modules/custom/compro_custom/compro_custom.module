@@ -155,6 +155,17 @@ function compro_custom_entity_extra_field_info() {
     );
   }
 
+  // Add the download div to the Inforgraphic entity.
+  $extra['section_type']['section_type_infographic'] = array(
+    'display' => array(
+      'download_and_share' => array(
+        'label' => t('Download and Share'),
+        'description' => t('Download and Share'),
+        'weight' => 0,
+      ),
+    ),
+  );
+
   return $extra;
 }
 
@@ -178,6 +189,15 @@ function compro_custom_node_view(array &$build, EntityInterface $entity, EntityV
 
   if ($display->getComponent('compro_links')) {
     $build['compro_links'] = $build['links'];
+  }
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function compro_custom_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('download_and_share')) {
+    $build['download_and_share'] = compro_custom_download_and_share_content($entity);
   }
 }
 
@@ -212,4 +232,75 @@ function compro_custom_title_update(&$form, \Drupal\Core\Form\FormStateInterface
   // Update the built-in title with the user-entered title.
   $user_title = $form_state->getValue(array('field_title'));
   $form_state->setValue('title', $user_title);
+}
+
+/**
+ * Build the div with the download and share links.
+ */
+function compro_custom_download_and_share_content($entity) {
+  if (!$entity || $entity->bundle() != 'section_type_infographic') {
+    return array();
+  }
+
+  // Render the download button.
+  $file = $entity->get('field_infographic_image')->referencedEntities()[0];
+  $file_url = Url::fromUri($file->url(),
+    array(
+      'attributes' => array(
+        'class' => array(
+          'button',
+          'download-button',
+        ),
+      ),
+    )
+  );
+  // We need query-params for download-token here.
+  $download = Link::fromTextAndUrl(t('Download'), $file_url)->toRenderable();
+
+  // Render the share pop-out.
+  $share_text = '<span class="share-parent-text">Share</span>';
+
+  // Gather some basic defaults.
+  $page_title = $entity->get('field_infographic_image')[0]->get('title')->getCastedValue();
+  $caption = $entity->get('field_infographic_caption')->getValue()[0]['value'];
+  $page_summary = isset($caption) ? substr(strip_tags($caption), 0, 300) . '...' : '';
+
+  // Twitter.
+  $twitter_url = _build_url('https://twitter.com/intent/tweet', $file->url(), $page_title);
+  $twitter_link = Link::fromTextAndUrl(t('Twitter'), $twitter_url);
+
+  // Linkedin.
+  $linkedin_url = _build_url('http://www.linkedin.com/shareArticle', $file->url(), $page_title);
+  $linkedin_link = Link::fromTextAndUrl(t('LinkedIn'), $linkedin_url);
+
+  $render =  array(
+    '#type' => 'container',
+    '#attributes' => array('class' => array('share-and-download-wrapper')),
+    'download' => $download,
+    'share_text' => array('#markup' => $share_text),
+    'share' => array(
+      '#attributes' => array('class' => array('social', 'share-links')),
+      'twitter' => array(
+        '#markup' => $twitter_link->toString(),
+      ),
+      'linkedin' => array(
+        '#markup' => $linkedin_link->toString(),
+      ),
+    ),
+  );
+
+  return $render;
+}
+
+/**
+ * Helper function to build a URL so we can clean up some code.
+ */
+function _build_url($to_uri, $from_url, $text) {
+  return Url::fromUri($to_uri, array(
+      'query' => array(
+        'url' => $from_url,
+        'text' => $text,
+      ),
+    )
+  );
 }

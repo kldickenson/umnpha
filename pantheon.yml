@@ -4,11 +4,11 @@ workflows:
   sync_code:
     after:
       - type: webphp
-        description: Update database
-        script: private/scripts/drush_updb.php
-      - type: webphp
         description: Import configuration from .yml files
         script: private/scripts/drush_config_import.php
+      - type: webphp
+        description: Update database
+        script: private/scripts/drush_updb.php
       - type: webphp
         description: Post to Slack on deploy
         script: private/scripts/slack_notification.php
