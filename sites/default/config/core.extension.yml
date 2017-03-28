@@ -46,6 +46,7 @@ module:
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
+  kint: 0
   libraries: 0
   link: 0
   linked_field: 0
