@@ -6,6 +6,7 @@ dependencies:
     - eck.eck_type.section_type.section_type_infographic
     - field.field.section_type.section_type_infographic.field_infographic_caption
     - field.field.section_type.section_type_infographic.field_infographic_image
+    - responsive_image.styles.full_content_width
   module:
     - responsive_image
 id: section_type.section_type_infographic.default
@@ -13,9 +14,13 @@ targetEntityType: section_type
 bundle: section_type_infographic
 mode: default
 content:
+  download_and_share:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
   field_infographic_caption:
     weight: 2
-    label: above
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
@@ -25,7 +30,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      responsive_image_style: ''
+      responsive_image_style: full_content_width
       image_link: ''
     third_party_settings: {  }
 hidden:

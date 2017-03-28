@@ -1,0 +1,15 @@
+uuid: 8ea9ff43-2a57-4d56-bfbb-80eb2582aa65
+langcode: en
+status: true
+dependencies: {  }
+name: full_width_380xn
+label: 'Full width 380xN'
+effects:
+  cb076085-1054-450b-8e2e-f1910274185d:
+    uuid: cb076085-1054-450b-8e2e-f1910274185d
+    id: image_scale
+    weight: 1
+    data:
+      width: 380
+      height: null
+      upscale: false

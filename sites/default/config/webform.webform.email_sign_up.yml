@@ -100,4 +100,39 @@ access:
   delete_own:
     roles: {  }
     users: {  }
-handlers: {  }
+handlers:
+  constant_contact:
+    id: remote_post
+    label: 'Constant Contact'
+    handler_id: constant_contact
+    status: true
+    weight: 0
+    settings:
+      type: x-www-form-urlencoded
+      insert_url: 'https://visitor2.constantcontact.com/api/signup'
+      update_url: ''
+      delete_url: ''
+      excluded_data:
+        serial: serial
+        sid: sid
+        uuid: uuid
+        token: token
+        uri: uri
+        created: created
+        completed: completed
+        changed: changed
+        in_draft: in_draft
+        current_page: current_page
+        remote_addr: remote_addr
+        uid: uid
+        langcode: langcode
+        webform_id: webform_id
+        entity_type: entity_type
+        entity_id: entity_id
+        sticky: sticky
+        notes: notes
+      custom_data: "ca: xxx\nlist: xxx"
+      insert_custom_data: ''
+      update_custom_data: ''
+      delete_custom_data: ''
+      debug: true
