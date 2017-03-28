@@ -164,27 +164,30 @@
 
 
 /*Media*/
-.field--name-field-media-media {
+.section-type-media {
   margin: 0 auto 40px auto;
-  text-align: center;
-  max-width: 940px;
-
-  img {
-    height: 350px;
-    object-fit: cover;
-    width: 100%;
-  }
-
+  max-width: 980px;
+  padding: 0 20px;
 }
 
 
 
 
+/*Heading*/
+.section-type-heading {
+  margin:0 auto 30px auto;
+  max-width: 980px;
+  padding: 0 20px;
+}
+
+
+
 
 /*Longtext*/
-.field--name-field-longtext-text {
+.section-type-longtext {
   margin: 0 auto;
-  width: 55%;
+  max-width: 980px;
+  padding: 0 20px;
 
   p {
     margin-bottom: 25px;
@@ -199,31 +202,27 @@
 
 
 
+/*Pull Quote*/
+.section-type-pull-quote {
+  border-bottom: 1px solid $medium-gray;
+  border-top: 1px solid $medium-gray;
+  margin: 40px auto;
+  max-width: 980px;
+  padding: 35px 40px;
+  text-align: center;
+}
+
+
+
+
 
 /*Infographics*/
-
 .section-type-infographic {
-  margin-bottom: 40px;
-
-  .field--name-field-infographic-image {
-    margin: 0 auto;
-    width: 55%;
-
-    img {
-      height: 350px;
-      object-fit: cover;
-    }
-
-  }
-
-  .field--name-field-infographic-caption {
-    font-size: rem(14);
-    font-style: normal;
-    margin: 0 auto;
-    width: 55%;
-  }
-
+  margin: 0 auto 40px auto;
+  max-width: 940px;
+  position: relative;
 }
+
 
 
 

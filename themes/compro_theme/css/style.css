@@ -343,10 +343,7 @@ div.warning {
           margin-bottom: -1px; } }
 
 /*
-*
 *   #BLOCKS
-*
-*
 **/
 /*Header Blocks & Gen Menu*/
 .block-system-branding-block {
@@ -514,38 +511,41 @@ div.warning {
         text-align: center; } }
 
 /*Media*/
-.field--name-field-media-media {
+.section-type-media {
   margin: 0 auto 40px auto;
-  text-align: center;
-  max-width: 940px; }
-  .field--name-field-media-media img {
-    height: 350px;
-    object-fit: cover;
-    width: 100%; }
+  max-width: 980px;
+  padding: 0 20px; }
+
+/*Heading*/
+.section-type-heading {
+  margin: 0 auto 30px auto;
+  max-width: 980px;
+  padding: 0 20px; }
 
 /*Longtext*/
-.field--name-field-longtext-text {
+.section-type-longtext {
   margin: 0 auto;
-  width: 55%; }
-  .field--name-field-longtext-text p {
+  max-width: 980px;
+  padding: 0 20px; }
+  .section-type-longtext p {
     margin-bottom: 25px; }
-  .field--name-field-longtext-text p:last-child {
+  .section-type-longtext p:last-child {
     margin-bottom: 40px; }
+
+/*Pull Quote*/
+.section-type-pull-quote {
+  border-bottom: 1px solid #969696;
+  border-top: 1px solid #969696;
+  margin: 40px auto;
+  max-width: 980px;
+  padding: 35px 40px;
+  text-align: center; }
 
 /*Infographics*/
 .section-type-infographic {
-  margin-bottom: 40px; }
-  .section-type-infographic .field--name-field-infographic-image {
-    margin: 0 auto;
-    width: 55%; }
-    .section-type-infographic .field--name-field-infographic-image img {
-      height: 350px;
-      object-fit: cover; }
-  .section-type-infographic .field--name-field-infographic-caption {
-    font-size: 0.875rem;
-    font-style: normal;
-    margin: 0 auto;
-    width: 55%; }
+  margin: 0 auto 40px auto;
+  max-width: 940px;
+  position: relative; }
 
 /*
 *
@@ -583,6 +583,23 @@ div.warning {
 /*
 *   #FIELDS
 **/
+/*Hero & Title*/
+.path-frontpage .field--name-field-title {
+  display: none; }
+
+.field-group-page-hero {
+  position: relative; }
+  .field-group-page-hero .field--name-field-title {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 600;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 99; }
+
 /*Featured Report*/
 .field--name-field-featured-report-image {
   height: 100%;
@@ -734,7 +751,7 @@ div.warning {
 
 /*Testimonial*\
 *[1]   her hair starts to get chopped off around 1745px wide
-*[2]   This takes care of white space at btm of img file
+*[2]   This takes care of white space at btm of img file, probably need to remove later
 **/
 .field--name-field-testimonial-quote {
   color: #00264b;
@@ -742,6 +759,7 @@ div.warning {
   font-size: 1.0625rem;
   font-style: italic;
   font-weight: 200;
+  letter-spacing: 0.00625rem;
   line-height: 2.125rem;
   margin: 0 0 30px 0; }
   .field--name-field-testimonial-quote::before {
@@ -784,6 +802,67 @@ div.warning {
   @media screen and (max-width: 768px) {
     .field--name-field-testimonial-image img {
       bottom: -7px; } }
+
+/*Media*/
+.field--name-field-media-media img {
+  height: 350px;
+  object-fit: cover;
+  width: 100%; }
+
+/*Heading*/
+.field--name-field-heading-heading {
+  color: #00264b;
+  font-size: 1.5625rem;
+  font-weight: 600; }
+
+/*Pull Quote*/
+.field--name-field-pull-quote-quote {
+  color: #79111b;
+  font-family: 'Lora';
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 200;
+  letter-spacing: 0.00625rem;
+  line-height: 3rem;
+  margin: 0 0 25px 0;
+  text-align: center; }
+  .field--name-field-pull-quote-quote::before {
+    content: '\201C'; }
+  .field--name-field-pull-quote-quote::after {
+    content: '\201D'; }
+
+.field--name-field-pull-quote-author {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 600; }
+  .field--name-field-pull-quote-author::before {
+    content: '\2013'; }
+  .field--name-field-pull-quote-author::after {
+    content: '\002C'; }
+
+.field--name-field-pull-quote-credentials {
+  display: inline-block;
+  font-size: 0.6875rem;
+  text-transform: uppercase; }
+
+/*Infographic*/
+.field--name-field-infographic-image {
+  width: 100%; }
+  .field--name-field-infographic-image img {
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%; }
+
+.share-and-download-wrapper {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  transform: translateY(-100%);
+  z-index: 99; }
+
+.field--name-field-infographic-testimonial {
+  font-family: 'Lora';
+  font-size: 0.75rem; }
 
 body .gutter__xsm_top {
   padding-top: 0.625rem; }

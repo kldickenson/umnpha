@@ -24,7 +24,7 @@ content:
     third_party_settings: {  }
   field_pull_quote_credentials:
     type: string
-    weight: 2
+    weight: 4
     label: hidden
     settings:
       link_to_entity: false
