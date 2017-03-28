@@ -442,7 +442,7 @@ div.warning {
 /*Sponsors*/
 .section-type-sponsors {
   border-top: 1px solid #969696;
-  margin: 0px auto;
+  margin: 0 auto;
   padding: 40px 3rem 60px 3rem;
   width: 100%; }
   @media screen and (max-width: 768px) {
@@ -515,13 +515,13 @@ div.warning {
 
 /*Media*/
 .field--name-field-media-media {
-  margin: 0 auto;
-  margin-bottom: 40px;
+  margin: 0 auto 40px auto;
   text-align: center;
-  max-width: 940px img;
-    max-width-height: 350px;
-    max-width-object-fit: cover;
-    max-width-width: 100%; }
+  max-width: 940px; }
+  .field--name-field-media-media img {
+    height: 350px;
+    object-fit: cover;
+    width: 100%; }
 
 /*Longtext*/
 .field--name-field-longtext-text {
