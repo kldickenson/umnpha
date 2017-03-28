@@ -117,6 +117,29 @@
 
 
 
+/*Testimonial*/
+.section-type-testimonial {
+  padding: 0 6rem;
+  position: relative;
+
+  .testimonial-text {
+    display: inline-block;
+    margin: 115px 3rem 90px 3rem;
+    max-width: 40%;
+  }
+
+  .testimonial-image {
+    display: inline-flex;
+    height: 100%;
+    margin: 0 10%;
+    position: absolute;
+    width: 25%;
+  }
+
+}
+
+
+
 
 /*Media*/
 .field--name-field-media-media {
