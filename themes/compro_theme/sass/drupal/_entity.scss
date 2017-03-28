@@ -8,6 +8,113 @@
 
 
 
+/*Featured Report*/
+.section-type-featured-report {
+  background-color: $cedar;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+
+  .featured-report-image {
+    width: 45%;
+  }
+
+  .featured-report-text {
+    padding: 3% 5% 3% 60px;
+    width:50%;
+  }
+
+  @media screen and(max-width: 768px) {
+    flex-direction: column;
+
+    .featured-report-image {
+      max-height: 250px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .featured-report-text {
+      padding: 25px 20px;
+      width: 100%;
+    }
+
+  }
+
+}
+
+
+
+
+/*Sponsors*/
+.section-type-sponsors {
+  border-top: 1px solid $medium-gray;
+  margin: 0px auto;
+  padding: 40px 3rem 60px 3rem;
+  width: 100%;
+
+  @media screen and(max-width: 768px) {
+    padding: 30px 2rem 25px 2rem;
+  }
+
+}
+
+.component-sponsor  {
+  display: inline-block;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+
+}
+
+
+
+
+
+/*Highlight*/
+.section-type-highlight {
+  background-color: $gainsboro-gray;
+  padding: 70px 3rem;
+
+  @media screen and(max-width: 768px) {
+    padding: 20px;
+  }
+
+  .highlight-content {
+    background-color: #fff;
+    display: flex;
+    margin: 0 auto;
+
+    @media screen and(max-width: 768px) {
+      flex-direction: column;
+    }
+
+  }
+
+  .highlight-media {
+    height: auto;
+    width: 60%;
+
+    @media screen and(max-width: 768px) {
+      width: 100%;
+    }
+
+  }
+
+  .group-highlight-text {
+    padding: 70px 60px;
+
+    @media screen and(max-width: 768px) {
+      padding: 28px 25px;
+    }
+
+  }
+
+}
+
+
 
 
 
@@ -16,7 +123,7 @@
   margin: 0 auto;
   margin-bottom: 40px;
   text-align: center;
-  width: 55%;
+  max-width: 940px
 
   img {
     height: 350px;
@@ -76,113 +183,5 @@
 
 
 
-/*Sponsors*/
-  //[1] Aligns multiple images inline
-.field-group-sponsors-primary {
-  display: inline-block;
-  margin: 35px 0 60px 3rem;
-  padding: 40px 0 0 0;
-
-  .field--name-field-sponsors-primary__label {
-    color: $um-blue;
-    margin-bottom: 30px;
-  }
-
-  img {
-    height: 40px;
-    object-fit: contain;
-  }
-}
-
-.field-group-sponsors-secondary {
-  display: inline-block;
-  margin: 35px 3rem 60px 0;
-  padding: 40px 0 0 0;
 
 
-  div.field__item { //[1]
-    display: inline-block;
-
-    div {
-      display: inline-block;
-    }
-
-  }
-
-  .field--name-field-sponsors-secondary-label {
-    color: $um-blue;
-    margin-bottom: 30px;
-  }
-
-  img {
-    height: 40px;
-    object-fit: contain;
-    padding: 0 15px;
-  }
-
-}
-
-
-
-
-
-/*Featured Report*/
-.section-type-featured-report {
-  background-color: $cedar;
-  color: white;
-  float: left;
-  width: 100%;
-
-  .field--name-field-featured-report-image {
-    float: left;
-    line-height: 0px;
-    width: 45%;
-
-    img {
-      height: 100%;
-      line-height: 0px;
-      object-fit: cover;
-      width: 100%;
-    }
-
-    @media screen and(max-width: 1480px) {
-      //padding starts to throw off alignment here
-    }
-  }
-
-  .featured_report_text {
-    padding: 100px 10% 60px 2%;
-    float: right;
-    width:50%;
-
-    .field--name-field-featured-report-title {
-      font-size: rem(40);
-      font-weight: bold;
-      margin: 0 0 30px 0;
-
-    }
-
-    .field--name-field-featured-report-subtitle {
-      font-family: 'Lora', serif;
-      font-size: rem(18);
-      margin: 0 0 52px 0;
-
-    }
-
-    .field--name-field-featured-report-button {
-
-      a {
-        background-color: $yellow;
-        color: $cedar;
-        display: inline;
-        font-family: "Montserrat Bold";
-        font-size: rem(16);
-        padding: rem(16) rem(32);
-        text-align: center;
-      }
-
-    }
-
-  }
-
-}
