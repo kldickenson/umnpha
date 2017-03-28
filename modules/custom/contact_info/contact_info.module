@@ -96,7 +96,7 @@ function contact_info_create_address(ImmutableConfig $contact_info = NULL) {
   $variables = array();
   foreach ($contact_info->get('address') as $key => $value) {
     if (isset($value) && strlen($value)) {
-      $variables['#' . $key] = Html::escape($value);
+      $variables['#' . $key] = $value;
     }
   }
 
