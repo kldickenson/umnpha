@@ -161,6 +161,7 @@ function compro_theme_preprocess_menu_local_task(&$variables) {
  * hook_preprocess_entity().
  */
 function compro_theme_preprocess_eck_entity(&$variables) {
+
   if (isset($variables['entity']['#section_type'])) {
     $variables['attributes']['class'] = array(
       'entity',
@@ -168,4 +169,18 @@ function compro_theme_preprocess_eck_entity(&$variables) {
       str_replace('_', '-', $variables['entity']['#section_type']->bundle()),
     );
   }
+  
+  if (isset($variables['entity']['#component'])) {
+      $variables['attributes']['class'] = array(
+        'entity',
+        'entity-component',
+        str_replace('_', '-', $variables['entity']['#component']->bundle()),
+      );
+  }
 }
+
+
+
+
+
+
