@@ -1,0 +1,30 @@
+uuid: 16031656-db58-4907-af00-e936f226743c
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.full_width_380xn
+    - image.style.full_width_660xn
+    - image.style.full_width_940xn
+  theme:
+    - compro_theme
+id: full_content_width
+label: 'Full Content Width'
+image_style_mappings:
+  -
+    breakpoint_id: compro_theme.large
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: full_width_940xn
+  -
+    breakpoint_id: compro_theme.medium
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: full_width_660xn
+  -
+    breakpoint_id: compro_theme.mobile
+    multiplier: 1x
+    image_mapping_type: image_style
+    image_mapping: full_width_380xn
+breakpoint_group: compro_theme
+fallback_image_style: full_width_940xn

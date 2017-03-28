@@ -5,8 +5,9 @@ dependencies:
   config:
     - field.field.media.image.field_image
     - media_entity.bundle.image
+    - responsive_image.styles.full_content_width
   module:
-    - image
+    - responsive_image
 id: media.image.default
 targetEntityType: media
 bundle: image
@@ -16,10 +17,10 @@ content:
     weight: 2
     label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: full_content_width
       image_link: ''
     third_party_settings: {  }
-    type: image
+    type: responsive_image
 hidden:
   created: true
   name: true

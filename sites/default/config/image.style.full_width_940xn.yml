@@ -1,0 +1,15 @@
+uuid: f4834be6-9ed6-4f52-bb0c-98b2e1bc97e2
+langcode: en
+status: true
+dependencies: {  }
+name: full_width_940xn
+label: 'Full width 940xN'
+effects:
+  6ebdbde3-b910-45b7-b439-942d0c272432:
+    uuid: 6ebdbde3-b910-45b7-b439-942d0c272432
+    id: image_scale
+    weight: 1
+    data:
+      width: 940
+      height: null
+      upscale: false
