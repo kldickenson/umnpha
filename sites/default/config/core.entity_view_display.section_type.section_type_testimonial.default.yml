@@ -11,7 +11,45 @@ dependencies:
     - field.field.section_type.section_type_testimonial.field_testimonial_text_color
   module:
     - color_field
+    - field_group
     - responsive_image
+third_party_settings:
+  field_group:
+    group_testimonial_text:
+      children:
+        - field_testimonial_quote
+        - field_testimonial_credentials
+        - field_testimonial_author
+        - field_testimonial_text_color
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: testimonial-text
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Testimonial Text'
+    group_testimonial_image:
+      children:
+        - field_testimonial_image
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: testimonial-image
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Testimonial Image'
 id: section_type.section_type_testimonial.default
 targetEntityType: section_type
 bundle: section_type_testimonial
@@ -19,14 +57,14 @@ mode: default
 content:
   field_testimonial_author:
     type: string
-    weight: 4
+    weight: 3
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   field_testimonial_credentials:
     type: string
-    weight: 3
+    weight: 2
     label: hidden
     settings:
       link_to_entity: false
@@ -41,14 +79,14 @@ content:
     third_party_settings: {  }
   field_testimonial_quote:
     type: string
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   field_testimonial_text_color:
     type: color_field_formatter_css
-    weight: 1
+    weight: 4
     label: hidden
     settings:
       selector: .field-testimonial-quote
