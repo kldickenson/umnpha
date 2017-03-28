@@ -5,6 +5,30 @@
 
 
 
+/*Hero & Title*/
+.path-frontpage .field--name-field-title {
+  display: none;
+}
+
+.field-group-page-hero {
+  position: relative;
+
+  .field--name-field-title {
+    color: #fff;
+    font-size: rem(44);
+    font-weight: 600;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 99;
+  }
+}
+
+
+
+
 /*Featured Report*/
 .field--name-field-featured-report-image {
   height: 100%;
@@ -72,7 +96,6 @@
   }
 
 }
-
 
 
 
@@ -166,7 +189,6 @@
 
 
 
-
 /*Highlight*/
 .field--name-field-highlight-media {
   line-height: 0;
@@ -231,7 +253,7 @@
 
 /*Testimonial*\
 *[1]   her hair starts to get chopped off around 1745px wide
-*[2]   This takes care of white space at btm of img file
+*[2]   This takes care of white space at btm of img file, probably need to remove later
 **/
 
 .field--name-field-testimonial-quote {
@@ -240,7 +262,7 @@
   font-size: rem(17);
   font-style: italic;
   font-weight: 200;
-  //letter-spacing: rem(0.1);
+  letter-spacing: rem(0.1);
   line-height: rem(34);
   margin: 0 0 30px 0;
 
@@ -298,4 +320,102 @@
     bottom: -7px;                             //[2]
   }
 
+}
+
+
+
+
+/*Media*/
+.field--name-field-media-media {
+  img {
+    height: 350px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+}
+
+
+
+
+/*Heading*/
+.field--name-field-heading-heading {
+  color: $um-blue;
+  font-size: rem(25);
+  font-weight: 600;
+}
+
+
+
+
+/*Pull Quote*/
+.field--name-field-pull-quote-quote {
+  color: $hill-brown;
+  font-family: 'Lora';
+  font-size: rem(24);
+  font-style: italic;
+  font-weight: 200;
+  letter-spacing: rem(0.1);
+  line-height: rem(48);
+  margin: 0 0 25px 0;
+  text-align: center;
+
+  &::before {
+    content: '\201C';
+  }
+
+  &::after {
+    content: '\201D';
+  }
+
+}
+
+.field--name-field-pull-quote-author {
+  display: inline-block;
+  font-size: rem(15);
+  font-weight: 600;
+
+  &::before {
+    content: '\2013';
+  }
+
+  &::after {
+    content: '\002C';
+  }
+
+}
+
+.field--name-field-pull-quote-credentials {
+  display: inline-block;
+  font-size: rem(11);
+  text-transform: uppercase;
+}
+
+
+
+
+
+/*Infographic*/
+.field--name-field-infographic-image {
+  width: 100%;
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+}
+
+.share-and-download-wrapper {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  transform: translateY(-100%);
+  z-index: 99;
+}
+
+.field--name-field-infographic-testimonial {
+  font-family: 'Lora';
+  font-size: rem(12);
 }
