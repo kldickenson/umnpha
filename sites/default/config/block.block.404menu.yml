@@ -24,6 +24,6 @@ settings:
 visibility:
   request_path:
     id: request_path
-    pages: node/3
+    pages: /node/3
     negate: false
     context_mapping: {  }

@@ -20,4 +20,4 @@ description: 'A basic page with a webform attached.'
 help: 'This title will not be displayed on the page. It is for clarity and navigation as an admin. '
 new_revision: false
 preview_mode: 1
-display_submitted: true
+display_submitted: false
