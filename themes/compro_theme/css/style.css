@@ -453,10 +453,8 @@ footer .block-menu {
 
 /*Post Footer*/
 .block-copyright-block {
-  display: inline-block; }
-  @media screen and (max-width: 768px) {
-    .block-copyright-block {
-      font-size: 0.6875rem; } }
+  display: inline-block;
+  font-size: 0.6875rem; }
 
 .block-contact-info.block-social {
   float: right; }
