@@ -2,7 +2,15 @@
 *
  */
 
-/*Page Hero Fields*/
+
+
+
+
+/*Page*/
+.path-frontpage .field--name-field-title {
+  display: none;
+}
+
 .node--type-page {
 
   .field--name-field-page-hero {
@@ -25,6 +33,148 @@
         object-fit: cover;
         object-position: 0px;
         width: 100%;
+      }
+
+    }
+
+  }
+
+  .field-group-page-hero {
+    position: relative;
+
+    .field--name-field-title {
+      color: #fff;
+      font-size: rem(44);
+      font-weight: 600;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      z-index: 99;
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+/*Webform*/
+.node--type-webform {
+
+  .image-form-wrapper {
+    background-color: $dodger-blue;
+    display: flex;
+
+    @media screen and(max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  .field--name-field-form-image {
+    height: auto;
+    line-height: 0px;
+    max-width: 55%;
+
+    @media screen and(max-width: 768px) {
+      margin: 0 0 30px 0;
+      max-width: 100%;
+    }
+
+    img {
+      line-height: 0px;
+    }
+
+  }
+
+  .field-group-form-text {
+    color: white;
+    padding: 50px 10% 50px 60px;
+
+    @media screen and(max-width: 768px) {
+      padding: 0 20px;
+    }
+  }
+
+  .field--name-field-title {
+    color: $um-blue;
+    font-family: 'Montserrat Bold';
+    font-size: rem(36px);
+    //font-weight: 300;
+    letter-spacing: rem(0.1);
+    margin: 0 0 35px 0;
+    text-align: center;
+  }
+
+  .field--name-field-form-text {
+    font-family: 'Lora';
+    font-size: rem(21);
+    //font-weight: 200;
+    margin: 0 auto 35px auto;
+    max-width: 75%;
+    text-align: center;
+  }
+
+  .field--name-field-form-webform {
+
+    @media screen and(max-width: 768px) {
+      margin: 0 auto;
+      max-width: 75%;
+    }
+
+    .form-item {
+      height: 70px;
+      margin: 0 0 30px 0;
+      max-width: 65%;
+
+      @media screen and(max-width: 768px) {
+        margin: 0 0 30px 0;
+        max-width: 100%;
+      }
+
+      label {
+        color: $mine-shaft;
+        font-size: 11px;
+        margin: 0 0 12px 0;
+        text-transform: uppercase;
+
+        &::after {
+          content: '\003A';
+          font-size: rem(14);
+          position: relative;
+          bottom: 1px;
+          left: 2px;
+        }
+
+      }
+
+      input {
+        background-color: #dcdcdc;
+        border-radius: unset;
+        color: $dark-gray;
+        height: 40px;
+        padding: 15px 20px;
+      }
+
+    }
+
+    .form-actions {
+
+      input {
+        background-color: $arb-blue;
+        border-radius: unset;
+        font-family: 'Montserrat';
+        font-size: rem(14);
+        margin: 0 0 40px 0;
+        padding: 12px 30px;
+        text-transform: uppercase;
       }
 
     }
