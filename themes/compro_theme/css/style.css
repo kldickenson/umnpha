@@ -345,22 +345,16 @@ div.warning {
 /*
 *   #BLOCKS
 **/
-/*Header Blocks & Gen Menu*/
+/*Header Blocks*/
 .block-system-branding-block {
   display: inline-block;
   margin: 0 0 0 35px; }
-
-.block-menu {
-  display: inline-block;
-  float: right; }
-  .block-menu ul li {
-    display: inline;
-    margin: 0 15px; }
-    .block-menu ul li a {
-      color: #00264b;
-      text-transform: uppercase; }
-      .block-menu ul li a:hover {
-        color: #0c57aa; }
+  @media screen and (max-width: 768px) {
+    .block-system-branding-block {
+      margin: 0;
+      width: 80%; }
+      .block-system-branding-block img {
+        width: 100%; } }
 
 .block-search-icon-block {
   display: inline-block;
@@ -368,6 +362,9 @@ div.warning {
   height: 25px;
   margin: 0 20px 0 15px;
   width: 25px; }
+  @media screen and (max-width: 768px) {
+    .block-search-icon-block {
+      display: none; } }
   .block-search-icon-block span {
     content: '\1f50d';
     font-family: "fontello";
@@ -378,26 +375,88 @@ div.warning {
   float: right;
   margin: 0 0 0 20px;
   text-transform: uppercase; }
+  @media screen and (max-width: 768px) {
+    .block-email-sign-up {
+      display: none; } }
+
+/*Main Menu*/
+header .block-menu {
+  display: inline-block;
+  float: right; }
+  header .block-menu ul li {
+    display: inline;
+    margin: 0 15px; }
+    @media screen and (max-width: 768px) {
+      header .block-menu ul li {
+        display: none; } }
+    header .block-menu ul li a {
+      color: #00264b;
+      text-transform: uppercase; }
+      header .block-menu ul li a:hover {
+        color: #0c57aa; }
+  header .block-menu ul.menu::before {
+    color: #00264b;
+    content: '\2630';
+    display: none;
+    font-size: 1.5625rem; }
+    @media screen and (max-width: 768px) {
+      header .block-menu ul.menu::before {
+        display: inline-block; } }
+
+/*Footer Menu*/
+footer .block-menu {
+  display: inline-block;
+  float: right; }
+  @media screen and (max-width: 768px) {
+    footer .block-menu {
+      display: block;
+      float: none; } }
+  footer .block-menu ul {
+    margin: 0; }
+  footer .block-menu ul li.menu-item {
+    display: inline;
+    margin: 0 15px; }
+    @media screen and (max-width: 768px) {
+      footer .block-menu ul li.menu-item {
+        display: block;
+        font-size: 0.8125rem;
+        margin: 0 0 20px 0; } }
+    footer .block-menu ul li.menu-item a {
+      color: #969696;
+      text-transform: uppercase; }
+      footer .block-menu ul li.menu-item a:hover {
+        color: #ffcc05; }
+      footer .block-menu ul li.menu-item a.is-active {
+        color: #ffcc05; }
 
 /*Footer Blocks*/
 #block-logoforthefooter {
   display: inline-block;
   margin: 0 0 0 35px; }
-
-.block-menu.menu--menu-footer-menu ul li a {
-  color: #969696; }
-  .block-menu.menu--menu-footer-menu ul li a:hover {
-    color: #ffcc05; }
+  @media screen and (max-width: 768px) {
+    #block-logoforthefooter {
+      margin: 0 0 40px 0;
+      width: 80%; } }
 
 .block-address {
   position: relative;
   text-align: right; }
+  @media screen and (max-width: 768px) {
+    .block-address {
+      text-align: left; } }
   .block-address address {
     font-size: 0.6875rem;
     font-style: normal; }
+    @media screen and (max-width: 768px) {
+      .block-address address {
+        font-size: 0.8125rem; } }
 
+/*Post Footer*/
 .block-copyright-block {
   display: inline-block; }
+  @media screen and (max-width: 768px) {
+    .block-copyright-block {
+      font-size: 0.6875rem; } }
 
 .block-contact-info.block-social {
   float: right; }
@@ -595,7 +654,8 @@ div.warning {
   display: flex; }
   @media screen and (max-width: 768px) {
     .node--type-webform .image-form-wrapper {
-      flex-direction: column; } }
+      flex-direction: column;
+      width: 100%; } }
 .node--type-webform .field--name-field-form-image {
   height: auto;
   line-height: 0px;
@@ -666,14 +726,23 @@ div.warning {
 .region-header {
   padding: 40px 3rem;
   background-color: #fff; }
+  @media screen and (max-width: 768px) {
+    .region-header {
+      padding: 20px; } }
 
 .region-footer {
-  padding: 60px 3rem 35px;
+  padding: 60px 3rem 35px 3rem;
   background-color: #37383A; }
+  @media screen and (max-width: 768px) {
+    .region-footer {
+      padding: 30px 20px 25px 30px; } }
 
 .region-post-footer {
   padding: 40px 3rem;
   background-color: #292a2c; }
+  @media screen and (max-width: 768px) {
+    .region-post-footer {
+      padding: 25px 20px; } }
 
 /*
 *   #FIELDS
