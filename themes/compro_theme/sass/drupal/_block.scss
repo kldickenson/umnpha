@@ -178,10 +178,7 @@ footer .block-menu {
 /*Post Footer*/
 .block-copyright-block {
   display: inline-block;
-
-  @media screen and(max-width: 768px) {
-    font-size: rem(11);
-  }
+  font-size: rem(11);
 }
 
 .block-contact-info.block-social {      //needs fontello content
