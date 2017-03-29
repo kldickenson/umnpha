@@ -6,28 +6,17 @@
 
 
 
-/*Header Blocks & Gen Menu*/
+/*Header Blocks*/
 .block-system-branding-block {
   display: inline-block;
   margin: 0 0 0 35px;
-}
 
-.block-menu {
-  display: inline-block;
-  float: right;
+  @media screen and(max-width: 768px) {
+    margin: 0;
+    width: 80%;
 
-  ul li {
-    display: inline;
-    margin: 0 15px;
-
-    a {
-      color: $um-blue;
-      text-transform: uppercase;
-
-      &:hover {
-        color: $blue;
-      }
-
+    img {
+      width: 100%;
     }
 
   }
@@ -37,11 +26,14 @@
 .block-search-icon-block {
 
   display: inline-block;
-
   float: right;
   height: 25px;
   margin: 0 20px 0 15px;
   width: 25px;
+
+  @media screen and(max-width: 768px) {
+    display: none;
+  }
 
   span {
     content: '\1f50d';
@@ -56,8 +48,97 @@
   float: right;
   margin: 0 0 0 20px;
   text-transform: uppercase;
+
+  @media screen and(max-width: 768px) {
+    display: none;
+  }
+
 }
 
+/*Main Menu*/
+header .block-menu {
+  display: inline-block;
+  float: right;
+
+  ul li {
+    display: inline;
+    margin: 0 15px;
+
+    @media screen and(max-width: 768px) {
+      display: none;
+    }
+
+    a {
+      color: $um-blue;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $blue;
+      }
+
+    }
+
+  }
+
+  ul.menu::before {
+    color: $um-blue;
+    content: '\2630';
+    display: none;
+    font-size: rem(25);
+
+    @media screen and(max-width: 768px) {
+      display: inline-block;
+    }
+
+  }
+
+}
+
+
+
+
+
+/*Footer Menu*/
+footer .block-menu {
+  display: inline-block;
+  float: right;
+
+  @media screen and(max-width: 768px) {
+    display: block;
+    float: none;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  ul li.menu-item {
+    display: inline;
+    margin: 0 15px;
+
+    @media screen and(max-width: 768px) {
+      display: block;
+      font-size: rem(13);
+      margin: 0 0 20px 0;
+    }
+
+    a {
+      color: $medium-gray;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $yellow;
+      }
+
+      &.is-active {
+        color: $yellow;
+      }
+
+    }
+
+  }
+
+}
 
 
 
@@ -65,17 +146,10 @@
 #block-logoforthefooter {   //this block needs to be re-created, find better selector
   display: inline-block;
   margin: 0 0 0 35px;
-}
 
-.block-menu.menu--menu-footer-menu {
-
-  ul li a {
-    color: $medium-gray;
-
-    &:hover {
-      color: $yellow;
-    }
-
+  @media screen and(max-width: 768px) {
+    margin: 0 0 40px 0;
+    width: 80%;
   }
 
 }
@@ -84,15 +158,30 @@
   position: relative;
   text-align: right;
 
+  @media screen and(max-width: 768px) {
+    text-align: left;
+  }
+
   address {
     font-size: rem(11);
     font-style: normal;
+
+    @media screen and(max-width: 768px) {
+      font-size: rem(13);
+    }
+
   }
 
 }
 
+
+/*Post Footer*/
 .block-copyright-block {
   display: inline-block;
+
+  @media screen and(max-width: 768px) {
+    font-size: rem(11);
+  }
 }
 
 .block-contact-info.block-social {      //needs fontello content

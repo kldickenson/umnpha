@@ -1,14 +1,29 @@
 .region-header {
-  @include padding(40px 3rem);
+  padding:40px 3rem;
   background-color: #fff;
+
+  @media screen and(max-width: 768px) {
+    padding: 20px;
+  }
+
 }
 
 .region-footer{
-  @include padding(60px 3rem 35px 3rem);
+  padding: 60px 3rem 35px 3rem;
   background-color: $footer-background;
+
+  @media screen and(max-width: 768px) {
+    padding: 30px 20px 25px 30px;
+  }
+
 }
 
 .region-post-footer {
-  @include padding(40px 3rem);
+  padding:40px 3rem;
   background-color: $postfooter-background;
+
+  @media screen and(max-width: 768px) {
+    padding: 25px 20px;
+  }
+
 }
