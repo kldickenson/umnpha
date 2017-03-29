@@ -540,12 +540,18 @@ div.warning {
   max-width: 980px;
   padding: 35px 40px;
   text-align: center; }
+  @media screen and (max-width: 768px) {
+    .section-type-pull-quote {
+      margin: 40px 20px; } }
 
 /*Infographics*/
 .section-type-infographic {
   margin: 0 auto 40px auto;
   max-width: 940px;
   position: relative; }
+  @media screen and (max-width: 768px) {
+    .section-type-infographic {
+      margin: 0 20px 40px 20px; } }
 
 /*
 *
@@ -859,8 +865,11 @@ div.warning {
   right: 0;
   transform: translateY(-100%);
   z-index: 99; }
+  @media screen and (max-width: 768px) {
+    .share-and-download-wrapper {
+      transform: translateY(-150%); } }
 
-.field--name-field-infographic-testimonial {
+.field--name-field-infographic-caption {
   font-family: 'Lora';
   font-size: 0.75rem; }
 
