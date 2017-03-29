@@ -5,31 +5,6 @@
 
 
 
-/*Hero & Title*/
-.path-frontpage .field--name-field-title {
-  display: none;
-}
-
-.field-group-page-hero {
-  position: relative;
-
-  .field--name-field-title {
-    color: #fff;
-    font-size: rem(44);
-    font-weight: 600;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    z-index: 99;
-  }
-
-}
-
-
-
-
 /*Featured Report*/
 .field--name-field-featured-report-image {
   height: 100%;
@@ -97,6 +72,7 @@
   }
 
 }
+
 
 
 

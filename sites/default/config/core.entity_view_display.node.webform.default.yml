@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.webform.field_form_text
     - field.field.node.webform.field_form_webform
     - field.field.node.webform.field_title
+    - field.field.node.webform.field_webform_media_form
     - node.type.webform
   module:
     - field_group
@@ -22,8 +23,8 @@ third_party_settings:
         - field_title
         - field_form_text
         - field_form_webform
-      parent_name: ''
-      weight: 1
+      parent_name: group_image_form
+      weight: 2
       format_type: html_element
       format_settings:
         label: 'Form Text'
@@ -36,6 +37,23 @@ third_party_settings:
         id: ''
         classes: field-group-form-text
       label: 'Form Text'
+    group_image_form:
+      children:
+        - field_form_image
+        - group_form_text
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: image-form-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Image & Form'
 _core:
   default_config_hash: 3r1i0UMUbeNHhvmiqHDYznoS4G9XR1jq6lQ49r80lDE
 id: node.webform.default
@@ -45,7 +63,7 @@ mode: default
 content:
   field_form_image:
     type: image
-    weight: 0
+    weight: 1
     label: hidden
     settings:
       image_link: ''
@@ -53,7 +71,7 @@ content:
     third_party_settings: {  }
   field_form_sections:
     type: entity_reference_entity_view
-    weight: 2
+    weight: 3
     label: hidden
     settings:
       link: true
@@ -78,6 +96,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+  field_webform_media_form:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
 hidden:
   compro_links: true
   compro_submitted: true

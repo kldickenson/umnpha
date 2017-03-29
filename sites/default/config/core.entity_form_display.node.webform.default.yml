@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.webform.field_form_text
     - field.field.node.webform.field_form_webform
     - field.field.node.webform.field_title
+    - field.field.node.webform.field_webform_media_form
     - image.style.thumbnail
     - node.type.webform
   module:
@@ -60,9 +61,12 @@ content:
     type: text_textarea
   field_form_webform:
     weight: 3
-    settings: {  }
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: 'Your name'
     third_party_settings: {  }
-    type: webform_entity_reference_select
+    type: webform_entity_reference_autocomplete
   field_title:
     weight: 0
     settings:
@@ -70,6 +74,11 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+  field_webform_media_form:
+    weight: 26
+    settings: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_select
   path:
     type: path
     weight: 8
