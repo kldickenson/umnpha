@@ -70,6 +70,11 @@ header .block-menu {
   float: right;
   transform: translateY(50%);
 
+  @media screen and(max-width: 768px) {
+    transform: translateY(-25%);
+  }
+
+
   ul {
     margin: 0;
 

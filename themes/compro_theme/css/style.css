@@ -389,6 +389,9 @@ header .block-menu {
   display: inline-block;
   float: right;
   transform: translateY(50%); }
+  @media screen and (max-width: 768px) {
+    header .block-menu {
+      transform: translateY(-25%); } }
   header .block-menu ul {
     margin: 0; }
     header .block-menu ul li {
@@ -666,18 +669,18 @@ footer .block-menu {
       flex-direction: column;
       width: 100%; } }
 .node--type-webform .field--name-field-form-image {
-  height: auto;
   line-height: 0px;
-  max-width: 55%; }
+  width: 100%; }
   @media screen and (max-width: 768px) {
     .node--type-webform .field--name-field-form-image {
       margin: 0 0 30px 0;
       max-width: 100%; } }
   .node--type-webform .field--name-field-form-image img {
-    line-height: 0px; }
+    line-height: 0px;
+    height: 100%; }
 .node--type-webform .field-group-form-text {
   color: white;
-  padding: 50px 10% 50px 60px; }
+  padding: 50px 10% 50px 5%; }
   @media screen and (max-width: 768px) {
     .node--type-webform .field-group-form-text {
       padding: 0 20px; } }
@@ -701,7 +704,7 @@ footer .block-menu {
 .node--type-webform .field--name-field-form-webform .form-item {
   height: 70px;
   margin: 0 0 30px 0;
-  max-width: 65%; }
+  max-width: 85%; }
   @media screen and (max-width: 768px) {
     .node--type-webform .field--name-field-form-webform .form-item {
       margin: 0 0 30px 0;
@@ -720,17 +723,21 @@ footer .block-menu {
   .node--type-webform .field--name-field-form-webform .form-item input {
     background-color: #dcdcdc;
     border-radius: unset;
+    border-stye: none;
+    border-width: 0px;
     color: #5f5f5f;
     height: 40px;
     padding: 15px 20px; }
-.node--type-webform .field--name-field-form-webform .form-actions input {
-  background-color: #0f6cb6;
-  border-radius: unset;
-  font-family: 'Montserrat';
-  font-size: 0.875rem;
-  margin: 0 0 40px 0;
-  padding: 12px 30px;
-  text-transform: uppercase; }
+.node--type-webform .field--name-field-form-webform .form-actions {
+  margin: 0; }
+  .node--type-webform .field--name-field-form-webform .form-actions input {
+    background-color: #0f6cb6;
+    border-radius: unset;
+    font-family: 'Montserrat';
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 12px 30px;
+    text-transform: uppercase; }
 
 .region-header {
   padding: 40px 3rem;
@@ -743,7 +750,8 @@ footer .block-menu {
 
 .region-footer {
   padding: 60px 3rem 35px 3rem;
-  background-color: #37383A; }
+  background-color: #37383A;
+  border-bottom: 1px solid #fff; }
   @media screen and (max-width: 768px) {
     .region-footer {
       padding: 30px 20px 25px 30px; } }
