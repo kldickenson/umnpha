@@ -12,7 +12,7 @@
   width: 100%;
 
   img {
-    height: auto;
+    height: 100%;
     line-height: 0px;
     object-fit: cover;
     width: 100%;
@@ -102,6 +102,8 @@
   }
 
   .component-sponsor {
+    width: 85%;
+
     @media screen and(max-width: 768px) {
       padding: 0 0 25px 0;
     }
@@ -112,7 +114,7 @@
 
 .field-group-sponsors-secondary {
   display: inline-block;
-  width: 45%;
+  width: 50%;
 
   @media screen and(max-width: 768px) {
     display: block;
@@ -151,9 +153,14 @@
 
   }
 
+  .field--name-field-sponsors-logo {
+    width: 100%;
+  }
+
   .component-sponsor {
+    border-right: 1px solid $medium-gray;
     margin: 0 40px 0 0;
-    padding:0 40px 0 0;
+    padding: 7.5px 30px 7.5px 0;
 
     @media screen and(max-width: 768px) {
       margin: 0 0 0 0;
@@ -168,10 +175,19 @@
 
 /*Highlight*/
 .field--name-field-highlight-media {
+  height: 100%;
   line-height: 0;
 
+  article.media {
+    height: 100%;
+  }
+
+  .field--name-field-image {
+    height: 100%;
+  }
+
   img {
-    height: auto;
+    height: 100%;
     line-height: 0px;
     object-fit: cover;
     width: 100%;
