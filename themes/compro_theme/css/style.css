@@ -348,52 +348,61 @@ div.warning {
 /*Header Blocks*/
 .block-system-branding-block {
   display: inline-block;
-  margin: 0 0 0 35px; }
+  transform: translateY(15%);
+  width: 42%; }
   @media screen and (max-width: 768px) {
     .block-system-branding-block {
       margin: 0;
-      width: 80%; }
-      .block-system-branding-block img {
-        width: 100%; } }
+      width: 80%; } }
+  .block-system-branding-block img {
+    width: 100%; }
 
 .block-search-icon-block {
   display: inline-block;
   float: right;
-  height: 25px;
-  margin: 0 20px 0 15px;
-  width: 25px; }
+  margin: 0 40px 0 0;
+  transform: translateY(50%); }
   @media screen and (max-width: 768px) {
     .block-search-icon-block {
       display: none; } }
   .block-search-icon-block span {
     content: '\1f50d';
     font-family: "fontello";
-    font-size: 2rem; }
+    font-size: 1rem; }
 
 .block-email-sign-up {
   display: inline-block;
   float: right;
-  margin: 0 0 0 20px;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  transform: translateY(50%); }
   @media screen and (max-width: 768px) {
     .block-email-sign-up {
       display: none; } }
+  .block-email-sign-up a {
+    background-color: #0f6cb6;
+    color: white;
+    font-size: 0.9375rem;
+    padding: 0.9375rem 1.875rem; }
 
 /*Main Menu*/
 header .block-menu {
   display: inline-block;
-  float: right; }
-  header .block-menu ul li {
-    display: inline;
-    margin: 0 15px; }
-    @media screen and (max-width: 768px) {
-      header .block-menu ul li {
-        display: none; } }
-    header .block-menu ul li a {
-      color: #00264b;
-      text-transform: uppercase; }
-      header .block-menu ul li a:hover {
-        color: #0c57aa; }
+  float: right;
+  transform: translateY(50%); }
+  header .block-menu ul {
+    margin: 0; }
+    header .block-menu ul li {
+      display: inline;
+      font-size: 15px;
+      margin: 0 30px 0 0; }
+      @media screen and (max-width: 768px) {
+        header .block-menu ul li {
+          display: none; } }
+      header .block-menu ul li a {
+        color: #00264b;
+        text-transform: uppercase; }
+        header .block-menu ul li a:hover {
+          color: #0c57aa; }
   header .block-menu ul.menu::before {
     color: #00264b;
     content: '\2630';
@@ -459,9 +468,9 @@ footer .block-menu {
 .block-contact-info.block-social {
   float: right; }
   .block-contact-info.block-social a {
-    height: 16px;
-    margin: 0px 15px;
-    text-indent: -5000px; }
+    color: #969696;
+    font-size: 1rem;
+    margin: 0px 30px 0 0; }
 
 /*
 *   #Entity/Section-Types
@@ -480,7 +489,7 @@ footer .block-menu {
   .section-type-featured-report .featured-report-image {
     width: 45%; }
   .section-type-featured-report .featured-report-text {
-    padding: 3% 5% 3% 60px;
+    padding: 7% 10% 4% 0;
     width: 50%; }
   @media screen and (max-width: 768px) {
     .section-type-featured-report {
@@ -497,7 +506,7 @@ footer .block-menu {
 .section-type-sponsors {
   border-top: 1px solid #969696;
   margin: 0 auto;
-  padding: 40px 3rem 60px 3rem;
+  padding: 40px 5rem 60px;
   width: 100%; }
   @media screen and (max-width: 768px) {
     .section-type-sponsors {
@@ -507,7 +516,7 @@ footer .block-menu {
   display: inline-block; }
   .component-sponsor img {
     height: 40px;
-    width: auto; }
+    width: 100%; }
 
 /*Highlight*/
 .section-type-highlight {
@@ -524,12 +533,14 @@ footer .block-menu {
       .section-type-highlight .highlight-content {
         flex-direction: column; } }
   .section-type-highlight .highlight-media {
+    flex-grow: 1;
     height: auto;
-    width: 60%; }
+    width: 100%; }
     @media screen and (max-width: 768px) {
       .section-type-highlight .highlight-media {
         width: 100%; } }
   .section-type-highlight .group-highlight-text {
+    flex-grow: 1;
     padding: 70px 60px; }
     @media screen and (max-width: 768px) {
       .section-type-highlight .group-highlight-text {
@@ -727,6 +738,8 @@ footer .block-menu {
   @media screen and (max-width: 768px) {
     .region-header {
       padding: 20px; } }
+  .region-header .inner {
+    padding: 0 2rem; }
 
 .region-footer {
   padding: 60px 3rem 35px 3rem;
@@ -751,7 +764,7 @@ footer .block-menu {
   line-height: 0px;
   width: 100%; }
   .field--name-field-featured-report-image img {
-    height: auto;
+    height: 100%;
     line-height: 0px;
     object-fit: cover;
     width: 100%; }
@@ -813,13 +826,15 @@ footer .block-menu {
       .field-group-sponsors-primary .field--name-field-sponsors-primary__label {
         font-weight: 0.875rem;
         margin: 0 0 25px 0; } }
-  @media screen and (max-width: 768px) {
-    .field-group-sponsors-primary .component-sponsor {
-      padding: 0 0 25px 0; } }
+  .field-group-sponsors-primary .component-sponsor {
+    width: 85%; }
+    @media screen and (max-width: 768px) {
+      .field-group-sponsors-primary .component-sponsor {
+        padding: 0 0 25px 0; } }
 
 .field-group-sponsors-secondary {
   display: inline-block;
-  width: 45%; }
+  width: 50%; }
   @media screen and (max-width: 768px) {
     .field-group-sponsors-secondary {
       display: block;
@@ -844,9 +859,12 @@ footer .block-menu {
       .field-group-sponsors-secondary .field--name-field-sponsors-secondary-label {
         font-weight: 0.875rem;
         margin: 0 0 25px 0; } }
+  .field-group-sponsors-secondary .field--name-field-sponsors-logo {
+    width: 100%; }
   .field-group-sponsors-secondary .component-sponsor {
+    border-right: 1px solid #969696;
     margin: 0 40px 0 0;
-    padding: 0 40px 0 0; }
+    padding: 7.5px 30px 7.5px 0; }
     @media screen and (max-width: 768px) {
       .field-group-sponsors-secondary .component-sponsor {
         margin: 0 0 0 0;
@@ -854,9 +872,14 @@ footer .block-menu {
 
 /*Highlight*/
 .field--name-field-highlight-media {
+  height: 100%;
   line-height: 0; }
+  .field--name-field-highlight-media article.media {
+    height: 100%; }
+  .field--name-field-highlight-media .field--name-field-image {
+    height: 100%; }
   .field--name-field-highlight-media img {
-    height: auto;
+    height: 100%;
     line-height: 0px;
     object-fit: cover;
     width: 100%; }

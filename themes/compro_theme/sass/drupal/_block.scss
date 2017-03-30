@@ -9,17 +9,20 @@
 /*Header Blocks*/
 .block-system-branding-block {
   display: inline-block;
-  margin: 0 0 0 35px;
+  transform: translateY(15%);
+  width: 42%;
 
   @media screen and(max-width: 768px) {
     margin: 0;
     width: 80%;
 
-    img {
-      width: 100%;
-    }
-
   }
+
+  img {
+    width: 100%;
+  }
+
+
 
 }
 
@@ -27,9 +30,8 @@
 
   display: inline-block;
   float: right;
-  height: 25px;
-  margin: 0 20px 0 15px;
-  width: 25px;
+  margin: 0 40px 0 0;
+  transform: translateY(50%);
 
   @media screen and(max-width: 768px) {
     display: none;
@@ -38,7 +40,7 @@
   span {
     content: '\1f50d';
     font-family: "fontello";
-    font-size: rem(32);
+    font-size: rem(16);
   }
 
 }
@@ -46,11 +48,18 @@
 .block-email-sign-up {
   display: inline-block;
   float: right;
-  margin: 0 0 0 20px;
   text-transform: uppercase;
+  transform: translateY(50%);
 
   @media screen and(max-width: 768px) {
     display: none;
+  }
+
+  a {
+    background-color: $arb-blue;
+    color: white;
+    font-size: rem(15);
+    padding: rem(15) rem(30);
   }
 
 }
@@ -59,21 +68,28 @@
 header .block-menu {
   display: inline-block;
   float: right;
+  transform: translateY(50%);
 
-  ul li {
-    display: inline;
-    margin: 0 15px;
+  ul {
+    margin: 0;
 
-    @media screen and(max-width: 768px) {
-      display: none;
-    }
+    li {
+      display: inline;
+      font-size: 15px;
+      margin: 0 30px 0 0;
 
-    a {
-      color: $um-blue;
-      text-transform: uppercase;
+      @media screen and(max-width: 768px) {
+        display: none;
+      }
 
-      &:hover {
-        color: $blue;
+      a {
+        color: $um-blue;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $blue;
+        }
+
       }
 
     }
@@ -185,9 +201,10 @@ footer .block-menu {
   float: right;
 
   a {
-    height: 16px;
-    margin: 0px 15px;
-    text-indent: -5000px;
+    color: $medium-gray;
+    font-size: rem(16);
+    margin: 0px 30px 0 0;
+
   }
 
 }
