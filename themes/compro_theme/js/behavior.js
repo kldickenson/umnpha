@@ -1,7 +1,7 @@
 
 /* JavaScript for Compro theme */
 
-(function ($) {
+(function ($, Drupal) {
   Drupal.behaviors.comproTheme = {
     attach: function (context, settings) {
 
@@ -32,4 +32,4 @@
         " at all so once i get that fixed this text should show up on page load")
     }
   };
-})(jQuery);
+})(jQuery, Drupal);
