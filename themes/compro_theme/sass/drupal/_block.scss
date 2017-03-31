@@ -204,11 +204,18 @@ footer .block-menu {
 
 .block-contact-info.block-social {      //needs fontello content
   float: right;
+  margin: 0 50px 0 0;
 
   a {
-    color: $medium-gray;
+    color: transparent;
     font-size: rem(16);
     margin: 0px 30px 0 0;
+    width: 20px;
+
+    &::before {
+      color: $medium-gray;
+      font-size: rem(24);
+    }
 
   }
 
