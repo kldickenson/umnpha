@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - phoenix_component
+    - system
+  theme:
+    - compro_adminimal
+id: addcomponent_2
+theme: compro_adminimal
+region: content
+weight: 0
+provider: null
+plugin: add_component_block
+settings:
+  id: add_component_block
+  label: 'Add Component'
+  provider: phoenix_component
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /admin/content/component
+    negate: false
+    context_mapping: {  }

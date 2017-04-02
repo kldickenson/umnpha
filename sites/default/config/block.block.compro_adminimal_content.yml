@@ -11,7 +11,7 @@ _core:
 id: compro_adminimal_content
 theme: compro_adminimal
 region: content
-weight: -3
+weight: 1
 provider: null
 plugin: system_main_block
 settings:
