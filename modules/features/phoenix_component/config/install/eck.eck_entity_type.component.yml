@@ -1,9 +1,6 @@
-uuid: 02f93b4b-4835-4584-bbf9-b7a7a2990f71
 langcode: en
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: 087ENwpJW9lGQXTyleUvV_jeDWn4EXERmxQaX7uARcY
 id: component
 label: Component
 created: false

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Additional tasks for the phoenix_component module.
+ */
+
+/**
+ * Implements hook_page_attachments().
+ */
+function phoenix_component_page_attachments(array &$attachments) {
+  if ($_SERVER['REQUEST_URI'] == '/admin/content/component') {
+    $attachments['#attached']['library'][] = 'phoenix_component/admin_screen';
+  }
+}
