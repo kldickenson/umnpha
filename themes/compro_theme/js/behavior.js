@@ -17,17 +17,15 @@
       });
 
       //Mobile Menu
-      $(window).resize(function(){
-        if($(window).width()<=768) {
-          $menu.on('click', function(e) {
-            console.log('click is working woohoo');
-            $(this).find('ul.menu').toggleClass('is-open');
-            $(this).find('ul.menu > li').toggle();
-            $search_icon.toggle()
-            $email_signup.toggle()
-          })
-        }
-      });
+      if($(window).width()<=768) {
+        $menu.on('click', function(e) {
+          console.log('click is working woohoo');
+          $(this).find('ul.menu').toggleClass('is-open');
+          $(this).find('ul.menu > li').toggle();
+          $search_icon.toggle()
+          $email_signup.toggle()
+        })
+      }
     }
   };
 })(jQuery, Drupal);
