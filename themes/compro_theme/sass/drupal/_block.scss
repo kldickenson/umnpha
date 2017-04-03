@@ -236,23 +236,49 @@ footer .block-menu {
 .block-copyright-block {
   display: inline-block;
   font-size: rem(11);
+
+  a {
+    color: $um-maize;
+  }
+
 }
 
-.block-contact-info.block-social {      //needs fontello content
+.block-contact-info.block-social {
   float: right;
   margin: 0 50px 0 0;
 
   a {
-    color: transparent;
+    color: $medium-gray;
     font-size: rem(16);
     margin: 0px 30px 0 0;
     width: 20px;
 
     &::before {
-      color: $medium-gray;
       font-size: rem(24);
+    }
+
+    &:hover {
+      &::before{
+        color: $um-maize;
+      }
+
     }
 
   }
 
+}
+
+.region-post-footer .block-contact-info.block-social {
+  @media screen and(max-width: 768px) {
+    display: none;
+  }
+
+}
+
+.region-footer .block-contact-info.block-social {
+  display: none;
+
+  @media screen and(max-width: 768px) {
+    display: inline-block;
+  }
 }

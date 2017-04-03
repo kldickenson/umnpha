@@ -157,14 +157,24 @@
     width: 100%;
   }
 
-  .component-sponsor {
-    border-right: 1px solid $medium-gray;
-    margin: 0 40px 0 0;
-    padding: 7.5px 30px 7.5px 0;
+  .field--name-field-sponsors-secondary-sponsor {
 
-    @media screen and(max-width: 768px) {
-      margin: 0 0 0 0;
-      padding: 0 0 25px 0;
+    .field__item {
+      border-right: 1px solid $medium-gray;
+      margin: 0 40px 0 0;
+      padding: 7.5px 30px 7.5px 0;
+
+      @media screen and(max-width: 768px) {
+        margin: 0 0 0 0;
+        padding: 0 0 25px 0;
+      }
+
+    }
+
+    .field__item:last-child {
+      border: none;
+      margin: 0 0;
+      padding: 0 0;
     }
 
   }

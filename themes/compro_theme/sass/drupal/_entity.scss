@@ -46,7 +46,11 @@
 
 
 
-/*Sponsors*/
+/*Sponsors
+* [1] This distorts the image (only really affecting primary sponsor), but without the images are small due to limit on height as per comps
+*
+*
+**/
 .section-type-sponsors {
   border-top: 1px solid $medium-gray;
   margin: 0 auto;
@@ -64,7 +68,7 @@
 
   img {
     height: 40px;
-    width: 100%;
+    //width: 100%;      //[1]
 
     @media screen and(max-width: 768px) {
       width: auto;
