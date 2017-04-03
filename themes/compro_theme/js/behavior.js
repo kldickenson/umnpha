@@ -5,7 +5,7 @@
   Drupal.behaviors.comproTheme = {
     attach: function (context, settings) {
 
-      var $menu = $('#block-mainmenu > ul.menu::before');
+      var $menu = $('#block-mainmenu');
       var $search_icon = $('#block-searchicon');
       var $email_signup = $('#block-emailsignup');
 
@@ -18,8 +18,12 @@
 
       //Mobile Menu
       $menu.on('click', function(e){
-        console.log('click is working gaddamit');
-        $.show($search_icon, $email_signup);
+        console.log('click is working woohoo');
+        $(this).find('ul.menu').toggleClass('is-open');
+        $(this).find('ul.menu > li').toggle();
+        $search_icon.toggle()
+        $email_signup.toggle()
+
       })
 
       //Just a stoopid test
@@ -28,8 +32,6 @@
         console.log('working?')
       })
 
-      console.log("well i don't think this file is being loaded in anywhere" +
-        " at all so once i get that fixed this text should show up on page load")
     }
   };
 })(jQuery, Drupal);
