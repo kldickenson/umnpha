@@ -1,0 +1,20 @@
+uuid: aacda722-cc74-4f15-860a-62885de06c18
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - compro_theme
+id: searchform
+theme: compro_theme
+region: header
+weight: -9
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form'
+  provider: search
+  label_display: '0'
+visibility: {  }

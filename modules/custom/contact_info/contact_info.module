@@ -247,7 +247,7 @@ function contact_info_create_social(ImmutableConfig $contact_info = NULL) {
 
     foreach ($data as $social_site_key => $social_site) {
       $output['social'][$social_site_key]
-        = Link::fromTextAndUrl('',
+        = Link::fromTextAndUrl($social_site['name'],
         Url::fromUri($social_site['url'],
           array(
             'html' => TRUE,
