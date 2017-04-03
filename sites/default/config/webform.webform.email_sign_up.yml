@@ -9,7 +9,7 @@ template: false
 id: email_sign_up
 title: 'Email Sign Up'
 description: ''
-elements: "name:\n  '#type': textfield\n  '#title': Name\n  '#placeholder': 'John Smith'\nemail_address:\n  '#type': email\n  '#title': 'Email Address'\n  '#placeholder': john@smith.com\norganization:\n  '#type': textfield\n  '#title': Organization\n  '#placeholder': 'Institute for Healthcare Policy and Innovation'\n"
+elements: "first_name:\n  '#type': textfield\n  '#title': 'First Name'\n  '#placeholder': John\nlast_name:\n  '#type': textfield\n  '#title': 'Last Name'\n  '#placeholder': Smith\nemail:\n  '#type': email\n  '#title': 'Email Address'\n  '#placeholder': john@smith.com\n"
 css: ''
 javascript: ''
 settings:
@@ -54,12 +54,12 @@ settings:
   draft_button_attributes: {  }
   draft_saved_message: ''
   draft_loaded_message: ''
-  confirmation_type: page
+  confirmation_type: inline
   confirmation_title: ''
-  confirmation_message: ''
+  confirmation_message: 'Thank you for signing up for our mailing list!'
   confirmation_url: ''
   confirmation_attributes: {  }
-  confirmation_back: true
+  confirmation_back: false
   confirmation_back_label: ''
   confirmation_back_attributes: {  }
   limit_total: null
@@ -131,8 +131,8 @@ handlers:
         entity_id: entity_id
         sticky: sticky
         notes: notes
-      custom_data: "ca: xxx\nlist: xxx"
+      custom_data: "ca: f39963cc-5e02-4e83-b724-a8a6f5447cf9\nlist: 1898835691\nsource: EFD"
       insert_custom_data: ''
       update_custom_data: ''
       delete_custom_data: ''
-      debug: true
+      debug: false
