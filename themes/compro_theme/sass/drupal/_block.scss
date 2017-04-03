@@ -72,6 +72,12 @@
     color: white;
     font-size: rem(15);
     padding: rem(15) rem(30);
+
+    &:hover {
+      transition: $base-duration $base-timing;
+      background-color: $arb-blue-lightened;
+    }
+
   }
 
 }
@@ -98,6 +104,10 @@ header .block-menu {
       display: inline;
       font-size: 15px;
       margin: 0 30px 0 0;
+
+      &.menu-item--active-trail {
+        color: $blue;
+      }
 
       @media screen and(max-width: 768px) {
         display: none;
@@ -216,6 +226,7 @@ footer .block-menu {
   text-align: right;
 
   @media screen and(max-width: 768px) {
+    margin: 0 0 40px 0;
     text-align: left;
   }
 
@@ -227,6 +238,16 @@ footer .block-menu {
       font-size: rem(13);
     }
 
+  }
+
+}
+
+.region-footer .block-contact-info.block-social {
+  display: none;
+
+  @media screen and(max-width: 768px) {
+    display: block;
+    float: none;
   }
 
 }
@@ -273,12 +294,4 @@ footer .block-menu {
     display: none;
   }
 
-}
-
-.region-footer .block-contact-info.block-social {
-  display: none;
-
-  @media screen and(max-width: 768px) {
-    display: inline-block;
-  }
 }

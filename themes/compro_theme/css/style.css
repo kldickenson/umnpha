@@ -396,6 +396,9 @@ div.warning {
     color: white;
     font-size: 0.9375rem;
     padding: 0.9375rem 1.875rem; }
+    .block-email-sign-up a:hover {
+      transition: 250ms ease-in-out;
+      background-color: #429FE9; }
 
 /*Main Menu*/
 header .block-menu {
@@ -415,6 +418,8 @@ header .block-menu {
       display: inline;
       font-size: 15px;
       margin: 0 30px 0 0; }
+      header .block-menu ul li.menu-item--active-trail {
+        color: #0c57aa; }
       @media screen and (max-width: 768px) {
         header .block-menu ul li {
           display: none;
@@ -487,6 +492,7 @@ footer .block-menu {
   text-align: right; }
   @media screen and (max-width: 768px) {
     .block-address {
+      margin: 0 0 40px 0;
       text-align: left; } }
   .block-address address {
     font-size: 0.6875rem;
@@ -494,6 +500,13 @@ footer .block-menu {
     @media screen and (max-width: 768px) {
       .block-address address {
         font-size: 0.8125rem; } }
+
+.region-footer .block-contact-info.block-social {
+  display: none; }
+  @media screen and (max-width: 768px) {
+    .region-footer .block-contact-info.block-social {
+      display: block;
+      float: none; } }
 
 /*Post Footer*/
 .block-copyright-block {
@@ -518,12 +531,6 @@ footer .block-menu {
 @media screen and (max-width: 768px) {
   .region-post-footer .block-contact-info.block-social {
     display: none; } }
-
-.region-footer .block-contact-info.block-social {
-  display: none; }
-  @media screen and (max-width: 768px) {
-    .region-footer .block-contact-info.block-social {
-      display: inline-block; } }
 
 /*
 *   #Entity/Section-Types
@@ -732,8 +739,9 @@ footer .block-menu {
       margin: 0 0 30px 0;
       max-width: 100%; } }
   .node--type-webform .field--name-field-form-image img {
+    height: 100%;
     line-height: 0px;
-    height: 100%; }
+    object-fit: cover; }
 .node--type-webform .field-group-form-text {
   color: white;
   padding: 50px 10% 50px 5%; }
@@ -746,7 +754,8 @@ footer .block-menu {
   font-size: 2.25rem;
   letter-spacing: 0.00625rem;
   margin: 0 0 35px 0;
-  text-align: center; }
+  text-align: center;
+  text-transform: capitalize; }
 .node--type-webform .field--name-field-form-text {
   font-family: 'Lora';
   font-size: 1.3125rem;
@@ -797,6 +806,9 @@ footer .block-menu {
     @media screen and (max-width: 768px) {
       .node--type-webform .field--name-field-form-webform .form-actions input {
         margin: 0 0 50px 0; } }
+    .node--type-webform .field--name-field-form-webform .form-actions input:hover {
+      background-color: #429FE9;
+      transition: 250ms ease-in-out; }
 
 .region-header {
   padding: 40px 3rem;
@@ -860,7 +872,7 @@ footer .block-menu {
       margin: 0 0 35px; } }
 
 .field--name-field-featured-report-button a {
-  background-color: #ffcc05;
+  background-color: #ffca05;
   color: #431D16;
   display: inline;
   font-family: "Montserrat";
@@ -874,6 +886,9 @@ footer .block-menu {
       font-size: 0.6875rem;
       margin: 0 0 10px 0;
       padding: 0.6875rem 1.71875rem; } }
+  .field--name-field-featured-report-button a:hover {
+    background-color: #FFFF38;
+    transition: 250ms ease-in-out; }
 
 /*Sponsors*/
 .field-group-sponsors-primary {
@@ -977,12 +992,15 @@ footer .block-menu {
       margin: 0 0 35px 0; } }
 
 .field--name-field-highlight-button a {
-  background-color: #0c57aa;
+  background-color: #0f6cb6;
   color: white;
   font-size: 0.8125rem;
   padding: 0.8125rem 2.03125rem;
   text-align: center;
   text-transform: uppercase; }
+  .field--name-field-highlight-button a:hover {
+    background-color: #429FE9;
+    transition: 250ms ease-in-out; }
   @media screen and (max-width: 768px) {
     .field--name-field-highlight-button a {
       font-size: 0.6875rem;

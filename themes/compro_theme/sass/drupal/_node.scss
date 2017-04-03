@@ -90,8 +90,9 @@
     }
 
     img {
-      line-height: 0px;
       height: 100%;
+      line-height: 0px;
+      object-fit: cover;
     }
 
   }
@@ -113,6 +114,7 @@
     letter-spacing: rem(0.1);
     margin: 0 0 35px 0;
     text-align: center;
+    text-transform: capitalize;
   }
 
   .field--name-field-form-text {
@@ -185,6 +187,11 @@
 
         @media screen and(max-width: 768px) {
           margin: 0 0 50px 0;
+        }
+
+        &:hover {
+          background-color: $arb-blue-lightened;
+          transition: $base-duration $base-timing;
         }
 
       }

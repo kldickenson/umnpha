@@ -1,0 +1,20 @@
+uuid: 150ba0cb-edf5-447c-a21f-6b3651cb547b
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_info
+  theme:
+    - compro_theme
+id: social_2
+theme: compro_theme
+region: footer
+weight: 0
+provider: null
+plugin: social
+settings:
+  id: social
+  label: Social
+  provider: contact_info
+  label_display: '0'
+visibility: {  }
