@@ -21,9 +21,7 @@
   img {
     width: 100%;
   }
-
-
-
+  
 }
 
 .block-search-icon-block {
@@ -34,7 +32,15 @@
   transform: translateY(50%);
 
   @media screen and(max-width: 768px) {
+    color: $um-blue;
     display: none;
+    margin: 0 0;
+    position: absolute;
+    text-align: center;
+    top: 250px;
+    width: 100%;
+    z-index: 9999;
+
   }
 
   span {
@@ -53,6 +59,11 @@
 
   @media screen and(max-width: 768px) {
     display: none;
+    position: absolute;
+    text-align: center;
+    top: 315px;
+    width: 100%;
+    z-index: 9999;
   }
 
   a {
@@ -71,7 +82,11 @@ header .block-menu {
   transform: translateY(50%);
 
   @media screen and(max-width: 768px) {
+    left: 0;
+    position: absolute;
+    top: 100px;
     transform: translateY(-25%);
+    width: 100%;
   }
 
 
@@ -85,6 +100,8 @@ header .block-menu {
 
       @media screen and(max-width: 768px) {
         display: none;
+        margin: 0 0 30px 0;
+        text-align: center;
       }
 
       a {
@@ -99,6 +116,13 @@ header .block-menu {
 
     }
 
+    &.is-open {
+      background-color: rgba(250,250,250,.8);
+      height: 300px;
+      position: relative;
+      top: 59px;
+    }
+
   }
 
   ul.menu::before {
@@ -109,6 +133,9 @@ header .block-menu {
 
     @media screen and(max-width: 768px) {
       display: inline-block;
+      position: relative;
+      right: -90%;
+      top: -65px;
     }
 
   }
