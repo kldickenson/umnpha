@@ -121,7 +121,7 @@ function contact_info_create_fax(ImmutableConfig $contact_info = NULL) {
     );
   }
   else {
-    return FALSE;
+    return array();
   }
 }
 
@@ -151,7 +151,7 @@ function contact_info_create_map(ImmutableConfig $contact_info = NULL, $map_sett
   // Check to see if an API key exists.
   if (!isset($map_settings['api_key'])) {
     drupal_set_message(t('Please provide a Google API key for the embedded map to work properly'), 'warning');
-    return $output;
+    return array();
   }
 
   if ($contact_info->get('address') !== NULL) {
@@ -204,7 +204,7 @@ function contact_info_create_phone(ImmutableConfig $contact_info = NULL) {
     );
   }
   else {
-    return FALSE;
+    return array();
   }
 }
 
@@ -248,13 +248,12 @@ function contact_info_create_social(ImmutableConfig $contact_info = NULL) {
     foreach ($data as $social_site_key => $social_site) {
       $output['social'][$social_site_key]
         = Link::fromTextAndUrl('',
-          Url::fromUri($social_site['url'],
-            array(
-              'html' => TRUE,
-              'attributes' => array(),
-            )
+        Url::fromUri($social_site['url'],
+          array(
+            'html' => TRUE,
+            'attributes' => array(),
           )
-        )->toRenderable();
+        ))->toRenderable();
     }
   }
 
@@ -422,7 +421,7 @@ function _contact_info_social_draggable_table($social_table, &$form, FormStateIn
     if (isset($social_table[$i]['url']) && !empty($social_table[$i]['url'])) {
       $form['contact_info']['social']['table'][$i]['icon']['link']
         = Link::fromTextAndUrl($social_table[$i]['name'],
-          Url::fromUri($social_table[$i]['url']))->toRenderable();
+        Url::fromUri($social_table[$i]['url']))->toRenderable();
     }
 
     $form['contact_info']['social']['table'][$i]['url'] = array(

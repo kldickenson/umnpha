@@ -1,17 +1,16 @@
 <?php
 
+namespace Drupal\compro_custom\Plugin\Field\FieldWidget;
+
 /**
  * @file
  * Contains \Drupal\compro_custom\Plugin\Field\HeadingTextfieldWidget.
  */
 
-namespace Drupal\compro_custom\Plugin\Field\FieldWidget;
-
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\WidgetBase;
 use Drupal\Core\Field\WidgetInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Symfony\Component\Validator\ConstraintViolationInterface;
 
 /**
  * Plugin implementation of the 'heading_textfield' widget.
@@ -30,7 +29,8 @@ class HeadingTextfieldWidget extends WidgetBase implements WidgetInterface {
    * {@inheritdoc}
    */
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
-    $settings = $this->fieldDefinition->getFieldStorageDefinition()->getSettings();
+    $settings = $this->fieldDefinition->getFieldStorageDefinition()
+      ->getSettings();
     $element += array(
       '#type' => 'fieldset',
       'value' => array(

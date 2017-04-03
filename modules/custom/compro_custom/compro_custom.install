@@ -5,6 +5,8 @@
  * Install file for misc updates.
  */
 
+use Drupal\node\Entity\Node;
+
 /**
  * Implements hook_install().
  */
@@ -17,9 +19,9 @@ function compro_custom_install() {
  */
 function compro_custom_update_8002() {
   $nids = \Drupal::entityQuery('node')->execute();
-  $nodes =  \Drupal\node\Entity\Node::loadMultiple($nids);
+  $nodes = Node::loadMultiple($nids);
 
-  foreach($nodes as $node) {
+  foreach ($nodes as $node) {
     $title = $node->getTitle();
     $node->set('field_title', $title);
     $node->save();

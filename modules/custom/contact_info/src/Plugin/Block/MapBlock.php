@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\contact_info\Plugin\Block;
+
 /**
  * @file
  * Contains \Drupal\contact_info\Plugin\Block/MapBlock.
  */
-
-namespace Drupal\contact_info\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -74,14 +74,18 @@ class MapBlock extends BlockBase {
    */
   public function blockSubmit($form, FormStateInterface $form_state) {
     $this->configuration['api_key'] = $form_state->getValue(array('api_key'));
-    $this->configuration['width'] = $form_state->getValue(array(
-      'dimensions',
-      'width',
-    ));
-    $this->configuration['height'] = $form_state->getValue(array(
-      'dimensions',
-      'height',
-    ));
+    $this->configuration['width'] = $form_state->getValue(
+      array(
+        'dimensions',
+        'width',
+      )
+    );
+    $this->configuration['height'] = $form_state->getValue(
+      array(
+        'dimensions',
+        'height',
+      )
+    );
   }
 
 }
