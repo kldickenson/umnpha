@@ -366,7 +366,7 @@ div.warning {
     .block-search-icon-block {
       color: #00264b;
       display: none;
-      margin: 0 0;
+      margin: 0 0 0 -56px;
       position: absolute;
       text-align: center;
       top: 250px;
@@ -385,6 +385,7 @@ div.warning {
   @media screen and (max-width: 768px) {
     .block-email-sign-up {
       display: none;
+      margin: 0 0 0 -56px;
       position: absolute;
       text-align: center;
       top: 315px;
@@ -429,6 +430,11 @@ header .block-menu {
       height: 300px;
       position: relative;
       top: 59px; }
+      header .block-menu ul.is-open::before {
+        content: '\215'; }
+      @media screen and (max-width: 430px) {
+        header .block-menu ul.is-open {
+          top: 39px; } }
   header .block-menu ul.menu::before {
     color: #00264b;
     content: '\2630';
@@ -551,6 +557,9 @@ footer .block-menu {
   .component-sponsor img {
     height: 40px;
     width: 100%; }
+    @media screen and (max-width: 768px) {
+      .component-sponsor img {
+        width: auto; } }
 
 /*Highlight*/
 .section-type-highlight {
