@@ -20,3 +20,4 @@ permissions:
   - 'administer eck entity types'
   - 'view any component entities'
   - 'view any section_type entities'
+  - 'view media'
