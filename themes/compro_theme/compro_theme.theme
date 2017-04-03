@@ -161,7 +161,6 @@ function compro_theme_preprocess_menu_local_task(&$variables) {
  * hook_preprocess_entity().
  */
 function compro_theme_preprocess_eck_entity(&$variables) {
-
   if (isset($variables['entity']['#section_type'])) {
     $variables['attributes']['class'] = array(
       'entity',
@@ -179,8 +178,10 @@ function compro_theme_preprocess_eck_entity(&$variables) {
   }
 }
 
-
-
-
-
-
+function compro_theme_preprocess_field_group_html_element(&$vars) {
+  if ($vars['element']['#group_name'] == 'group_page_hero') {
+    if (empty($vars['element']['field_page_hero']['#markup'])) {
+      $vars['attributes']->addClass('no-hero-image');
+    }
+  }
+}
