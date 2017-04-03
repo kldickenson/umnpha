@@ -134,9 +134,9 @@ header .block-menu {
   @media screen and(max-width: 768px) {
     left: 0;
     position: absolute;
-    top: 100px;
     transform: translateY(-25%);
     width: 100%;
+    z-index: 999;
   }
 
 
@@ -197,7 +197,7 @@ header .block-menu {
       display: inline-block;
       position: relative;
       right: -90%;
-      top: -65px;
+      
     }
 
   }
