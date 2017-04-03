@@ -949,6 +949,7 @@ footer .block-menu {
     padding: 7.5px 30px 7.5px 0; }
     @media screen and (max-width: 768px) {
       .field-group-sponsors-secondary .field--name-field-sponsors-secondary-sponsor .field__item {
+        border: none;
         margin: 0 0 0 0;
         padding: 0 0 25px 0; } }
   .field-group-sponsors-secondary .field--name-field-sponsors-secondary-sponsor .field__item:last-child {
