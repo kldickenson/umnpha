@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\compro_credit\Plugin\Block;
+
 /**
  * @file
  * Contains \Drupal\compro_credit\Plugin\Block\ComproCreditBlock.
  */
-
-namespace Drupal\compro_credit\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;
@@ -20,12 +20,14 @@ use Drupal\Core\Url;
  * )
  */
 class ComproCreditBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
   public function build() {
     // External Uri.
-    $url = Url::fromUri('http://www.commercialprogression.com',
+    $url = Url::fromUri(
+      'http://www.commercialprogression.com',
       array(
         'attributes' => array(
           'class' => array(

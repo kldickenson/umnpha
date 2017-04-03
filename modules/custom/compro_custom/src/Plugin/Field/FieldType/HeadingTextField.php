@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\compro_custom\Plugin\Field\FieldType;
+
 /**
  * @file
  * Contains \Drupal\compro_custom\Plugin\Field\HeadingTextField.
  */
-
-namespace Drupal\compro_custom\Plugin\Field\FieldType;
 
 use Drupal\Core\Field\FieldItemBase;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -33,7 +33,10 @@ class HeadingTextField extends FieldItemBase {
     $settings = array(
       'max_length' => 255,
       'allowed_wrappers' => array(
-        'h2', 'h3', 'h4', 'h5',
+        'h2',
+        'h3',
+        'h4',
+        'h5',
       ),
     ) + parent::defaultStorageSettings();
 
@@ -50,26 +53,12 @@ class HeadingTextField extends FieldItemBase {
           'type' => 'varchar',
           'length' => $field_definition->getSetting('max_length'),
         ),
-//        'format' => array(
-//          'type' => 'varchar',
-//          'length' => 255,
-//          'not null' => FALSE,
-//        ),
         'wrapper' => array(
           'type' => 'varchar',
           'length' => 255,
           'not null' => FALSE,
         ),
       ),
-//      'indexes' => array(
-//        'format' => array('format'),
-//      ),
-//      'foreign keys' => array(
-//        'format' => array(
-//          'table' => 'filter_format',
-//          'columns' => array('format' => 'format'),
-//        ),
-//      ),
     );
   }
 
@@ -97,7 +86,8 @@ class HeadingTextField extends FieldItemBase {
       '#title' => t('Maximum length'),
       '#default_value' => isset($settings['max_length']) ? $settings['max_length'] : '',
       '#required' => TRUE,
-      '#element_validate' => array(array($this, 'formValidate'),
+      '#element_validate' => array(
+        array($this, 'formValidate'),
       ),
       '#description' => t('The maximum length of the field in characters.'),
       '#disabled' => $has_data,
@@ -120,20 +110,35 @@ class HeadingTextField extends FieldItemBase {
    * {@inheritdoc}
    */
   public function getConstraints() {
-    $constraint_manager = \Drupal::typedDataManager()->getValidationConstraintManager();
+    $constraint_manager = \Drupal::typedDataManager()
+      ->getValidationConstraintManager();
     $constraints = parent::getConstraints();
 
     if ($max_length = $this->getSetting('max_length')) {
-      $constraints[] = $constraint_manager->create('ComplexData', array(
-        'value' => array(
-          'Length' => array(
-            'min' => 0,
-            'max' => $max_length,
-            'maxMessage' => t('%name: the text may not be longer than @max characters.', array('%name' => $this->getFieldDefinition()->getLabel(), '@max' => $max_length)),
-            'minMessage' => t('%name: the text must be longer than @min characters.', array('%name' => $this->getFieldDefinition()->getLabel(), '@min' => 0)),
+      $constraints[] = $constraint_manager->create(
+        'ComplexData', array(
+          'value' => array(
+            'Length' => array(
+              'min' => 0,
+              'max' => $max_length,
+              'maxMessage' => t(
+                '%name: the text may not be longer than @max characters.', array(
+                  '%name' => $this->getFieldDefinition()
+                    ->getLabel(),
+                  '@max' => $max_length,
+                )
+              ),
+              'minMessage' => t(
+                '%name: the text must be longer than @min characters.', array(
+                  '%name' => $this->getFieldDefinition()
+                    ->getLabel(),
+                  '@min' => 0,
+                )
+              ),
+            ),
           ),
-        ),
-      ));
+        )
+      );
     }
 
     return $constraints;
@@ -145,8 +150,10 @@ class HeadingTextField extends FieldItemBase {
   public function formValidate($element, FormStateInterface $form_state) {
     $settings = $this->getSettings();
 
-    if (!empty($element['value']) && !empty($settings['max_length']) &&
-      strlen($element['value']) > $settings['max_length']) {
+    if (!empty($element['value']) && !empty($settings['max_length'])
+      && strlen($element['value']) > $settings['max_length']
+    ) {
+
       $message = t('%name: the text may not be longer than %max characters.', array(
         '%name' => $element['#title'],
         '%max' => 255,

@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\compro_credit\Plugin\Block;
+
 /**
  * @file
  * Contains \Drupal\compro_credit\Plugin\Block\CopyrightBlock.
  */
-
-namespace Drupal\compro_credit\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;
@@ -20,12 +20,14 @@ use Drupal\Core\Url;
  * )
  */
 class CopyrightBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
   public function build() {
-    //External Uri.
-    $url = Url::fromUri('https://www.umich.edu',
+    // External Uri.
+    $url = Url::fromUri(
+      'https://www.umich.edu',
       array(
         'attributes' => array(
           'class' => array(
@@ -38,8 +40,7 @@ class CopyrightBlock extends BlockBase {
     // Render array that returns text for block content.
     return array(
       'copyright' => array(
-        '#markup' => '&copy; ' . date('Y') . ' ' .
-          $external_link->toString(),
+        '#markup' => '&copy; ' . date('Y') . ' ' . $external_link->toString(),
       ),
     );
   }
