@@ -18,6 +18,7 @@ use Drupal\Core\Block\BlockBase;
  * )
  */
 class SearchIconBlock extends BlockBase {
+
   /**
    * {@inheritdoc}
    */

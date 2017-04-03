@@ -4,6 +4,7 @@
  * @file
  * Tokens for the contact info module.
  */
+use Drupal\Core\Render\BubbleableMetadata;
 
 /**
  * Implements hook_token_info().
@@ -134,7 +135,7 @@ function contact_info_token_info() {
 /**
  * Implements hook_tokens().
  */
-function contact_info_tokens($type, $tokens, array $data, array $options, \Drupal\Core\Render\BubbleableMetadata $bubbleable_metadata) {
+function contact_info_tokens($type, $tokens, array $data, array $options, BubbleableMetadata $bubbleable_metadata) {
   $replacements = array();
 
   if ($type == 'contact_info') {

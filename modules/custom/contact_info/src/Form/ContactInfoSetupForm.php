@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\contact_info\Form;
+
 /**
  * @file
  * Contains \Drupal\contact_info\Form\ContactInfoSetupForm.
  */
-
-namespace Drupal\contact_info\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -173,63 +173,74 @@ class ContactInfoSetupForm extends ConfigFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('contact_info.setup');
-    $config
-      ->set('address.country_name', $form_state->getValue(array(
+    $config->set('address.country_name', $form_state->getValue(
+      array(
         'contact_info',
         'address',
         'country_name',
-      )))
-      ->set('address.legal_name', $form_state->getValue(array(
+      )))->set(
+      'address.legal_name', $form_state->getValue(
+      array(
         'contact_info',
         'address',
         'legal_name',
-      )))
-      ->set('address.street_address', $form_state->getValue(array(
+      )))->set(
+      'address.street_address', $form_state->getValue(
+      array(
         'contact_info',
         'address',
         'street_address',
-      )))
-      ->set('address.street_address_2', $form_state->getValue(array(
+      )))->set(
+      'address.street_address_2', $form_state->getValue(
+      array(
         'contact_info',
         'address',
         'street_address_2',
-      )))
-      ->set('address.locality', $form_state->getValue(array(
+      )))->set(
+      'address.locality', $form_state->getValue(
+      array(
         'contact_info',
         'address',
         'locality',
-      )))
-      ->set('address.region', $form_state->getValue(array(
+      )))->set(
+      'address.region', $form_state->getValue(
+      array(
         'contact_info',
         'address',
         'region',
-      )))
-      ->set('address.postal_code', $form_state->getValue(array(
+      )))->set(
+      'address.postal_code', $form_state->getValue(
+      array(
         'contact_info',
         'address',
         'postal_code',
-      )))
-      ->set('phone.country_code', $form_state->getValue(array(
+      )))->set(
+      'phone.country_code', $form_state->getValue(
+      array(
         'contact_info',
         'phone',
         'country_code',
-      )))
-      ->set('phone.number', $form_state->getValue(array(
+      )))->set(
+      'phone.number', $form_state->getValue(
+      array(
         'contact_info',
         'phone',
         'number',
-      )))
-      ->set('fax.number', $form_state->getValue(array(
+      )))->set(
+      'fax.number', $form_state->getValue(
+      array(
         'contact_info',
         'fax',
         'number',
-      )))
-      ->set('social_seo.site_twitter', $form_state->getValue(array(
+      )))->set(
+      'social_seo.site_twitter', $form_state->getValue(
+      array(
         'contact_info',
         'social_seo',
         'site_twitter',
-      )))
-      ->set('social_seo.site_google_plus', $form_state->getValue(array(
+      )))->set(
+      'social_seo.site_google_plus', $form_state->getValue(
+      array(
         'contact_info',
         'social_seo',
         'site_google_plus',

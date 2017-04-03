@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Entity\Display\EntityDisplayInterface;
+use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
 use Drupal\Core\Entity\EntityInterface;
@@ -69,7 +70,7 @@ function compro_custom_preprocess_block(&$variables) {
     // Link path.
     $compro_custom = \Drupal::config('compro_custom.form');
 
-    $variables['title_h1'] = $compro_custom->get('logo.heading') !== NULL ? FALSE : TRUE;
+    $variables['title_h1'] = $compro_custom->get('logo.heading') !== 1 ? FALSE : TRUE;
     // There doesn't seem to be a function that sanity-checks a route name, so
     // we fudge it here.
     $variables['logo_path'] = $compro_custom->get('logo.url') !== NULL ? $compro_custom->get('logo.url') : '<front>';
@@ -77,7 +78,8 @@ function compro_custom_preprocess_block(&$variables) {
       $variables['logo_path'] = $compro_custom->get('logo.url');
     }
     else {
-      $variables['logo_path'] = Url::fromRoute($compro_custom->get('logo.url'))->toString();
+      $variables['logo_path'] = Url::fromRoute($compro_custom->get('logo.url'))
+        ->toString();
     }
     $variables['logo_title'] = Html::escape($compro_custom->get('logo.title') !== NULL ? $compro_custom->get('logo.title') : $site_name . ' home');
   }
@@ -219,7 +221,8 @@ function compro_custom_entity_view_alter(&$build, EntityInterface $entity, Entit
  */
 function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
   if ($form_id == 'node_webform_edit_form' || $form_id == 'node_page_edit_form'
-    || $form_id == 'node_webform_add_form'  || $form_id == 'node_page_add_form') {
+    || $form_id == 'node_webform_add_form' || $form_id == 'node_page_add_form'
+  ) {
     $form['title']['#access'] = FALSE;
     $form['#validate'][] = 'compro_custom_title_update';
   }
@@ -228,7 +231,7 @@ function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $
 /**
  * Custom validator for content types with a custom title for display purposes.
  */
-function compro_custom_title_update(&$form, \Drupal\Core\Form\FormStateInterface &$form_state) {
+function compro_custom_title_update(&$form, FormStateInterface &$form_state) {
   // Update the built-in title with the user-entered title.
   $user_title = $form_state->getValue(array('field_title'));
   $form_state->setValue('title', $user_title);
@@ -261,7 +264,8 @@ function compro_custom_download_and_share_content($entity) {
   $share_text = '<span class="share-parent-text">Share</span>';
 
   // Gather some basic defaults.
-  $page_title = $entity->get('field_infographic_image')[0]->get('title')->getCastedValue();
+  $page_title = $entity->get('field_infographic_image')[0]->get('title')
+    ->getCastedValue();
   $caption = $entity->get('field_infographic_caption')->getValue()[0]['value'];
   $page_summary = isset($caption) ? substr(strip_tags($caption), 0, 300) . '...' : '';
 
@@ -273,7 +277,7 @@ function compro_custom_download_and_share_content($entity) {
   $linkedin_url = _build_url('http://www.linkedin.com/shareArticle', $file->url(), $page_title);
   $linkedin_link = Link::fromTextAndUrl(t('LinkedIn'), $linkedin_url);
 
-  $render =  array(
+  $render = array(
     '#type' => 'container',
     '#attributes' => array('class' => array('share-and-download-wrapper')),
     'download' => $download,
@@ -297,10 +301,9 @@ function compro_custom_download_and_share_content($entity) {
  */
 function _build_url($to_uri, $from_url, $text) {
   return Url::fromUri($to_uri, array(
-      'query' => array(
-        'url' => $from_url,
-        'text' => $text,
-      ),
-    )
-  );
+    'query' => array(
+      'url' => $from_url,
+      'text' => $text,
+    ),
+  ));
 }

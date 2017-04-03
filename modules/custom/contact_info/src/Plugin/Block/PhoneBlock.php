@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\contact_info\Plugin\Block;
+
 /**
  * @file
  * Contains \Drupal\contact_info\Plugin\Block/PhoneBlock.
  */
-
-namespace Drupal\contact_info\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 

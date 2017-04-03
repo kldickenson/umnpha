@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\email_sign_up\Plugin\Block;
+
 /**
  * @file
  * Contains \Drupal\email_sign_up\Plugin\Block\EmailSignUp.
  */
-
-namespace Drupal\email_sign_up\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
 use Drupal\Core\Link;
@@ -20,6 +20,7 @@ use Drupal\Core\Url;
  * )
  */
 class EmailSignUp extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
@@ -31,7 +32,8 @@ class EmailSignUp extends BlockBase {
     $text = !empty($email_sign_up->get('text')) ?
       $email_sign_up->get('text') : 'Email Sign Up';
 
-    $url = Url::fromUserInput($uri,
+    $url = Url::fromUserInput(
+      $uri,
       array(
         'attributes' => array(
           'class' => array(

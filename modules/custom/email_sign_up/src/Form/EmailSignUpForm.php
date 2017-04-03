@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\email_sign_up\Form;
+
 /**
  * @file
  * Contains \Drupal\email_sign_up\Form\EmailSignUpForm.
  */
-
-namespace Drupal\email_sign_up\Form;
 
 use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
@@ -67,6 +67,9 @@ class EmailSignUpForm extends ConfigFormBase {
     return parent::buildForm($form, $form_state);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     $user_input = $form_state->getValue(array('link'));
     if ((strpos($user_input, '/') !== 0) && (strpos($user_input, '#') !== 0) && (strpos($user_input, '?') !== 0)) {
@@ -81,12 +84,20 @@ class EmailSignUpForm extends ConfigFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $config = $this->config('email_sign_up.setup');
     $config
-      ->set('link', $form_state->getValue(array(
-        'link',
-      )))
-      ->set('text', $form_state->getValue(array(
-        'text',
-      )));
+      ->set(
+        'link', $form_state->getValue(
+        array(
+          'link',
+        )
+      )
+      )
+      ->set(
+        'text', $form_state->getValue(
+        array(
+          'text',
+        )
+      )
+      );
 
     $config->save();
     parent::submitForm($form, $form_state);

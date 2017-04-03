@@ -1,11 +1,11 @@
 <?php
 
+namespace Drupal\compro_custom\Plugin\Field\FieldFormatter;
+
 /**
  * @file
  * Contains \Drupal\compro_custom\Plugin\Field\FieldFormatter\HeadingDefaultFormatter.
  */
-
-namespace Drupal\compro_custom\Plugin\Field\FieldFormatter;
 
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
