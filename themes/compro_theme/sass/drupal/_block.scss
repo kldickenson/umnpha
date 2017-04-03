@@ -56,30 +56,39 @@
 
 
 /*Search Form*/
-.block-search {
+.block-google-cse {
   position: absolute;
   right: 25%;
   top: 209px;
   width: 20%;
   z-index: 9999;
 
-  .form-search {
-    background-image: none !important;
-    background-color: rgba(250, 250, 250, 0.85);
-    border: 0 none;
-    border-radius: 0;
-    color: $dark-gray;
-    font-size: rem(14);
-    height: 40px;
-    padding: rem(14) rem(20);
+  .form-item-query {
+    .form-text {
+      background-color: rgba(250, 250, 250, 0.85) !important;
+      background-image: none !important;
+      border: 0 none;
+      border-radius: 0;
+      color: $dark-gray;
+      font-size: rem(14);
+      height: 40px;
+      padding: 0 rem(20);
 
+    }
+
+    &.form-item {
+      margin: 0 0;
+    }
+
+    label {
+      display: none;
+    }
 
   }
 
-  .form-wrapper {
+  .form-submit {
     display: none;
   }
-
 
 }
 
