@@ -27,12 +27,9 @@
           $(this).find('ul.menu').toggleClass('is-open').addClass('animated' +
             ' slideInDown');
           $(this).find('ul.menu > li').toggle();
-          $search_icon.toggleClass('is-shown').addClass('animated' +
-            ' slideInDown');
-          $email_signup.toggle().addClass('animated' +
-            ' slideInDown');
-          $search_field.toggle().addClass('animated' +
-            ' slideInDown');
+          $search_icon.toggleClass('is-shown');
+          $email_signup.toggle();
+          $search_field.toggle().addClass('is-open');
         })
       }
 
@@ -75,6 +72,7 @@
 
           console.log("testimonial position", $testimonialPosition);
           console.log("viewport", $scrollTop + $viewportHeight);
+          console.log("dooodeeedaa");
 
           if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
             $testimonial.addClass('animated slideInRight');
