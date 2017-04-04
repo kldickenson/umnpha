@@ -8,6 +8,7 @@
       var $menu = $('#block-mainmenu');
       var $search_icon = $('#block-searchicon');
       var $email_signup = $('#block-emailsignup');
+      var $search_field = $('#block-googlecse');
 
 
       // Sliding panel
@@ -21,10 +22,14 @@
 
         $menu.on('click', function(e) {
           $(this).find('ul.menu').toggleClass('is-open').addClass('animated' +
-            ' slideindown');
+            ' slideInDown');
           $(this).find('ul.menu > li').toggle();
-          $search_icon.toggle()
-          $email_signup.toggle()
+          $search_icon.toggleClass('is-shown').addClass('animated' +
+            ' slideInDown');
+          $email_signup.toggle().addClass('animated' +
+            ' slideInDown');
+          $search_field.toggle().addClass('animated' +
+            ' slideInDown');
         })
       }
 
@@ -47,8 +52,9 @@
         console.log("element position", elPosition);
         console.log("viewport", scrollTop + viewportHeight);
 
-        if(elPosition <= (scrollTop + viewportHeight + 40)) {
-          $sponsors.addClass('animated slideInLeft');
+        if((elPosition) <= (scrollTop + viewportHeight + 80)) {  //maybe
+          // want to add elPosition + elHeight here?
+          $sponsors.addClass('animated slideInRight');
         }
       })
 
