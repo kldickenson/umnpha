@@ -40,10 +40,14 @@
     display: none;
     margin: 0 0 0 25px;
     position: absolute;
+    right: 25%;
     text-align: center;
     top: 225px;
-    width: 100%;
-    z-index: 99999;
+    z-index: 9999;
+
+    &.is-shown{
+      display: inline-block;
+    }
 
   }
 
@@ -59,7 +63,6 @@
 
 /*Search Form*/
 .block-google-cse {
-  //display: none;
   opacity: 0;
   position: absolute;
   right: 25%;
@@ -75,14 +78,17 @@
   }
 
   @media screen and(max-width: 768px) {
-    right: 35%;
-    top: 230px;
-    width: 30%;
+    display: none;
+    opacity: 1;
+    right: 25%;
+    top: 220px;
+    width: 50%;
+    z-index: 999;
   }
 
   .form-item-query {
     .form-text {
-      background-color: rgba(250, 250, 250, 0.85) !important;
+      background-color: $gainsboro-gray !important;
       background-image: none !important;
       border: 0 none;
       border-radius: 0;
@@ -90,7 +96,6 @@
       font-size: rem(14);
       height: 40px;
       padding: 0 rem(20);
-
     }
 
     &.form-item {

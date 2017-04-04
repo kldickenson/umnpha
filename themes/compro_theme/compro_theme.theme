@@ -13,8 +13,8 @@ function compro_theme_preprocess_html(&$variables) {
   $animateCss = [
     '#tag' => 'link',
     '#attributes' => [
-//      'href' => 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
-      'href' => './css/animate.css/source/animate.css',
+      'href' => 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
+//      'href' => './css/animate.css/source/animate.css',
       'rel' => 'stylesheet',
       'type' => 'text/css'
     ],
@@ -91,11 +91,12 @@ function compro_theme_theme_suggestions_views_view_alter(array &$suggestions, ar
  * Implements hook_preprocess_form().
  */
 function compro_theme_preprocess_form(&$variables) {
-kint($variables);
-  if (isset($variables['element']['#attribute']['class']['google-cse-search
-  -box-form'])){
-  $variables['#attributes']['placeholder'] = t('Enter Keywords');
-  }
+//  kint($variables);
+
+//  if (isset($variables['element']['#children']['class']['js-form-type-textfield']['class']['form-text'])){
+//  $variables['#attributes']['placeholder'] = array ('Enter Keywords');
+//  }
+
 }
 
 /**
