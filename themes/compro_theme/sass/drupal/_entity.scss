@@ -25,7 +25,7 @@
     width:50%;
   }
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     flex-direction: column;
 
     .featured-report-image {
@@ -57,7 +57,11 @@
   padding: 40px 5rem 60px;
   width: 100%;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 1170px) {
+    padding: 40px 2rem 60px;
+  }
+
+  @media screen and(max-width: 940px) {
     padding: 30px 2rem 25px 2rem;
   }
 
@@ -71,7 +75,11 @@
     object-fit: contain;
     width: inherit;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 1070px){
+      width: 100%;
+    }
+
+    @media screen and(max-width: 940px) {
       width: auto;
     }
   }
@@ -87,7 +95,7 @@
   background-color: $gainsboro-gray;
   padding: 70px 3rem;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     padding: 20px;
   }
 
@@ -96,7 +104,7 @@
     display: flex;
     margin: 0 auto;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       flex-direction: column;
     }
 
@@ -107,7 +115,7 @@
     height: auto;
     width: 100%;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       width: 100%;
     }
 
@@ -117,7 +125,7 @@
     flex-grow: 1;
     padding: 70px 60px;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       padding: 28px 25px;
     }
 
@@ -133,7 +141,7 @@
   padding: 0 6rem;
   position: relative;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     padding: 0 20px;
   }
 
@@ -142,7 +150,7 @@
     margin: 115px 3rem 90px 3rem;
     max-width: 40%;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       display: block;
       margin: 26px 0;
       max-width: 100%;
@@ -158,7 +166,7 @@
     position: absolute;
     width: 25%;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       display: block;
       height: auto;
       margin: 0 0;
@@ -222,7 +230,7 @@
   padding: 35px 40px;
   text-align: center;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     margin: 40px 20px;
   }
 
@@ -238,7 +246,7 @@
   max-width: 940px;
   position: relative;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     margin: 0 20px 40px 20px;
   }
 }

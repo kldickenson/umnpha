@@ -17,7 +17,7 @@
     object-fit: cover;
     width: 100%;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       object-fit: cover;
     }
 
@@ -31,7 +31,7 @@
   line-height: rem(50);
   margin: 0 0 30px 0;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     font-size: rem(28px);
     line-height: rem(35px);
     margin: 0 0 20px 0;
@@ -44,7 +44,7 @@
   font-size: rem(18);
   margin: 0 0 49px 0;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     font-size: rem(13);
     margin: 0 0 35px;
   }
@@ -63,7 +63,7 @@
     text-align: center;
     text-transform: uppercase;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       font-size: rem(11);
       margin: 0 0 10px 0;
       padding: rem(11) rem(27.5);
@@ -87,7 +87,7 @@
   display: inline-block;
   width: 45%;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     display: block;
     text-align: center;
     width: 100%;
@@ -99,7 +99,7 @@
     font-weight: 500;
     margin:0 0 30px 0;
 
-    @media screen and(max-width: 768px){
+    @media screen and(max-width: 940px){
       font-weight: rem(14);
       margin: 0 0 25px 0;
     }
@@ -109,7 +109,7 @@
   .component-sponsor {
     width: 85%;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       padding: 0 0 25px 0;
     }
 
@@ -121,7 +121,7 @@
   display: inline-block;
   width: 50%;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     display: block;
     text-align: center;
     width: 100%;
@@ -130,7 +130,7 @@
   div.field__item {
     display: inline-block;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       display: block;
     }
 
@@ -138,7 +138,7 @@
       display: inline-block;
       width: 100%;
 
-      @media screen and(max-width: 768px) {
+      @media screen and(max-width: 940px) {
         display: block;
       }
 
@@ -152,14 +152,12 @@
     font-weight: 500;
     margin-bottom: 30px;
 
-    @media screen and(max-width: 768px){
+    @media screen and(max-width: 940px){
       font-weight: rem(14);
       margin: 0 0 25px 0;
     }
 
   }
-
-
 
   .field--name-field-sponsors-secondary-sponsor {
 
@@ -169,7 +167,11 @@
       padding: 7.5px 30px 7.5px 0;
       width: inherit;
 
-      @media screen and(max-width: 768px) {
+      @media screen and(max-width: 1065px) {
+        margin: 0 30px 0 0;
+      }
+
+      @media screen and(max-width: 940px) {
         border: none;
         margin: 0 0 0 0;
         padding: 0 0 25px 0;
@@ -180,7 +182,7 @@
     .field__item:last-child {
       border: none;
       margin: 0 0;
-      padding: 0 0;
+      padding: 7.5px 0;
     }
 
   }
@@ -208,7 +210,7 @@
     object-fit: cover;
     width: 100%;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       object-fit:contain;
     }
 
@@ -222,7 +224,7 @@
   font-weight: 600;
   margin: 0 0 25px 0;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     font-size: rem(24);
     margin: 0 0 24px 0;
   }
@@ -233,7 +235,7 @@
   font-size: rem(18px);
   margin: 0 0 63px 0;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     font-size: rem(12px);
     margin: 0 0 35px 0;
   }
@@ -255,7 +257,7 @@
       transition: $base-duration $base-timing;
     }
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 940px) {
       font-size: rem(11);
       padding: rem(11) rem(30);
     }
@@ -288,7 +290,7 @@
     content: '\201D';
   }
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     margin: 0 0 26px 0;
     text-align: center;
   }
@@ -311,7 +313,7 @@
     padding: 3px 0 0 0;
   }
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     margin: 0 0 7px 0;
   }
 
@@ -330,7 +332,7 @@
   object-fit: cover;
   position: relative;
 
-  @media screen and(max-width: 768px) {
+  @media screen and(max-width: 940px) {
     bottom: -7px;                             //[2]
   }
 
@@ -411,9 +413,12 @@
 
 /*Infographic*/
 .field--name-field-infographic-image {
+  line-height: 0;
+  position: relative;
   width: 100%;
 
   img {
+    line-height: 0;
     max-width: 100%;
     object-fit: cover;
     width: 100%;
@@ -423,20 +428,56 @@
 
 .share-and-download-wrapper {
   background-color: $arb-blue;
-  bottom: 0;
   color: white;
+  display: inline-block;
+  font-family: "Montserrat Bold";
+  font-size: rem(12);
+  height: 30px;
+  padding: 0 0 0 10px;
   position: absolute;
   right: 0;
+  text-transform: uppercase;
   transform: translateY(-100%);
+  width: 30%;
   z-index: 99;
 
-  @media screen and(max-width: 768px) {
-    transform: translateY(-150%);
+  .share-links {
+    display: inline-block;
+    position: absolute;
+
+    a::before {
+      color: white;
+      margin: 0 12px 0 0;
+    }
+
+    a:hover::before {
+      color: $um-maize;
+    }
+
   }
 
   a {
     color: white;
+
+    &:hover {
+      color: $um-maize;
+    }
+
   }
+
+  .download-button {
+    margin: 0 12px 0 0;
+
+    &::after {
+      content: '\2b07';
+      margin: 0 12px 0 10px;
+    }
+  }
+
+  .share-parent-text {
+    margin: 0 10px 0 0;
+  }
+
 }
 
 .field--name-field-infographic-caption {
