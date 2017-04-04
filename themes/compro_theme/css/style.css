@@ -1137,6 +1137,11 @@ div.warning {
   position: relative;
   width: inherit;
   max-width: none; }
+  @media screen and (max-width: 940px) {
+    .field--name-field-testimonial-image img {
+      bottom: -8px;
+      height: 215px;
+      max-width: 100%; } }
 
 /*Media*/
 .field--name-field-media-media img {

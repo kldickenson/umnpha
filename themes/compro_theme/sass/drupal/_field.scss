@@ -333,6 +333,13 @@
   position: relative;
   width: inherit;
   max-width: none;
+
+  @media screen and(max-width: 940px) {
+    bottom: -8px;
+    height: 215px;
+    max-width: 100%;
+  }
+
 }
 
 
