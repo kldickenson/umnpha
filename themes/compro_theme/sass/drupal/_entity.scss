@@ -73,11 +73,6 @@
   img {
     height: 40px;
     object-fit: contain;
-
-    @media screen and(max-width: 940px) {
-      width: auto;
-    }
-
   }
 
 }
