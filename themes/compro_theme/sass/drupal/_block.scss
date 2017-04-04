@@ -10,12 +10,12 @@
 .block-system-branding-block {
   display: inline-block;
   transform: translateY(15%);
-  width: 42%;
+
 
   @media screen and(max-width: 940px) {
     margin: 0;
+    height: 40px;
     max-height: 40px;
-    width: 80%;
 
   }
 
@@ -303,11 +303,10 @@
 /*Footer Blocks*/
 #block-logoforthefooter {   //this block needs to be re-created, find better selector
   display: inline-block;
-  margin: 0 0 0 35px;
+  margin: 0;
 
   @media screen and(max-width: 940px) {
     margin: 0 0 40px 0;
-    width: 80%;
   }
 
 }
@@ -357,7 +356,11 @@
 
 .block-contact-info.block-social {
   float: right;
-  margin: 0 50px 0 0;
+  margin: 0;
+
+  .social{
+    margin: 0 -30px 0 0;
+  }
 
   a {
     color: transparent;

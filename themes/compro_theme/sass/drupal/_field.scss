@@ -161,11 +161,11 @@
 
   .field--name-field-sponsors-secondary-sponsor {
 
-    .field__item {
+    > .field__item {
       border-right: 1px solid $medium-gray;
       margin: 0 40px 0 0;
       padding: 7.5px 30px 7.5px 0;
-      width: inherit;
+      width: 45%;
 
       @media screen and(max-width: 1065px) {
         margin: 0 30px 0 0;
@@ -326,16 +326,13 @@
   text-transform: uppercase;
 }
 
-.field--name-field-testimonial-image img {    //[1]
+.field--name-field-testimonial-image img {
   bottom: 15%;
   height: 115%;
   object-fit: cover;
   position: relative;
-
-  @media screen and(max-width: 940px) {
-    bottom: -7px;                             //[2]
-  }
-
+  width: inherit;
+  max-width: none;
 }
 
 
@@ -344,7 +341,6 @@
 /*Media*/
 .field--name-field-media-media {
   img {
-    height: 350px;
     object-fit: cover;
     width: 100%;
   }
