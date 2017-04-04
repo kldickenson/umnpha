@@ -348,13 +348,12 @@ div.warning {
 /*Logo Blocks*/
 .block-system-branding-block {
   display: inline-block;
-  transform: translateY(15%);
-  width: 42%; }
+  transform: translateY(15%); }
   @media screen and (max-width: 940px) {
     .block-system-branding-block {
       margin: 0;
-      max-height: 40px;
-      width: 80%; } }
+      height: 40px;
+      max-height: 40px; } }
 
 /*Search Icon*/
 .block-search-icon-block {
@@ -536,11 +535,10 @@ div.warning {
 /*Footer Blocks*/
 #block-logoforthefooter {
   display: inline-block;
-  margin: 0 0 0 35px; }
+  margin: 0; }
   @media screen and (max-width: 940px) {
     #block-logoforthefooter {
-      margin: 0 0 40px 0;
-      width: 80%; } }
+      margin: 0 0 40px 0; } }
 
 .block-address {
   position: relative;
@@ -572,7 +570,9 @@ div.warning {
 
 .block-contact-info.block-social {
   float: right;
-  margin: 0 50px 0 0; }
+  margin: 0; }
+  .block-contact-info.block-social .social {
+    margin: 0 -30px 0 0; }
   .block-contact-info.block-social a {
     color: transparent;
     font-size: 1rem;
@@ -618,19 +618,19 @@ div.warning {
         padding: 25px 20px;
         width: 100%; } }
 
-/*Sponsors
-* [1] This distorts the image (only really affecting primary sponsor), but without the images are small due to limit on height as per comps
+/*
 *
+* Sponsors
 *
 **/
 .section-type-sponsors {
   border-top: 1px solid #969696;
   margin: 0 auto;
-  padding: 40px 5rem 60px;
-  width: 100%; }
+  padding: 40px 0 60px;
+  max-width: 940px; }
   @media screen and (max-width: 1170px) {
     .section-type-sponsors {
-      padding: 40px 2rem 60px; } }
+      padding: 40px 0 60px; } }
   @media screen and (max-width: 940px) {
     .section-type-sponsors {
       padding: 30px 2rem 25px 2rem; } }
@@ -639,11 +639,7 @@ div.warning {
   display: inline-block; }
   .component-sponsor img {
     height: 40px;
-    object-fit: contain;
-    width: inherit; }
-    @media screen and (max-width: 1070px) {
-      .component-sponsor img {
-        width: 100%; } }
+    object-fit: contain; }
     @media screen and (max-width: 940px) {
       .component-sponsor img {
         width: auto; } }
@@ -658,7 +654,8 @@ div.warning {
   .section-type-highlight .highlight-content {
     background-color: #fff;
     display: flex;
-    margin: 0 auto; }
+    margin: 0 auto;
+    max-width: 940px; }
     @media screen and (max-width: 940px) {
       .section-type-highlight .highlight-content {
         flex-direction: column; } }
@@ -678,7 +675,8 @@ div.warning {
 
 /*Testimonial*/
 .section-type-testimonial {
-  padding: 0 6rem;
+  margin: 0 auto;
+  max-width: 940px;
   position: relative; }
   @media screen and (max-width: 940px) {
     .section-type-testimonial {
@@ -696,9 +694,8 @@ div.warning {
   .section-type-testimonial .testimonial-image {
     display: inline-flex;
     height: 100%;
-    margin: 0 10%;
-    position: absolute;
-    width: 25%; }
+    margin: 0 3%;
+    position: absolute; }
     @media screen and (max-width: 940px) {
       .section-type-testimonial .testimonial-image {
         display: block;
@@ -729,6 +726,12 @@ div.warning {
     margin-bottom: 25px; }
   .section-type-longtext p:last-child {
     margin-bottom: 40px; }
+  .section-type-longtext a {
+    color: #0c57aa; }
+    .section-type-longtext a:hover {
+      text-decoration: underline; }
+    .section-type-longtext a:visited {
+      color: #2d2d2d; }
 
 /*Pull Quote*/
 .section-type-pull-quote {
@@ -1014,16 +1017,16 @@ div.warning {
       .field-group-sponsors-secondary .field--name-field-sponsors-secondary-label {
         font-weight: 0.875rem;
         margin: 0 0 25px 0; } }
-  .field-group-sponsors-secondary .field--name-field-sponsors-secondary-sponsor .field__item {
+  .field-group-sponsors-secondary .field--name-field-sponsors-secondary-sponsor > .field__item {
     border-right: 1px solid #969696;
     margin: 0 40px 0 0;
     padding: 7.5px 30px 7.5px 0;
-    width: inherit; }
+    width: 45%; }
     @media screen and (max-width: 1065px) {
-      .field-group-sponsors-secondary .field--name-field-sponsors-secondary-sponsor .field__item {
+      .field-group-sponsors-secondary .field--name-field-sponsors-secondary-sponsor > .field__item {
         margin: 0 30px 0 0; } }
     @media screen and (max-width: 940px) {
-      .field-group-sponsors-secondary .field--name-field-sponsors-secondary-sponsor .field__item {
+      .field-group-sponsors-secondary .field--name-field-sponsors-secondary-sponsor > .field__item {
         border: none;
         margin: 0 0 0 0;
         padding: 0 0 25px 0; } }
@@ -1131,14 +1134,12 @@ div.warning {
   bottom: 15%;
   height: 115%;
   object-fit: cover;
-  position: relative; }
-  @media screen and (max-width: 940px) {
-    .field--name-field-testimonial-image img {
-      bottom: -7px; } }
+  position: relative;
+  width: inherit;
+  max-width: none; }
 
 /*Media*/
 .field--name-field-media-media img {
-  height: 350px;
   object-fit: cover;
   width: 100%; }
 

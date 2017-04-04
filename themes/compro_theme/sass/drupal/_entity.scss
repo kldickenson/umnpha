@@ -46,19 +46,19 @@
 
 
 
-/*Sponsors
-* [1] This distorts the image (only really affecting primary sponsor), but without the images are small due to limit on height as per comps
+/*
 *
+* Sponsors
 *
 **/
 .section-type-sponsors {
   border-top: 1px solid $medium-gray;
   margin: 0 auto;
-  padding: 40px 5rem 60px;
-  width: 100%;
+  padding: 40px 0 60px;
+  max-width: 940px;
 
   @media screen and(max-width: 1170px) {
-    padding: 40px 2rem 60px;
+    padding: 40px 0 60px;
   }
 
   @media screen and(max-width: 940px) {
@@ -73,15 +73,11 @@
   img {
     height: 40px;
     object-fit: contain;
-    width: inherit;
-
-    @media screen and(max-width: 1070px){
-      width: 100%;
-    }
 
     @media screen and(max-width: 940px) {
       width: auto;
     }
+
   }
 
 }
@@ -103,6 +99,7 @@
     background-color: #fff;
     display: flex;
     margin: 0 auto;
+    max-width: 940px;
 
     @media screen and(max-width: 940px) {
       flex-direction: column;
@@ -138,7 +135,8 @@
 
 /*Testimonial*/
 .section-type-testimonial {
-  padding: 0 6rem;
+  margin: 0 auto;
+  max-width: 940px;
   position: relative;
 
   @media screen and(max-width: 940px) {
@@ -162,9 +160,8 @@
   .testimonial-image {
     display: inline-flex;
     height: 100%;
-    margin: 0 10%;
+    margin: 0 3%;
     position: absolute;
-    width: 25%;
 
     @media screen and(max-width: 940px) {
       display: block;
@@ -214,6 +211,19 @@
 
   p:last-child {
     margin-bottom: 40px;
+  }
+
+  a {
+    color: $blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: $mine-shaft;
+    }
+
   }
 
 }
