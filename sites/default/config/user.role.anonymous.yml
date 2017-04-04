@@ -17,3 +17,4 @@ permissions:
   - 'view any component entities'
   - 'view any section_type entities'
   - 'view media'
+  - 'search Google CSE'

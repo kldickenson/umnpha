@@ -17,15 +17,41 @@
       });
 
       //Mobile Menu
-      if($(window).width()<=768) {
+      if($(window).width() <= 788) {
+
         $menu.on('click', function(e) {
-          console.log('click is working woohoo');
-          $(this).find('ul.menu').toggleClass('is-open');
+          $(this).find('ul.menu').toggleClass('is-open').addClass('animated' +
+            ' slideindown');
           $(this).find('ul.menu > li').toggle();
           $search_icon.toggle()
           $email_signup.toggle()
         })
       }
+
+      //Search field
+      if($(window).width() >= 788) {
+        $search_icon.on('click', function(e){
+          $(this).addClass('is-open');
+          $(this).siblings('.block-google-cse').toggleClass('is-open');
+        })
+      }
+
+      //Sponsors Scroll
+      $(window).scroll(function(){
+
+        var scrollTop = $(document).scrollTop();
+        var viewportHeight = $(window).height();
+        var elPosition = $('.section-type-sponsors').position().top;
+        var elHeight = $('.section-type-sponsors').outerHeight();
+        var $sponsors = $('.section-type-sponsors');
+        console.log("element position", elPosition);
+        console.log("viewport", scrollTop + viewportHeight);
+
+        if(elPosition <= (scrollTop + viewportHeight + 40)) {
+          $sponsors.addClass('animated slideInLeft');
+        }
+      })
+
     }
   };
 })(jQuery, Drupal);

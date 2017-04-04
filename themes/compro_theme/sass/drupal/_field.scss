@@ -136,6 +136,7 @@
 
     div {
       display: inline-block;
+      width: 100%;
 
       @media screen and(max-width: 768px) {
         display: block;
@@ -158,9 +159,7 @@
 
   }
 
-  .field--name-field-sponsors-logo {
-    width: 100%;
-  }
+
 
   .field--name-field-sponsors-secondary-sponsor {
 
@@ -168,6 +167,7 @@
       border-right: 1px solid $medium-gray;
       margin: 0 40px 0 0;
       padding: 7.5px 30px 7.5px 0;
+      width: inherit;
 
       @media screen and(max-width: 768px) {
         border: none;

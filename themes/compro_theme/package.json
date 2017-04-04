@@ -12,5 +12,8 @@
   },
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2"
   }
 }
