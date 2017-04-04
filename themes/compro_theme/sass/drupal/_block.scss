@@ -20,8 +20,8 @@
   }
 
   img {
+    height: 40px;
     width: 100%;
-
   }
 
 }
@@ -75,6 +75,7 @@
   &.is-open {
     opacity: 1;
     transform: unset;
+    z-index: 999;
   }
 
   @media screen and(max-width: 768px) {
@@ -83,7 +84,6 @@
     right: 25%;
     top: 220px;
     width: 50%;
-    z-index: 999;
   }
 
   .form-item-query {

@@ -356,6 +356,7 @@ div.warning {
       max-height: 40px;
       width: 80%; } }
   .block-system-branding-block img {
+    height: 40px;
     width: 100%; }
 
 /*Search Icon*/
@@ -392,15 +393,15 @@ div.warning {
   width: 20%; }
   .block-google-cse.is-open {
     opacity: 1;
-    transform: unset; }
+    transform: unset;
+    z-index: 999; }
   @media screen and (max-width: 768px) {
     .block-google-cse {
       display: none;
       opacity: 1;
       right: 25%;
       top: 220px;
-      width: 50%;
-      z-index: 999; } }
+      width: 50%; } }
   .block-google-cse .form-item-query .form-text {
     background-color: #dcdcdc !important;
     background-image: none !important;
@@ -855,8 +856,9 @@ div.warning {
       transition: 250ms ease-in-out; }
 
 .region-header {
-  padding: 40px 3rem;
-  background-color: #fff; }
+  background-color: #fff;
+  height: 126px;
+  padding: 40px 3rem; }
   @media screen and (max-width: 768px) {
     .region-header {
       height: 70px;
@@ -1157,7 +1159,9 @@ div.warning {
     width: 100%; }
 
 .share-and-download-wrapper {
+  background-color: #0f6cb6;
   bottom: 0;
+  color: white;
   position: absolute;
   right: 0;
   transform: translateY(-100%);
@@ -1165,6 +1169,8 @@ div.warning {
   @media screen and (max-width: 768px) {
     .share-and-download-wrapper {
       transform: translateY(-150%); } }
+  .share-and-download-wrapper a {
+    color: white; }
 
 .field--name-field-infographic-caption {
   font-family: 'Lora';

@@ -5,10 +5,12 @@
   Drupal.behaviors.comproTheme = {
     attach: function (context, settings) {
 
+
       var $menu = $('#block-mainmenu');
       var $search_icon = $('#block-searchicon');
       var $email_signup = $('#block-emailsignup');
       var $search_field = $('#block-googlecse');
+      var $page
 
 
       // Sliding panel
@@ -16,6 +18,7 @@
         $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
         e.preventDefault();
       });
+
 
       //Mobile Menu
       if($(window).width() <= 788) {
@@ -33,6 +36,7 @@
         })
       }
 
+
       //Search field
       if($(window).width() >= 788) {
         $search_icon.on('click', function(e){
@@ -41,22 +45,51 @@
         })
       }
 
-      //Sponsors Scroll
+
+      //Scroll Triggered Slide-Ins
       $(window).scroll(function(){
 
-        var scrollTop = $(document).scrollTop();
-        var viewportHeight = $(window).height();
-        var elPosition = $('.section-type-sponsors').position().top;
-        var elHeight = $('.section-type-sponsors').outerHeight();
-        var $sponsors = $('.section-type-sponsors');
-        console.log("element position", elPosition);
-        console.log("viewport", scrollTop + viewportHeight);
+        var $scrollTop = $(document).scrollTop();
+        var $viewportHeight = $(window).height();
 
-        if((elPosition) <= (scrollTop + viewportHeight + 80)) {  //maybe
-          // want to add elPosition + elHeight here?
+        var $sponsors = $('.section-type-sponsors');
+        var $sponsorPosition = $sponsors.position().top;
+        var $sponsorHeight = $sponsors.outerHeight();
+
+        console.log("sponsor position", $sponsorPosition);
+        console.log("viewport", $scrollTop + $viewportHeight);
+
+        if(($sponsorPosition) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.addClass('animated slideInRight');
-        }
-      })
+        };
+      });
+
+      if ($(document).hasClass('section-type-testimonial')){
+        $(window).scroll(function() {
+          var $scrollTop = $(document).scrollTop();
+          var $viewportHeight = $(window).height();
+
+          var $testimonial = $('.section-type-testimonial');
+          var $testimonialPosition = $testimonial.position().top;
+          var $testimonialHeight = $testimonial.outerHeight();
+
+          console.log("testimonial position", $testimonialPosition);
+          console.log("viewport", $scrollTop + $viewportHeight);
+
+          if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
+            $testimonial.addClass('animated slideInRight');
+          };
+        });
+      };
+
+
+
+      //About Page Title
+      var $page = $('.node--type-page');
+
+      if ($(document).hasClass('node--type-page')) {
+        $page.find('.field-group-page-hero > .field--name-field-title').addClass('animated fadeIn')
+      };
 
     }
   };
