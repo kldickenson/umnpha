@@ -283,6 +283,7 @@ function compro_custom_download_and_share_content($entity) {
     'download' => $download,
     'share_text' => array('#markup' => $share_text),
     'share' => array(
+      '#type' => 'container',
       '#attributes' => array('class' => array('social', 'share-links')),
       'twitter' => array(
         '#markup' => $twitter_link->toString(),

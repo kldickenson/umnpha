@@ -422,7 +422,9 @@
 }
 
 .share-and-download-wrapper {
+  background-color: $arb-blue;
   bottom: 0;
+  color: white;
   position: absolute;
   right: 0;
   transform: translateY(-100%);
@@ -431,9 +433,17 @@
   @media screen and(max-width: 768px) {
     transform: translateY(-150%);
   }
+
+  a {
+    color: white;
+  }
 }
 
 .field--name-field-infographic-caption {
   font-family: 'Lora';
   font-size: rem(12);
 }
+
+
+
+
