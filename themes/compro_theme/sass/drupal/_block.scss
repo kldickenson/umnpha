@@ -42,32 +42,7 @@
 
 /*Search Icon*/
 .block-search-icon-block {
-
   display: none;
-  float: right;
-  margin: 0 40px 0 0;
-  transform: translateY(50%);
-
-  @media screen and(max-width: 940px) {
-    //color: $um-blue;
-    display: none;
-    //position: absolute;
-    //right: 28%;
-    //text-align: center;
-    //top: 135px;
-    //z-index: 999;
-  }
-
-  span {
-    content: '\1f50d';
-    font-family: "fontello";
-    font-size: rem(16);
-  }
-
-  //&.is-open {
-  //  display: inline-block;
-  //}
-
 }
 
 
@@ -76,70 +51,7 @@
 
 /*Search Form*/
 .block-google-cse {
-  opacity: 0;
-  position: absolute;
-  right: 25%;
-  top: 126px;
-  transform: translateY(-100%);
-  transition: 100ms linear 500ms;
-  width: 20%;
-
-
-  &.is-open {
-    display: inline-block;
-    opacity: 1;
-    transform: unset;
-    z-index: 99;
-  }
-
-  @media screen and(max-width: 940px) {
-    display: none;
-    opacity: 1;
-    right: 25%;
-    top: 140px;
-    width: 50%;
-
-    &::after {
-      color: $um-blue;
-      content: '\1f50d';
-      font-family: 'fontello';
-      font-size: rem(16);
-      position: relative;
-      right: -80%;
-      top: -45px;
-    }
-  }
-
-  .form-item-query {
-    .form-text {
-      background-color: $gainsboro-gray !important;
-      background-image: none !important;
-      border: 0 none;
-      border-radius: 0;
-      color: $dark-gray;
-      font-size: rem(14);
-      height: 40px;
-      padding: 0 rem(20);
-    }
-
-    &.form-item {
-      margin: 0 0;
-    }
-
-    label {
-      display: none;
-    }
-
-  }
-
-  .form-submit {
-    display: none;
-  }
-
-  #google-cse-results {
   display: none;
-}
-
 }
 
 
@@ -338,7 +250,7 @@
 
 
 /*Footer Blocks*/
-#block-logoforthefooter {   //this block needs to be re-created, find better selector
+#block-logoforthefooter {
   display: inline-block;
   margin: 0;
 

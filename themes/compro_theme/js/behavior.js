@@ -20,7 +20,6 @@
       var $search_icon = $('#block-searchicon');
 
 
-
       // Sliding panel
       $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
         $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
@@ -37,15 +36,6 @@
             ' slideInDown');
           $header.find('.menu >' +
             ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block,.hamburger').toggleClass('is-open');
-        })
-      }
-
-
-      //Search field
-      if($(window).width() >= 788) {
-        $search_icon.on('click', function(e){
-          $(this).addClass('is-open');
-          $(this).siblings('.block-google-cse').toggleClass('is-open');
         })
       }
 
