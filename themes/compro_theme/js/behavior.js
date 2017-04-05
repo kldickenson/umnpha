@@ -13,13 +13,12 @@
         }
       });
 
-      var $menu = $('#block-mainmenu');
+
+      var $body = $('body');
       var $header = $('.region-header > .inner')
       var $hamburger = $('.hamburger');
       var $search_icon = $('#block-searchicon');
-      var $email_signup = $('#block-emailsignup');
-      var $search_field = $('#block-googlecse');
-      var $body = $('body');
+
 
 
       // Sliding panel
@@ -37,10 +36,7 @@
           $header.toggleClass('is-open').addClass('animated' +
             ' slideInDown');
           $header.find('.menu >' +
-            ' li,.menu--menu-main-menu,#block-searchicon,#block-emailsignup,#block-googlecse,.block-system-branding-block,.hamburger').toggleClass('is-open');
-          // $search_icon.toggleClass('is-shown');
-          // $email_signup.toggle();
-          // $search_field.toggle().addClass('is-open');
+            ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block,.hamburger').toggleClass('is-open');
         })
       }
 
@@ -55,7 +51,7 @@
 
 
       //Scroll Triggered Slide-Ins
-      $(window).scroll(function(){
+      $(window).scroll(function() {
 
         var $scrollTop = $(document).scrollTop();
         var $viewportHeight = $(window).height();
@@ -63,9 +59,6 @@
         var $sponsors = $('.section-type-sponsors');
         var $sponsorPosition = $sponsors.position().top;
         var $sponsorHeight = $sponsors.outerHeight();
-
-        console.log("sponsor position", $sponsorPosition);
-        console.log("viewport", $scrollTop + $viewportHeight);
 
         if(($sponsorPosition) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.addClass('animated slideInRight');
@@ -80,9 +73,6 @@
           var $testimonial = $('.section-type-testimonial');
           var $testimonialPosition = $testimonial.position().top;
           var $testimonialHeight = $testimonial.outerHeight();
-
-          console.log("testimonial position", $testimonialPosition);
-          console.log("viewport", $scrollTop + $viewportHeight);
 
           if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
             $testimonial.addClass('animated slideInRight');
