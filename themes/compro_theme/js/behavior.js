@@ -88,6 +88,7 @@
         // Header fix.
         if (position > 0) {
           $('.region-header').addClass('header-fixed animated slideInDown');
+          $('.layout-content').css('padding-top', '70px');
         }
 
       });

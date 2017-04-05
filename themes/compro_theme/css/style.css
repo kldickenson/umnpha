@@ -863,6 +863,9 @@ div.warning {
     position: fixed;
     width: 100%;
     z-index: 9999; }
+    @media screen and (max-width: 940px) {
+      .region-header.header-fixed {
+        width: 100vw; } }
 
 .region-footer {
   padding: 60px 3rem 35px 3rem;
