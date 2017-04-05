@@ -14,10 +14,12 @@
       });
 
       var $menu = $('#block-mainmenu');
+      var $header = $('.region-header > .inner')
+      var $hamburger = $('.hamburger');
       var $search_icon = $('#block-searchicon');
       var $email_signup = $('#block-emailsignup');
       var $search_field = $('#block-googlecse');
-      var $page
+      var $body = $('body');
 
 
       // Sliding panel
@@ -28,15 +30,17 @@
 
 
       //Mobile Menu
-      if($(window).width() <= 788) {
+      if($(window).width() <= 950) {
 
-        $menu.on('click', function(e) {
-          $(this).find('ul.menu').toggleClass('is-open').addClass('animated' +
+        $hamburger.on('click', function(e) {
+          console.log('click working');
+          $header.toggleClass('is-open').addClass('animated' +
             ' slideInDown');
-          $(this).find('ul.menu > li').toggle();
-          $search_icon.toggleClass('is-shown');
-          $email_signup.toggle();
-          $search_field.toggle().addClass('is-open');
+          $header.find('.menu >' +
+            ' li,.menu--menu-main-menu,#block-searchicon,#block-emailsignup,#block-googlecse,.block-system-branding-block,.hamburger').toggleClass('is-open');
+          // $search_icon.toggleClass('is-shown');
+          // $email_signup.toggle();
+          // $search_field.toggle().addClass('is-open');
         })
       }
 
@@ -68,7 +72,7 @@
         };
       });
 
-      if ($(document).hasClass('section-type-testimonial')){
+      if ($('.section-type-testimonial')[0]){
         $(window).scroll(function() {
           var $scrollTop = $(document).scrollTop();
           var $viewportHeight = $(window).height();
@@ -79,7 +83,6 @@
 
           console.log("testimonial position", $testimonialPosition);
           console.log("viewport", $scrollTop + $viewportHeight);
-          console.log("dooodeeedaa");
 
           if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
             $testimonial.addClass('animated slideInRight');
@@ -90,11 +93,11 @@
 
 
       //About Page Title
-      var $page = $('.node--type-page');
-
-      if ($(document).hasClass('node--type-page')) {
-        $page.find('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn')
+      if ($body.hasClass('node--type-page')) {
+        $('.field-group-page-hero .field--name-field-title').addClass('animated fadeInDown')
       };
+
+      //Sticky Nav
 
     }
   };
