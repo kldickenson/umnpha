@@ -1,8 +1,15 @@
 /*
 *   #BLOCKS
+*   1) Logo block
+*   2) Search Icon
+*   3) Search Form
+*   4) Email Sign-up Button
+*   5) Main Menu & Hamburger Button
+*   6) Footer Menu
+*   7) Footer Blocks (Address & Mobile Social Icons)
+*   8) Post-Footer Blocks (Copyright & Desktop Social Icons)
+*
 **/
-
-
 
 
 
@@ -16,108 +23,39 @@
     margin: 0;
     height: 40px;
     max-height: 40px;
-    max-width: 90%;
+    max-width: 87%;
 
   }
 
-  img {
-    //height: 40px;
-    //width: 100%;
+  &.is-open {
+    left: 20px;
+    max-width: 83%;
+    position: relative;
+    top: -55px;
   }
 
 }
+
+
+
 
 
 /*Search Icon*/
 .block-search-icon-block {
-
-  display: inline-block;
-  float: right;
-  margin: 0 40px 0 0;
-  transform: translateY(50%);
-
-  @media screen and(max-width: 1150px) {
-    margin: 0 30px 0 0;
-  }
-
-  @media screen and(max-width: 940px) {
-    color: $um-blue;
-    display: none;
-    margin: 0 0 0 25px;
-    position: absolute;
-    right: 25%;
-    text-align: center;
-    top: 215px;
-    z-index: 9999;
-
-    &.is-shown{
-      display: inline-block;
-    }
-
-  }
-
-  span {
-    content: '\1f50d';
-    font-family: "fontello";
-    font-size: rem(16);
-  }
-
+  display: none;
 }
+
+
 
 
 
 /*Search Form*/
 .block-google-cse {
-  opacity: 0;
-  position: absolute;
-  right: 25%;
-  top: 126px;
-  transform: translateY(-100%);
-  transition: 100ms linear 500ms;
-  width: 20%;
-
-
-  &.is-open {
-    opacity: 1;
-    transform: unset;
-    z-index: 999;
-  }
-
-  @media screen and(max-width: 940px) {
-    display: none;
-    opacity: 1;
-    right: 25%;
-    top: 220px;
-    width: 50%;
-  }
-
-  .form-item-query {
-    .form-text {
-      background-color: $gainsboro-gray !important;
-      background-image: none !important;
-      border: 0 none;
-      border-radius: 0;
-      color: $dark-gray;
-      font-size: rem(14);
-      height: 40px;
-      padding: 0 rem(20);
-    }
-
-    &.form-item {
-      margin: 0 0;
-    }
-
-    label {
-      display: none;
-    }
-
-  }
-
-  .form-submit {
-    display: none;
-  }
-
+  display: none;
 }
+
+
+
 
 
 /*Email Sign Up*/
@@ -127,16 +65,11 @@
   text-transform: uppercase;
   transform: translateY(50%);
 
-  @media screen and(max-width: 1060px) {
-    margin: 0;
-  }
-
   @media screen and(max-width: 940px) {
     display: none;
-    margin: 0 0 0 -56px;
-    position: absolute;
+    position: relative;
     text-align: center;
-    top: 315px;
+    top: 150px;
     width: 100%;
     z-index: 9999;
   }
@@ -159,6 +92,10 @@
 
   }
 
+  &.is-open {
+    display: inline-block;
+  }
+
 }
 
 
@@ -174,9 +111,8 @@
   @media screen and(max-width: 940px) {
     left: 0;
     position: absolute;
-    transform: translateY(-25%);
+    transform: unset;
     width: 100%;
-    z-index: 999;
   }
 
 
@@ -192,16 +128,6 @@
         color: $blue;
       }
 
-      @media screen and(max-width: 1150px) {
-        margin: 0 20px 0 0;
-      }
-
-      @media screen and(max-width: 940px) {
-        display: none;
-        margin: 0 0 30px 0;
-        text-align: center;
-      }
-
       a {
         color: $um-blue;
         text-transform: uppercase;
@@ -212,22 +138,39 @@
 
       }
 
-    }
+      @media screen and(max-width: 1150px) {
+        margin: 0 20px 0 0;
+      }
 
-    &.is-open {
-      background-color: rgba(250,250,250,.8);
-      height: 300px;
-      position: absolute;
-      top: 55px;
-      transition: $base-duration;
-      width: 100%;
+      @media screen and(max-width: 940px) {
+        display: none;
+        margin: 0 0 30px 0;
+        text-align: center;
+      }
 
-      &::before {
-        content: '\2715';
-        top: -55px;
+      &.is-open {
+        display: inline-block;
+        width: 100%;
       }
 
     }
+
+  }
+
+}
+
+.region-header .hamburger {
+  background-color: unset;
+  margin: 0 0 0 3%;
+  padding: 0;
+  position: absolute;
+  right: 5%;
+
+  &:focus {
+    outline: none;
+  }
+
+  .hamburger-inner {
 
     &::before {
       color: $um-blue;
@@ -237,10 +180,17 @@
 
       @media screen and(max-width: 940px) {
         display: inline-block;
-        position: absolute;
-        right: 5%;
       }
 
+    }
+
+  }
+
+  &.is-open {
+    top: -55px;
+
+    &::before {
+      content: '\2715';
     }
 
   }
@@ -295,8 +245,10 @@
 
 
 
+
+
 /*Footer Blocks*/
-#block-logoforthefooter {   //this block needs to be re-created, find better selector
+#block-logoforthefooter {
   display: inline-block;
   margin: 0;
 
@@ -336,6 +288,9 @@
   }
 
 }
+
+
+
 
 
 /*Post Footer*/

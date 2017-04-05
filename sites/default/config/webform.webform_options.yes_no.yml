@@ -9,5 +9,4 @@ _core:
   default_config_hash: KAEJv6Gks8rU-P0XcmUfjRuk-92T32qbkBCn1LQgKr8
 id: yes_no
 label: Yes/No
-category: General
 options: "Yes: Yes\nNo: No\n"

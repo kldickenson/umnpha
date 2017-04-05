@@ -13,11 +13,11 @@
         }
       });
 
-      var $menu = $('#block-mainmenu');
+
+      var $body = $('body');
+      var $header = $('.region-header > .inner')
+      var $hamburger = $('.hamburger');
       var $search_icon = $('#block-searchicon');
-      var $email_signup = $('#block-emailsignup');
-      var $search_field = $('#block-googlecse');
-      var $page
 
 
       // Sliding panel
@@ -28,47 +28,34 @@
 
 
       //Mobile Menu
-      if($(window).width() <= 788) {
+      if($(window).width() <= 950) {
 
-        $menu.on('click', function(e) {
-          $(this).find('ul.menu').toggleClass('is-open').addClass('animated' +
+        $hamburger.on('click', function(e) {
+          console.log('click working');
+          $header.toggleClass('is-open').addClass('animated' +
             ' slideInDown');
-          $(this).find('ul.menu > li').toggle();
-          $search_icon.toggleClass('is-shown');
-          $email_signup.toggle();
-          $search_field.toggle().addClass('is-open');
-        })
-      }
-
-
-      //Search field
-      if($(window).width() >= 788) {
-        $search_icon.on('click', function(e){
-          $(this).addClass('is-open');
-          $(this).siblings('.block-google-cse').toggleClass('is-open');
+          $header.find('.menu >' +
+            ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block,.hamburger').toggleClass('is-open');
         })
       }
 
 
       //Scroll Triggered Slide-Ins
-      $(window).scroll(function(){
+      $(window).scroll(function() {
 
         var $scrollTop = $(document).scrollTop();
         var $viewportHeight = $(window).height();
-
         var $sponsors = $('.section-type-sponsors');
         var $sponsorPosition = $sponsors.position().top;
         var $sponsorHeight = $sponsors.outerHeight();
 
-        console.log("sponsor position", $sponsorPosition);
-        console.log("viewport", $scrollTop + $viewportHeight);
-
+        //Animate when section-type enters viewport
         if(($sponsorPosition) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.addClass('animated slideInRight');
         };
       });
 
-      if ($(document).hasClass('section-type-testimonial')){
+      if ($('.section-type-testimonial')[0]){
         $(window).scroll(function() {
           var $scrollTop = $(document).scrollTop();
           var $viewportHeight = $(window).height();
@@ -77,10 +64,7 @@
           var $testimonialPosition = $testimonial.position().top;
           var $testimonialHeight = $testimonial.outerHeight();
 
-          console.log("testimonial position", $testimonialPosition);
-          console.log("viewport", $scrollTop + $viewportHeight);
-          console.log("dooodeeedaa");
-
+          //Animate when section-type enters viewport
           if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
             $testimonial.addClass('animated slideInRight');
           };
@@ -90,12 +74,23 @@
 
 
       //About Page Title
-      var $page = $('.node--type-page');
-
-      if ($(document).hasClass('node--type-page')) {
-        $page.find('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn')
+      if ($body.hasClass('node--type-page')) {
+        $('.field-group-page-hero .field--name-field-title').addClass('animated fadeInDown')
       };
 
+
+      //Sticky Nav
+
+      $(window).scroll(function() {
+        var position = $(window).scrollTop();
+
+        console.log(position)
+        // Header fix.
+        if (position > 0) {
+          $('.region-header').addClass('header-fixed animated slideInDown');
+        }
+
+      });
     }
   };
 })(jQuery, Drupal);

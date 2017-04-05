@@ -9,5 +9,4 @@ _core:
   default_config_hash: Onwyr2kH5zCeHvMfSSPDJIKUKrvX7x7tAr-7Uv_-k-c
 id: titles
 label: Titles
-category: Demographic
 options: "Miss: Miss\nMs: Ms\nMr: Mr\nMrs: Mrs\nDr: Dr\n"
