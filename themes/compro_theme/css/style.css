@@ -421,11 +421,9 @@ div.warning {
 .block-email-sign-up {
   display: inline-block;
   float: right;
+  margin: 0 -30px 0 0;
   text-transform: uppercase;
   transform: translateY(50%); }
-  @media screen and (max-width: 1150px) {
-    .block-email-sign-up {
-      margin: 0 -30px 0 0; } }
   @media screen and (max-width: 1060px) {
     .block-email-sign-up {
       margin: 0; } }
@@ -441,8 +439,8 @@ div.warning {
   .block-email-sign-up a {
     background-color: #0f6cb6;
     color: white;
-    font-size: 0.9375rem;
-    padding: 0.9375rem 1.875rem; }
+    font-size: 0.875rem;
+    padding: 0.875rem 1.75rem; }
     .block-email-sign-up a:hover {
       transition: 250ms ease-in-out;
       background-color: #429FE9; }
@@ -467,7 +465,7 @@ div.warning {
     margin: 0; }
     .menu--menu-main-menu.block-menu .menu li {
       display: inline;
-      font-size: 15px;
+      font-size: 0.8125rem;
       margin: 0 30px 0 0; }
       .menu--menu-main-menu.block-menu .menu li.menu-item--active-trail {
         color: #0c57aa; }
@@ -691,13 +689,11 @@ div.warning {
   .section-type-testimonial .testimonial-image {
     display: inline-flex;
     height: 100%;
-    margin: 0 3%;
     position: absolute; }
     @media screen and (max-width: 940px) {
       .section-type-testimonial .testimonial-image {
         display: block;
         height: auto;
-        margin: 0 0;
         position: relative;
         width: 100%;
         text-align: center; } }
@@ -840,6 +836,7 @@ div.warning {
       max-width: 100%; } }
   .node--type-webform .field--name-field-form-webform .form-item label {
     color: #2d2d2d;
+    font-family: "Montserrat";
     font-size: 11px;
     margin: 0 0 12px 0;
     text-transform: uppercase; }
@@ -857,6 +854,9 @@ div.warning {
     color: #5f5f5f;
     height: 40px;
     padding: 15px 20px; }
+    .node--type-webform .field--name-field-form-webform .form-item input::-webkit-input-placeholder, .node--type-webform .field--name-field-form-webform .form-item input::-moz-placeholder, .node--type-webform .field--name-field-form-webform .form-item input:-ms-input-placeholder, .node--type-webform .field--name-field-form-webform .form-item input:-moz-placeholder {
+      font-family: "Lora Italic";
+      font-size: 15px; }
 .node--type-webform .field--name-field-form-webform .form-actions {
   margin: 0; }
   .node--type-webform .field--name-field-form-webform .form-actions input {
@@ -877,19 +877,14 @@ div.warning {
 .region-header {
   background-color: #fff;
   height: 126px;
-  padding: 40px 3rem; }
-  @media screen and (max-width: 1060px) {
-    .region-header {
-      padding: 40px 1.5rem; } }
+  padding: 40px 0; }
   @media screen and (max-width: 940px) {
     .region-header {
       height: 70px;
       padding: 15px 20px; } }
   .region-header .inner {
-    padding: 0 2rem; }
-    @media screen and (max-width: 1060px) {
-      .region-header .inner {
-        padding: 0 1rem; } }
+    margin: 0 auto;
+    max-width: 940px; }
 
 .region-footer {
   padding: 60px 3rem 35px 3rem;

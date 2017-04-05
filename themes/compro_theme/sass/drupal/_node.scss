@@ -60,12 +60,6 @@
 
 
 
-
-
-
-
-
-
 /*Webform*/
 .node--type-webform {
 
@@ -145,6 +139,7 @@
 
       label {
         color: $mine-shaft;
+        font-family: "Montserrat";
         font-size: 11px;
         margin: 0 0 12px 0;
         text-transform: uppercase;
@@ -160,14 +155,21 @@
       }
 
       input {
-        background-color: #dcdcdc;
-
+        background-color: $gainsboro-gray;
         border-radius: unset;
         border-stye: none;
         border-width: 0px;
         color: $dark-gray;
         height: 40px;
         padding: 15px 20px;
+
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &:-ms-input-placeholder,
+        &:-moz-placeholder {
+          font-family: "Lora Italic";
+          font-size: 15px;
+        }
       }
 
     }
