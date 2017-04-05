@@ -35,7 +35,10 @@ function compro_theme_page_attachments_alter(array &$page) {
  * Implements hook_preprocess_page().
  */
 function compro_theme_preprocess_page(&$variables) {
-
+  // The 404 page.
+  if ($variables['node']->get('nid')->value != 3) {
+    unset($variables['page']['content']['404menu']);
+  }
 }
 
 /**

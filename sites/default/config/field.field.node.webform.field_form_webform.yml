@@ -23,5 +23,7 @@ settings:
     target_bundles: null
     auto_create: false
   default_data: ''
-  status: true
+  status: open
+  open: ''
+  close: ''
 field_type: webform

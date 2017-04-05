@@ -21,9 +21,4 @@ settings:
   label_display: visible
   level: 1
   depth: 0
-visibility:
-  request_path:
-    id: request_path
-    pages: /node/3
-    negate: false
-    context_mapping: {  }
+visibility: {  }
