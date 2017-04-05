@@ -121,7 +121,7 @@
 
     li {
       display: inline;
-      font-size: rem(13);
+      font-size: rem(15);
       margin: 0 30px 0 0;
 
       &.menu-item--active-trail {
@@ -160,7 +160,6 @@
 }
 
 .region-header .hamburger {
-
   background-color: unset;
   margin: 0 0 0 3%;
   padding: 0;
@@ -188,7 +187,6 @@
   }
 
   &.is-open {
-
     top: -55px;
 
     &::before {
