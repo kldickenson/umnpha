@@ -14,6 +14,7 @@ use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\Xss;
 use Drupal\node\Entity\NodeType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Helper function to get options (all or available).
@@ -225,6 +226,18 @@ function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $
   ) {
     $form['title']['#access'] = FALSE;
     $form['#validate'][] = 'compro_custom_title_update';
+  }
+  if ($form_id == 'google_cse_search_box_form') {
+    $form['query']['#attributes']['placeholder'] = t('Enter your keywords');
+    $form['#action'] = 'search/cse';
+  }
+  if ($form_id == 'search_form') {
+    if (!$form['basic']['keys']['#default_value']) {
+      $response = new RedirectResponse(Url::fromUserInput('/search/cse',
+        array('query' => array('keys' => $_GET['query'])))->toString());
+      $response->send();
+      return;
+    }
   }
 }
 

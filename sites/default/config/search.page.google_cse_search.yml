@@ -10,7 +10,7 @@ path: cse
 weight: -10
 plugin: google_cse_search
 configuration:
-  cx: ''
+  cx: '014046924157104487988:rxwgdy1igem'
   results_tab: ''
   results_width: '600'
   cof_here: 'FORID:11'
@@ -19,9 +19,9 @@ configuration:
   results_suffix: ''
   results_searchbox_width: '40'
   results_display: here
-  results_display_images: 1
+  results_display_images: 0
   no_results_message: 'Sorry! there were no results matching your query.'
-  sitesearch: ihpi.umich.edu
+  sitesearch: ''
   sitesearch_form: radios
   sitesearch_option: ''
   sitesearch_default: 0
