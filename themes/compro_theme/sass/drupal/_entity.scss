@@ -155,13 +155,11 @@
   .testimonial-image {
     display: inline-flex;
     height: 100%;
-    margin: 0 3%;
     position: absolute;
 
     @media screen and(max-width: 940px) {
       display: block;
       height: auto;
-      margin: 0 0;
       position: relative;
       width: 100%;
       text-align: center;

@@ -86,7 +86,7 @@
       var $page = $('.node--type-page');
 
       if ($(document).hasClass('node--type-page')) {
-        $page.find('.field-group-page-hero > .field--name-field-title').addClass('animated fadeIn')
+        $page.find('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn')
       };
 
     }
