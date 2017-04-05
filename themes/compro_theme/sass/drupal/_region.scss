@@ -37,6 +37,17 @@
 
 }
 
+.region-footer,
+.region-post-footer {
+
+  .inner {
+    margin: 0 auto;
+    max-width: 1340px;
+    padding: 0 20px;
+  }
+
+}
+
 .region-footer{
   padding: 60px 3rem 35px 3rem;
   background-color: $footer-background;
