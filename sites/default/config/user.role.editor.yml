@@ -26,3 +26,6 @@ permissions:
   - 'edit own page content'
   - 'access media overview'
   - 'administer media'
+  - 'administer menu'
+  - 'administer taxonomy'
+  - 'access toolbar'

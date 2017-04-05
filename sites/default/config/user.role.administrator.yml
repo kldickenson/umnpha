@@ -11,3 +11,6 @@ is_admin: false
 permissions:
   - 'access media overview'
   - 'administer media'
+  - 'administer menu'
+  - 'administer taxonomy'
+  - 'access toolbar'
