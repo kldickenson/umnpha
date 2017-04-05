@@ -1,9 +1,12 @@
+uuid: 0e7a77e4-d5d6-4fca-813e-c4a2ae500ae6
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
+_core:
+  default_config_hash: BT_3UBELAN3eqTLJI7j_j75V3Q4wwpBbGejRMLn6yks
 open: null
 close: null
 uid: null
@@ -132,6 +135,3 @@ handlers:
       debug: false
       reply_to: ''
       return_path: ''
-uuid: 0e7a77e4-d5d6-4fca-813e-c4a2ae500ae6
-_core:
-  default_config_hash: BT_3UBELAN3eqTLJI7j_j75V3Q4wwpBbGejRMLn6yks

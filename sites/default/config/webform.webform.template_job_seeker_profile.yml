@@ -1,9 +1,12 @@
+uuid: 38698588-29f3-4e7f-8459-d6d91a23723b
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
+_core:
+  default_config_hash: kNjwbAmXmqgBEizPZK8dOXJBYhIj1xbs_yv1danhaXs
 open: null
 close: null
 uid: null
@@ -132,6 +135,3 @@ handlers:
       debug: false
       reply_to: ''
       return_path: ''
-uuid: 38698588-29f3-4e7f-8459-d6d91a23723b
-_core:
-  default_config_hash: kNjwbAmXmqgBEizPZK8dOXJBYhIj1xbs_yv1danhaXs
