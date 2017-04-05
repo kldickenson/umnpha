@@ -220,6 +220,7 @@
   font-size: rem(22);
   font-weight: 600;
   margin: 0 0 25px 0;
+  max-width: 185px;
 
   @media screen and(max-width: 940px) {
     font-size: rem(24);
@@ -484,7 +485,3 @@
   font-family: 'Lora';
   font-size: rem(12);
 }
-
-
-
-
