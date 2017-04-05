@@ -865,6 +865,8 @@ div.warning {
     border-stye: none;
     border-width: 0px;
     color: #5f5f5f;
+    font-size: 15px;
+    font-style: italic;
     height: 40px;
     padding: 15px 20px; }
     .node--type-webform .field--name-field-form-webform .form-item input::-webkit-input-placeholder, .node--type-webform .field--name-field-form-webform .form-item input::-moz-placeholder, .node--type-webform .field--name-field-form-webform .form-item input:-ms-input-placeholder, .node--type-webform .field--name-field-form-webform .form-item input:-moz-placeholder {
