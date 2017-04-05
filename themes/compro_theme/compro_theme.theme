@@ -36,7 +36,7 @@ function compro_theme_page_attachments_alter(array &$page) {
  */
 function compro_theme_preprocess_page(&$variables) {
   // The 404 page.
-  if ($variables['node']->get('nid')->value != 3) {
+  if (!isset($variables['node']) || $variables['node']->get('nid')->value != 3) {
     unset($variables['page']['content']['404menu']);
   }
 }
