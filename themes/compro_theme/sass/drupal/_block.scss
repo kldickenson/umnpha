@@ -16,6 +16,7 @@
     margin: 0;
     height: 40px;
     max-height: 40px;
+    max-width: 90%;
 
   }
 
@@ -123,12 +124,9 @@
 .block-email-sign-up {
   display: inline-block;
   float: right;
+  margin: 0 -30px 0 0;
   text-transform: uppercase;
   transform: translateY(50%);
-
-  @media screen and(max-width: 1150px) {
-    margin: 0 -30px 0 0;
-  }
 
   @media screen and(max-width: 1060px) {
     margin: 0;
@@ -147,8 +145,8 @@
   a {
     background-color: $arb-blue;
     color: white;
-    font-size: rem(15);
-    padding: rem(15) rem(30);
+    font-size: rem(14);
+    padding: rem(14) rem(28);
 
     &:hover {
       transition: $base-duration $base-timing;
@@ -188,7 +186,7 @@
 
     li {
       display: inline;
-      font-size: 15px;
+      font-size: rem(13);
       margin: 0 30px 0 0;
 
       &.menu-item--active-trail {
@@ -241,9 +239,7 @@
       @media screen and(max-width: 940px) {
         display: inline-block;
         position: absolute;
-        right: 15%;
-        z-index: 99999;
-
+        right: 5%;
       }
 
     }

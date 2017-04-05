@@ -1,11 +1,8 @@
 .region-header {
   background-color: #fff;
   height: 126px;
-  padding:40px 3rem;
+  padding:40px 0;
 
-  @media screen and(max-width: 1060px) {
-    padding: 40px 1.5rem;
-  }
 
   @media screen and(max-width: 940px) {
     height: 70px;
@@ -13,11 +10,12 @@
   }
 
   .inner {
-    padding: 0 2rem;
+    margin: 0 auto;
+    max-width: 940px;
 
-    @media screen and(max-width: 1060px) {
-      padding: 0 1rem;
-    }
+    //@media screen and(max-width: 1070px) {
+    //  padding: 0;
+    //}
   }
 
 }
