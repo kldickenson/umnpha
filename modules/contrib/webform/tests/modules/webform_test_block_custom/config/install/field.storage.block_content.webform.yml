@@ -2,11 +2,11 @@ langcode: en
 status: true
 dependencies:
   module:
-    - node
+    - block_content
     - webform
-id: node.webform
+id: block_content.webform
 field_name: webform
-entity_type: node
+entity_type: block_content
 type: webform
 settings:
   target_type: webform

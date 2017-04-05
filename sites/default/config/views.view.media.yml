@@ -2,6 +2,8 @@ uuid: d44d30b5-5b5d-447b-86c5-685184b155c4
 langcode: en
 status: true
 dependencies:
+  config:
+    - image.style.thumbnail
   module:
     - image
     - media_entity

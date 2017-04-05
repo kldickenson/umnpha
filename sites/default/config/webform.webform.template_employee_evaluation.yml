@@ -1,12 +1,9 @@
-uuid: 83a2c2e1-3eeb-415d-a79d-f364549b1be5
 langcode: en
 status: closed
 dependencies:
   enforced:
     module:
       - webform_templates
-_core:
-  default_config_hash: YYjKOUcjOhebM5m1mFDwVV7FyZHNhXTReX7co5BS24g
 open: null
 close: null
 uid: null
@@ -25,10 +22,12 @@ settings:
   form_submit_once: false
   form_submit_attributes: {  }
   form_exception_message: ''
-  form_closed_message: ''
+  form_open_message: ''
+  form_close_message: ''
   form_previous_submissions: true
   form_confidential: false
   form_confidential_message: ''
+  form_convert_anonymous: false
   form_prepopulate: false
   form_prepopulate_source_entity: false
   form_disable_autocomplete: false
@@ -37,6 +36,7 @@ settings:
   form_disable_back: false
   form_autofocus: false
   form_details_toggle: false
+  submission_log: false
   wizard_progress_bar: true
   wizard_progress_pages: false
   wizard_progress_percentage: false
@@ -53,7 +53,7 @@ settings:
   preview_prev_button_label: ''
   preview_prev_button_attributes: {  }
   preview_message: ''
-  draft: false
+  draft: none
   draft_auto_save: false
   draft_button_label: ''
   draft_button_attributes: {  }
@@ -106,3 +106,6 @@ access:
     roles: {  }
     users: {  }
 handlers: {  }
+uuid: 83a2c2e1-3eeb-415d-a79d-f364549b1be5
+_core:
+  default_config_hash: YYjKOUcjOhebM5m1mFDwVV7FyZHNhXTReX7co5BS24g
