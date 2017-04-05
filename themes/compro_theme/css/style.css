@@ -353,7 +353,8 @@ div.warning {
     .block-system-branding-block {
       margin: 0;
       height: 40px;
-      max-height: 40px; } }
+      max-height: 40px;
+      max-width: 90%; } }
 
 /*Search Icon*/
 .block-search-icon-block {
@@ -501,8 +502,7 @@ div.warning {
         .menu--menu-main-menu.block-menu .menu::before {
           display: inline-block;
           position: absolute;
-          right: 15%;
-          z-index: 99999; } }
+          right: 5%; } }
 
 /*Footer Menu*/
 .footer-wrapper .block-menu {

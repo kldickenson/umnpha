@@ -28,3 +28,6 @@ permissions:
   - 'administer site configuration'
   - 'edit any webform'
   - 'edit own webform'
+  - 'administer menu'
+  - 'administer taxonomy'
+  - 'access toolbar'
