@@ -617,7 +617,7 @@ div.warning {
   .section-type-highlight .highlight-media {
     flex-grow: 1;
     height: auto;
-    width: 100%; }
+    width: 200%; }
     @media screen and (max-width: 940px) {
       .section-type-highlight .highlight-media {
         width: 100%; } }
@@ -856,6 +856,13 @@ div.warning {
       top: 70px;
       transition: 250ms;
       width: 100%; }
+  .region-header.header-fixed {
+    background-color: rgba(250, 250, 250, 0.85);
+    height: 70px;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9999; }
 
 .region-footer {
   padding: 60px 3rem 35px 3rem;

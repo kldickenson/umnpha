@@ -45,11 +45,11 @@
 
         var $scrollTop = $(document).scrollTop();
         var $viewportHeight = $(window).height();
-
         var $sponsors = $('.section-type-sponsors');
         var $sponsorPosition = $sponsors.position().top;
         var $sponsorHeight = $sponsors.outerHeight();
 
+        //Animate when section-type enters viewport
         if(($sponsorPosition) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.addClass('animated slideInRight');
         };
@@ -64,6 +64,7 @@
           var $testimonialPosition = $testimonial.position().top;
           var $testimonialHeight = $testimonial.outerHeight();
 
+          //Animate when section-type enters viewport
           if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
             $testimonial.addClass('animated slideInRight');
           };
@@ -77,8 +78,19 @@
         $('.field-group-page-hero .field--name-field-title').addClass('animated fadeInDown')
       };
 
+
       //Sticky Nav
 
+      $(window).scroll(function() {
+        var position = $(window).scrollTop();
+
+        console.log(position)
+        // Header fix.
+        if (position > 0) {
+          $('.region-header').addClass('header-fixed animated slideInDown');
+        }
+
+      });
     }
   };
 })(jQuery, Drupal);

@@ -94,11 +94,7 @@ function compro_theme_theme_suggestions_views_view_alter(array &$suggestions, ar
  * Implements hook_preprocess_form().
  */
 function compro_theme_preprocess_form(&$variables) {
-//  kint($variables);
 
-//  if (isset($variables['element']['#children']['class']['js-form-type-textfield']['class']['form-text'])){
-//  $variables['#attributes']['placeholder'] = array ('Enter Keywords');
-//  }
 
 }
 
