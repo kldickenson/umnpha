@@ -375,6 +375,12 @@ div.warning {
     position: relative;
     top: -55px; }
 
+#block-404menu {
+  padding: 25px;
+  text-align: center; }
+  #block-404menu .menu {
+    text-align: center; }
+
 /*Search Icon*/
 .block-search-icon-block {
   display: none; }
