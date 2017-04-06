@@ -10,8 +10,8 @@ dependencies:
     - compro_theme
 id: mainmenu
 theme: compro_theme
-region: header
-weight: -7
+region: nav
+weight: -10
 provider: null
 plugin: 'system_menu_block:menu-main-menu'
 settings:

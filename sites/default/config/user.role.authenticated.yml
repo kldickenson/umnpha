@@ -22,3 +22,5 @@ permissions:
   - 'view any section_type entities'
   - 'view media'
   - 'access kint'
+  - 'use text format standard'
+  - 'search Google CSE'

@@ -16,8 +16,6 @@
 /*Logo Blocks*/
 .block-system-branding-block {
   display: inline-block;
-  transform: translateY(15%);
-
 
   @media screen and(max-width: 940px) {
     margin: 0;
@@ -65,13 +63,8 @@
   text-transform: uppercase;
   transform: translateY(50%);
 
-  @media screen and(max-width: 940px) {
-    display: none;
-    position: relative;
-    text-align: center;
-    top: 150px;
-    width: 100%;
-    z-index: 9999;
+  &.is-open {
+    display: inline-block;
   }
 
   a {
@@ -92,8 +85,13 @@
 
   }
 
-  &.is-open {
-    display: inline-block;
+  @media screen and(max-width: 940px) {
+    display: none;
+    position: relative;
+    text-align: center;
+    top: 150px;
+    width: 100%;
+    z-index: 9999;
   }
 
 }
@@ -108,12 +106,7 @@
   float: right;
   transform: translateY(50%);
 
-  @media screen and(max-width: 940px) {
-    left: 0;
-    position: absolute;
-    transform: unset;
-    width: 100%;
-  }
+
 
 
   .menu {
@@ -138,6 +131,11 @@
 
       }
 
+      &.is-open {
+        display: inline-block;
+        width: 100%;
+      }
+
       @media screen and(max-width: 1150px) {
         margin: 0 20px 0 0;
       }
@@ -148,13 +146,15 @@
         text-align: center;
       }
 
-      &.is-open {
-        display: inline-block;
-        width: 100%;
-      }
-
     }
 
+  }
+
+  @media screen and(max-width: 940px) {
+    left: 0;
+    position: absolute;
+    transform: unset;
+    width: 100%;
   }
 
 }
@@ -189,8 +189,10 @@
   &.is-open {
     top: -55px;
 
-    &::before {
+    .hamburger-inner::before {
+      color: $um-blue;
       content: '\2715';
+      font-size: rem(25);
     }
 
   }
