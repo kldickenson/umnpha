@@ -104,7 +104,6 @@
     color: $um-blue;
     font-family: 'Montserrat Bold';
     font-size: rem(36px);
-    //font-weight: 300;
     letter-spacing: rem(0.1);
     margin: 0 0 35px 0;
     text-align: center;
@@ -114,7 +113,6 @@
   .field--name-field-form-text {
     font-family: 'Lora';
     font-size: rem(21);
-    //font-weight: 200;
     margin: 0 auto 35px auto;
     max-width: 75%;
     text-align: center;
@@ -163,7 +161,7 @@
         font-size: 15px;
         font-style: italic;
         height: 40px;
-        padding: 15px 20px;
+        padding: 10px 20px;
 
         &::-webkit-input-placeholder,
         &::-moz-placeholder,
@@ -172,12 +170,12 @@
           font-family: "Lora Italic";
           font-size: 15px;
         }
+
       }
 
     }
 
     .form-actions {
-
       margin: 0;
 
       input {
