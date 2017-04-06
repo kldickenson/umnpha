@@ -1,8 +1,26 @@
+header {
+  position: relative;
+
+  &.header-fixed {
+    background-color: rgba(250, 250, 250, 0.85);
+    height: 70px;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+
+    @media screen and(max-width: 940px) {
+      width: 100vw
+    }
+  }
+}
 .region-header {
   background-color: #fefefe;
+  display: inline-block;
   height: 126px;
   padding: 40px 0;
   position: relative;
+
 
   @media screen and(max-width: 940px) {
     height: 70px;
@@ -27,7 +45,7 @@
   }
 
   &.header-fixed {
-    background-color: rgba(250, 250, 250, 0.85);
+    background-color: transparent;
     height: 70px;
     padding: 15px 0;
     position: fixed;
@@ -40,6 +58,19 @@
 
   }
 
+}
+
+.region-nav {
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-100%);
+
+  &.header-fixed {
+    background-color: transparent;
+    top: unset;
+  }
 }
 
 .region-footer,

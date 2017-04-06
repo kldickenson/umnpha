@@ -8,7 +8,7 @@ dependencies:
     - compro_theme
 id: googlecse
 theme: compro_theme
-region: header
+region: nav
 weight: -8
 provider: null
 plugin: google_cse

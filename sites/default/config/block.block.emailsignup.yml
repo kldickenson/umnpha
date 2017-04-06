@@ -8,8 +8,8 @@ dependencies:
     - compro_theme
 id: emailsignup
 theme: compro_theme
-region: header
-weight: -10
+region: nav
+weight: -11
 provider: null
 plugin: email_sign_up
 settings:
