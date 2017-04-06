@@ -15,7 +15,7 @@
 
 
       var $body = $('body');
-      var $header = $('.region-header > .inner')
+      var $mobileNav = $('.region-nav')
       var $hamburger = $('.hamburger');
       var $search_icon = $('#block-searchicon');
 
@@ -30,16 +30,17 @@
       //Mobile Menu
       if($(window).width() <= 950) {
 
-        var animationMenu = "animated fadeInDown";
+        var animationMenu = "animated slideInDown";
         var animationEnd = 'webkitTransitionEnd otransitionend' +
           ' oTransitionEnd msTransitionEnd transitionend';
 
         $hamburger.on('click', function(e) {
-          $header.toggleClass('is-open').addClass(animationMenu).one(animationEnd),
+          console.log('click called');
+          $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd),
                 function(e) {
               this.removeClass(animationMenu);
             };
-          $header.find('.menu >' +
+          $mobileNav.find('.menu >' +
             ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block,.hamburger').toggleClass('is-open');
         })
       }

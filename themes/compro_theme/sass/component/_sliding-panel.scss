@@ -5,11 +5,11 @@ $sliding-panel-background: #fff;
 .sliding-panel-button,
 .sliding-panel-close {
   @include display(none);
-  
-  @include media($sliding-panel-breakpoint) {
-    @include display(block);
-  }
-  
+
+  //@include media($sliding-panel-breakpoint) {
+  //  @include display(block);
+  //}
+
 }
 
 .sliding-panel-content {
