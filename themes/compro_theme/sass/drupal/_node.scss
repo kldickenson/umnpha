@@ -46,12 +46,12 @@
       color: #fff;
       font-size: rem(44);
       font-weight: 600;
-      position: absolute;
       text-align: center;
-      top: 50%;
-      transform: translateY(-50%);
       width: 100%;
       z-index: 99;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
     }
 
   }
