@@ -66,6 +66,7 @@ header {
   right: 5%;
   top: 50%;
   transform: translateY(-100%);
+  z-index: 9999;
 
   &.header-fixed {
     background-color: transparent;
