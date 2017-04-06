@@ -139,7 +139,7 @@
           $('header,.region-header,.region-nav').addClass('header-fixed' +
             ' animated' +
             ' slideInDown');
-          $('.layout-content').css('padding-top', '70px');
+          $('.layout-content').css('padding-top', '95px');
         }
       });
     }
