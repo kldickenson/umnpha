@@ -2,6 +2,6 @@ features:
   favicon: true
 logo:
   use_default: false
-  path: 'public://logo.png'
+  path: themes/compro_theme/logo.png
 favicon:
   use_default: true
