@@ -126,9 +126,8 @@
 
       //About Page Title
       if ($body.hasClass('node--type-page')) {
-        $('.field-group-page-hero .field--name-field-title').addClass('animated fadeInDown')
+        $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
       };
-
 
       //Sticky Nav
       $(window).scroll(function() {

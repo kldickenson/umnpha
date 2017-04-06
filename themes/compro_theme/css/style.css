@@ -755,12 +755,12 @@ div.warning {
     color: #fff;
     font-size: 2.75rem;
     font-weight: 600;
-    position: absolute;
     text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
     width: 100%;
-    z-index: 99; }
+    z-index: 99;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
 
 /*Webform*/
 .node--type-webform .image-form-wrapper {
@@ -1226,17 +1226,16 @@ header {
   display: inline-block;
   font-family: "Montserrat Bold";
   font-size: 0.75rem;
-  height: 30px;
   padding: 0 0 0 10px;
   position: absolute;
   right: 0;
   text-transform: uppercase;
   transform: translateY(-100%);
-  width: 30%;
   z-index: 99; }
   .share-and-download-wrapper .share-links {
     display: inline-block;
-    position: absolute; }
+    padding-top: 4px;
+    vertical-align: middle; }
     .share-and-download-wrapper .share-links a::before {
       color: white;
       margin: 0 12px 0 0; }
@@ -1247,12 +1246,15 @@ header {
     .share-and-download-wrapper a:hover {
       color: #ffca05; }
   .share-and-download-wrapper .download-button {
-    margin: 0 12px 0 0; }
+    display: inline-block;
+    vertical-align: middle; }
     .share-and-download-wrapper .download-button::after {
       content: '\2b07';
       margin: 0 12px 0 10px; }
   .share-and-download-wrapper .share-parent-text {
-    margin: 0 10px 0 0; }
+    display: inline-block;
+    margin: 0 10px 0 0;
+    vertical-align: middle; }
 
 .field--name-field-infographic-caption {
   font-family: 'Lora';

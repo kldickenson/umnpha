@@ -436,18 +436,17 @@
   display: inline-block;
   font-family: "Montserrat Bold";
   font-size: rem(12);
-  height: 30px;
   padding: 0 0 0 10px;
   position: absolute;
   right: 0;
   text-transform: uppercase;
   transform: translateY(-100%);
-  width: 30%;
   z-index: 99;
 
   .share-links {
     display: inline-block;
-    position: absolute;
+    padding-top: 4px;
+    vertical-align: middle;
 
     a::before {
       color: white;
@@ -470,7 +469,8 @@
   }
 
   .download-button {
-    margin: 0 12px 0 0;
+    display: inline-block;
+    vertical-align: middle;
 
     &::after {
       content: '\2b07';
@@ -479,7 +479,9 @@
   }
 
   .share-parent-text {
+    display: inline-block;
     margin: 0 10px 0 0;
+    vertical-align: middle;
   }
 
 }
