@@ -17,12 +17,23 @@
 .block-system-branding-block {
   display: inline-block;
 
+  h1 {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 1100px) {
+    max-width: 450px;
+  }
+
   @media screen and(max-width: 940px) {
     margin: 0;
-    height: 40px;
     max-height: 40px;
     max-width: 87%;
+  }
 
+  @media screen and (max-width: 480px) {
+    max-width: 80%;
+    padding-top: 10px;
   }
 
   &.is-open {
@@ -71,6 +82,7 @@
     background-color: $arb-blue;
     color: white;
     font-size: rem(14);
+    margin: 0;
     padding: rem(14) rem(28);
 
     &:hover {
@@ -129,6 +141,10 @@
           color: $blue;
         }
 
+        @media screen and (max-width: 985px) {
+          font-size: 12px;
+        }
+
       }
 
       &.is-open {
@@ -161,10 +177,8 @@
 
 .region-header .hamburger {
   background-color: unset;
-  margin: 0 0 0 3%;
+  float: right;
   padding: 0;
-  position: absolute;
-  right: 5%;
 
   &:focus {
     outline: none;
@@ -176,7 +190,7 @@
       color: $um-blue;
       content: '\2630';
       display: none;
-      font-size: rem(25);
+      font-size: 2.5rem;
 
       @media screen and(max-width: 940px) {
         display: inline-block;
