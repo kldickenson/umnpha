@@ -568,7 +568,7 @@ div.warning {
 *     section-types now that there are classes for that
 *
 **/
-/*Featured Report*/
+/* Featured Report */
 .section-type-featured-report {
   background-color: #431D16;
   color: white;
@@ -578,7 +578,7 @@ div.warning {
   .section-type-featured-report .featured-report-image {
     width: 45%; }
   .section-type-featured-report .featured-report-text {
-    padding: 7% 10% 4% 0;
+    padding: 0 10% 4% 0;
     width: 50%; }
   @media screen and (max-width: 940px) {
     .section-type-featured-report {
@@ -649,16 +649,18 @@ div.warning {
 
 /*Testimonial*/
 .section-type-testimonial {
-  margin: 0 auto;
+  margin: -40px auto -7px;
   max-width: 1100px;
   position: relative; }
   @media screen and (max-width: 940px) {
     .section-type-testimonial {
+      margin: 0 auto;
       padding: 0 20px; } }
   .section-type-testimonial .testimonial-text {
     display: inline-block;
-    margin: 115px 3rem 90px 3rem;
-    max-width: 55%; }
+    margin: 110px 3rem 65px 3rem;
+    max-width: 55%;
+    vertical-align: top; }
     @media screen and (max-width: 940px) {
       .section-type-testimonial .testimonial-text {
         display: block;
@@ -666,16 +668,12 @@ div.warning {
         max-width: 100%;
         text-align: center; } }
   .section-type-testimonial .testimonial-image {
-    display: inline-flex;
-    height: 100%;
-    position: absolute; }
+    display: inline-block;
+    max-width: 315px; }
     @media screen and (max-width: 940px) {
       .section-type-testimonial .testimonial-image {
         display: block;
-        height: auto;
-        position: relative;
-        width: 100%;
-        text-align: center; } }
+        margin: 0 auto; } }
 
 /*Media*/
 .section-type-media {
@@ -915,8 +913,7 @@ header {
 .region-footer .inner,
 .region-post-footer .inner {
   margin: 0 auto;
-  max-width: 1340px;
-  padding: 0 20px; }
+  max-width: 1340px; }
 
 .region-footer {
   padding: 60px 3rem 35px 3rem;
@@ -954,12 +951,14 @@ header {
   font-size: 2.5rem;
   font-weight: 600;
   line-height: 3.125rem;
-  margin: 0 0 30px 0; }
+  margin: 0 0 30px 0;
+  padding-top: 75px; }
   @media screen and (max-width: 940px) {
     .field--name-field-featured-report-title {
       font-size: 1.75rem;
       line-height: 2.1875rem;
-      margin: 0 0 20px 0; } }
+      margin: 0 0 20px 0;
+      padding-top: 0; } }
 
 .field--name-field-featured-report-subtitle {
   font-family: 'Lora', serif;
@@ -1156,19 +1155,9 @@ header {
   font-size: 0.6875rem;
   font-weight: 400;
   text-transform: uppercase; }
-
-.field--name-field-testimonial-image img {
-  bottom: 15%;
-  height: 115%;
-  object-fit: cover;
-  position: relative;
-  width: inherit;
-  max-width: none; }
   @media screen and (max-width: 940px) {
-    .field--name-field-testimonial-image img {
-      bottom: -8px;
-      height: 215px;
-      max-width: 100%; } }
+    .field--name-field-testimonial-credentials {
+      margin: 0; } }
 
 /*Media*/
 .field--name-field-media-media img {
