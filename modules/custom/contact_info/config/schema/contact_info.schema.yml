@@ -32,6 +32,9 @@ contact_info.setup:
     contact_info.fax.number:
       type: text
       label: 'Number'
+    contact_info.email.emailaddress:
+      type: text
+      label: 'Email Address'
     contact_info.social_seo.site_twitter:
       type: text
       label: 'Site Twitter'

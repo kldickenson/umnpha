@@ -284,7 +284,8 @@
 
 }
 
-.block-address {
+.block-address,
+.block-email {
   position: relative;
   text-align: right;
 
@@ -293,7 +294,8 @@
     text-align: left;
   }
 
-  address {
+  address,
+  a.email {
     font-size: rem(11);
     font-style: normal;
 
@@ -301,6 +303,10 @@
       font-size: rem(13);
     }
 
+  }
+
+  a.email {
+    color: $um-maize;
   }
 
 }

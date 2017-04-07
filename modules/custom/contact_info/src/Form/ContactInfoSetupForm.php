@@ -128,6 +128,19 @@ class ContactInfoSetupForm extends ConfigFormBase {
       '#default_value' => $contact_info->get('fax.number') ? $contact_info->get('fax.number') : '',
     );
 
+    // Email.
+    $form['contact_info']['email'] = array(
+      '#type' => 'details',
+      '#title' => t('Email'),
+      '#collapsible' => TRUE,
+      '#open' => TRUE,
+    );
+    $form['contact_info']['email']['emailaddress'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Email Address'),
+      '#default_value' => $contact_info->get('email.emailaddress') ? $contact_info->get('email.emailaddress') : '',
+    );
+
     // Social SEO.
     $form['contact_info']['social_seo'] = array(
       '#type' => 'details',
@@ -232,6 +245,12 @@ class ContactInfoSetupForm extends ConfigFormBase {
         'contact_info',
         'fax',
         'number',
+      )))->set(
+      'email.emailaddress', $form_state->getValue(
+      array(
+        'contact_info',
+        'email',
+        'emailaddress',
       )))->set(
       'social_seo.site_twitter', $form_state->getValue(
       array(

@@ -513,19 +513,30 @@ div.warning {
     #block-logoforthefooter {
       margin: 0 0 40px 0; } }
 
-.block-address {
+.block-address,
+.block-email {
   position: relative;
   text-align: right; }
   @media screen and (max-width: 940px) {
-    .block-address {
+    .block-address,
+    .block-email {
       margin: 0 0 40px 0;
       text-align: left; } }
-  .block-address address {
+  .block-address address,
+  .block-address a.email,
+  .block-email address,
+  .block-email a.email {
     font-size: 0.6875rem;
     font-style: normal; }
     @media screen and (max-width: 940px) {
-      .block-address address {
+      .block-address address,
+      .block-address a.email,
+      .block-email address,
+      .block-email a.email {
         font-size: 0.8125rem; } }
+  .block-address a.email,
+  .block-email a.email {
+    color: #ffca05; }
 
 .region-footer .block-contact-info.block-social {
   display: none; }
