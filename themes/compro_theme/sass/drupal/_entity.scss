@@ -119,10 +119,14 @@
   }
 
   .group-highlight-text {
-    padding: 70px 60px;
+    padding: 60px 0 4% 60px;
     width: 35%;
 
-    @media screen and(max-width: 940px) {
+    @media screen and (max-width: 1120px) {
+      padding: 30px 0 4% 45px;
+    }
+
+    @media screen and (max-width: 940px) {
       padding: 28px 25px;
       width: 100%;
     }
@@ -130,9 +134,6 @@
   }
 
 }
-
-
-
 
 /*Testimonial*/
 .section-type-testimonial {

@@ -9,7 +9,7 @@ template: false
 id: for_media
 title: 'For Media'
 description: ''
-elements: "name:\n  '#type': textfield\n  '#title': Name\n  '#placeholder': 'John Smith'\nemail_address:\n  '#type': email\n  '#title': 'Email Address'\n  '#placeholder': john@smith.com\norganization:\n  '#type': textfield\n  '#title': Organization\n  '#placeholder': 'Institute for Healthcare Policy and Innovation'\n"
+elements: "name:\n  '#type': textfield\n  '#title': Name\nemail_address:\n  '#type': email\n  '#title': 'Email Address'\norganization:\n  '#type': textfield\n  '#title': Organization\n"
 css: ''
 javascript: ''
 settings:
