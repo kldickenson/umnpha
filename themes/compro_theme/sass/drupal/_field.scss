@@ -237,6 +237,11 @@
   font-size: rem(18px);
   margin: 0 0 63px 0;
 
+  @media screen and (max-width: 1120px) {
+    font-size: rem(16px);
+    margin: 0 0 35px 0;
+  }
+
   @media screen and(max-width: 940px) {
     font-size: rem(12px);
     margin: 0 0 35px 0;
@@ -277,7 +282,7 @@
 .field--name-field-testimonial-quote {
   color: $um-blue;
   font-family: 'Lora';
-  font-size: rem(17);
+  font-size: rem(17.6);
   font-style: italic;
   font-weight: 200;
   letter-spacing: rem(0.1);
@@ -297,11 +302,6 @@
     text-align: center;
   }
 
-}
-
-.field--name-field-testimonial-author,
-.field--name-field-testimonial-credentials {
-  margin-left: 75px;
 }
 
 .field--name-field-testimonial-author {

@@ -640,8 +640,11 @@ div.warning {
       .section-type-highlight .highlight-media {
         width: 100%; } }
   .section-type-highlight .group-highlight-text {
-    padding: 70px 60px;
+    padding: 60px 0 4% 60px;
     width: 35%; }
+    @media screen and (max-width: 1120px) {
+      .section-type-highlight .group-highlight-text {
+        padding: 30px 0 4% 45px; } }
     @media screen and (max-width: 940px) {
       .section-type-highlight .group-highlight-text {
         padding: 28px 25px;
@@ -929,6 +932,9 @@ header {
     .region-post-footer {
       padding: 25px 20px; } }
 
+footer.footer-wrapper {
+  color: #969696; }
+
 /*
 *   #FIELDS
 **/
@@ -1088,6 +1094,10 @@ header {
 .field--name-field-highlight-text {
   font-size: 1.125rem;
   margin: 0 0 63px 0; }
+  @media screen and (max-width: 1120px) {
+    .field--name-field-highlight-text {
+      font-size: 1rem;
+      margin: 0 0 35px 0; } }
   @media screen and (max-width: 940px) {
     .field--name-field-highlight-text {
       font-size: 0.75rem;
@@ -1115,7 +1125,7 @@ header {
 .field--name-field-testimonial-quote {
   color: #00264b;
   font-family: 'Lora';
-  font-size: 1.0625rem;
+  font-size: 1.1rem;
   font-style: italic;
   font-weight: 200;
   letter-spacing: 0.00625rem;
@@ -1129,10 +1139,6 @@ header {
     .field--name-field-testimonial-quote {
       margin: 0 0 26px 0;
       text-align: center; } }
-
-.field--name-field-testimonial-author,
-.field--name-field-testimonial-credentials {
-  margin-left: 75px; }
 
 .field--name-field-testimonial-author {
   color: #5f5f5f;
