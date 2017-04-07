@@ -6,7 +6,7 @@ dependencies:
     - eck.eck_type.component.component_sponsor
     - field.field.component.component_sponsor.field_sponsor_link
     - field.field.component.component_sponsor.field_sponsor_logo
-    - image.style.max_nx32
+    - image.style.max_nx40
   module:
     - image
     - linked_field
@@ -20,7 +20,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: max_nx32
+      image_style: max_nx40
       image_link: ''
     third_party_settings:
       linked_field:

@@ -991,6 +991,7 @@ header {
 
 /*Sponsors*/
 .field-group-sponsors-primary {
+  vertical-align: top;
   display: inline-block;
   width: 45%; }
   @media screen and (max-width: 940px) {
@@ -1014,6 +1015,7 @@ header {
         padding: 0 0 25px 0; } }
 
 .field-group-sponsors-secondary {
+  vertical-align: top;
   display: inline-block;
   width: 50%; }
   @media screen and (max-width: 940px) {
