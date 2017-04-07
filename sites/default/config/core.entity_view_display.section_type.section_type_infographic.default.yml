@@ -18,6 +18,7 @@ content:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_infographic_caption:
     weight: 2
     label: hidden
@@ -25,6 +26,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_infographic_image:
     type: responsive_image
     weight: 0
@@ -33,5 +35,6 @@ content:
       responsive_image_style: full_content_width
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   title: true

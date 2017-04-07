@@ -38,11 +38,13 @@ content:
     weight: 2
     settings: {  }
     third_party_settings: {  }
+    region: content
   created:
     type: datetime_timestamp
     weight: 4
     settings: {  }
     third_party_settings: {  }
+    region: content
   field_page_hero:
     weight: 7
     settings:
@@ -50,6 +52,7 @@ content:
       preview_image_style: thumbnail
     third_party_settings: {  }
     type: image_image
+    region: content
   field_page_sections:
     type: inline_entity_form_complex
     weight: 1
@@ -64,6 +67,7 @@ content:
       collapsible: false
       collapsed: false
     third_party_settings: {  }
+    region: content
   field_title:
     weight: 6
     settings:
@@ -71,11 +75,13 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
   path:
     type: path
     weight: 5
     settings: {  }
     third_party_settings: {  }
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 3
@@ -84,6 +90,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden:
   promote: true
   sticky: true

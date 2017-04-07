@@ -1,11 +1,11 @@
 address:
   country_name: US
-  legal_name: ''
-  street_address: ''
-  street_address_2: ''
-  locality: ''
-  region: ''
-  postal_code: ''
+  legal_name: 'U-M Institute for Healthcare Policy & Innovation'
+  street_address: '2800 Plymouth Road, North Campus Research Complex (NCRC) '
+  street_address_2: 'Building 16 '
+  locality: 'Ann Arbor'
+  region: MI
+  postal_code: '48109'
 phone:
   country_code: ''
   number: ''
@@ -16,3 +16,20 @@ email:
 social_seo:
   site_twitter: ''
   site_google_plus: ''
+social:
+  table:
+    1:
+      name: Twitter
+      url: 'https://twitter.com/UM_IHPI'
+      weight: '10'
+      enable: 0
+    2:
+      name: YouTube
+      url: 'https://www.youtube.com/playlist?list=PLNxqP-XbH8BLi5K_2giRk0NeJTLct7ybl'
+      weight: '10'
+      enable: 0
+    3:
+      name: LinkedIn
+      url: 'https://www.linkedin.com/company-beta/10226059?pathWildcard=10226059'
+      weight: '10'
+      enable: 0

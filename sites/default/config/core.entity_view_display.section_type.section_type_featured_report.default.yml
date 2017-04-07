@@ -67,6 +67,7 @@ content:
       important: '1'
       opacity: '1'
     third_party_settings: {  }
+    region: content
   field_featured_report_button:
     type: link
     weight: 3
@@ -78,6 +79,7 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
+    region: content
   field_featured_report_image:
     type: responsive_image
     weight: 1
@@ -86,6 +88,7 @@ content:
       responsive_image_style: ''
       image_link: ''
     third_party_settings: {  }
+    region: content
   field_featured_report_subtitle:
     type: string
     weight: 2
@@ -93,6 +96,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   field_featured_report_title:
     type: string
     weight: 1
@@ -100,5 +104,6 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
 hidden:
   title: true

@@ -22,6 +22,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_pull_quote_credentials:
     type: string_textfield
     weight: 4
@@ -29,6 +30,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_pull_quote_quote:
     type: string_textfield
     weight: 1
@@ -36,12 +38,14 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_pull_quote_text_color:
     type: color_field_widget_box
     weight: 2
     settings:
       default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e, #5f5f5f, #571c0c, #ffcc05, #0f284a'
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -49,4 +53,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }
