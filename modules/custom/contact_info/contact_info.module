@@ -54,6 +54,7 @@ function contact_info_contextual_links_view_alter(&$element, $items) {
     switch ($element['#element']['#block']->delta) {
       case 'address':
       case 'phone':
+      case 'email':
       case 'fax':
         $element['#links']['edit-content'] = array(
           'title' => 'Edit contact info',
@@ -118,6 +119,32 @@ function contact_info_create_fax(ImmutableConfig $contact_info = NULL) {
   if (isset($fax['number']) && $fax['number']) {
     return array(
       '#markup' => '<span itemprop="faxNumber">' . Html::escape($fax['number']) . '</span>',
+    );
+  }
+  else {
+    return array();
+  }
+}
+
+/**
+ * Reusable function to read config for email and return something renderable.
+ *
+ * @param \Drupal\Core\Config\ImmutableConfig $contact_info
+ *   The config object saved by ContactInfoSetupForm.
+ *
+ * @return array
+ *   A render array for the resulting element
+ */
+function contact_info_create_email(ImmutableConfig $contact_info = NULL) {
+  $email = $contact_info->get('email');
+  if (isset($email['emailaddress']) && $email['emailaddress']) {
+    return array(
+      '#markup' => Link::fromTextAndUrl($email['emailaddress'], Url::fromUri('mailto:' . $email['emailaddress'], array(
+        'attributes' => array(
+          'itemprop' => 'email',
+          'class' => array('email'),
+        ),
+      )))->toString(),
     );
   }
   else {

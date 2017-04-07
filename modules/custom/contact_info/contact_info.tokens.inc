@@ -32,6 +32,11 @@ function contact_info_token_info() {
     'description' => t('Fax from the contact info module.'),
     'needs-data' => 'fax',
   );
+  $info['types']['email'] = array(
+    'name' => t('Email'),
+    'description' => t('Email from the contact info module.'),
+    'needs-data' => 'email',
+  );
   $info['types']['social_seo'] = array(
     'name' => t('Social SEO'),
     'description' => t('Social SEO from the contact info module.'),
@@ -105,6 +110,20 @@ function contact_info_token_info() {
     'description' => t('The number of the fax number.'),
   );
 
+  $info['tokens']['contact_info']['email'] = array(
+    'name' => t('Email address'),
+    'description' => t('The email address entered in the contact info form.'),
+    'type' => 'email',
+  );
+  $info['tokens']['email']['label'] = array(
+    'name' => t('Label'),
+    'description' => t('The label of the email address.'),
+  );
+  $info['tokens']['email']['emailaddress'] = array(
+    'name' => t('Email Address'),
+    'description' => t('The address of the email.'),
+  );
+
   $info['tokens']['contact_info']['social_seo'] = array(
     'name' => t('Social SEO'),
     'description' => t('The social info useful for metatag and elsewhere.'),
@@ -160,6 +179,11 @@ function contact_info_tokens($type, $tokens, array $data, array $options, Bubble
           $replacements[$original] = $renderer->render($create_fax);
           break;
 
+        case 'email':
+          $create_email = contact_info_create_email($contact_info);
+          $replacements[$original] = $renderer->render($create_email);
+          break;
+
         case 'social_seo':
           $replacements[$original] = print_r($contact_info->get('social_seo'), TRUE);
           break;
@@ -190,6 +214,11 @@ function contact_info_tokens($type, $tokens, array $data, array $options, Bubble
     $faxes = $token_service->findWithPrefix($tokens, 'fax');
     foreach ($faxes as $name => $original) {
       $replacements[$original] = $contact_info->get('fax')[$name];
+    }
+
+    $emails = $token_service->findWithPrefix($tokens, 'email');
+    foreach ($emails as $name => $original) {
+      $replacements[$original] = $contact_info->get('email')[$name];
     }
 
     $social_seos = $token_service->findWithPrefix($tokens, 'social_seo');
