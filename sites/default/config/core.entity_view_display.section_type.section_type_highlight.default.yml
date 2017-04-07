@@ -80,6 +80,7 @@ content:
       rel: '0'
       target: '0'
     third_party_settings: {  }
+    region: content
   field_highlight_media:
     weight: 1
     label: hidden
@@ -88,6 +89,7 @@ content:
       view_mode: default
     third_party_settings: {  }
     type: entity_reference_entity_view
+    region: content
   field_highlight_text:
     type: string
     weight: 6
@@ -95,6 +97,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   field_highlight_title:
     weight: 5
     label: hidden
@@ -102,5 +105,6 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   title: true

@@ -41,6 +41,7 @@ content:
     settings:
       default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
     third_party_settings: {  }
+    region: content
   field_featured_report_button:
     type: link_default
     weight: 5
@@ -48,6 +49,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+    region: content
   field_featured_report_image:
     type: image_image
     weight: 3
@@ -55,6 +57,7 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+    region: content
   field_featured_report_subtitle:
     type: string_textfield
     weight: 2
@@ -62,6 +65,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_featured_report_title:
     type: string_textfield
     weight: 1
@@ -69,6 +73,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -76,4 +81,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

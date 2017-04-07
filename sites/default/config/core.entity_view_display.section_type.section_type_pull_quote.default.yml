@@ -22,6 +22,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   field_pull_quote_credentials:
     type: string
     weight: 4
@@ -29,6 +30,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   field_pull_quote_quote:
     type: string
     weight: 0
@@ -36,6 +38,7 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
   field_pull_quote_text_color:
     type: color_field_formatter_css
     weight: 1
@@ -46,5 +49,6 @@ content:
       important: '1'
       opacity: '1'
     third_party_settings: {  }
+    region: content
 hidden:
   title: true

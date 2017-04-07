@@ -21,6 +21,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_infographic_image:
     type: image_image
     weight: 1
@@ -28,6 +29,7 @@ content:
       progress_indicator: throbber
       preview_image_style: thumbnail
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -35,4 +37,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }

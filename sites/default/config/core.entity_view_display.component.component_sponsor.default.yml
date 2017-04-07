@@ -28,6 +28,7 @@ content:
         type: field
         destination: field_sponsor_link
         advanced: {  }
+    region: content
 hidden:
   field_sponsor_link: true
   title: true

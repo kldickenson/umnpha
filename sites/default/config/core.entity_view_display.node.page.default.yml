@@ -44,6 +44,7 @@ content:
       image_link: ''
       image_style: ''
     third_party_settings: {  }
+    region: content
   field_page_sections:
     type: entity_reference_entity_view
     weight: 1
@@ -52,6 +53,7 @@ content:
       link: true
       view_mode: default
     third_party_settings: {  }
+    region: content
   field_title:
     weight: 1
     label: hidden
@@ -59,6 +61,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden:
   compro_links: true
   compro_submitted: true

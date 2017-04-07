@@ -23,6 +23,7 @@ content:
       placeholder_url: ''
       placeholder_title: ''
     third_party_settings: {  }
+    region: content
   field_highlight_media:
     weight: 4
     settings:
@@ -35,6 +36,7 @@ content:
       override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_complex
+    region: content
   field_highlight_text:
     type: string_textfield
     weight: 2
@@ -42,6 +44,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   field_highlight_title:
     type: string_textfield
     weight: 1
@@ -49,6 +52,7 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
   title:
     type: string_textfield
     weight: 0
@@ -56,4 +60,5 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
 hidden: {  }
