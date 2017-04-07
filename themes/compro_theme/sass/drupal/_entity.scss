@@ -147,7 +147,7 @@
 
   .testimonial-text {
     display: inline-block;
-    margin: 110px 3rem 65px 3rem;
+    margin: 110px 2.75rem 65px 2.75rem;
     max-width: 55%;
     vertical-align: top;
 
@@ -162,11 +162,10 @@
 
   .testimonial-image {
     display: inline-block;
-    max-width: 315px;
 
     @media screen and(max-width: 940px) {
       display: block;
-      margin: 0 auto;
+      text-align: center;
     }
 
   }
