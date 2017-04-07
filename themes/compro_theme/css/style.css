@@ -867,6 +867,9 @@ header {
     position: fixed;
     width: 100%;
     z-index: 9999; }
+    header.header-fixed .header-nav-wrapper {
+      margin: 0 auto;
+      max-width: 1340px; }
     @media screen and (max-width: 940px) {
       header.header-fixed {
         width: 100vw; } }
