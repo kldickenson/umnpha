@@ -21,15 +21,15 @@ social:
     1:
       name: Twitter
       url: 'https://twitter.com/UM_IHPI'
+      enable: '1'
       weight: '10'
-      enable: 0
     2:
       name: YouTube
       url: 'https://www.youtube.com/playlist?list=PLNxqP-XbH8BLi5K_2giRk0NeJTLct7ybl'
+      enable: '1'
       weight: '10'
-      enable: 0
     3:
       name: LinkedIn
       url: 'https://www.linkedin.com/company-beta/10226059?pathWildcard=10226059'
+      enable: '1'
       weight: '10'
-      enable: 0
