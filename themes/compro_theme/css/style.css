@@ -1212,8 +1212,6 @@ footer.footer-wrapper {
   font-weight: 600; }
   .field--name-field-pull-quote-author::before {
     content: '\2013'; }
-  .field--name-field-pull-quote-author::after {
-    content: '\002C'; }
 
 .field--name-field-pull-quote-credentials {
   display: inline-block;

@@ -359,7 +359,7 @@
 
 /*Pull Quote*/
 .field--name-field-pull-quote-quote {
-  
+
   font-family: 'Lora';
   font-size: rem(24);
   font-style: italic;
@@ -386,10 +386,6 @@
 
   &::before {
     content: '\2013';
-  }
-
-  &::after {
-    content: '\002C';
   }
 
 }
