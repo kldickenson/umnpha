@@ -758,6 +758,7 @@ div.warning {
     width: 100%; }
     .node--type-page .field--name-field-page-hero.field--type-image img {
       background: transparent;
+      visibility: hidden;
       max-height: 300px;
       object-fit: cover;
       object-position: 0 90%;
