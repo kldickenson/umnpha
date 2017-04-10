@@ -757,6 +757,7 @@ div.warning {
     min-width: 100%;
     width: 100%; }
     .node--type-page .field--name-field-page-hero.field--type-image img {
+      background: transparent;
       max-height: 300px;
       object-fit: cover;
       object-position: 0 90%;
@@ -1140,6 +1141,7 @@ footer.footer-wrapper {
 *[2]   This takes care of white space at btm of img file, probably need to remove later
 **/
 .field--name-field-testimonial-quote {
+  color: #00264b;
   font-family: 'Lora';
   font-size: 1.1rem;
   font-style: italic;
@@ -1193,6 +1195,7 @@ footer.footer-wrapper {
 
 /*Pull Quote*/
 .field--name-field-pull-quote-quote {
+  color: #79111b;
   font-family: 'Lora';
   font-size: 1.5rem;
   font-style: italic;
