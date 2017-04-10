@@ -763,6 +763,9 @@ div.warning {
       object-fit: cover;
       object-position: 0 90%;
       width: 100%; }
+      @media screen and (max-width: 940px) {
+        .node--type-page .field--name-field-page-hero.field--type-image img {
+          visibility: visible; } }
 .node--type-page .field-group-page-hero {
   position: relative; }
   .node--type-page .field-group-page-hero .field--name-field-title {
