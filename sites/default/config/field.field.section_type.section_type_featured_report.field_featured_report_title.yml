@@ -5,15 +5,13 @@ dependencies:
   config:
     - eck.eck_type.section_type.section_type_featured_report
     - field.storage.section_type.field_featured_report_title
-  module:
-    - text
 id: section_type.section_type_featured_report.field_featured_report_title
 field_name: field_featured_report_title
 entity_type: section_type
 bundle: section_type_featured_report
 label: 'Display Title'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''

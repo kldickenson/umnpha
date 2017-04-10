@@ -5,15 +5,13 @@ dependencies:
   config:
     - eck.eck_type.section_type.section_type_pull_quote
     - field.storage.section_type.field_pull_quote_quote
-  module:
-    - text
 id: section_type.section_type_pull_quote.field_pull_quote_quote
 field_name: field_pull_quote_quote
 entity_type: section_type
 bundle: section_type_pull_quote
 label: Quote
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
