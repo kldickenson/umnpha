@@ -3,9 +3,11 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+      css/animate.css/animate.css/animate.min.css: {}
   js:
     js/behavior.js: {}
     js/vendor/modernizr-custom.js: {}
+    js/vendor/parallax.js/parallax.min.js: {}
   dependencies:
       - core/jquery
       - core/drupal
