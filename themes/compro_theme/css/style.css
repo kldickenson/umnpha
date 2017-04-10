@@ -672,13 +672,13 @@ div.warning {
     display: inline-block;
     margin: 110px 2.75rem 65px 2.75rem;
     max-width: 55%;
-    vertical-align: top; }
+    vertical-align: top;
+    text-align: center; }
     @media screen and (max-width: 940px) {
       .section-type-testimonial .testimonial-text {
         display: block;
         margin: 26px 0;
-        max-width: 100%;
-        text-align: center; } }
+        max-width: 100%; } }
   .section-type-testimonial .testimonial-image {
     display: inline-block; }
     @media screen and (max-width: 940px) {
