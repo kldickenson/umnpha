@@ -774,7 +774,6 @@ div.warning {
     font-weight: 600;
     text-align: center;
     width: 100%;
-    z-index: 99;
     position: absolute;
     top: 50%;
     transform: translateY(-50%); }
