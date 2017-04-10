@@ -3,7 +3,7 @@ global-styling:
   css:
     theme:
       css/style.css: {}
-      css/animate.css/animate.css/animate.min.css: {}
+      css/vendor/animate.css: {}
   js:
     js/behavior.js: {}
     js/vendor/modernizr-custom.js: {}

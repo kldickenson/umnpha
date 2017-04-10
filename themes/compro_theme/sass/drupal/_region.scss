@@ -72,6 +72,11 @@ header {
     top: 84px;
     transition: $base-duration;
     width: 100%;
+
+    @media screen and(max-width: 940px) {
+      width: 100vw;
+    }
+
   }
 
   @media screen and(max-width: 940px) {

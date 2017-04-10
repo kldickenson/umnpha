@@ -265,11 +265,6 @@ div.warning {
     left: 0;
     height: 100%;
     width: 220px;
-    -webkit-transform: translateX(-220px);
-    -moz-transform: translateX(-220px);
-    -ms-transform: translateX(-220px);
-    -o-transform: translateX(-220px);
-    transform: translateX(-220px);
     -webkit-transition: all 0.25s linear;
     -moz-transition: all 0.25s linear;
     transition: all 0.25s linear;
@@ -468,7 +463,8 @@ div.warning {
     color: #00264b;
     content: '\2630';
     display: none;
-    font-size: 2.5rem; }
+    font-size: 2.5rem;
+    transition: 0.25s ease-in-out; }
     @media screen and (max-width: 940px) {
       .region-header .hamburger .hamburger-inner::before {
         display: inline-block; } }
@@ -477,7 +473,9 @@ div.warning {
     .region-header .hamburger.is-open .hamburger-inner::before {
       color: #00264b;
       content: '\2715';
-      font-size: 1.5625rem; }
+      font-size: 2.5rem;
+      transform: scaleX(-1);
+      transition: 0.25s ease-in-out; }
 
 /*Footer Menu*/
 .footer-wrapper .block-menu {
@@ -687,6 +685,9 @@ div.warning {
       .section-type-testimonial .testimonial-image {
         display: block;
         text-align: center; } }
+    @media screen and (max-width: 940px) {
+      .section-type-testimonial .testimonial-image img {
+        object-fit: contain; } }
 
 /*Media*/
 .section-type-media {
@@ -922,6 +923,9 @@ header {
     top: 84px;
     transition: 250ms;
     width: 100%; }
+    @media screen and (max-width: 940px) {
+      .region-nav.is-open {
+        width: 100vw; } }
   @media screen and (max-width: 940px) {
     .region-nav {
       display: none; } }
@@ -1136,7 +1140,6 @@ footer.footer-wrapper {
 *[2]   This takes care of white space at btm of img file, probably need to remove later
 **/
 .field--name-field-testimonial-quote {
-  color: #00264b;
   font-family: 'Lora';
   font-size: 1.1rem;
   font-style: italic;
@@ -1190,7 +1193,6 @@ footer.footer-wrapper {
 
 /*Pull Quote*/
 .field--name-field-pull-quote-quote {
-  color: #79111b;
   font-family: 'Lora';
   font-size: 1.5rem;
   font-style: italic;

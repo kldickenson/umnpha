@@ -201,6 +201,7 @@
       content: '\2630';
       display: none;
       font-size: 2.5rem;
+      transition: 0.25s ease-in-out;
 
       @media screen and(max-width: 940px) {
         display: inline-block;
@@ -216,7 +217,9 @@
     .hamburger-inner::before {
       color: $um-blue;
       content: '\2715';
-      font-size: rem(25);
+      font-size: 2.5rem;
+      transform: scaleX(-1);
+      transition: 0.25s ease-in-out;
     }
 
   }

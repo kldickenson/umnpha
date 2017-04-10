@@ -6,10 +6,6 @@ $sliding-panel-background: #fff;
 .sliding-panel-close {
   @include display(none);
 
-  //@include media($sliding-panel-breakpoint) {
-  //  @include display(block);
-  //}
-
 }
 
 .sliding-panel-content {
@@ -18,7 +14,7 @@ $sliding-panel-background: #fff;
     @include display(block);
     @include position(fixed, 0 auto 0 0);
     @include size($sliding-panel-width 100%);
-    @include transform(translateX(- $sliding-panel-width));
+    //@include transform(translateX(- $sliding-panel-width));
     @include transition(all 0.25s linear);
     background: $sliding-panel-background;
     -webkit-overflow-scrolling: touch;
