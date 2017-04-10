@@ -10,17 +10,6 @@
  */
 function compro_theme_preprocess_html(&$variables) {
 
-  $animateCss = [
-    '#tag' => 'link',
-    '#attributes' => [
-      'href' => 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css',
-//      'href' => './css/animate.css/source/animate.css',
-      'rel' => 'stylesheet',
-      'type' => 'text/css'
-    ],
-  ];
-
-  $variables['page']['#attached']['html_head'][] = [$animateCss, 'animate.css'];
 
 }
 
