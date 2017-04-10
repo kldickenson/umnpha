@@ -35,13 +35,13 @@
           ' oTransitionEnd msTransitionEnd transitionend';
 
         $hamburger.on('click', function(e) {
-          console.log('click called');
+          $(this).toggleClass('is-open');
           $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd),
                 function(e) {
               this.removeClass(animationMenu);
             };
           $mobileNav.find('.menu >' +
-            ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block,.hamburger').toggleClass('is-open');
+            ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block').toggleClass('is-open');
         })
       }
 
@@ -124,10 +124,20 @@
       });
 
 
-      //About Page Title
-      if ($body.hasClass('node--type-page')) {
-        $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
-      };
+      //Hero Page Title
+
+        //Animate on page load
+        if ($body.hasClass('node--type-page')) {
+          $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
+        };
+
+        //Parallax on image
+        if ($body.hasClass('node--type-page')) {
+          var imageUrl = $body.find('.field-group-page-hero >' +
+            ' .field--name-field-page-hero > img').prop('src');
+          console.log(imageUrl);
+          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl})
+        }
 
       //Sticky Nav
       $(window).scroll(function() {
