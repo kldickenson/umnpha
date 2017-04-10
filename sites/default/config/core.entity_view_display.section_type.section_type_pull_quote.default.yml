@@ -44,7 +44,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      selector: .field-pull-quote-quote
+      selector: .field--name-field-pull-quote-quote
       property: color
       important: '1'
       opacity: '1'

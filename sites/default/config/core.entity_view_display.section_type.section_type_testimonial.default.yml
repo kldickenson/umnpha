@@ -93,7 +93,7 @@ content:
     weight: 4
     label: hidden
     settings:
-      selector: .field-testimonial-quote
+      selector: .field--name-field-testimonial-quote
       property: color
       important: '1'
       opacity: '1'
