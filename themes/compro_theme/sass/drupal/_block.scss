@@ -21,8 +21,12 @@
     margin: 0;
   }
 
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1185px) {
     max-width: 450px;
+  }
+
+  @media screen and(max-width: 1030px) {
+    max-width: 350px;
   }
 
   @media screen and(max-width: 940px) {
@@ -149,10 +153,6 @@
 
         &:hover {
           color: $blue;
-        }
-
-        @media screen and (max-width: 985px) {
-          font-size: 12px;
         }
 
       }
