@@ -355,7 +355,7 @@ div.warning {
   @media screen and (max-width: 1185px) {
     .block-system-branding-block {
       max-width: 450px; } }
-  @media screen and (max-width: 1030px) {
+  @media screen and (max-width: 1040px) {
     .block-system-branding-block {
       max-width: 350px; } }
   @media screen and (max-width: 940px) {
@@ -441,6 +441,9 @@ div.warning {
       @media screen and (max-width: 1150px) {
         .menu--menu-main-menu.block-menu .menu li {
           margin: 0 20px 0 0; } }
+      @media screen and (max-width: 1050px) {
+        .menu--menu-main-menu.block-menu .menu li {
+          font-size: 0.875rem; } }
       @media screen and (max-width: 940px) {
         .menu--menu-main-menu.block-menu .menu li {
           display: none;
