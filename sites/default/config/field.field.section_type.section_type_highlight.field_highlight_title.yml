@@ -5,15 +5,13 @@ dependencies:
   config:
     - eck.eck_type.section_type.section_type_highlight
     - field.storage.section_type.field_highlight_title
-  module:
-    - text
 id: section_type.section_type_highlight.field_highlight_title
 field_name: field_highlight_title
 entity_type: section_type
 bundle: section_type_highlight
 label: 'Display Title'
 description: ''
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
