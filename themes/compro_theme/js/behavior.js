@@ -15,7 +15,7 @@
 
 
       var $body = $('body');
-      var $mobileNav = $('.region-nav')
+      var $mobileNav = $('.region-nav');
       var $hamburger = $('.hamburger');
       var $search_icon = $('#block-searchicon');
 

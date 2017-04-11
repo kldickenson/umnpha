@@ -9,6 +9,7 @@ dependencies:
     - field.field.section_type.section_type_featured_report.field_featured_report_image
     - field.field.section_type.section_type_featured_report.field_featured_report_subtitle
     - field.field.section_type.section_type_featured_report.field_featured_report_title
+    - field.field.section_type.section_type_featured_report.field_fr_background_color
     - image.style.thumbnail
   module:
     - color_field
@@ -22,7 +23,7 @@ third_party_settings:
         - field_featured_report_button
         - field_button_text_color
       parent_name: ''
-      weight: 4
+      weight: 5
       format_type: fieldset
       format_settings:
         id: ''
@@ -73,6 +74,13 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  field_fr_background_color:
+    weight: 4
+    settings:
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+    third_party_settings: {  }
+    type: color_field_widget_box
     region: content
   title:
     type: string_textfield

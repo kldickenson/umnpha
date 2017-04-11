@@ -9,6 +9,7 @@ dependencies:
     - field.field.section_type.section_type_featured_report.field_featured_report_image
     - field.field.section_type.section_type_featured_report.field_featured_report_subtitle
     - field.field.section_type.section_type_featured_report.field_featured_report_title
+    - field.field.section_type.section_type_featured_report.field_fr_background_color
   module:
     - color_field
     - field_group
@@ -40,7 +41,7 @@ third_party_settings:
       children:
         - field_featured_report_image
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: html_element
       format_settings:
         id: ''
@@ -62,8 +63,8 @@ content:
     weight: 4
     label: hidden
     settings:
-      selector: '.field--name-field-featured-report-button .featured_report_text'
-      property: background-color
+      selector: '.field--name-field-featured-report-button a'
+      property: color
       important: '1'
       opacity: '1'
     third_party_settings: {  }
@@ -104,6 +105,17 @@ content:
     settings:
       link_to_entity: false
     third_party_settings: {  }
+    region: content
+  field_fr_background_color:
+    weight: 0
+    label: hidden
+    settings:
+      selector: .section-type-featured-report
+      property: background-color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
     region: content
 hidden:
   title: true

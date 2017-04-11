@@ -582,7 +582,6 @@ div.warning {
 **/
 /* Featured Report */
 .section-type-featured-report {
-  background-color: #431D16;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -1001,7 +1000,6 @@ footer.footer-wrapper {
 
 .field--name-field-featured-report-button a {
   background-color: #ffca05;
-  color: #431D16;
   display: inline;
   font-family: "Montserrat";
   font-size: 0.875rem;
@@ -1182,7 +1180,8 @@ footer.footer-wrapper {
 .field--name-field-testimonial-credentials {
   font-size: 0.6875rem;
   font-weight: 400;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  text-align: left; }
   @media screen and (max-width: 940px) {
     .field--name-field-testimonial-credentials {
       margin: 0; } }
