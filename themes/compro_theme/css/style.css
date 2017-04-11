@@ -352,9 +352,12 @@ div.warning {
   display: inline-block; }
   .block-system-branding-block h1 {
     margin: 0; }
-  @media screen and (max-width: 1100px) {
+  @media screen and (max-width: 1185px) {
     .block-system-branding-block {
       max-width: 450px; } }
+  @media screen and (max-width: 1030px) {
+    .block-system-branding-block {
+      max-width: 350px; } }
   @media screen and (max-width: 940px) {
     .block-system-branding-block {
       margin: 0;
@@ -432,9 +435,6 @@ div.warning {
         text-transform: uppercase; }
         .menu--menu-main-menu.block-menu .menu li a:hover {
           color: #0c57aa; }
-        @media screen and (max-width: 985px) {
-          .menu--menu-main-menu.block-menu .menu li a {
-            font-size: 12px; } }
       .menu--menu-main-menu.block-menu .menu li.is-open {
         display: inline-block;
         width: 100%; }
