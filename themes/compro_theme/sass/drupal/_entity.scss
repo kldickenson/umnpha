@@ -71,7 +71,8 @@
 
   img {
     height: 40px;
-    object-fit: contain;
+    object-fit: fill;
+    width: initial;
   }
 
 }
