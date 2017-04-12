@@ -135,8 +135,7 @@
         if ($body.hasClass('node--type-page')) {
           var imageUrl = $body.find('.field-group-page-hero >' +
             ' .field--name-field-page-hero > img').prop('src');
-          console.log(imageUrl);
-          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 90%'})
+          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'})
         }
 
       //Sticky Nav
