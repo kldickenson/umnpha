@@ -223,7 +223,8 @@ function compro_custom_entity_view_alter(&$build, EntityInterface $entity, Entit
  * Implements hook_form_alter().
  */
 function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-  if ($form_id == 'node_webform_form' || $form_id == 'node_page_form') {
+  if ($form_id == 'node_webform_edit_form' || $form_id == 'node_page_edit_form'
+    || $form_id == 'node_webform_form' || $form_id == 'node_page_form') {
     $form['title']['#access'] = FALSE;
     $form['#validate'][] = 'compro_custom_title_update';
   }
