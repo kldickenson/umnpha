@@ -1,0 +1,21 @@
+diff --git a/src/Plugin/Field/FieldFormatter/ColorFieldFormatterCss.php b/src/Plugin/Field/FieldFormatter/ColorFieldFormatterCss.php
+index 053191a..339695e 100644
+--- a/src/Plugin/Field/FieldFormatter/ColorFieldFormatterCss.php
++++ b/src/Plugin/Field/FieldFormatter/ColorFieldFormatterCss.php
+@@ -119,6 +119,7 @@ class ColorFieldFormatterCss extends FormatterBase {
+ 
+     foreach ($items as $delta => $item) {
+ 
++      $name = $item->getDataDefinition()->getFieldDefinition()->getName();
+       $value = $this->viewValue($item);
+       $selector = $settings['selector'];
+       $important = ($settings['important']) ? ' !important' : '';
+@@ -132,7 +133,7 @@ class ColorFieldFormatterCss extends FormatterBase {
+       $elements['#attached']['html_head'][] = [[
+         '#tag' => 'style',
+         '#value' => $inline_css,
+-      ], 'colorfield_css'];
++      ], 'colorfield_css'.$name];
+     }
+ 
+     return $elements;
