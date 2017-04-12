@@ -413,7 +413,7 @@ div.warning {
       display: none;
       position: relative;
       text-align: center;
-      top: 150px;
+      top: 200px;
       width: 100%;
       z-index: 9999; } }
 
@@ -764,6 +764,7 @@ div.warning {
       max-height: 300px;
       object-fit: cover;
       object-position: 0 90%;
+      overflow-y: hidden;
       width: 100%; }
       @media screen and (max-width: 940px) {
         .node--type-page .field--name-field-page-hero.field--type-image img {
@@ -774,11 +775,11 @@ div.warning {
     color: #fff;
     font-size: 2.75rem;
     font-weight: 600;
-    text-align: center;
-    width: 100%;
     position: absolute;
+    text-align: center;
     top: 50%;
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    width: 100%; }
 
 /*Webform*/
 .node--type-webform .image-form-wrapper {
@@ -788,9 +789,12 @@ div.warning {
     .node--type-webform .image-form-wrapper {
       flex-direction: column;
       width: 100%; } }
+.node--type-webform .field--name-field-form-image,
+.node--type-webform .field-group-form-text {
+  display: inline-block;
+  vertical-align: middle; }
 .node--type-webform .field--name-field-form-image {
-  line-height: 0px;
-  width: 100%; }
+  line-height: 0px; }
   @media screen and (max-width: 940px) {
     .node--type-webform .field--name-field-form-image {
       margin: 0 0 30px 0;
@@ -811,18 +815,16 @@ div.warning {
   font-size: 2.25rem;
   letter-spacing: 0.00625rem;
   margin: 0 0 35px 0;
-  text-align: center;
+  text-align: left;
   text-transform: capitalize; }
 .node--type-webform .field--name-field-form-text {
   font-family: 'Lora';
   font-size: 1.3125rem;
-  margin: 0 auto 35px auto;
-  max-width: 75%;
-  text-align: center; }
+  margin: 0 0 35px 0;
+  text-align: left; }
 @media screen and (max-width: 940px) {
   .node--type-webform .field--name-field-form-webform {
-    margin: 0 auto;
-    max-width: 75%; } }
+    margin: 0 auto; } }
 .node--type-webform .field--name-field-form-webform .form-item {
   height: 70px;
   margin: 0 0 30px 0;
@@ -1000,6 +1002,7 @@ footer.footer-wrapper {
 
 .field--name-field-featured-report-button a {
   background-color: #ffca05;
+  color: #79111b;
   display: inline;
   font-family: "Montserrat";
   font-size: 0.875rem;
