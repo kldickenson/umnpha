@@ -121,6 +121,7 @@ class ColorFieldFormatterCss extends FormatterBase {
 
     foreach ($items as $delta => $item) {
 
+      $name = $item->getDataDefinition()->getFieldDefinition()->getName();
       $value = $this->viewValue($item);
       $selector = $settings['selector'];
       $important = ($settings['important']) ? ' !important' : '';
@@ -134,7 +135,7 @@ class ColorFieldFormatterCss extends FormatterBase {
       $elements['#attached']['html_head'][] = [[
         '#tag' => 'style',
         '#value' => $inline_css,
-      ], 'colorfield_css_' . Html::cleanCssIdentifier($selector)];
+      ], 'colorfield_css'.$name];
     }
 
     return $elements;
