@@ -675,13 +675,13 @@ div.warning {
     display: inline-block;
     margin: 110px 2.75rem 65px 2.75rem;
     max-width: 55%;
-    vertical-align: top;
-    text-align: center; }
+    vertical-align: top; }
     @media screen and (max-width: 1100px) {
       .section-type-testimonial .testimonial-text {
         max-width: 46%; } }
     @media screen and (max-width: 940px) {
       .section-type-testimonial .testimonial-text {
+        text-align: center;
         display: block;
         margin: 26px 0;
         max-width: 100%; } }
