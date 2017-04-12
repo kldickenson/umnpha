@@ -796,7 +796,8 @@ div.warning {
 .node--type-webform .field--name-field-form-image,
 .node--type-webform .field-group-form-text {
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: middle;
+  width: 50%; }
 .node--type-webform .field--name-field-form-image {
   line-height: 0px; }
   @media screen and (max-width: 940px) {
