@@ -623,7 +623,8 @@ div.warning {
   display: inline-block; }
   .component-sponsor img {
     height: 40px;
-    object-fit: contain; }
+    object-fit: fill;
+    width: initial; }
 
 /*Highlight*/
 .section-type-highlight {
