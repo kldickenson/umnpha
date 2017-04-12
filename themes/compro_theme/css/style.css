@@ -798,6 +798,10 @@ div.warning {
   display: inline-block;
   vertical-align: middle;
   width: 50%; }
+  @media screen and (max-width: 940px) {
+    .node--type-webform .field--name-field-form-image,
+    .node--type-webform .field-group-form-text {
+      width: 100%; } }
 .node--type-webform .field--name-field-form-image {
   line-height: 0px; }
   @media screen and (max-width: 940px) {

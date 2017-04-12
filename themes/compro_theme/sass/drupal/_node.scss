@@ -85,6 +85,11 @@
     display: inline-block;
     vertical-align: middle;
     width: 50%;
+
+    @media screen and(max-width: 940px) {
+      width: 100%;
+    }
+    
   }
 
   .field--name-field-form-image {
