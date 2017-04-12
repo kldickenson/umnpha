@@ -190,6 +190,40 @@
 
     }
 
+    fieldset {
+      padding: 5px;
+      height: auto !important;
+    }
+
+    .form-type-radio {
+      height: auto;
+      margin: 0;
+
+      input {
+        height: auto;
+        display: inline-block;
+        margin: 5px 4px 0;
+        vertical-align: top;
+      }
+
+      label {
+        display: inline-block;
+        width: 82%;
+        margin: 4px 0 0;
+
+        &::after {
+          content: '';
+        }
+
+      }
+
+      fieldset {
+        padding: 5px;
+        height: auto;
+      }
+
+    }
+
     .form-actions {
       margin: 0;
 
