@@ -585,6 +585,7 @@ div.warning {
   color: white;
   display: flex;
   justify-content: space-between;
+  max-height: 500px;
   width: 100%; }
   .section-type-featured-report .featured-report-image {
     width: 45%; }
@@ -885,6 +886,7 @@ div.warning {
       transition: 250ms ease-in-out; }
 
 header {
+  height: 95px;
   margin: 0 auto;
   max-width: 1340px;
   position: relative; }
@@ -906,8 +908,7 @@ header {
 .region-header {
   background-color: #fefefe;
   display: inline-block;
-  height: 126px;
-  padding: 40px 0 40px 20px;
+  padding: 30px 0 0 20px;
   position: relative; }
   @media screen and (max-width: 940px) {
     .region-header {
@@ -921,11 +922,11 @@ header {
   .region-header.header-fixed {
     background-color: transparent;
     height: 95px;
-    padding: 15px 0; }
+    padding: 20px 0; }
 
 .region-nav {
   float: right;
-  padding: 40px 20px 0 0; }
+  padding: 30px 20px 30px 0; }
   .region-nav.header-fixed {
     background-color: transparent;
     padding-top: 10px; }

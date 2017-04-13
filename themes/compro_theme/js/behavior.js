@@ -135,7 +135,8 @@
         if ($body.hasClass('node--type-page')) {
           var imageUrl = $body.find('.field-group-page-hero >' +
             ' .field--name-field-page-hero > img').prop('src');
-          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'})
+          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
+
         }
 
       //Sticky Nav
@@ -148,6 +149,10 @@
             ' animated' +
             ' slideInDown');
           $('.layout-content').css('padding-top', '95px');
+
+          //Re-initialize parallax so it gets adjusted positioning
+          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'}).enable();
+
         }
       });
     }
