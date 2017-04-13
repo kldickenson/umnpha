@@ -149,10 +149,6 @@
             ' animated' +
             ' slideInDown');
           $('.layout-content').css('padding-top', '95px');
-
-          //Re-initialize parallax so it gets adjusted positioning
-          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'}).enable();
-
         }
       });
     }
