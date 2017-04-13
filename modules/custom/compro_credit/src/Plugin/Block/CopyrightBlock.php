@@ -42,6 +42,10 @@ class CopyrightBlock extends BlockBase {
       'copyright' => array(
         '#markup' => '&copy; ' . date('Y') . ' ' . $external_link->toString(),
       ),
+      // @see https://creativecommons.org/choose/results-one?license_code=by-nc&amp;jurisdiction=&amp;version=4.0&amp;lang=en
+      'cc_license' => array(
+        '#markup' => '<br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.',
+      ),
     );
   }
 

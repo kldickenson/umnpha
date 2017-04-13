@@ -8,6 +8,7 @@
 namespace Drupal\color_field\Plugin\Field\FieldFormatter;
 
 use Drupal\color_field\Plugin\Field\FieldType\ColorFieldType;
+use Drupal\Component\Utility\Html;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Form\FormStateInterface;
@@ -120,6 +121,7 @@ class ColorFieldFormatterCss extends FormatterBase {
 
     foreach ($items as $delta => $item) {
 
+      $name = $item->getDataDefinition()->getFieldDefinition()->getName();
       $value = $this->viewValue($item);
       $selector = $settings['selector'];
       $important = ($settings['important']) ? ' !important' : '';
@@ -133,7 +135,7 @@ class ColorFieldFormatterCss extends FormatterBase {
       $elements['#attached']['html_head'][] = [[
         '#tag' => 'style',
         '#value' => $inline_css,
-      ], 'colorfield_css'];
+      ], 'colorfield_css'.$name];
     }
 
     return $elements;
