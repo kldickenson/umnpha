@@ -610,15 +610,16 @@ div.warning {
 **/
 .section-type-sponsors {
   border-top: 1px solid #969696;
-  margin: 0 auto;
-  padding: 40px 20px 60px;
-  max-width: 1340px; }
+  padding: 40px 20px 60px; }
   @media screen and (max-width: 1170px) {
     .section-type-sponsors {
       padding: 40px 0 60px; } }
   @media screen and (max-width: 940px) {
     .section-type-sponsors {
       padding: 30px 2rem 25px 2rem; } }
+  .section-type-sponsors .field-group-sponsors-wrapper {
+    margin: 0 auto;
+    max-width: 1340px; }
 
 .component-sponsor {
   display: inline-block; }
