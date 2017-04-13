@@ -81,9 +81,7 @@
   display: inline-block;
 
   img {
-    height: 40px;
-    object-fit: fill;
-    width: initial;
+    object-fit: contain;
   }
 
 }

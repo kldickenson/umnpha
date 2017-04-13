@@ -631,9 +631,7 @@ div.warning {
 .component-sponsor {
   display: inline-block; }
   .component-sponsor img {
-    height: 40px;
-    object-fit: fill;
-    width: initial; }
+    object-fit: contain; }
 
 /*Highlight*/
 .section-type-highlight {
