@@ -16,8 +16,8 @@ third_party_settings:
       children:
         - field_sponsors_primary__label
         - field_sponsors_primary_sponsors
-      parent_name: ''
-      weight: 0
+      parent_name: group_sponsors_wrapper
+      weight: 1
       format_type: html_element
       format_settings:
         label: Primary
@@ -34,8 +34,8 @@ third_party_settings:
       children:
         - field_sponsors_secondary_label
         - field_sponsors_secondary_sponsor
-      parent_name: ''
-      weight: 20
+      parent_name: group_sponsors_wrapper
+      weight: 2
       format_type: html_element
       format_settings:
         label: Secondary
@@ -48,6 +48,23 @@ third_party_settings:
         id: ''
         classes: field-group-sponsors-secondary
       label: Secondary
+    group_sponsors_wrapper:
+      children:
+        - group_sponsors_primary
+        - group_sponsors_secondary
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: field-group-sponsors-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Wrapper
 id: section_type.section_type_sponsors.default
 targetEntityType: section_type
 bundle: section_type_sponsors
