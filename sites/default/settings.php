@@ -24,3 +24,34 @@ if (file_exists($local_settings)) {
   include $local_settings;
 }
 $settings['install_profile'] = 'standard';
+
+if (defined('PANTHEON_ENVIRONMENT')) {
+  if (in_array($_ENV['PANTHEON_ENVIRONMENT'], array('stage', 'dev', 'test', 'live'))) {
+    $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.getpantheon.io";
+    $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.pantheon.io";
+    $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.pantheonsite.io";
+    $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.panth.io";
+
+    # Replace value with custom domain(s) added in the site Dashboard
+    $settings['trusted_host_patterns'][] = '^.+\.healthyagingpoll\.org$';
+    $settings['trusted_host_patterns'][] = '^healthyagingpoll\.org$';
+    $settings['trusted_host_patterns'][] = '^localhost$';
+  }
+}
+
+// Redirect all traffic to non-www. For example healthyagingpoll.org
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
+  ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') &&
+  // Check if Drupal or WordPress is running via command line
+  (php_sapi_name() != "cli")) {
+  if ($_SERVER['HTTP_HOST'] == 'live-umnpha.pantheonsite.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.pantheon.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.getpantheon.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.panth.io') {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: http://healthyagingpoll.org'. $_SERVER['REQUEST_URI']);
+    exit();
+  }
+  if ($_SERVER['HTTP_HOST'] == 'www.healthyagingpoll.org' || $_SERVER['HTTP_HOST'] == 'live-umnpha.pantheonsite.io') {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: http://healthyagingpoll.org'. $_SERVER['REQUEST_URI']);
+    exit();
+  }
+}
