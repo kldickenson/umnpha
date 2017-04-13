@@ -148,12 +148,6 @@
             ' animated' +
             ' slideInDown');
           $('.layout-content').css('padding-top', '95px');
-
-          //Re-initialize parallax so it gets adjusted positioning --
-          // currently not working but leaving in b/c its best solution
-          // when working
-          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'}).enable();
-
         }
       });
     }
