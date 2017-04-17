@@ -1,0 +1,23 @@
+uuid: 931949a2-4396-4782-9b73-b3b7cbe68fb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.component_sponsor
+    - field.storage.component.field_sponsor_link
+  module:
+    - link
+id: component.component_sponsor.field_sponsor_link
+field_name: field_sponsor_link
+entity_type: component
+bundle: component_sponsor
+label: Link
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 0
+field_type: link

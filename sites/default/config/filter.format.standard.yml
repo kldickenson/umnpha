@@ -1,0 +1,25 @@
+uuid: 9f490e12-2e0e-4770-9258-33d15d15a283
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: I_nxGITZ_BVOYe-6zV6jW3nk26s_Cp3n7YygMlYhtpM
+name: Standard
+format: standard
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<br> <del> <em> <hr> <ins> <li> <mark> <noscript> <ol> <p> <q> <strong> <sub> <sup> <ul> <a href>'
+      filter_html_help: false
+      filter_html_nofollow: false
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }

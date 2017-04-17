@@ -1,0 +1,9 @@
+uuid: 8243e261-40fa-4208-abc8-7bb4299d5a7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Infographic
+type: section_type_infographic
+description: 'An informational graphic that will contain a download bar along with social media icons.'

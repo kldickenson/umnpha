@@ -1,0 +1,377 @@
+/*
+*   #BLOCKS
+*   1) Logo block
+*   2) Search Icon
+*   3) Search Form
+*   4) Email Sign-up Button
+*   5) Main Menu & Hamburger Button
+*   6) Footer Menu
+*   7) Footer Blocks (Address & Mobile Social Icons)
+*   8) Post-Footer Blocks (Copyright & Desktop Social Icons)
+*
+**/
+
+
+
+/*Logo Blocks*/
+.block-system-branding-block {
+  display: inline-block;
+
+  h1 {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 1185px) {
+    max-width: 450px;
+  }
+
+  @media screen and(max-width: 1040px) {
+    max-width: 350px;
+  }
+
+  @media screen and(max-width: 940px) {
+    margin: 0;
+    max-height: 40px;
+    max-width: 87%;
+  }
+
+  @media screen and (max-width: 480px) {
+    max-width: 80%;
+    padding-top: 10px;
+  }
+
+  &.is-open {
+    left: 20px;
+    max-width: 83%;
+    position: relative;
+    top: -55px;
+  }
+
+}
+
+// 404
+#block-404menu {
+  padding: 25px;
+  text-align: center;
+
+  .menu {
+    text-align: center;
+  }
+
+}
+
+
+
+
+/*Search Icon*/
+.block-search-icon-block {
+  display: none;
+}
+
+
+
+
+
+/*Search Form*/
+.block-google-cse {
+  display: none;
+}
+
+
+
+
+
+/*Email Sign Up*/
+.block-email-sign-up {
+  display: inline-block;
+  float: right;
+  text-transform: uppercase;
+  transform: translateY(50%);
+
+  &.is-open {
+    display: inline-block;
+  }
+
+  a {
+    background-color: $arb-blue;
+    color: white;
+    font-size: rem(14);
+    margin: 0;
+    padding: rem(14) rem(28);
+
+    &:hover {
+      transition: $base-duration $base-timing;
+      background-color: $arb-blue-lightened;
+    }
+
+    @media screen and(max-width: 1060px) {
+      font-size: rem(13);
+      padding: rem(13) rem(24);
+    }
+
+  }
+
+  @media screen and(max-width: 940px) {
+    display: none;
+    position: relative;
+    text-align: center;
+    top: 200px;
+    width: 100%;
+    z-index: 9999;
+  }
+
+}
+
+
+
+
+
+/*Main Menu*/
+.menu--menu-main-menu.block-menu {
+  display: inline-block;
+  float: right;
+  transform: translateY(50%);
+
+
+
+
+  .menu {
+    margin: 0;
+
+    li {
+      display: inline;
+      font-size: rem(15);
+      margin: 0 30px 0 0;
+
+      &.menu-item--active-trail {
+        color: $blue;
+      }
+
+      a {
+        color: $um-blue;
+        text-transform: uppercase;
+
+        &:hover {
+          color: $blue;
+        }
+
+      }
+
+      &.is-open {
+        display: inline-block;
+        width: 100%;
+      }
+
+      @media screen and(max-width: 1150px) {
+        margin: 0 20px 0 0;
+      }
+
+      @media screen and (max-width: 1050px) {
+        font-size: rem(14);
+      }
+
+      @media screen and(max-width: 940px) {
+        display: none;
+        margin: 0 0 30px 0;
+        text-align: center;
+      }
+
+    }
+
+  }
+
+  @media screen and(max-width: 940px) {
+    left: 0;
+    position: absolute;
+    transform: unset;
+    width: 100%;
+  }
+
+}
+
+.region-header .hamburger {
+  background-color: unset;
+  float: right;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+  }
+
+  .hamburger-inner {
+
+    &::before {
+      color: $um-blue;
+      content: '\2630';
+      display: none;
+      font-size: 2.5rem;
+      transition: 0.25s ease-in-out;
+
+      @media screen and(max-width: 940px) {
+        display: inline-block;
+      }
+
+    }
+
+  }
+
+  &.is-open {
+    top: -55px;
+
+    .hamburger-inner::before {
+      color: $um-blue;
+      content: '\2715';
+      font-size: 2.5rem;
+      transform: scaleX(-1);
+      transition: 0.25s ease-in-out;
+    }
+
+  }
+
+}
+
+
+
+
+
+/*Footer Menu*/
+.footer-wrapper .block-menu {
+  display: inline-block;
+  float: right;
+
+  @media screen and(max-width: 940px) {
+    display: block;
+    float: none;
+  }
+
+  ul {
+    margin: 0 -15px 0 0;
+  }
+
+  ul li.menu-item {
+    display: inline;
+    margin: 0 15px;
+
+    @media screen and(max-width: 940px) {
+      display: block;
+      font-size: rem(13);
+      margin: 0 0 20px 0;
+    }
+
+    a {
+      color: $medium-gray;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $yellow;
+      }
+
+      &.is-active {
+        color: $yellow;
+      }
+
+    }
+
+  }
+
+}
+
+
+
+
+
+/*Footer Blocks*/
+#block-logoforthefooter {
+  display: inline-block;
+  margin: 0;
+
+  @media screen and(max-width: 940px) {
+    margin: 0 0 40px 0;
+  }
+
+}
+
+.block-address,
+.block-email {
+  position: relative;
+  text-align: right;
+
+  @media screen and(max-width: 940px) {
+    margin: 0 0 40px 0;
+    text-align: left;
+  }
+
+  address,
+  a.email {
+    font-size: rem(11);
+    font-style: normal;
+
+    @media screen and(max-width: 940px) {
+      font-size: rem(13);
+    }
+
+  }
+
+  a.email {
+    color: $um-maize;
+  }
+
+}
+
+.region-footer .block-contact-info.block-social {
+  display: none;
+
+  @media screen and(max-width: 940px) {
+    display: block;
+    float: none;
+  }
+
+}
+
+/*Post Footer*/
+.block-copyright-block {
+  display: inline-block;
+  font-size: rem(11);
+
+  a {
+    color: $um-maize;
+  }
+
+}
+
+.block-contact-info.block-social {
+  float: right;
+  margin: 0;
+
+  .social{
+    margin: 0 -30px 0 0;
+  }
+
+  a {
+    color: transparent;
+    font-size: rem(16);
+    margin: 0px 30px 0 0;
+    width: 20px;
+
+    &::before {
+      color: $medium-gray;
+      font-size: rem(24);
+    }
+
+    &:hover {
+      &::before{
+        color: $um-maize;
+      }
+
+    }
+
+  }
+
+}
+
+.region-post-footer .block-contact-info.block-social {
+  @media screen and(max-width: 940px) {
+    display: none;
+  }
+
+}

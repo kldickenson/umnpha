@@ -1,0 +1,28 @@
+uuid: 37b1a6de-b6d0-471e-90cd-27b1b3bf4186
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.component_sponsor
+    - eck.eck_type.section_type.section_type_sponsors
+    - field.storage.section_type.field_sponsors_primary_sponsors
+id: section_type.section_type_sponsors.field_sponsors_primary_sponsors
+field_name: field_sponsors_primary_sponsors
+entity_type: section_type
+bundle: section_type_sponsors
+label: 'Primary Sponsors'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:component'
+  handler_settings:
+    target_bundles:
+      component_sponsor: component_sponsor
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

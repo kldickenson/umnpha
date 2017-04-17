@@ -1,0 +1,30 @@
+uuid: a323702a-120e-4834-9ff7-c96c9a32239c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_highlight
+    - field.storage.section_type.field_highlight_media
+    - media_entity.bundle.image
+    - media_entity.bundle.video_embed
+id: section_type.section_type_highlight.field_highlight_media
+field_name: field_highlight_media
+entity_type: section_type
+bundle: section_type_highlight
+label: Media
+description: 'Can be image or video'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video_embed: video_embed
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

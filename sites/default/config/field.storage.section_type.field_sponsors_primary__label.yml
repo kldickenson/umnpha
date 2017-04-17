@@ -1,0 +1,21 @@
+uuid: 4eef0bea-cf19-46b2-b40c-4da76a11b64e
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: section_type.field_sponsors_primary__label
+field_name: field_sponsors_primary__label
+entity_type: section_type
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

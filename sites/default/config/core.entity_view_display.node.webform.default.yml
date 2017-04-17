@@ -1,0 +1,114 @@
+uuid: e9b7de43-bccd-401b-baf4-c67881a9ec6d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.webform.field_form_image
+    - field.field.node.webform.field_form_sections
+    - field.field.node.webform.field_form_text
+    - field.field.node.webform.field_form_webform
+    - field.field.node.webform.field_title
+    - field.field.node.webform.field_webform_media_form
+    - node.type.webform
+  module:
+    - field_group
+    - image
+    - text
+    - user
+    - webform
+third_party_settings:
+  field_group:
+    group_form_text:
+      children:
+        - field_title
+        - field_form_text
+        - field_form_webform
+      parent_name: group_image_form
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: 'Form Text'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: field-group-form-text
+      label: 'Form Text'
+    group_image_form:
+      children:
+        - field_form_image
+        - group_form_text
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: image-form-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Image & Form'
+_core:
+  default_config_hash: 3r1i0UMUbeNHhvmiqHDYznoS4G9XR1jq6lQ49r80lDE
+id: node.webform.default
+targetEntityType: node
+bundle: webform
+mode: default
+content:
+  field_form_image:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_form_sections:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    region: content
+  field_form_text:
+    type: text_default
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_form_webform:
+    type: webform_entity_reference_entity_view
+    weight: 5
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_webform_media_form:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: webform_entity_reference_entity_view
+    region: content
+hidden:
+  compro_links: true
+  compro_submitted: true
+  links: true

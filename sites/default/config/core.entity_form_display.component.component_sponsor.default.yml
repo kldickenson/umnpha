@@ -1,0 +1,42 @@
+uuid: 11e524e1-7989-49b0-809f-d8b628f38f1c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.component_sponsor
+    - field.field.component.component_sponsor.field_sponsor_link
+    - field.field.component.component_sponsor.field_sponsor_logo
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+id: component.component_sponsor.default
+targetEntityType: component
+bundle: component_sponsor
+mode: default
+content:
+  field_sponsor_link:
+    weight: 3
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_sponsor_logo:
+    type: image_image
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

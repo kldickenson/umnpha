@@ -1,0 +1,50 @@
+uuid: 3a51b57b-6ae8-4d93-bb76-4e812d150d7d
+langcode: en
+status: true
+dependencies: {  }
+id: seo
+label: seo
+weight: -6
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access in-place editing'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform submission log'
+  - 'administer account settings'
+  - 'administer menu'
+  - 'administer meta tags'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer redirect settings'
+  - 'administer redirects'
+  - 'administer site configuration'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer xmlsitemap'
+  - 'create component entities'
+  - 'create page content'
+  - 'create section_type entities'
+  - 'create url aliases'
+  - 'create webform content'
+  - 'delete any component entities'
+  - 'delete any section_type entities'
+  - 'delete any webform content'
+  - 'delete own page content'
+  - 'delete own webform content'
+  - 'edit any component entities'
+  - 'edit any page content'
+  - 'edit any section_type entities'
+  - 'edit any webform'
+  - 'edit any webform content'
+  - 'edit own page content'
+  - 'edit own webform'
+  - 'edit own webform content'
+  - 'use text format standard'
+  - 'view own unpublished content'
+  - 'view the administration theme'

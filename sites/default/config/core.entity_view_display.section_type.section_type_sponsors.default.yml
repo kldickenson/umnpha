@@ -1,0 +1,108 @@
+uuid: 53580f85-c78b-4a33-81d2-73bea54bdc0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_sponsors
+    - field.field.section_type.section_type_sponsors.field_sponsors_primary__label
+    - field.field.section_type.section_type_sponsors.field_sponsors_primary_sponsors
+    - field.field.section_type.section_type_sponsors.field_sponsors_secondary_label
+    - field.field.section_type.section_type_sponsors.field_sponsors_secondary_sponsor
+  module:
+    - field_group
+third_party_settings:
+  field_group:
+    group_sponsors_primary:
+      children:
+        - field_sponsors_primary__label
+        - field_sponsors_primary_sponsors
+      parent_name: group_sponsors_wrapper
+      weight: 1
+      format_type: html_element
+      format_settings:
+        label: Primary
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: field-group-sponsors-primary
+      label: Primary
+    group_sponsors_secondary:
+      children:
+        - field_sponsors_secondary_label
+        - field_sponsors_secondary_sponsor
+      parent_name: group_sponsors_wrapper
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: Secondary
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: field-group-sponsors-secondary
+      label: Secondary
+    group_sponsors_wrapper:
+      children:
+        - group_sponsors_primary
+        - group_sponsors_secondary
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: field-group-sponsors-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Wrapper
+id: section_type.section_type_sponsors.default
+targetEntityType: section_type
+bundle: section_type_sponsors
+mode: default
+content:
+  field_sponsors_primary__label:
+    weight: 21
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_sponsors_primary_sponsors:
+    type: entity_reference_entity_view
+    weight: 22
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    region: content
+  field_sponsors_secondary_label:
+    weight: 22
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_sponsors_secondary_sponsor:
+    type: entity_reference_entity_view
+    weight: 23
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    region: content
+hidden:
+  title: true

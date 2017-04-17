@@ -1,0 +1,21 @@
+uuid: e1ed31e7-7977-4a36-bfd7-cfb02c009a91
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_page_sections
+    - node.type.page
+id: node.page.field_page_sections
+field_name: field_page_sections
+entity_type: node
+bundle: page
+label: Sections
+description: 'Choose which section-types to display on this page'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:section_type'
+  handler_settings: {  }
+field_type: entity_reference

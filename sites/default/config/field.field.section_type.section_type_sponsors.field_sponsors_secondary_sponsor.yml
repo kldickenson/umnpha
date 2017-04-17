@@ -1,0 +1,28 @@
+uuid: 1ccf6a2a-625a-40ad-adb9-ecfa08145496
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.component_sponsor
+    - eck.eck_type.section_type.section_type_sponsors
+    - field.storage.section_type.field_sponsors_secondary_sponsor
+id: section_type.section_type_sponsors.field_sponsors_secondary_sponsor
+field_name: field_sponsors_secondary_sponsor
+entity_type: section_type
+bundle: section_type_sponsors
+label: 'Secondary Sponsors'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:component'
+  handler_settings:
+    target_bundles:
+      component_sponsor: component_sponsor
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

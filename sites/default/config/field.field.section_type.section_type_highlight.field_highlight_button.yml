@@ -1,0 +1,23 @@
+uuid: 805551b1-b06c-4ae2-a31d-08773c926981
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_highlight
+    - field.storage.section_type.field_highlight_button
+  module:
+    - link
+id: section_type.section_type_highlight.field_highlight_button
+field_name: field_highlight_button
+entity_type: section_type
+bundle: section_type_highlight
+label: Button
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

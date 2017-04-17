@@ -1,0 +1,110 @@
+uuid: a5777a10-23f2-4c51-96e5-63a0e842cabe
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_highlight
+    - field.field.section_type.section_type_highlight.field_highlight_button
+    - field.field.section_type.section_type_highlight.field_highlight_media
+    - field.field.section_type.section_type_highlight.field_highlight_text
+    - field.field.section_type.section_type_highlight.field_highlight_title
+  module:
+    - field_group
+    - link
+third_party_settings:
+  field_group:
+    group_highlight_text:
+      children:
+        - field_highlight_title
+        - field_highlight_text
+        - field_highlight_button
+      parent_name: group_highlight_wrapper
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-highlight-text
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Highlight Text'
+    group_highlight_media:
+      children:
+        - field_highlight_media
+      parent_name: group_highlight_wrapper
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: highlight-media
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Highlight Media'
+    group_highlight_wrapper:
+      children:
+        - group_highlight_media
+        - group_highlight_text
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: highlight-content
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Highlight Wrapper'
+id: section_type.section_type_highlight.default
+targetEntityType: section_type
+bundle: section_type_highlight
+mode: default
+content:
+  field_highlight_button:
+    type: link
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: null
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    region: content
+  field_highlight_media:
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+  field_highlight_text:
+    type: string
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_highlight_title:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  title: true

@@ -1,0 +1,121 @@
+uuid: 92955bff-79f7-4337-ad31-49816e3d7ca2
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_featured_report
+    - field.field.section_type.section_type_featured_report.field_button_text_color
+    - field.field.section_type.section_type_featured_report.field_featured_report_button
+    - field.field.section_type.section_type_featured_report.field_featured_report_image
+    - field.field.section_type.section_type_featured_report.field_featured_report_subtitle
+    - field.field.section_type.section_type_featured_report.field_featured_report_title
+    - field.field.section_type.section_type_featured_report.field_fr_background_color
+  module:
+    - color_field
+    - field_group
+    - link
+    - responsive_image
+third_party_settings:
+  field_group:
+    group_featured_report_text:
+      children:
+        - field_featured_report_title
+        - field_featured_report_subtitle
+        - field_featured_report_button
+        - field_button_text_color
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        label: featured_report_text
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: featured-report-text
+      label: featured_report_text
+    group_featured_report_image:
+      children:
+        - field_featured_report_image
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: featured-report-image
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: featured_report_image
+id: section_type.section_type_featured_report.default
+targetEntityType: section_type
+bundle: section_type_featured_report
+mode: default
+content:
+  field_button_text_color:
+    type: color_field_formatter_css
+    weight: 4
+    label: hidden
+    settings:
+      selector: '.field--name-field-featured-report-button a'
+      property: color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    region: content
+  field_featured_report_button:
+    type: link
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    region: content
+  field_featured_report_image:
+    type: responsive_image
+    weight: 1
+    label: hidden
+    settings:
+      responsive_image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_featured_report_subtitle:
+    type: string
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_featured_report_title:
+    type: string
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_fr_background_color:
+    weight: 0
+    label: hidden
+    settings:
+      selector: .section-type-featured-report
+      property: background-color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+hidden:
+  title: true

@@ -1,0 +1,17 @@
+uuid: 4b82733a-54b8-4fcd-acd2-e990a4686647
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: h9PVTF-pBk8DTTDgvpKeB2hwjd3qtEvUGxqenvIgVK4
+name: viewport
+label: Viewport
+effects:
+  f8677d80-e9b6-4335-a200-c1ce48c0ecec:
+    uuid: f8677d80-e9b6-4335-a200-c1ce48c0ecec
+    id: image_scale
+    weight: 1
+    data:
+      width: 1920
+      height: null
+      upscale: true

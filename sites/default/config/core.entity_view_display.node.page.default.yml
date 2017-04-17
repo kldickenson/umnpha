@@ -1,0 +1,68 @@
+uuid: 60109218-cd22-4713-9018-c3488cd5a043
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.field_page_hero
+    - field.field.node.page.field_page_sections
+    - field.field.node.page.field_title
+    - node.type.page
+  module:
+    - field_group
+    - image
+    - user
+third_party_settings:
+  field_group:
+    group_page_hero:
+      children:
+        - field_title
+        - field_page_hero
+      parent_name: ''
+      weight: 0
+      format_type: html_element
+      format_settings:
+        label: 'Page Hero'
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+        id: ''
+        classes: field-group-page-hero
+      label: 'Page Hero'
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  field_page_hero:
+    type: image
+    weight: 2
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    region: content
+  field_page_sections:
+    type: entity_reference_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    region: content
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  compro_links: true
+  compro_submitted: true
+  links: true

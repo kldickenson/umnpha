@@ -1,0 +1,5 @@
+admin_screen:
+  version: 1.x
+  css:
+    theme:
+      theme/css/phoenix_component.css: {}

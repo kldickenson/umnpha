@@ -1,0 +1,5 @@
+name: Email Sign Up
+description: Custom block for email sign up
+package: compro
+type: module
+core: 8.x

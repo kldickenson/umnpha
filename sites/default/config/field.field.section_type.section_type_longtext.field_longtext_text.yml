@@ -1,0 +1,21 @@
+uuid: 82b9d518-677a-4186-9195-f1a50c1d7a2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_longtext
+    - field.storage.section_type.field_longtext_text
+  module:
+    - text
+id: section_type.section_type_longtext.field_longtext_text
+field_name: field_longtext_text
+entity_type: section_type
+bundle: section_type_longtext
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

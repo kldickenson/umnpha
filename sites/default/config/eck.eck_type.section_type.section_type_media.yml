@@ -1,0 +1,9 @@
+uuid: f2faf7ac-39c2-4499-9b57-10d49f6b7346
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Media
+type: section_type_media
+description: ''

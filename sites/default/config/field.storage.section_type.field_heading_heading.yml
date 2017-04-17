@@ -1,0 +1,27 @@
+uuid: 0f7f00dd-91fe-47e4-877c-ea9e1cae1997
+langcode: en
+status: true
+dependencies:
+  module:
+    - compro_custom
+    - eck
+id: section_type.field_heading_heading
+field_name: field_heading_heading
+entity_type: section_type
+type: heading_text
+settings:
+  max_length: '255'
+  allowed_wrappers:
+    h2: h2
+    h3: h3
+    h4: h4
+    h5: h5
+    h1: 0
+    h6: 0
+module: compro_custom
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

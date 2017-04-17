@@ -1,0 +1,23 @@
+uuid: 4fe00c46-10bc-4bb7-8994-608f6280f65f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_media
+    - field.field.section_type.section_type_media.field_media_media
+id: section_type.section_type_media.default
+targetEntityType: section_type
+bundle: section_type_media
+mode: default
+content:
+  field_media_media:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  title: true

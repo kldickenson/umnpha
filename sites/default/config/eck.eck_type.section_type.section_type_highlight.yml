@@ -1,0 +1,9 @@
+uuid: 840ae1bd-f93e-430b-814d-78d9d9b5c16e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Highlight
+type: section_type_highlight
+description: 'Highlights with a media item (image or video), title, short description, and button link. '

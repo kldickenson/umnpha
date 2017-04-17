@@ -1,0 +1,10 @@
+uuid: 116a5571-69b4-46c1-b4cd-56df25bc0b69
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact
+id: contact_message.small
+label: Small
+targetEntityType: contact_message
+cache: true

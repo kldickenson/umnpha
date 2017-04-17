@@ -1,0 +1,44 @@
+uuid: f3a23a37-1b37-4e52-b90e-7c2343ca9dc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.webform.field_form_image
+    - field.field.node.webform.field_form_sections
+    - field.field.node.webform.field_form_text
+    - field.field.node.webform.field_form_webform
+    - field.field.node.webform.field_title
+    - field.field.node.webform.field_webform_media_form
+    - node.type.webform
+  module:
+    - user
+_core:
+  default_config_hash: Ls5l3Xs7-YstJnurxFLKj38Exqr2JMZs1j9YeX1Kh2o
+id: node.webform.teaser
+targetEntityType: node
+bundle: webform
+mode: teaser
+content:
+  compro_links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  compro_submitted:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_form_image: true
+  field_form_sections: true
+  field_form_text: true
+  field_form_webform: true
+  field_title: true
+  field_webform_media_form: true

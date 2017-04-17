@@ -1,0 +1,25 @@
+{
+  "name": "compro_theme",
+  "version": "8.0.0",
+  "authors": [
+    "Chris Keller <chris@commercialprogression.com>"
+  ],
+  "description": "Drupal theme based on bourbon.io",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/alexfisher/compro_theme",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bourbon": "~4.2.6",
+    "neat": "~1.7.2",
+    "normalize-css": "normalize.css#~3.0.3"
+  }
+}

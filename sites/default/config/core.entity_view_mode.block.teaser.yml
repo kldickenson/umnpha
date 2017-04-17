@@ -1,0 +1,10 @@
+uuid: 8ee58c05-9704-434b-9604-afe32a2d0da1
+langcode: en
+status: true
+dependencies:
+  module:
+    - block
+id: block.teaser
+label: Teaser
+targetEntityType: block
+cache: true

@@ -1,0 +1,20 @@
+uuid: 2a05b96e-52d0-4abc-8795-2515eaec9c5d
+langcode: en
+status: true
+dependencies:
+  module:
+    - compro_credit
+  theme:
+    - compro_theme
+id: copyrightnotice
+theme: compro_theme
+region: post_footer
+weight: -8
+provider: null
+plugin: copyright_block
+settings:
+  id: copyright_block
+  label: 'Copyright Notice'
+  provider: compro_credit
+  label_display: '0'
+visibility: {  }

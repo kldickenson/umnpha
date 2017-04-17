@@ -1,0 +1,68 @@
+uuid: d2282fca-448d-469a-9597-389290e93c7a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_sponsors
+    - field.field.section_type.section_type_sponsors.field_sponsors_primary__label
+    - field.field.section_type.section_type_sponsors.field_sponsors_primary_sponsors
+    - field.field.section_type.section_type_sponsors.field_sponsors_secondary_label
+    - field.field.section_type.section_type_sponsors.field_sponsors_secondary_sponsor
+  module:
+    - inline_entity_form
+id: section_type.section_type_sponsors.default
+targetEntityType: section_type
+bundle: section_type_sponsors
+mode: default
+content:
+  field_sponsors_primary__label:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_sponsors_primary_sponsors:
+    type: inline_entity_form_complex
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    region: content
+  field_sponsors_secondary_label:
+    type: string_textfield
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_sponsors_secondary_sponsor:
+    type: inline_entity_form_complex
+    weight: 4
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

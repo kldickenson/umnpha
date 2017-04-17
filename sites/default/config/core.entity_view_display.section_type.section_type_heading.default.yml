@@ -1,0 +1,23 @@
+uuid: e441c00f-59df-4e4a-8062-36e33bc633c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_heading
+    - field.field.section_type.section_type_heading.field_heading_heading
+  module:
+    - compro_custom
+id: section_type.section_type_heading.default
+targetEntityType: section_type
+bundle: section_type_heading
+mode: default
+content:
+  field_heading_heading:
+    type: heading_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  title: true

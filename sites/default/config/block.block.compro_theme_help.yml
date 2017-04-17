@@ -1,0 +1,22 @@
+uuid: b341a63e-e573-4f68-b380-363bee4b183a
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - compro_theme
+_core:
+  default_config_hash: 8I8iACSa0sKO3k3jlvUG1ge52rfcKX7USJAQYnzuBgg
+id: compro_theme_help
+theme: compro_theme
+region: header
+weight: -11
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

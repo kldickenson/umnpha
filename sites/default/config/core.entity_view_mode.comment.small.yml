@@ -1,0 +1,10 @@
+uuid: cad16f76-a628-444c-96e8-3f651b7f8382
+langcode: en
+status: true
+dependencies:
+  module:
+    - comment
+id: comment.small
+label: Small
+targetEntityType: comment
+cache: true

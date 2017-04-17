@@ -1,0 +1,22 @@
+uuid: 820d664a-7e94-41c1-a825-470123058e0a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - compro_adminimal
+_core:
+  default_config_hash: P32Lk6oRb_bB6yoWBb4dYA_iTHqUj33sWgucbixuy4M
+id: compro_adminimal_messages
+theme: compro_adminimal
+region: content
+weight: -2
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,20 @@
+uuid: 7b3ad628-9179-4a17-9771-f4cc77d5986c
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: node.field_page_sections
+field_name: field_page_sections
+entity_type: node
+type: entity_reference
+settings:
+  target_type: section_type
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,41 @@
+uuid: 4a043840-bc75-4f82-91c7-adb228e0fbee
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_infographic
+    - field.field.section_type.section_type_infographic.field_infographic_caption
+    - field.field.section_type.section_type_infographic.field_infographic_image
+    - image.style.thumbnail
+  module:
+    - image
+id: section_type.section_type_infographic.default
+targetEntityType: section_type
+bundle: section_type_infographic
+mode: default
+content:
+  field_infographic_caption:
+    type: string_textfield
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_infographic_image:
+    type: image_image
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: fcef8b2c-5c32-4984-8148-012b346e3afb
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_testimonial
+    - field.storage.section_type.field_testimonial_quote
+  module:
+    - text
+id: section_type.section_type_testimonial.field_testimonial_quote
+field_name: field_testimonial_quote
+entity_type: section_type
+bundle: section_type_testimonial
+label: Quote
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

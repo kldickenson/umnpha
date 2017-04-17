@@ -1,0 +1,19 @@
+uuid: f2aad98c-fdd4-48ca-b658-3c42876b674e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_title
+    - node.type.page
+id: node.page.field_title
+field_name: field_title
+entity_type: node
+bundle: page
+label: Title
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,10 @@
+uuid: 4357237d-b76b-4d2e-bb98-a76fa9a6a80a
+langcode: en
+status: true
+dependencies: {  }
+id: section_type
+label: 'Section Type'
+created: false
+changed: false
+uid: false
+title: true

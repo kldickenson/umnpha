@@ -1,0 +1,15 @@
+uuid: b6a20693-9060-418f-9e93-e588dd5fb074
+langcode: en
+status: true
+dependencies: {  }
+name: full_width_660xn
+label: 'Full width 660xN'
+effects:
+  59b67e02-34eb-4d54-adbc-c4eafc5163d6:
+    uuid: 59b67e02-34eb-4d54-adbc-c4eafc5163d6
+    id: image_scale
+    weight: 1
+    data:
+      width: 660
+      height: null
+      upscale: false

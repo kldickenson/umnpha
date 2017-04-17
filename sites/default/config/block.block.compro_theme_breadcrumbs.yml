@@ -1,0 +1,22 @@
+uuid: 1b41cbda-4cb8-4e00-b961-5dc2aba8b8cc
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - compro_theme
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: compro_theme_breadcrumbs
+theme: compro_theme
+region: header
+weight: -5
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

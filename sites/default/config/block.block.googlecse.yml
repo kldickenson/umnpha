@@ -1,0 +1,20 @@
+uuid: 2db4d7e4-7ee2-492b-8595-dd35b72dab86
+langcode: en
+status: true
+dependencies:
+  module:
+    - google_cse
+  theme:
+    - compro_theme
+id: googlecse
+theme: compro_theme
+region: nav
+weight: -8
+provider: null
+plugin: google_cse
+settings:
+  id: google_cse
+  label: Search
+  provider: google_cse
+  label_display: '0'
+visibility: {  }

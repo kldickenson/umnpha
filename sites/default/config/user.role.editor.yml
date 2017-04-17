@@ -1,0 +1,43 @@
+uuid: e52400c7-185f-48dd-a988-1a3c8832446f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: WU08CH8_qHXOB3lMVFY_yyJz33nkTRpCg9XqfqkM6eI
+id: editor
+label: editor
+weight: -8
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access media overview'
+  - 'access toolbar'
+  - 'access webform submission log'
+  - 'administer media'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'create component entities'
+  - 'create page content'
+  - 'create section_type entities'
+  - 'create url aliases'
+  - 'create webform content'
+  - 'delete any component entities'
+  - 'delete any section_type entities'
+  - 'delete any webform content'
+  - 'delete own page content'
+  - 'delete own webform content'
+  - 'edit any component entities'
+  - 'edit any page content'
+  - 'edit any section_type entities'
+  - 'edit any webform content'
+  - 'edit own page content'
+  - 'edit own webform content'
+  - 'modify contact info'
+  - 'use text format standard'
+  - 'view own unpublished content'
+  - 'view the administration theme'

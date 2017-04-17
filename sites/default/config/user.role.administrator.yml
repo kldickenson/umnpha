@@ -1,0 +1,52 @@
+uuid: ca60012e-1237-4c5a-af81-f7477b4d4772
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Om6FEO7vZZMkPIbVvfxtdkWerQ2PvQM4sWUd6Q3ZnfI
+id: administrator
+label: Administrator
+weight: -7
+is_admin: false
+permissions:
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access in-place editing'
+  - 'access media overview'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'access webform overview'
+  - 'access webform submission log'
+  - 'administer account settings'
+  - 'administer blocks'
+  - 'administer media'
+  - 'administer menu'
+  - 'administer nodes'
+  - 'administer redirects'
+  - 'administer taxonomy'
+  - 'administer users'
+  - 'bypass eck entity access'
+  - 'create component entities'
+  - 'create page content'
+  - 'create section_type entities'
+  - 'create url aliases'
+  - 'create webform content'
+  - 'delete any component entities'
+  - 'delete any page content'
+  - 'delete any section_type entities'
+  - 'delete any webform content'
+  - 'delete own page content'
+  - 'delete own webform content'
+  - 'edit any component entities'
+  - 'edit any page content'
+  - 'edit any section_type entities'
+  - 'edit any webform content'
+  - 'edit own page content'
+  - 'edit own webform content'
+  - 'modify contact info'
+  - 'use text format standard'
+  - 'view own unpublished content'
+  - 'view the administration theme'

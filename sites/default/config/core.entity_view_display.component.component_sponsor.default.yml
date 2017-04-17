@@ -1,0 +1,34 @@
+uuid: d6d8d13e-dae3-439b-9858-1450778fb07c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.component_sponsor
+    - field.field.component.component_sponsor.field_sponsor_link
+    - field.field.component.component_sponsor.field_sponsor_logo
+    - image.style.max_nx40
+  module:
+    - image
+    - linked_field
+id: component.component_sponsor.default
+targetEntityType: component
+bundle: component_sponsor
+mode: default
+content:
+  field_sponsor_logo:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: max_nx40
+      image_link: ''
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_sponsor_link
+        advanced: {  }
+    region: content
+hidden:
+  field_sponsor_link: true
+  title: true

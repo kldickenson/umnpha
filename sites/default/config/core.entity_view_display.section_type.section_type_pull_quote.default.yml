@@ -1,0 +1,54 @@
+uuid: b71504a2-1244-400d-8d16-e20e2836213b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_pull_quote
+    - field.field.section_type.section_type_pull_quote.field_pull_quote_author
+    - field.field.section_type.section_type_pull_quote.field_pull_quote_credentials
+    - field.field.section_type.section_type_pull_quote.field_pull_quote_quote
+    - field.field.section_type.section_type_pull_quote.field_pull_quote_text_color
+  module:
+    - color_field
+id: section_type.section_type_pull_quote.default
+targetEntityType: section_type
+bundle: section_type_pull_quote
+mode: default
+content:
+  field_pull_quote_author:
+    type: string
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_pull_quote_credentials:
+    type: string
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_pull_quote_quote:
+    type: string
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  field_pull_quote_text_color:
+    type: color_field_formatter_css
+    weight: 1
+    label: hidden
+    settings:
+      selector: .field--name-field-pull-quote-quote
+      property: color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    region: content
+hidden:
+  title: true

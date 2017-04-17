@@ -1,0 +1,20 @@
+uuid: fdc33d12-f927-48f7-bde3-1e7fa4c41d7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - email_sign_up
+  theme:
+    - compro_theme
+id: emailsignup
+theme: compro_theme
+region: nav
+weight: -11
+provider: null
+plugin: email_sign_up
+settings:
+  id: email_sign_up
+  label: 'Email Sign Up'
+  provider: compro_custom
+  label_display: '0'
+visibility: {  }

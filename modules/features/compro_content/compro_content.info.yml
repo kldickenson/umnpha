@@ -1,0 +1,22 @@
+name: Content
+description: 'Image styles, WYSIWYG profiles, content entry general settings'
+type: module
+core: 8.x
+dependencies:
+version: 8.x-1.0
+package: Compro
+features:
+  bundle: compro
+  required:
+    - core.entity_view_display.file.audio.default
+    - core.entity_view_display.file.document.default
+    - core.entity_view_display.file.image.default
+    - core.entity_view_display.file.video.default
+    - image.style.content_area
+    - image.style.square_thumbnail
+    - image.style.viewport
+    - user.role.editor
+    - user.role.author
+    - editor.editor.standard
+    - filter.format.passthrough
+    - filter.format.standard

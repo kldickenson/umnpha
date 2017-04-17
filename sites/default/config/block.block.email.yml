@@ -1,0 +1,20 @@
+uuid: 68582891-a041-4f08-9bab-4f1f56a83101
+langcode: en
+status: true
+dependencies:
+  module:
+    - contact_info
+  theme:
+    - compro_theme
+id: email
+theme: compro_theme
+region: footer
+weight: 0
+provider: null
+plugin: email
+settings:
+  id: email
+  label: Email
+  provider: contact_info
+  label_display: '0'
+visibility: {  }

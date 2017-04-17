@@ -1,0 +1,10 @@
+uuid: 78af28d3-9582-4a91-81e4-7f85cf8a1c6f
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+id: webform.teaser
+label: Teaser
+targetEntityType: webform
+cache: true

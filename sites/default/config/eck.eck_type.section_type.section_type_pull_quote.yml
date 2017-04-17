@@ -1,0 +1,9 @@
+uuid: 514caec8-efc9-4a42-aaea-04818d038431
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: 'Pull Quote'
+type: section_type_pull_quote
+description: ''

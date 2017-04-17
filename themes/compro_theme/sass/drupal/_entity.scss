@@ -1,0 +1,275 @@
+/*
+*   #Entity/Section-Types
+*
+*   1) Featured Report
+*   2) Sponsors
+*   3) Highlight
+*   4) Testimonial
+*   5) Media
+*   6) Heading
+*   7) Longtext
+*   8) Pullquote
+*   9) Infographic
+*
+**/
+
+
+
+/* Featured Report */
+.section-type-featured-report {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  max-height: 500px;
+  width: 100%;
+
+  .featured-report-image {
+    width: 45%;
+  }
+
+  .featured-report-text {
+    padding: 0 10% 4% 0;
+    width: 50%;
+  }
+
+  @media screen and(max-width: 940px) {
+    flex-direction: column;
+
+    .featured-report-image {
+      height: 300px;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .featured-report-text {
+      padding: 25px 20px;
+      width: 100%;
+    }
+
+  }
+
+}
+
+
+
+
+/*
+*
+* Sponsors
+*
+**/
+.section-type-sponsors {
+  border-top: 1px solid $medium-gray;
+  padding: 40px 20px 60px;
+
+  @media screen and(max-width: 1170px) {
+    padding: 40px 0 60px;
+  }
+
+  @media screen and(max-width: 940px) {
+    padding: 30px 2rem 25px 2rem;
+  }
+
+  .field-group-sponsors-wrapper {
+    margin: 0 auto;
+    max-width: 1340px;
+  }
+
+}
+
+.component-sponsor  {
+  display: inline-block;
+
+  img {
+    object-fit: contain;
+  }
+
+}
+
+
+
+
+
+/*Highlight*/
+.section-type-highlight {
+  background-color: $gainsboro-gray;
+  padding: 70px 3rem;
+
+  @media screen and(max-width: 940px) {
+    padding: 20px;
+  }
+
+  .highlight-content {
+    background-color: #fff;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1340px;
+
+    @media screen and(max-width: 940px) {
+      flex-direction: column;
+    }
+
+  }
+
+  .highlight-media,
+  .group-highlight-text {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .highlight-media {
+    height: auto;
+    width: 60%;
+
+    @media screen and(max-width: 940px) {
+      width: 100%;
+    }
+
+  }
+
+  .group-highlight-text {
+    padding: 60px 0 4% 60px;
+    width: 35%;
+
+    @media screen and (max-width: 1120px) {
+      padding: 30px 0 4% 45px;
+    }
+
+    @media screen and (max-width: 940px) {
+      padding: 28px 25px;
+      width: 100%;
+    }
+
+  }
+
+}
+
+/*Testimonial*/
+.section-type-testimonial {
+  margin: -40px auto -7px;
+  max-width: 1100px;
+  position: relative;
+
+  @media screen and(max-width: 940px) {
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .testimonial-text {
+    display: inline-block;
+    margin: 110px 2.75rem 65px 2.75rem;
+    max-width: 55%;
+    vertical-align: top;
+
+    @media screen and(max-width: 1100px) {
+      max-width: 46%;
+    }
+
+    @media screen and(max-width: 940px) {
+      text-align: center;
+      display: block;
+      margin: 26px 0;
+      max-width: 100%;
+    }
+
+  }
+
+  .testimonial-image {
+    display: inline-block;
+
+    @media screen and(max-width: 940px) {
+      display: block;
+      text-align: center;
+    }
+
+    img {
+      @media screen and(max-width: 940px) {
+        object-fit: contain;
+      }
+    }
+
+  }
+
+}
+
+/*Media*/
+.section-type-media {
+  margin: 0 auto 40px auto;
+  max-width: 980px;
+  padding: 0 20px;
+}
+
+
+
+
+/*Heading*/
+.section-type-heading {
+  margin:0 auto 30px auto;
+  max-width: 980px;
+  padding: 0 20px;
+}
+
+
+
+
+/*Longtext*/
+.section-type-longtext {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 20px;
+
+  p {
+    margin-bottom: 25px;
+  }
+
+  p:last-child {
+    margin-bottom: 40px;
+  }
+
+  a {
+    color: $blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: $mine-shaft;
+    }
+
+  }
+
+}
+
+
+
+
+/*Pull Quote*/
+.section-type-pull-quote {
+  border-bottom: 1px solid $medium-gray;
+  border-top: 1px solid $medium-gray;
+  margin: 40px auto;
+  max-width: 980px;
+  padding: 35px 40px;
+  text-align: center;
+
+  @media screen and(max-width: 940px) {
+    margin: 40px 20px;
+  }
+
+}
+
+
+
+
+
+/*Infographics*/
+.section-type-infographic {
+  margin: 0 auto 40px auto;
+  max-width: 940px;
+  position: relative;
+
+  @media screen and(max-width: 940px) {
+    margin: 0 20px 40px 20px;
+  }
+}

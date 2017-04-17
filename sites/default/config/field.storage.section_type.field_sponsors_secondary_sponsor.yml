@@ -1,0 +1,19 @@
+uuid: a3181e05-260d-4a04-9fc9-b5571292d5de
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: section_type.field_sponsors_secondary_sponsor
+field_name: field_sponsors_secondary_sponsor
+entity_type: section_type
+type: entity_reference
+settings:
+  target_type: component
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

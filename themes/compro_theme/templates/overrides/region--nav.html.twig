@@ -1,0 +1,12 @@
+{% extends 'region.html.twig' %}
+{% set attributes = attributes.addClass('sliding-panel-content') %}
+{% block content %}
+  {% if content %}
+    <div class="sliding-panel-button">Menu</div>
+      <nav{{ attributes.addClass(classes) }}><div class="inner">
+        <div class="sliding-panel-close">x</div>
+          {{  content }}
+        </div></nav>
+    <div class="sliding-panel-fade-screen"></div>
+  {% endif %}
+{% endblock %}

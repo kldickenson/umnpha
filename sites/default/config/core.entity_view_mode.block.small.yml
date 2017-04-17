@@ -1,0 +1,10 @@
+uuid: 7a08e497-4e73-4a3f-af2c-04f5da0744d2
+langcode: en
+status: true
+dependencies:
+  module:
+    - block
+id: block.small
+label: Small
+targetEntityType: block
+cache: true

@@ -1,0 +1,30 @@
+uuid: 23c8bf62-0057-4932-9091-29ea10623e54
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - file
+    - image
+id: section_type.field_infographic_image
+field_name: field_infographic_image
+entity_type: section_type
+type: image
+settings:
+  uri_scheme: public
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

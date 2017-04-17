@@ -1,0 +1,23 @@
+uuid: 76c63e49-6b74-49ba-99b7-2aa65fd3d3db
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_longtext
+    - field.field.section_type.section_type_longtext.field_longtext_text
+  module:
+    - text
+id: section_type.section_type_longtext.default
+targetEntityType: section_type
+bundle: section_type_longtext
+mode: default
+content:
+  field_longtext_text:
+    type: text_default
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  title: true

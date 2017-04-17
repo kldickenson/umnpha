@@ -1,0 +1,57 @@
+uuid: b8db2992-f8a4-40c8-b310-c045641a1390
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_pull_quote
+    - field.field.section_type.section_type_pull_quote.field_pull_quote_author
+    - field.field.section_type.section_type_pull_quote.field_pull_quote_credentials
+    - field.field.section_type.section_type_pull_quote.field_pull_quote_quote
+    - field.field.section_type.section_type_pull_quote.field_pull_quote_text_color
+  module:
+    - color_field
+id: section_type.section_type_pull_quote.default
+targetEntityType: section_type
+bundle: section_type_pull_quote
+mode: default
+content:
+  field_pull_quote_author:
+    type: string_textfield
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_pull_quote_credentials:
+    type: string_textfield
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_pull_quote_quote:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  field_pull_quote_text_color:
+    type: color_field_widget_box
+    weight: 2
+    settings:
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e, #5f5f5f, #571c0c, #ffcc05, #0f284a'
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

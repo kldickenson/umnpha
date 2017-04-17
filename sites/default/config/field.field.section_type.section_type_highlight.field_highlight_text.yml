@@ -1,0 +1,19 @@
+uuid: dbe4376f-4b22-4c10-8fab-e04d3de13506
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_highlight
+    - field.storage.section_type.field_highlight_text
+id: section_type.section_type_highlight.field_highlight_text
+field_name: field_highlight_text
+entity_type: section_type
+bundle: section_type_highlight
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

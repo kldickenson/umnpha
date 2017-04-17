@@ -1,0 +1,24 @@
+uuid: 3a0d2735-6c0f-4958-968d-067ee949fb95
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_heading
+    - field.storage.section_type.field_heading_heading
+  module:
+    - compro_custom
+id: section_type.section_type_heading.field_heading_heading
+field_name: field_heading_heading
+entity_type: section_type
+bundle: section_type_heading
+label: Heading
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: ''
+    wrapper: h2
+default_value_callback: ''
+settings: {  }
+field_type: heading_text

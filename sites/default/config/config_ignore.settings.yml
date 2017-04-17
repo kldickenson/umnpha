@@ -1,0 +1,7 @@
+ignored_config_entities:
+  0: email_sign_up.setup
+  2: contact_info.setup
+  4: system.site
+  6: 'user.role.*'
+_core:
+  default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

@@ -1,0 +1,10 @@
+email_sign_up.setup:
+  type: config_object
+  label: 'Email Sign Up'
+  mapping:
+    text:
+      type: text
+      label: 'Email Sign Up text'
+    link:
+      type: text
+      label: 'Email Sign Up link'

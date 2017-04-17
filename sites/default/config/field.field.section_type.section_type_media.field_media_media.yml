@@ -1,0 +1,30 @@
+uuid: 23677943-2c26-46a6-ad78-690c55c56bcf
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_media
+    - field.storage.section_type.field_media_media
+    - media_entity.bundle.image
+    - media_entity.bundle.video_embed
+id: section_type.section_type_media.field_media_media
+field_name: field_media_media
+entity_type: section_type
+bundle: section_type_media
+label: Media
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+      video_embed: video_embed
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: image
+field_type: entity_reference

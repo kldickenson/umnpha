@@ -1,0 +1,20 @@
+uuid: 52de9fc1-5dc7-4c8b-afe6-309020b95530
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - eck
+id: section_type.field_pull_quote_text_color
+field_name: field_pull_quote_text_color
+entity_type: section_type
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

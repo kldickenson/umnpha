@@ -1,0 +1,21 @@
+uuid: 7e708394-60a3-4e52-9892-43ae47ab9f93
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: section_type.field_infographic_caption
+field_name: field_infographic_caption
+entity_type: section_type
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,20 @@
+uuid: 31959531-599d-41dc-82e3-b5bb29ab55db
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - text
+id: section_type.field_featured_report_title
+field_name: field_featured_report_title
+entity_type: section_type
+type: text
+settings:
+  max_length: 255
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

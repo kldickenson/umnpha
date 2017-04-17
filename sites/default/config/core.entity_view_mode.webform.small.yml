@@ -1,0 +1,10 @@
+uuid: e840c1b9-d31b-403c-b584-04ede27807e7
+langcode: en
+status: true
+dependencies:
+  module:
+    - webform
+id: webform.small
+label: Small
+targetEntityType: webform
+cache: true

@@ -1,0 +1,332 @@
+<?php
+
+/**
+ * @file
+ * Custom module to perform misc tasks.
+ */
+
+use Drupal\Core\Entity\Display\EntityDisplayInterface;
+use Drupal\Core\Field\FieldFilteredMarkup;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Xss;
+use Drupal\node\Entity\NodeType;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
+/**
+ * Helper function to get options (all or available).
+ */
+function _compro_custom_get_options() {
+  return array(
+    'h1' => t('Heading 1'),
+    'h2' => t('Heading 2'),
+    'h3' => t('Heading 3'),
+    'h4' => t('Heading 4'),
+    'h5' => t('Heading 5'),
+    'h6' => t('Heading 6'),
+  );
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function compro_custom_page_attachments(array &$attachments) {
+  // Conditionally add CSS, based on admin screen.
+  $compro_custom = \Drupal::config('compro_custom.form');
+  if ($compro_custom->get('icon_enable')) {
+    if ($compro_custom->get('icon_neg')) {
+      $attachments['#attached']['library'][] = 'compro_custom/neg_icons';
+    }
+    else {
+      $attachments['#attached']['library'][] = 'compro_custom/icons';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ *
+ * In order to modify the core logo block, we have to trick Drupal into thinking
+ * that Compro Custom is a theme.
+ */
+function compro_custom_theme_registry_alter(&$theme_registry) {
+  if (isset($theme_registry['block__system_branding_block'])) {
+    $theme_registry['block__system_branding_block']['path'] = 'modules/custom/compro_custom/templates';
+    $theme_registry['block__system_branding_block']['theme path'] = 'modules/custom/compro_custom';
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Pass some more variables into our template file.
+ */
+function compro_custom_preprocess_block(&$variables) {
+  if ($variables['plugin_id'] == 'system_branding_block') {
+    $site_name = Xss::filterAdmin(\Drupal::config('system.site')->get('name'));
+
+    // Link path.
+    $compro_custom = \Drupal::config('compro_custom.form');
+
+    $variables['title_h1'] = $compro_custom->get('logo.heading') !== 1 ? FALSE : TRUE;
+    // There doesn't seem to be a function that sanity-checks a route name, so
+    // we fudge it here.
+    $variables['logo_path'] = $compro_custom->get('logo.url') !== NULL ? $compro_custom->get('logo.url') : '<front>';
+    if (strpos('http', $compro_custom->get('logo.url')) === FALSE) {
+      $variables['logo_path'] = $compro_custom->get('logo.url');
+    }
+    else {
+      $variables['logo_path'] = Url::fromRoute($compro_custom->get('logo.url'))
+        ->toString();
+    }
+    $variables['logo_title'] = Html::escape($compro_custom->get('logo.title') !== NULL ? $compro_custom->get('logo.title') : $site_name . ' home');
+  }
+}
+
+/**
+ * This is how tokens adds new view modes during install.
+ *
+ * Implementing hook_entity_type_alter()
+ * will throw an error, so it seems the best way to implement this
+ * is during install, and when new entity types are created.
+ */
+function compro_custom_add_view_modes() {
+  $modes = array('teaser', 'small');
+  // Create view modes for each entity type.
+  $info = \Drupal::entityTypeManager()->getDefinitions();
+  foreach ($info as $entity_type => $entity_type_info) {
+    // We're only interested in entity types with a view builder.
+    if (!$entity_type_info->getViewBuilderClass()) {
+      continue;
+    }
+    // Try to find a token view mode for that entity type.
+    $storage = \Drupal::entityTypeManager()->getStorage('entity_view_mode');
+    // Add view mode if it does not already exist.
+    foreach ($modes as $mode) {
+      if (!$storage->load("$entity_type.$mode")) {
+        $storage->create(array(
+          'targetEntityType' => $entity_type,
+          'id' => "$entity_type.$mode",
+          'status' => TRUE,
+          'label' => ucwords($mode),
+        ))->save();
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_insert().
+ */
+function compro_custom_entity_insert(EntityInterface $entity) {
+  compro_custom_add_view_modes();
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function compro_custom_entity_extra_field_info() {
+  $extra = array();
+
+  // Go through all the entity types and add extra fields for display.
+  foreach (NodeType::loadMultiple() as $bundle) {
+    $extra['node'][$bundle->Id()] = array(
+      'display' => array(
+        'compro_submitted' => array(
+          'label' => t('Submitted'),
+          'description' => t('Author attribution for the content.'),
+          'weight' => 0,
+        ),
+        'compro_links' => array(
+          'label' => t('Links'),
+          'description' => t('Node links, like "Read more".'),
+          'weight' => 0,
+        ),
+      ),
+      'form' => array(
+        'compro_submitted' => array(
+          'label' => t('Submitted'),
+          'description' => t('Author attribution for the content.'),
+          'edit' => Link::fromTextAndUrl('Edit', Url::fromRoute('compro_custom.compro_custom_submitted'))
+            ->toString(),
+          'weight' => 0,
+        ),
+      ),
+    );
+  }
+
+  // Add the download div to the Inforgraphic entity.
+  $extra['section_type']['section_type_infographic'] = array(
+    'display' => array(
+      'download_and_share' => array(
+        'label' => t('Download and Share'),
+        'description' => t('Download and Share'),
+        'weight' => 0,
+      ),
+    ),
+  );
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function compro_custom_node_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('compro_submitted')) {
+    $sub = \Drupal::config('compro_custom.compro_submitted');
+    $sub_line = 'Submitted by [node:author:name] on [node:created]';
+    if ($sub->get($entity->bundle())) {
+      $sub_line = $sub->get($entity->bundle());
+    }
+    $build['compro_submitted'] = [
+      '#prefix' => '<div class="submitted">',
+      '#markup' => \Drupal::token()
+        ->replace($sub_line, array('node' => $entity)),
+      '#suffix' => '</div>',
+    ];
+  }
+
+  if ($display->getComponent('compro_links')) {
+    $build['compro_links'] = $build['links'];
+  }
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function compro_custom_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('download_and_share')) {
+    $build['download_and_share'] = compro_custom_download_and_share_content($entity);
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ */
+function compro_custom_entity_view_alter(&$build, EntityInterface $entity, EntityDisplayInterface $display) {
+  if (isset($build['#fieldgroups'])) {
+    foreach ($build['#fieldgroups'] as $fieldgroup) {
+      foreach ($fieldgroup->children as $child) {
+        unset($build[$child]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'node_webform_edit_form' || $form_id == 'node_page_edit_form'
+    || $form_id == 'node_webform_form' || $form_id == 'node_page_form') {
+    $form['title']['#access'] = FALSE;
+    $form['#validate'][] = 'compro_custom_title_update';
+  }
+  if ($form_id == 'google_cse_search_box_form') {
+    $form['query']['#attributes']['placeholder'] = t('Enter your keywords');
+    $form['#action'] = 'search/cse';
+  }
+  if ($form_id == 'search_form') {
+    if (!$form['basic']['keys']['#default_value']) {
+      $response = new RedirectResponse(Url::fromUserInput('/search/cse',
+        array('query' => array('keys' => $_GET['query'])))->toString());
+      $response->send();
+      return;
+    }
+  }
+}
+
+/**
+ * Implements hook_inline_entity_form_entity_form_alter().
+ */
+function compro_custom_inline_entity_form_entity_form_alter(&$entity_form, &$form_state) {
+  $entity_form['title']['widget'][0]['value']['#title'] = new TranslatableMarkup('Admin Title');
+  $entity_form['title']['widget'][0]['value']['#description'] = new TranslatableMarkup('The admin title of this section or component; this is what you will use to search when adding an existing Section or Component.');
+}
+
+/**
+ * Custom validator for content types with a custom title for display purposes.
+ */
+function compro_custom_title_update(&$form, FormStateInterface &$form_state) {
+  // Update the built-in title with the user-entered title.
+  $user_title = $form_state->getValue(array('field_title'));
+  $form_state->setValue('title', $user_title);
+}
+
+/**
+ * Build the div with the download and share links.
+ */
+function compro_custom_download_and_share_content($entity) {
+  if (!$entity || $entity->bundle() != 'section_type_infographic') {
+    return array();
+  }
+
+  // Render the download button.
+  $file = $entity->get('field_infographic_image')->referencedEntities()[0];
+  $file_url = Url::fromUri($file->url(),
+    array(
+      'attributes' => array(
+        'class' => array(
+          'button',
+          'download-button',
+        ),
+      ),
+    )
+  );
+  // We need query-params for download-token here.
+  $download = Link::fromTextAndUrl(t('Download'), $file_url)->toRenderable();
+
+  // Render the share pop-out.
+  $share_text = '<span class="share-parent-text">Share</span>';
+
+  // Gather some basic defaults.
+  $page_title = $entity->get('field_infographic_image')[0]->get('title')
+    ->getCastedValue();
+  $caption = $entity->get('field_infographic_caption')->getValue()[0]['value'];
+  $page_summary = isset($caption) ? substr(strip_tags($caption), 0, 300) . '...' : '';
+
+  // Twitter.
+  $twitter_url = _build_url('https://twitter.com/intent/tweet', $file->url(), $page_title);
+  $twitter_link = Link::fromTextAndUrl(t('Twitter'), $twitter_url);
+
+  // Linkedin.
+  $linkedin_url = _build_url('http://www.linkedin.com/shareArticle', $file->url(), $page_title);
+  $linkedin_link = Link::fromTextAndUrl(t('LinkedIn'), $linkedin_url);
+
+  $render = array(
+    '#type' => 'container',
+    '#attributes' => array('class' => array('share-and-download-wrapper')),
+    'download' => $download,
+    'share_text' => array('#markup' => $share_text),
+    'share' => array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('social', 'share-links')),
+      'twitter' => array(
+        '#markup' => $twitter_link->toString(),
+      ),
+      'linkedin' => array(
+        '#markup' => $linkedin_link->toString(),
+      ),
+    ),
+  );
+
+  return $render;
+}
+
+/**
+ * Helper function to build a URL so we can clean up some code.
+ */
+function _build_url($to_uri, $from_url, $text) {
+  return Url::fromUri($to_uri, array(
+    'query' => array(
+      'url' => $from_url,
+      'text' => $text,
+    ),
+  ));
+}

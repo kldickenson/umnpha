@@ -1,0 +1,41 @@
+uuid: c51f2d44-0b09-4ef3-8272-84a0942ebd75
+langcode: en
+status: true
+dependencies:
+  module:
+    - google_cse
+id: google_cse_search
+label: 'Google CSE Search'
+path: cse
+weight: -10
+plugin: google_cse_search
+configuration:
+  cx: '014046924157104487988:rxwgdy1igem'
+  results_tab: ''
+  results_width: '600'
+  cof_here: 'FORID:11'
+  cof_google: 'FORID:0'
+  results_prefix: ''
+  results_suffix: ''
+  results_searchbox_width: '40'
+  results_display: here
+  results_display_images: 0
+  no_results_message: 'Sorry! there were no results matching your query.'
+  sitesearch: ''
+  sitesearch_form: radios
+  sitesearch_option: ''
+  sitesearch_default: 0
+  domain: www.google.com
+  limit_domain: ''
+  cr: ''
+  gl: ''
+  hl: ''
+  locale_hl: 0
+  ie: utf-8
+  lr: ''
+  locale_lr: 0
+  oe: ''
+  safe: ''
+  custom_css: ''
+  custom_results_display: results-only
+  use_adv: 0

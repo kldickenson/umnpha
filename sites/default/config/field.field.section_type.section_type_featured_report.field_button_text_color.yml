@@ -1,0 +1,22 @@
+uuid: 79ed4752-39f2-48b5-802d-e965472d4106
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_featured_report
+    - field.storage.section_type.field_button_text_color
+  module:
+    - color_field
+id: section_type.section_type_featured_report.field_button_text_color
+field_name: field_button_text_color
+entity_type: section_type
+bundle: section_type_featured_report
+label: 'Button Text Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

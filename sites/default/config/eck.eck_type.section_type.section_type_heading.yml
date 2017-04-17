@@ -1,0 +1,9 @@
+uuid: c19fa7f9-f810-4dc5-a3fb-e34bbaad6acc
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Heading
+type: section_type_heading
+description: ''
