@@ -36,7 +36,7 @@ $aliases['test'] = array(
     '%drush-script' => 'drush',
   ),
 );
-$aliases['live'] = array(
+$aliases['prod'] = array(
   'uri' => 'live-umnpha.pantheonsite.io',
   'db-url' => 'mysql://pantheon:b08f1b4d01a444cb9d616b2e9975e397@dbserver.live.6d63fa88-8632-4f72-84ec-f0b61ea7b0f5.drush.in:13164/pantheon',
   'db-allows-remote' => TRUE,
