@@ -1,7 +1,12 @@
 ignored_config_entities:
-  0: email_sign_up.setup
-  2: contact_info.setup
-  4: system.site
-  6: 'user.role.*'
+  0: core.extension
+  2: 'devel.*'
+  4: field_ui.settings
+  6: 'system.menu.*'
+  8: system.performance
+  10: system.site
+  12: 'user.role.*'
+  14: email_sign_up.setup
+  16: contact_info.setup
 _core:
   default_config_hash: UVH1aJ4b44UM-VdPVN7hNNuuVqfReJxwfVeDQH1Hvsk

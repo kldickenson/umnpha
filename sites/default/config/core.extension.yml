@@ -24,7 +24,6 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
-  devel: 0
   diff: 0
   dynamic_page_cache: 0
   eck: 0
@@ -34,10 +33,8 @@ module:
   entity: 0
   entity_embed: 0
   features: 0
-  features_ui: 0
   field: 0
   field_group: 0
-  field_ui: 0
   file: 0
   filter: 0
   google_cse: 0
@@ -46,7 +43,6 @@ module:
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
-  kint: 0
   libraries: 0
   link: 0
   linked_field: 0
@@ -83,12 +79,9 @@ module:
   user: 0
   video_embed_field: 0
   video_embed_media: 0
-  views_ui: 0
   webform: 0
-  webform_devel: 0
   webform_node: 0
   webform_templates: 0
-  webform_ui: 0
   xmlsitemap: 0
   menu_link_content: 1
   pathauto: 1
