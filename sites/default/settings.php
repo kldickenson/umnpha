@@ -40,18 +40,15 @@ if (defined('PANTHEON_ENVIRONMENT')) {
 }
 
 // Redirect all traffic to non-www. For example healthyagingpoll.org
-//if (isset($_SERVER['PANTHEON_ENVIRONMENT']) &&
-//  ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') &&
-//  // Check if Drupal or WordPress is running via command line
-//  (php_sapi_name() != "cli")) {
-//  if ($_SERVER['HTTP_HOST'] == 'live-umnpha.pantheonsite.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.pantheon.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.getpantheon.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.panth.io') {
-//    header('HTTP/1.0 301 Moved Permanently');
-//    header('Location: http://healthyagingpoll.org'. $_SERVER['REQUEST_URI']);
-//    exit();
-//  }
-//  if ($_SERVER['HTTP_HOST'] == 'www.healthyagingpoll.org' || $_SERVER['HTTP_HOST'] == 'live-umnpha.pantheonsite.io') {
-//    header('HTTP/1.0 301 Moved Permanently');
-//    header('Location: http://healthyagingpoll.org'. $_SERVER['REQUEST_URI']);
-//    exit();
-//  }
-//}
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') && (php_sapi_name() != "cli")) {
+  if ($_SERVER['HTTP_HOST'] == 'live-umnpha.pantheonsite.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.pantheon.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.getpantheon.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.panth.io') {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: http://healthyagingpoll.org'. $_SERVER['REQUEST_URI']);
+    exit();
+  }
+  if ($_SERVER['HTTP_HOST'] == 'www.healthyagingpoll.org') {
+    header('HTTP/1.0 301 Moved Permanently');
+    header('Location: http://healthyagingpoll.org'. $_SERVER['REQUEST_URI']);
+    exit();
+  }
+}
