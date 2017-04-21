@@ -4,4 +4,6 @@ logo:
   use_default: false
   path: themes/compro_theme/logo.png
 favicon:
-  use_default: true
+  use_default: false
+  path: 'public://favicon.ico'
+  mimetype: image/vnd.microsoft.icon
