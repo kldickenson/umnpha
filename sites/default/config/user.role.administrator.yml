@@ -24,6 +24,7 @@ permissions:
   - 'administer blocks'
   - 'administer media'
   - 'administer menu'
+  - 'administer meta tags'
   - 'administer nodes'
   - 'administer redirects'
   - 'administer taxonomy'
