@@ -180,11 +180,12 @@ display:
   recent_reports:
     display_plugin: block
     id: recent_reports
-    display_title: Block
+    display_title: 'Recent Reports'
     position: 1
     display_options:
       display_extenders: {  }
       block_description: 'Recent Reports'
+      display_description: ''
     cache_metadata:
       max-age: -1
       contexts:
