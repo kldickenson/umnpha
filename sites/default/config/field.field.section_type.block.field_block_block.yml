@@ -1,0 +1,29 @@
+uuid: 861acd08-9e2b-4d52-b793-dba5f8c9dbec
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.block
+    - field.storage.section_type.field_block_block
+  module:
+    - block_field
+id: section_type.block.field_block_block
+field_name: field_block_block
+entity_type: section_type
+bundle: block
+label: Block
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    address: address
+    email: email
+    fax: fax
+    map: map
+    phone: phone
+    social: social
+    'views_block:report-recent_reports': 'views_block:report-recent_reports'
+field_type: block_field
