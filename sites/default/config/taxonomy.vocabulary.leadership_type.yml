@@ -1,9 +1,0 @@
-uuid: ed401cd6-0a7f-470b-8463-c8fc6428a98c
-langcode: en
-status: true
-dependencies: {  }
-name: 'Leadership Type'
-vid: leadership_type
-description: 'A way to categorize bios for certain views.'
-hierarchy: 0
-weight: 0

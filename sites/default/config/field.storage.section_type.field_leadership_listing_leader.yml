@@ -1,16 +1,15 @@
-uuid: 9f47e726-3b38-4eb5-899d-685715bdf48a
+uuid: faa0f4fd-2437-47e3-be4d-3c181f38be1a
 langcode: en
 status: true
 dependencies:
   module:
     - eck
-    - taxonomy
-id: component.field_leadership_type
-field_name: field_leadership_type
-entity_type: component
+id: section_type.field_leadership_listing_leader
+field_name: field_leadership_listing_leader
+entity_type: section_type
 type: entity_reference
 settings:
-  target_type: taxonomy_term
+  target_type: component
 module: core
 locked: false
 cardinality: -1

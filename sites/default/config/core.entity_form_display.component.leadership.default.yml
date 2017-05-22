@@ -13,7 +13,6 @@ dependencies:
     - field.field.component.leadership.field_leadership_summary
     - field.field.component.leadership.field_leadership_title
     - field.field.component.leadership.field_leadership_twitter
-    - field.field.component.leadership.field_leadership_type
     - image.style.thumbnail
   module:
     - image
@@ -95,12 +94,6 @@ content:
       placeholder_title: ''
     third_party_settings: {  }
     type: link_default
-    region: content
-  field_leadership_type:
-    weight: 4
-    settings: {  }
-    third_party_settings: {  }
-    type: options_select
     region: content
   title:
     type: string_textfield
