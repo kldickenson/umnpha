@@ -1,0 +1,24 @@
+uuid: 6dd44960-54b4-4cde-aa82-ce390f291c97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_report_published_date
+    - node.type.report
+  module:
+    - datetime
+id: node.report.field_report_published_date
+field_name: field_report_published_date
+entity_type: node
+bundle: report
+label: 'Published on'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

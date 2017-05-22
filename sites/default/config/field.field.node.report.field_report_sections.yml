@@ -1,0 +1,46 @@
+uuid: f3a3af1b-90bb-436e-9665-6a21cc0f9f7c
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.leadership_listing
+    - eck.eck_type.section_type.section_type_featured_report
+    - eck.eck_type.section_type.section_type_heading
+    - eck.eck_type.section_type.section_type_highlight
+    - eck.eck_type.section_type.section_type_infographic
+    - eck.eck_type.section_type.section_type_longtext
+    - eck.eck_type.section_type.section_type_media
+    - eck.eck_type.section_type.section_type_pull_quote
+    - eck.eck_type.section_type.section_type_sponsors
+    - eck.eck_type.section_type.section_type_testimonial
+    - field.storage.node.field_report_sections
+    - node.type.report
+id: node.report.field_report_sections
+field_name: field_report_sections
+entity_type: node
+bundle: report
+label: Sections
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:section_type'
+  handler_settings:
+    target_bundles:
+      section_type_featured_report: section_type_featured_report
+      section_type_heading: section_type_heading
+      section_type_highlight: section_type_highlight
+      section_type_infographic: section_type_infographic
+      leadership_listing: leadership_listing
+      section_type_longtext: section_type_longtext
+      section_type_media: section_type_media
+      section_type_pull_quote: section_type_pull_quote
+      section_type_sponsors: section_type_sponsors
+      section_type_testimonial: section_type_testimonial
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: section_type_featured_report
+field_type: entity_reference

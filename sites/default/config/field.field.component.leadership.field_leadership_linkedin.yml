@@ -1,0 +1,23 @@
+uuid: 1eaf4f19-5e84-4dae-87d2-286595754bea
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.leadership
+    - field.storage.component.field_leadership_linkedin
+  module:
+    - link
+id: component.leadership.field_leadership_linkedin
+field_name: field_leadership_linkedin
+entity_type: component
+bundle: leadership
+label: LinkedIn
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

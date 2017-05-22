@@ -1,0 +1,23 @@
+uuid: 24d84fd9-7dc4-40e8-ad33-80d66045f138
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_report_contributers
+    - node.type.report
+  module:
+    - link
+id: node.report.field_report_contributers
+field_name: field_report_contributers
+entity_type: node
+bundle: report
+label: 'Contributing Faculty'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 2
+field_type: link

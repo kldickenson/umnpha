@@ -34,3 +34,10 @@ function compro_custom_update_8002() {
 function compro_custom_update_8003() {
   \Drupal::service('module_installer')->install(['google_analytics']);
 }
+
+/**
+ * Install views_infinite_scroll and block_field modules.
+ */
+function compro_custom_update_8004() {
+  \Drupal::service('module_installer')->install(['views_infinite_scroll', 'block_field']);
+}
