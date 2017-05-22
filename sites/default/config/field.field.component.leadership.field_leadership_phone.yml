@@ -1,0 +1,21 @@
+uuid: 1df384f0-baaa-49ae-b2aa-858787f0236a
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.leadership
+    - field.storage.component.field_leadership_phone
+  module:
+    - telephone
+id: component.leadership.field_leadership_phone
+field_name: field_leadership_phone
+entity_type: component
+bundle: leadership
+label: Phone
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

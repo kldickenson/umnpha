@@ -1,0 +1,19 @@
+uuid: 6fc4cd58-10db-4531-a54d-a6786338fc13
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - link
+id: component.field_leadership_twitter
+field_name: field_leadership_twitter
+entity_type: component
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,19 @@
+uuid: e2d24502-4da1-4c10-af70-55d7dd157fc0
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - text
+id: component.field_leadership_summary
+field_name: field_leadership_summary
+entity_type: component
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

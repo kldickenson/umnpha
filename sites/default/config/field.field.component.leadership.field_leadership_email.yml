@@ -1,0 +1,19 @@
+uuid: 9c1f6591-9db9-490d-a5ee-effebff3ab77
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.leadership
+    - field.storage.component.field_leadership_email
+id: component.leadership.field_leadership_email
+field_name: field_leadership_email
+entity_type: component
+bundle: leadership
+label: Email
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email

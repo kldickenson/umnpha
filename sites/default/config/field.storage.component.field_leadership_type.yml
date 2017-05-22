@@ -1,0 +1,20 @@
+uuid: 9f47e726-3b38-4eb5-899d-685715bdf48a
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - taxonomy
+id: component.field_leadership_type
+field_name: field_leadership_type
+entity_type: component
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

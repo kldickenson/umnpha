@@ -1,0 +1,147 @@
+uuid: 70641569-4405-496b-82df-39621c79ed63
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.leadership
+    - field.field.component.leadership.field_leadership_bio_link
+    - field.field.component.leadership.field_leadership_email
+    - field.field.component.leadership.field_leadership_image
+    - field.field.component.leadership.field_leadership_linkedin
+    - field.field.component.leadership.field_leadership_name
+    - field.field.component.leadership.field_leadership_phone
+    - field.field.component.leadership.field_leadership_summary
+    - field.field.component.leadership.field_leadership_title
+    - field.field.component.leadership.field_leadership_twitter
+    - field.field.component.leadership.field_leadership_type
+    - image.style.large
+  module:
+    - field_group
+    - image
+    - link
+    - telephone
+    - text
+third_party_settings:
+  field_group:
+    group_leadership_text:
+      children:
+        - field_leadership_name
+        - field_leadership_title
+        - field_leadership_summary
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-leadership-text
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Text
+    group_leadership_icons:
+      children:
+        - field_leadership_phone
+        - field_leadership_email
+        - field_leadership_twitter
+        - field_leadership_linkedin
+      parent_name: ''
+      weight: 1
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-leadership-icons
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Icons
+id: component.leadership.default
+targetEntityType: component
+bundle: leadership
+mode: default
+content:
+  field_leadership_email:
+    weight: 6
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: content
+  field_leadership_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: large
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_leadership_linkedin:
+    weight: 8
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_leadership_name:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: field
+        destination: field_leadership_bio_link
+        advanced: {  }
+    type: string
+    region: content
+  field_leadership_phone:
+    weight: 5
+    label: hidden
+    settings:
+      title: ''
+    third_party_settings: {  }
+    type: telephone_link
+    region: content
+  field_leadership_summary:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_leadership_title:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_leadership_twitter:
+    weight: 7
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  field_leadership_bio_link: true
+  field_leadership_type: true
+  title: true
