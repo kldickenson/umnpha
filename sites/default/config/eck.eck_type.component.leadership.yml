@@ -1,0 +1,9 @@
+uuid: 2daadf25-bf85-47c9-a228-c5694ab77e86
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.component
+name: Leadership
+type: leadership
+description: 'A small bio that only displays in a list.'

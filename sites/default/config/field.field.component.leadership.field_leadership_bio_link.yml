@@ -1,0 +1,23 @@
+uuid: 67d58565-64e9-4f25-b673-55c08085d292
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.leadership
+    - field.storage.component.field_leadership_bio_link
+  module:
+    - link
+id: component.leadership.field_leadership_bio_link
+field_name: field_leadership_bio_link
+entity_type: component
+bundle: leadership
+label: 'Bio Link'
+description: 'An external link to the full bio of this person'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

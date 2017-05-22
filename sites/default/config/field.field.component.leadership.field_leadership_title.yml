@@ -1,0 +1,19 @@
+uuid: 77c9ff5a-4d8c-47b4-8fdc-a1cd11ee5285
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.leadership
+    - field.storage.component.field_leadership_title
+id: component.leadership.field_leadership_title
+field_name: field_leadership_title
+entity_type: component
+bundle: leadership
+label: Title
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
