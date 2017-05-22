@@ -1,0 +1,19 @@
+uuid: b7390097-78f0-4e30-bdf0-2f9735e95281
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_report_contributers
+field_name: field_report_contributers
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

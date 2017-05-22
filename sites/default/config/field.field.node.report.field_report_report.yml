@@ -1,0 +1,27 @@
+uuid: 3669e113-20c8-44e7-926b-a727a791a7c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_report_report
+    - node.type.report
+  module:
+    - file
+id: node.report.field_report_report
+field_name: field_report_report
+entity_type: node
+bundle: report
+label: 'Full report'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'pdf doc docx txt'
+  max_filesize: '10 MB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

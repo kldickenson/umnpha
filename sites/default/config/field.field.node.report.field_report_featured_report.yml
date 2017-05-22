@@ -1,0 +1,28 @@
+uuid: 80927de3-3c1c-4966-b65d-b325bdd1864d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_featured_report
+    - field.storage.node.field_report_featured_report
+    - node.type.report
+id: node.report.field_report_featured_report
+field_name: field_report_featured_report
+entity_type: node
+bundle: report
+label: 'Featured Report'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:section_type'
+  handler_settings:
+    target_bundles:
+      section_type_featured_report: section_type_featured_report
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
