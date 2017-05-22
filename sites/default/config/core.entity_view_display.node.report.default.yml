@@ -16,10 +16,11 @@ dependencies:
     - field.field.node.report.field_title
     - node.type.report
   module:
+    - compro_custom
     - datetime
     - field_group
-    - file
     - link
+    - linked_field
     - user
 third_party_settings:
   field_group:
@@ -108,9 +109,16 @@ content:
   field_report_report:
     weight: 1
     label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: file_default
+    settings:
+      compro_custom_link_title: Download
+      compro_custom_link_class: button
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[node:field_report_report:entity]'
+        advanced: {  }
+    type: compro_custom_file_link
     region: content
   field_report_sections:
     weight: 4

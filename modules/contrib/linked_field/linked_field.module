@@ -141,6 +141,12 @@ function linked_field_field_formatter_third_party_settings_form(FormatterInterfa
   $target_bundle = $field_definition->getTargetBundle();
   $bundle = $target_bundle ? $target_bundle : $form['#bundle'];
   $field_names = $manager->getDestinationFields($field_definition->getTargetEntityTypeId(), $bundle);
+  $fields_available = count($field_names);
+
+  // Switch to 'custom' mode if no fields are available.
+  if (!$fields_available) {
+    $settings['type'] = 'custom';
+  }
 
   $element['type'] = [
     '#type' => 'radios',
@@ -171,10 +177,31 @@ function linked_field_field_formatter_third_party_settings_form(FormatterInterfa
     ],
   ];
 
+  if (!$fields_available) {
+    $element['destination']['field_message'] = [
+      '#type' => 'container',
+      '#states' => [
+        'visible' => [
+          'input[name$="[third_party_settings][linked_field][type]"]' => ['value' => 'field'],
+        ],
+      ],
+    ];
+
+    $element['destination']['field_message']['message'] = [
+      '#theme' => 'status_messages',
+      '#message_list' => [
+        'warning' => [
+          t('No fields are available for linking, please choose the <em>custom</em> type.'),
+        ],
+      ],
+    ];
+  }
+
   $element['destination']['field'] = [
     '#type' => 'select',
     '#title' => t('Field'),
     '#options' => $field_names,
+    '#disabled' => !$fields_available,
     '#empty_option' => t('- Select -'),
     '#default_value' => $settings['destination'],
     '#description' => t('The value of that field will be used as link destination.'),
@@ -310,7 +337,7 @@ function linked_field_entity_display_build_alter(&$build, $context) {
 
   foreach (Element::children($build) as $field_name) {
     $element = &$build[$field_name];
-    $settings = $manager->getDisplaySettings($context['entity'], $context['view_mode'], $field_name);
+    $settings = $manager->getFieldDisplaySettings($context['display'], $field_name);
 
     // Continue to next if no Linked Field settings were found.
     if (!count($settings)) {
@@ -376,7 +403,14 @@ function linked_field_entity_display_build_alter(&$build, $context) {
 
       // Render the field if no custom text was set in the configuration.
       if (!$text) {
-        $rendered = \Drupal::service('renderer')->render($element[$delta]);
+        $renderer = \Drupal::service('renderer');
+
+        if ($renderer->hasRenderContext()) {
+          $rendered = $renderer->render($element[$delta]);
+        }
+        else {
+          $rendered = $renderer->renderRoot($element[$delta]);
+        }
       }
       else {
         $rendered = $text;

@@ -5,6 +5,7 @@ namespace Drupal\linked_field;
 use Drupal\Component\Utility\Html;
 use Drupal\Component\Utility\UrlHelper;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\Entity\EntityViewDisplay;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\FieldItemListInterface;
@@ -101,6 +102,20 @@ class LinkedFieldManager implements LinkedFieldManagerInterface {
   /**
    * {@inheritdoc}
    */
+  public function getFieldDisplaySettings(EntityViewDisplayInterface $display, $field_name) {
+    $settings = [];
+    $component = $display->getComponent($field_name);
+
+    if (isset($component['third_party_settings']['linked_field'])) {
+      $settings = $component['third_party_settings']['linked_field'];
+    }
+
+    return $settings;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getDestination($type, $value, $context) {
     $uri = '';
 
@@ -130,7 +145,7 @@ class LinkedFieldManager implements LinkedFieldManagerInterface {
     $parsed_url = parse_url($destination);
 
     // Try to fix internal URLs by prefixing them with "internal:/".
-    if (!$parsed_url['scheme']) {
+    if (!isset($parsed_url['scheme'])) {
       // Let's support "/node/1" and "node/1" here.
       $slash = $destination[0] == '/' ? '' : '/';
       $destination = 'internal:' . $slash . $destination;
@@ -197,7 +212,8 @@ class LinkedFieldManager implements LinkedFieldManagerInterface {
             // Adding the attributes.
             foreach ($attributes as $name => $value) {
               if ($value) {
-                // Convert all HTML entities back to their applicable characters.
+                // Convert all HTML entities back to
+                // their applicable characters.
                 $value = Html::decodeEntities($value);
                 $element->setAttribute($name, $value);
               }
