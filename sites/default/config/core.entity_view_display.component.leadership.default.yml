@@ -13,7 +13,6 @@ dependencies:
     - field.field.component.leadership.field_leadership_summary
     - field.field.component.leadership.field_leadership_title
     - field.field.component.leadership.field_leadership_twitter
-    - field.field.component.leadership.field_leadership_type
     - image.style.large
   module:
     - field_group
@@ -143,5 +142,4 @@ content:
     region: content
 hidden:
   field_leadership_bio_link: true
-  field_leadership_type: true
   title: true

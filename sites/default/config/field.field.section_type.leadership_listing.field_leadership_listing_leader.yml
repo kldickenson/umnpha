@@ -1,0 +1,29 @@
+uuid: 5b00a19e-46ac-4e9a-8a34-bb17dede939f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.leadership
+    - eck.eck_type.section_type.leadership_listing
+    - field.storage.section_type.field_leadership_listing_leader
+id: section_type.leadership_listing.field_leadership_listing_leader
+field_name: field_leadership_listing_leader
+entity_type: section_type
+bundle: leadership_listing
+label: Leadership
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:component'
+  handler_settings:
+    target_bundles:
+      leadership: leadership
+    sort:
+      field: field_leadership_name
+      direction: ASC
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
