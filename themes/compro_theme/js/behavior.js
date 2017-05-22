@@ -142,7 +142,7 @@
       //Sticky Nav
       $(window).scroll(function() {
         var position = $(window).scrollTop();
-
+        console.log('scrolling');
         // Header fix.
         if (position > 0) {
           $('header,.region-header,.region-nav').addClass('header-fixed' +
