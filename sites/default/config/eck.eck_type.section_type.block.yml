@@ -1,0 +1,9 @@
+uuid: 3a870f56-b482-4938-995b-ef08e687de4b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: Block
+type: block
+description: 'Insert a developer-generated block, for content such as dynamic lists'

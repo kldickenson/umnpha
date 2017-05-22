@@ -1,0 +1,31 @@
+uuid: d0eb742a-a697-43c1-b899-0efc8657b2c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.block
+    - field.field.section_type.block.field_block_block
+  module:
+    - block_field
+id: section_type.block.default
+targetEntityType: section_type
+bundle: block
+mode: default
+content:
+  field_block_block:
+    weight: 3
+    settings:
+      plugin_id: ''
+      settings: {  }
+    third_party_settings: {  }
+    type: block_field_default
+    region: content
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

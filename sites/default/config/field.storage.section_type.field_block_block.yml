@@ -1,0 +1,19 @@
+uuid: 3a27863a-85e3-42e4-8bd8-3c69bacf99c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - block_field
+    - eck
+id: section_type.field_block_block
+field_name: field_block_block
+entity_type: section_type
+type: block_field
+settings: {  }
+module: block_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
