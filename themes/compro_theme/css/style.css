@@ -912,6 +912,12 @@ div.warning {
       background-color: #429FE9;
       transition: 250ms ease-in-out; }
 
+/**
+*     1 - Header
+*     2 - Region-Content
+*     3 - Footer
+*     4 - Node Types
+ */
 header {
   height: 95px;
   margin: 0 auto;
@@ -919,19 +925,20 @@ header {
   position: relative; }
   header.header-fixed {
     background-color: rgba(250, 250, 250, 0.85);
-    height: 95px;
     max-width: 100%;
     padding: 15px 20px;
     position: fixed;
     width: 100%;
     z-index: 500; }
-    header.header-fixed .header-nav-wrapper {
-      margin: 0 auto;
-      max-width: 1340px; }
     @media screen and (max-width: 940px) {
       header.header-fixed {
         width: 100vw; } }
 
+/**
+*     1 - Region-Header
+*     2 - Region-Nav
+*     3 -
+ */
 .region-header {
   background-color: #fefefe;
   display: inline-block;
