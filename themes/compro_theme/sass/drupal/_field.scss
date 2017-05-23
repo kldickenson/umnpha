@@ -80,6 +80,36 @@
 
 }
 
+.node--type-report .group-sidebar {
+  display: inline-block;
+  font-size: 12px;
+  float: left;
+  margin: 60px 50px 0 10%;
+
+  > .field {
+    margin: 0 0 20px 0;
+  }
+
+  .field--name-field-report-volume-issue {
+    font-size: 12px;
+
+    .field__label,
+    .field__item {
+      display: inline-block;
+    }
+  }
+}
+
+.node--type-report .field--name-field-title {
+  color: $blue-zodiac;
+  font-family: $heading-font-family;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 auto 20px;
+  max-width: 980px;
+  padding: 0 20px;
+}
+
 
 
 

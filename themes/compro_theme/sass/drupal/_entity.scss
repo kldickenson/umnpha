@@ -13,6 +13,7 @@
   color: white;
   display: flex;
   justify-content: space-between;
+  margin: 0 0 60px 0;
   max-height: 500px;
   width: 100%;
 
@@ -206,7 +207,8 @@
 
 
 /*Longtext*/
-.section-type-longtext {
+.section-type-longtext,
+#block-views-blockreport-recent-reports {
   margin: 0 auto;
   max-width: 980px;
   padding: 0 20px;
