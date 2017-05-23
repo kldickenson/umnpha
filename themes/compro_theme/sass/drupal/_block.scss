@@ -8,7 +8,7 @@
 *   6) Footer Menu
 *   7) Footer Blocks (Address & Mobile Social Icons)
 *   8) Post-Footer Blocks (Copyright & Desktop Social Icons)
-*
+*   9) Recent Reports
 **/
 
 
@@ -374,4 +374,13 @@
     display: none;
   }
 
+}
+
+
+.block-views-blockreport-recent-reports {
+  h2 {
+    color: $blue-zodiac;
+    font-family: $heading-font-family;
+    font-size: 24px;
+  }
 }

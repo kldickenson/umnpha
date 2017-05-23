@@ -345,7 +345,7 @@ div.warning {
 *   6) Footer Menu
 *   7) Footer Blocks (Address & Mobile Social Icons)
 *   8) Post-Footer Blocks (Copyright & Desktop Social Icons)
-*
+*   9) Recent Reports
 **/
 /*Logo Blocks*/
 .block-system-branding-block {
@@ -573,6 +573,11 @@ div.warning {
   .region-post-footer .block-contact-info.block-social {
     display: none; } }
 
+.block-views-blockreport-recent-reports h2 {
+  color: #0f284a;
+  font-family: "Montserrat Bold";
+  font-size: 24px; }
+
 /*
 *   #Entity/Section-Types
 *
@@ -592,6 +597,7 @@ div.warning {
   color: white;
   display: flex;
   justify-content: space-between;
+  margin: 0 0 60px 0;
   max-height: 500px;
   width: 100%; }
   .section-type-featured-report .featured-report-image {
@@ -715,19 +721,25 @@ div.warning {
   padding: 0 20px; }
 
 /*Longtext*/
-.section-type-longtext {
+.section-type-longtext,
+#block-views-blockreport-recent-reports {
   margin: 0 auto;
   max-width: 980px;
   padding: 0 20px; }
-  .section-type-longtext p {
+  .section-type-longtext p,
+  #block-views-blockreport-recent-reports p {
     margin-bottom: 25px; }
-  .section-type-longtext p:last-child {
+  .section-type-longtext p:last-child,
+  #block-views-blockreport-recent-reports p:last-child {
     margin-bottom: 40px; }
-  .section-type-longtext a {
+  .section-type-longtext a,
+  #block-views-blockreport-recent-reports a {
     color: #0c57aa; }
-    .section-type-longtext a:hover {
+    .section-type-longtext a:hover,
+    #block-views-blockreport-recent-reports a:hover {
       text-decoration: underline; }
-    .section-type-longtext a:visited {
+    .section-type-longtext a:visited,
+    #block-views-blockreport-recent-reports a:visited {
       color: #2d2d2d; }
 
 /*Pull Quote*/
@@ -912,6 +924,20 @@ div.warning {
       background-color: #429FE9;
       transition: 250ms ease-in-out; }
 
+/*Report*/
+.node--type-report.node--view-mode-teaser {
+  border-bottom: 2px solid #333;
+  margin: 0 0 35px 0;
+  padding: 0 0 35px 0; }
+  .node--type-report.node--view-mode-teaser > h2 {
+    display: none; }
+  .node--type-report.node--view-mode-teaser .field--name-field-report-featured-image {
+    float: left;
+    margin: 0 25px 0 0;
+    max-width: 35%; }
+  .node--type-report.node--view-mode-teaser .group-report-teaser-text {
+    font-size: 16px; }
+
 header {
   height: 95px;
   margin: 0 auto;
@@ -1055,6 +1081,28 @@ footer.footer-wrapper {
   .field--name-field-featured-report-button a:hover {
     background-color: #FFFF38;
     transition: 250ms ease-in-out; }
+
+.node--type-report .group-sidebar {
+  display: inline-block;
+  font-size: 12px;
+  float: left;
+  margin: 60px 50px 0 10%; }
+  .node--type-report .group-sidebar > .field {
+    margin: 0 0 20px 0; }
+  .node--type-report .group-sidebar .field--name-field-report-volume-issue {
+    font-size: 12px; }
+    .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
+    .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
+      display: inline-block; }
+
+.node--type-report .field--name-field-title {
+  color: #0f284a;
+  font-family: "Montserrat Bold";
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 auto 20px;
+  max-width: 980px;
+  padding: 0 20px; }
 
 /*Sponsors*/
 .field-group-sponsors-primary {
