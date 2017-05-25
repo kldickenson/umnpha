@@ -67,6 +67,7 @@
 
 
 
+
 /*Webform*/
 .node--type-webform {
 
@@ -253,3 +254,30 @@
   }
 
 }
+
+/*Report*/
+
+.node--type-report {
+
+  &.node--view-mode-teaser {
+    border-bottom: 2px solid #333;
+    margin: 0 0 35px 0;
+    padding: 0 0 35px 0;
+
+    > h2 {
+      display: none;
+    }
+
+    .field--name-field-report-featured-image {
+      float: left;
+      margin: 0 25px 0 0;
+      max-width: 35%;
+    }
+
+    .group-report-teaser-text {
+      font-size: 16px;
+    }
+  }
+}
+
+

@@ -100,12 +100,9 @@ content:
     region: content
   field_report_tags:
     weight: 9
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_autocomplete_tags
+    type: chosen_select
     region: content
   field_report_volume_issue:
     weight: 7
