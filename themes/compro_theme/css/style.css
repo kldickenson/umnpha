@@ -427,7 +427,8 @@ div.warning {
     .menu--menu-main-menu.block-menu .menu li {
       display: inline;
       font-size: 0.9375rem;
-      margin: 0 30px 0 0; }
+      margin: 0 30px 0 0;
+      position: relative; }
       .menu--menu-main-menu.block-menu .menu li.menu-item--active-trail {
         color: #0c57aa; }
       .menu--menu-main-menu.block-menu .menu li a {
@@ -449,6 +450,10 @@ div.warning {
           display: none;
           margin: 0 0 30px 0;
           text-align: center; } }
+      .menu--menu-main-menu.block-menu .menu li .menu {
+        position: absolute;
+        top: 165%;
+        left: 0; }
   @media screen and (max-width: 940px) {
     .menu--menu-main-menu.block-menu {
       left: 0;
@@ -947,11 +952,6 @@ header {
       header.header-fixed {
         width: 100vw; } }
 
-/**
-*     1 - Region-Header
-*     2 - Region-Nav
-*     3 -
- */
 .region-header {
   background-color: #fefefe;
   display: inline-block;
