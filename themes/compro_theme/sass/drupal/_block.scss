@@ -178,9 +178,24 @@
       }
 
       .menu {
+        height: 0px;
+        margin: -8px 0 0 0;
+        overflow: hidden;
+        padding: 60px 0 0 0;
         position: absolute;
-        top: 165%;
-        left: 0;
+          //top: 50px;
+          right: 0;
+        width: 200px;
+        z-index: 3;
+      }
+
+      &:hover {
+
+        .menu {
+          background-color: rgba(255,255,255,.75);
+          height: 175px;
+        }
+
       }
 
     }
