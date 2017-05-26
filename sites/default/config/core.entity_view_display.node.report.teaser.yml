@@ -29,7 +29,7 @@ third_party_settings:
         - field_title
         - field_report_summary
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: html_element
       format_settings:
         id: ''
@@ -70,6 +70,11 @@ content:
     settings:
       link_to_entity: true
     third_party_settings: {  }
+  links:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   compro_links: true
   compro_submitted: true
@@ -81,5 +86,4 @@ hidden:
   field_report_sections: true
   field_report_tags: true
   field_report_volume_issue: true
-  links: true
   share: true
