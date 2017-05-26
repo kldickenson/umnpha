@@ -41,3 +41,10 @@ function compro_custom_update_8003() {
 function compro_custom_update_8004() {
   \Drupal::service('module_installer')->install(['views_infinite_scroll', 'block_field']);
 }
+
+/**
+ * Install ckeditor_font module.
+ */
+function compro_custom_update_8005() {
+  \Drupal::service('module_installer')->install(['ckeditor_font']);
+}

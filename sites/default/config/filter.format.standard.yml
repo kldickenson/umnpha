@@ -6,15 +6,15 @@ _core:
   default_config_hash: I_nxGITZ_BVOYe-6zV6jW3nk26s_Cp3n7YygMlYhtpM
 name: Standard
 format: standard
-weight: 0
+weight: -10
 filters:
   filter_html:
     id: filter_html
     provider: filter
-    status: true
+    status: false
     weight: -10
     settings:
-      allowed_html: '<br> <del> <em> <hr> <ins> <li> <mark> <noscript> <ol> <p> <q> <strong> <sub> <sup> <ul> <a href>'
+      allowed_html: '<br> <del> <em> <hr> <ins> <li> <mark> <noscript> <ol> <p> <q> <strong> <sub> <sup> <ul> <a href> <u> <s> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <img src alt data-entity-type data-entity-uuid>'
       filter_html_help: false
       filter_html_nofollow: false
   filter_htmlcorrector:
@@ -23,3 +23,22 @@ filters:
     status: true
     weight: 10
     settings: {  }
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72

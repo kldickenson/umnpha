@@ -1,0 +1,23 @@
+uuid: 5e31de71-0509-4a21-9cdb-d9513f6020b9
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_longtext
+    - field.storage.section_type.longtext_top_border
+id: section_type.section_type_longtext.longtext_top_border
+field_name: longtext_top_border
+entity_type: section_type
+bundle: section_type_longtext
+label: 'Add Top Border?'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
