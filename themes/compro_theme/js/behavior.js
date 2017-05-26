@@ -48,6 +48,7 @@
       //Search field
       if($(window).width() >= 788) {
         $search_icon.on('click', function (e) {
+          console.log('clicked');
           $(this).addClass('is-open');
           $(this).siblings('.block-google-cse').toggleClass('is-open');
         });
