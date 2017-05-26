@@ -4,6 +4,8 @@
  * @file
  * Functions to support theming in the compro_theme theme.
  */
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -69,7 +71,11 @@ function compro_theme_theme_suggestions_fieldset_alter(array &$suggestions, arra
  * Implements hook_preprocess_node().
  */
 function compro_theme_preprocess_node(&$variables) {
-
+  if ($variables['elements']['#node']->bundle() == 'report' && $variables['elements']['#view_mode'] == 'teaser') {
+    $variables['content']['links'] = Link::fromTextAndUrl(t('Learn More'), Url::fromUri('internal:/node/' . $variables['elements']['#node']->nid->value))->toRenderable();
+    $variables['content']['links']['#weight'] = 4;
+    $variables['content']['links']['#attributes']['class'] = array('learn-more', 'button');
+  }
 }
 
 /**
