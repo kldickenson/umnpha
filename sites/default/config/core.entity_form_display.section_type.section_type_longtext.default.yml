@@ -5,6 +5,7 @@ dependencies:
   config:
     - eck.eck_type.section_type.section_type_longtext
     - field.field.section_type.section_type_longtext.field_longtext_text
+    - field.field.section_type.section_type_longtext.longtext_top_border
   module:
     - text
 id: section_type.section_type_longtext.default
@@ -14,11 +15,18 @@ mode: default
 content:
   field_longtext_text:
     type: text_textarea
-    weight: 1
+    weight: 2
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
+    region: content
+  longtext_top_border:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
     region: content
   title:
     type: string_textfield

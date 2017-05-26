@@ -5,6 +5,7 @@ dependencies:
   config:
     - eck.eck_type.section_type.section_type_longtext
     - field.field.section_type.section_type_longtext.field_longtext_text
+    - field.field.section_type.section_type_longtext.longtext_top_border
   module:
     - text
 id: section_type.section_type_longtext.default
@@ -20,4 +21,5 @@ content:
     third_party_settings: {  }
     region: content
 hidden:
+  longtext_top_border: true
   title: true

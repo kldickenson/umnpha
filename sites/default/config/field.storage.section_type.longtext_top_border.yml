@@ -1,0 +1,18 @@
+uuid: 76f6fa8f-f0d7-4c20-b0e3-c0393ca2229a
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: section_type.longtext_top_border
+field_name: longtext_top_border
+entity_type: section_type
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

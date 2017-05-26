@@ -740,6 +740,10 @@ div.warning {
     #block-views-blockreport-recent-reports a:visited {
       color: #2d2d2d; }
 
+.section-type-longtext.add-border {
+  border-top: solid 1px #5f5f5f;
+  padding-top: 40px; }
+
 /*Pull Quote*/
 .section-type-pull-quote {
   border-bottom: 1px solid #969696;
