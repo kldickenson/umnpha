@@ -190,7 +190,7 @@
     color: white;
     font-size: rem(14);
     margin: 0;
-    padding: rem(14) rem(28);
+    padding: .575rem 1.75rem;
 
     &:hover {
       transition: $base-duration $base-timing;
@@ -504,8 +504,32 @@
 
 .block-views-blockreport-recent-reports {
   h2 {
-    color: $blue-zodiac;
+    color: $um-blue;
     font-family: $heading-font-family;
-    font-size: 24px;
+    font-size: 25px;
+    margin: 0 0 30px 0;
+  }
+}
+
+.group-report-teaser-text + a[href].learn-more.button {
+  background-color: #0f6cb6;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.575rem 1.75rem;
+
+  //&::after {
+  //  clear: both;
+  //  content: '';
+  //  display: table;
+  //}
+}
+
+.block-views-blockreport-recent-reports .field--name-field-report-summary {
+
+  &:after {
+    clear: none;
+    content: none;
   }
 }
