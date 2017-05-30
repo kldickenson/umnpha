@@ -1,0 +1,22 @@
+uuid: 93699f6c-84dd-4c75-a37e-61e19f96f817
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.report_button_color
+    - node.type.report
+  module:
+    - color_field
+id: node.report.report_button_color
+field_name: report_button_color
+entity_type: node
+bundle: report
+label: 'Button Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

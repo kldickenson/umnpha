@@ -14,6 +14,7 @@ template: true
 id: template_contact
 title: 'Contact Us'
 description: 'A basic contact webform template.'
+category: ''
 elements: "name:\n  '#title': 'Your Name'\n  '#type': textfield\n  '#required': true\nemail:\n  '#title': 'Your Email'\n  '#type': email\n  '#required': true\nsubject:\n  '#title': Subject\n  '#type': textfield\n  '#required': true\nmessage:\n  '#title': Message\n  '#type': textarea\n  '#required': true\n"
 css: ''
 javascript: ''

@@ -14,6 +14,7 @@ template: true
 id: template_registration
 title: Registration
 description: 'A registration webform template.'
+category: ''
 elements: "personal_information:\n  '#title': 'Your Personal Information'\n  '#type': fieldset\n  first_name:\n    '#title': 'First Name'\n    '#type': textfield\n    '#required': true\n  last_name:\n    '#title': 'Last Name'\n    '#type': textfield\n    '#required': true\ncontact_information:\n  '#title': 'Your Contact Information'\n  '#type': fieldset\n  contact:\n    '#type': webform_contact\n    '#title': Contact\n    '#title_display': invisible\n    '#name__access': false\n    '#company__access': false\nmailinglist:\n  '#title': 'Mailing List'\n  '#type': fieldset\n  subscribe:\n    '#title': 'Please subscribe me to your mailing list.'\n    '#type': checkbox\nadditional_information:\n  '#title': 'Additional Information'\n  '#type': fieldset\n  '#open': true\n  notes:\n    '#title': Comments\n    '#type': textarea\n"
 css: ''
 javascript: ''
