@@ -42,7 +42,16 @@
             };
           $mobileNav.find('.menu >' +
             ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block').toggleClass('is-open');
-        })
+        });
+      }
+
+      //Search field
+      if($(window).width() >= 788) {
+        $search_icon.on('click', function (e) {
+          console.log('clicked');
+          $(this).addClass('is-open');
+          $(this).siblings('.block-google-cse').toggleClass('is-open');
+        });
       }
 
 

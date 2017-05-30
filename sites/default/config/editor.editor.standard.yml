@@ -19,11 +19,25 @@ settings:
           items:
             - Bold
             - Italic
+            - Underline
+            - Strike
+            - Superscript
+            - Subscript
+            - FontSize
+        -
+          name: Alignment
+          items:
+            - JustifyLeft
+            - JustifyCenter
+            - JustifyRight
+            - JustifyBlock
         -
           name: Lists
           items:
             - BulletedList
             - NumberedList
+            - Outdent
+            - Indent
         -
           name: Links
           items:
@@ -32,15 +46,23 @@ settings:
         -
           name: Tools
           items:
+            - DrupalImage
+            - Table
             - PasteText
+            - PasteFromWord
             - SpecialChar
             - Source
             - RemoveFormat
   plugins:
+    language:
+      language_list: un
     stylescombo:
       styles: ''
+    font:
+      font_names: ''
+      font_sizes: "10px|10\r\n12px|12\r\n14px|14\r\n16px|16\r\n18px|18\r\n20px|20\r\n22px|22"
 image_upload:
-  status: false
+  status: true
   scheme: public
   directory: inline-images
   max_size: ''
