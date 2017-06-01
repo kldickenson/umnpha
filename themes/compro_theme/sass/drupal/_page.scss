@@ -1,7 +1,7 @@
 /*
 *   #Page - General positioning of regions
 *   1) Header - container, region-header, region-nav (all states)
-*   2)
+*   2) Search Page
 *
 **/
 
@@ -89,6 +89,15 @@ header {
 
   }
 
+}
+
+.path-search {
+
+  .layout-content {
+    max-width: 980px;
+    padding: 0 20px;
+  }
+  
 }
 
 
