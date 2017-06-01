@@ -13,7 +13,7 @@
         }
       });
 
-
+      //Declare variables
       var $body = $('body');
       var $mobileNav = $('.region-nav');
       var $hamburger = $('.hamburger');
@@ -51,7 +51,6 @@
 
       //Search field
         $search_icon.on('click', function (e) {
-          console.log('clicked');
           $(this).addClass('is-open');
           $(this).siblings('.block-google-cse').toggleClass('is-open');
         });
@@ -65,6 +64,7 @@
         var $viewportHeight = $(window).height();
         var $sponsors = $('.section-type-sponsors');
 
+        // Declare elements to be animated //Refactor to a more dynamic way to do this and wrap to only run when sponsor section is present
         var $sponsorPrimaryLabelPos = $sponsors.find('.field--name-field-sponsors-primary__label').position().top;
         var $sponsorSecondaryLabelPos = $sponsors.find('.field--name-field-sponsors-secondary-label').position().top;
         var $sponsorPrimaryImagePos = $sponsors.find('.field--name-field-sponsors-primary-sponsors').position().top;
@@ -72,27 +72,22 @@
         var $sponsorSecondSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').position().top;
         var $sponsorHeight = $sponsors.outerHeight();
 
-        //Animate when relevant div enters viewport
+        //Animate each when it div enters viewport //Refactor this to loop
         if(($sponsorPrimaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.find('.field--name-field-sponsors-primary__label').addClass('animated slideInRight');
-        };
-
+        }
         if(($sponsorSecondaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.find('.field--name-field-sponsors-secondary-label').addClass('animated slideInRight');
-        };
-
+        }
         if(($sponsorPrimaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.find('.field--name-field-sponsors-primary-sponsors').addClass('animated slideInRight');
-        };
-
+        }
         if(($sponsorFirstSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').addClass('animated slideInRight');
-        };
-
+        }
         if(($sponsorSecondSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
           $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').addClass('animated slideInRight');
-        };
-
+        }
 
         //get variables for Testimonial sections
         if ($('.section-type-testimonial')[0]){
@@ -103,15 +98,15 @@
           // Animate when section-type enters viewport
           if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
             $testimonial.find('.testimonial-image').addClass('animated ' +
-              'slideInRight')
+              'slideInRight');
             $testimonial.find('.field--name-field-testimonial-quote').addClass('animated ' +
               'slideInRight').delay(1000);
             $testimonial.find('.field--name-field-testimonial-author').addClass('animated ' +
               'slideInRight').delay(1500);
             $testimonial.find('.field--name-field-testimonial-credentials').addClass('animated ' +
               'slideInRight').delay(2000);
-          };
-        };
+          }
+        }
       });
 
 
@@ -120,10 +115,15 @@
         //Animate on page load
         if ($body.hasClass('node--type-page')) {
           $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
-        };
+        }
 
         //Parallax on image
         if ($body.hasClass('node--type-page')) {
+          var imageUrl = $body.find('.field-group-page-hero >' +
+            ' .field--name-field-page-hero > img').prop('src');
+          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
+        }
+        if ($body.hasClass('node--type-report')) {
           var imageUrl = $body.find('.field-group-page-hero >' +
             ' .field--name-field-page-hero > img').prop('src');
           $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
@@ -132,7 +132,6 @@
       //Sticky Nav
       $(window).scroll(function() {
         var position = $(window).scrollTop();
-        console.log('scrolling');
         // Header fix.
         if (position > 0) {
           $('header,.region-header,.region-nav').addClass('header-fixed' +
