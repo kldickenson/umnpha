@@ -76,6 +76,9 @@ function compro_theme_preprocess_node(&$variables) {
     $variables['content']['links']['#weight'] = 4;
     $variables['content']['links']['#attributes']['class'] = array('learn-more', 'button');
   }
+  if ($variables['elements']['#node']->bundle() == 'report' && $variables['elements']['#view_mode'] == 'full') {
+    $variables['#attached']['library'][] = 'compro_theme/sticky-kit';
+  }
 }
 
 /**

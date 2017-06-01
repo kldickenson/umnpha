@@ -608,10 +608,14 @@ header.header-fixed {
     content: '';
     clear: both;
     display: table; }
+  @media all and (max-width: 500px) {
+    .node--type-report .node--type-report-container {
+      padding: 0 20px; } }
 .node--type-report .group-sidebar {
   display: inline-block;
-  font-size: 13px;
+  font-size: 0.75rem;
   float: left;
+  margin: 50px 0 0 0;
   width: 15%; }
   .node--type-report .group-sidebar:after {
     content: '';
@@ -619,6 +623,12 @@ header.header-fixed {
     display: table; }
   .node--type-report .group-sidebar a {
     font-weight: bold; }
+  @media all and (max-width: 660px) {
+    .node--type-report .group-sidebar {
+      float: none;
+      margin: 0;
+      padding: 0 20px;
+      width: 100%; } }
 .node--type-report .group-report-content {
   display: inline-block;
   float: right;
@@ -627,6 +637,22 @@ header.header-fixed {
     content: '';
     clear: both;
     display: table; }
+  @media all and (max-width: 660px) {
+    .node--type-report .group-report-content {
+      float: none;
+      width: 100%; } }
+
+.node--type-report .group-sidebar > .field,
+.node--type-report .group-sidebar > .sidebar-share-wrapper {
+  margin: 0 0 20px 0; }
+  @media all and (max-width: 660px) {
+    .node--type-report .group-sidebar > .field,
+    .node--type-report .group-sidebar > .sidebar-share-wrapper {
+      font-size: 0.875rem;
+      text-align: center; } }
+
+.node--type-report .group-sidebar > .field:last-child {
+  margin-bottom: 40px; }
 
 /*
 *   #REGION - General positioning of blocks within regions
@@ -1208,6 +1234,10 @@ footer.footer-wrapper {
     .section-type-longtext a:visited,
     .block-views-blockreport-recent-reports a:visited {
       color: #2d2d2d; }
+  @media all and (max-width: 500px) {
+    .section-type-longtext,
+    .block-views-blockreport-recent-reports {
+      padding: 0; } }
 
 .section-type-longtext.add-border {
   border-top: solid 1px #5f5f5f;
@@ -1292,13 +1322,15 @@ footer.footer-wrapper {
     background-color: #FFFF38;
     transition: 250ms ease-in-out; }
 
-.node--type-report .group-sidebar > .field {
-  margin: 0 0 20px 0; }
 .node--type-report .group-sidebar .field--name-field-report-volume-issue {
   font-size: 12px; }
   .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
   .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
     display: inline-block; }
+    @media all and (max-width: 660px) {
+      .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
+      .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
+        display: block; } }
 
 .node--type-report .field--name-field-title {
   color: #0f284a;
@@ -1308,6 +1340,9 @@ footer.footer-wrapper {
   margin: 0 auto 20px;
   max-width: 980px;
   padding: 0 20px; }
+  @media all and (max-width: 500px) {
+    .node--type-report .field--name-field-title {
+      padding: 0; } }
 
 /*Sponsors*/
 .field-group-sponsors-primary {

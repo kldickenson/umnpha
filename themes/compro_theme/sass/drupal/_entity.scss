@@ -234,6 +234,10 @@
 
   }
 
+  @media all and (max-width: 500px) {
+    padding: 0;
+  }
+
 }
 
 .section-type-longtext.add-border {

@@ -33,7 +33,7 @@
       });
 
       // Wrap sibling elements for node report sidebar layout
-      $(".group-sidebar").next(".group-report-content").andSelf().wrapAll("<div class='node--type-report-container' />");
+      $(".group-report-content").next(".group-sidebar").andSelf().wrapAll("<div class='node--type-report-container' />");
 
 
       // Hero images
@@ -55,7 +55,6 @@
       }
 
       // Mobile only
-
         //Mobile Menu
         if($(window).width() <= 950) {
 
@@ -90,17 +89,19 @@
           $mobileNav.append($search);
         }
 
-      // Scrolls
-        //Scroll Triggered Slide-Ins   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,
+        // Move sidebar fields to best locations
+
+      // Scroll Triggered Events
+        // Slide ins when in viewport   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,
         $(window).scroll(function(e) {
 
-          //get viewport size, set top of page to variable
+          //get viewport size, set top of page
           var $scrollTop = $(document).scrollTop();
           var $viewportHeight = $(window).height();
-          var $sponsors = $('.section-type-sponsors');
 
           // Sponsors Section Animation
           if ($('.section-type-sponsors')[0]) {
+            var $sponsors = $('.section-type-sponsors');
             var $sponsorPrimaryLabelPos = $sponsors.find('.field--name-field-sponsors-primary__label').position().top;
             var $sponsorSecondaryLabelPos = $sponsors.find('.field--name-field-sponsors-secondary-label').position().top;
             var $sponsorPrimaryImagePos = $sponsors.find('.field--name-field-sponsors-primary-sponsors').position().top;
@@ -146,10 +147,10 @@
           }
         });
 
-        //Sticky Nav
-        $(window).scroll(function() {
+        // Sticky Nav
+        $(window).scroll(function(e) {
           var position = $(window).scrollTop();
-          // Header fix.
+          // Fix Header
           if (position > 0) {
             $('header,.region-header,.region-nav').addClass('header-fixed' +
               ' animated' +
@@ -158,6 +159,13 @@
             $('.parallax-mirror').css('top', '84px');
           }
         });
+
+        // Sticky Side bar
+        if($(window).width() >= 660) {
+          $(window).scroll(function(e) {
+            $('.group-sidebar').stick_in_parent({offset_top: 100});
+          });
+        }
     }
   };
 })(jQuery, Drupal);
