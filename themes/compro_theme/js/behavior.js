@@ -65,28 +65,30 @@
         var $sponsors = $('.section-type-sponsors');
 
         // Declare elements to be animated //Refactor to a more dynamic way to do this and wrap to only run when sponsor section is present
-        var $sponsorPrimaryLabelPos = $sponsors.find('.field--name-field-sponsors-primary__label').position().top;
-        var $sponsorSecondaryLabelPos = $sponsors.find('.field--name-field-sponsors-secondary-label').position().top;
-        var $sponsorPrimaryImagePos = $sponsors.find('.field--name-field-sponsors-primary-sponsors').position().top;
-        var $sponsorFirstSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').position().top;
-        var $sponsorSecondSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').position().top;
-        var $sponsorHeight = $sponsors.outerHeight();
+        if ($('.section-type-sponsors')[0]) {
+          var $sponsorPrimaryLabelPos = $sponsors.find('.field--name-field-sponsors-primary__label').position().top;
+          var $sponsorSecondaryLabelPos = $sponsors.find('.field--name-field-sponsors-secondary-label').position().top;
+          var $sponsorPrimaryImagePos = $sponsors.find('.field--name-field-sponsors-primary-sponsors').position().top;
+          var $sponsorFirstSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').position().top;
+          var $sponsorSecondSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').position().top;
+          var $sponsorHeight = $sponsors.outerHeight();
 
-        //Animate each when it div enters viewport //Refactor this to loop
-        if(($sponsorPrimaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-primary__label').addClass('animated slideInRight');
-        }
-        if(($sponsorSecondaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-secondary-label').addClass('animated slideInRight');
-        }
-        if(($sponsorPrimaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-primary-sponsors').addClass('animated slideInRight');
-        }
-        if(($sponsorFirstSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').addClass('animated slideInRight');
-        }
-        if(($sponsorSecondSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').addClass('animated slideInRight');
+          //Animate each when it div enters viewport //Refactor this to loop
+          if(($sponsorPrimaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
+            $sponsors.find('.field--name-field-sponsors-primary__label').addClass('animated slideInRight');
+          }
+          if(($sponsorSecondaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
+            $sponsors.find('.field--name-field-sponsors-secondary-label').addClass('animated slideInRight');
+          }
+          if(($sponsorPrimaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
+            $sponsors.find('.field--name-field-sponsors-primary-sponsors').addClass('animated slideInRight');
+          }
+          if(($sponsorFirstSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
+            $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').addClass('animated slideInRight');
+          }
+          if(($sponsorSecondSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
+            $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').addClass('animated slideInRight');
+          }
         }
 
         //get variables for Testimonial sections

@@ -338,7 +338,7 @@ div.warning {
 /*
 *   #Page - General positioning of regions
 *   1) Header - container, region-header, region-nav (all states)
-*   2)
+*   2) Search Page
 *
 **/
 header .container {
@@ -389,6 +389,10 @@ header.header-fixed {
         background-color: rgba(250, 250, 250, 0.85); } }
     header.header-fixed .region-nav.child-open {
       height: 400px; }
+
+.path-search .layout-content {
+  max-width: 980px;
+  padding: 0 20px; }
 
 /*
 *   #NODE
