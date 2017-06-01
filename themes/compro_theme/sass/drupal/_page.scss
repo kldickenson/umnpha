@@ -39,7 +39,11 @@ header {
       height: 300px;
       position: absolute;
       top: 84px;
-      transition: $base-duration;
+      -webkit-transition: 250ms cubic-bezier(.18,.01,.63,.98);
+      -moz-transition: 250ms cubic-bezier(.18,.01,.63,.98);
+      -ms-transition: 250ms cubic-bezier(.18,.01,.63,.98);
+      -o-transition: 250ms cubic-bezier(.18,.01,.63,.98);
+      transition: 250ms cubic-bezier(.18,.01,.63,.98);
       width: 100vw;
     }
 
