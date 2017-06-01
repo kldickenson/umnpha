@@ -15,7 +15,10 @@ dependencies:
     - field.field.node.report.field_report_tags
     - field.field.node.report.field_report_volume_issue
     - field.field.node.report.field_title
-    - image.style.large
+    - field.field.node.report.report_button_color
+    - field.field.node.report.report_button_text_color
+    - field.field.node.report.report_download_background_color
+    - image.style.340xn
     - node.type.report
   module:
     - field_group
@@ -52,7 +55,7 @@ content:
     region: content
     label: hidden
     settings:
-      image_style: large
+      image_style: 340xn
       image_link: content
     third_party_settings: {  }
   field_report_summary:
@@ -86,4 +89,7 @@ hidden:
   field_report_sections: true
   field_report_tags: true
   field_report_volume_issue: true
+  report_button_color: true
+  report_button_text_color: true
+  report_download_background_color: true
   share: true
