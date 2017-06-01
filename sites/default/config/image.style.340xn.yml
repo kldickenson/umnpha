@@ -1,0 +1,15 @@
+uuid: 17146f47-9886-467d-b430-715410d955d2
+langcode: en
+status: true
+dependencies: {  }
+name: 340xn
+label: 340xN
+effects:
+  57197e33-a475-4bed-8ea0-94ab8d5b16d7:
+    uuid: 57197e33-a475-4bed-8ea0-94ab8d5b16d7
+    id: image_scale
+    weight: 1
+    data:
+      width: 340
+      height: null
+      upscale: false
