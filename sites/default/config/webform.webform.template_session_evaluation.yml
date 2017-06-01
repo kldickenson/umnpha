@@ -14,6 +14,7 @@ template: true
 id: template_session_evaluation
 title: 'Session Evaluation'
 description: 'A session evaluation webform template.'
+category: ''
 elements: "overall:\n  '#type': radios\n  '#title': 'How was the session overall?'\n  '#options_display': side_by_side\n  '#options': likert_quality\n  '#required': true\nspeaker:\n  '#type': webform_likert\n  '#title': 'Please rate the speaker''s...'\n  '#questions':\n    mastery: 'Mastery of this topic'\n    presentation: 'Presentation skills'\n    quality: 'Quality of slides and visual aids'\n  '#answers': likert_quality\n  '#na_answer': true\n  '#required': true\nlearn:\n  '#type': radios\n  '#title': 'Did you learn something in this session you can use in real life?'\n  '#options_display': side_by_side\n  '#options':\n    'Yes': 'Yes'\n    'No': 'No'\n    N/A: N/A\n  '#required': true\ncomments:\n  '#type': textarea\n  '#title': Comments\n  '#description': 'What did you like most? What would you change? Advice for the speaker to make this session better?'\n"
 css: ''
 javascript: ''

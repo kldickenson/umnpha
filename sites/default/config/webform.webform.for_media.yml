@@ -9,6 +9,7 @@ template: false
 id: for_media
 title: 'For Media'
 description: ''
+category: ''
 elements: "name:\n  '#type': textfield\n  '#title': Name\nemail_address:\n  '#type': email\n  '#title': 'Email Address'\norganization:\n  '#type': textfield\n  '#title': Organization\nembargoes_reports:\n  '#type': radios\n  '#title': 'Embargoed Reports'\n  '#title_display': invisible\n  '#options':\n    'Yes, I agree to uphold embargoes': 'Yes, I agree to uphold embargoes'\n    'I do not need embargoed notification but still want to receive poll results': 'I do not need embargoed notification but still want to receive poll results'\n  '#required': true\n  '#required_error': 'You must choose whether to receive embargoed notifications'\n"
 css: ''
 javascript: ''

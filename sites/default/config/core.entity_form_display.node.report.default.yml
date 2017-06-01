@@ -14,23 +14,45 @@ dependencies:
     - field.field.node.report.field_report_tags
     - field.field.node.report.field_report_volume_issue
     - field.field.node.report.field_title
+    - field.field.node.report.report_button_color
+    - field.field.node.report.report_button_text_color
+    - field.field.node.report.report_download_background_color
     - image.style.thumbnail
     - node.type.report
   module:
     - chosen_field
+    - color_field
     - datetime
+    - field_group
     - file
     - image
     - inline_entity_form
     - link
     - text
+third_party_settings:
+  field_group:
+    group_full_report_button:
+      children:
+        - field_report_report
+        - report_download_background_color
+        - report_button_text_color
+        - report_button_color
+      parent_name: ''
+      weight: 2
+      format_type: fieldset
+      format_settings:
+        id: ''
+        classes: ''
+        description: ''
+        required_fields: false
+      label: 'Full Report Button'
 id: node.report.default
 targetEntityType: node
 bundle: report
 mode: default
 content:
   field_report_contributers:
-    weight: 6
+    weight: 9
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -39,7 +61,7 @@ content:
     region: content
   field_report_featured_image:
     type: image_image
-    weight: 3
+    weight: 6
     region: content
     settings:
       progress_indicator: throbber
@@ -59,26 +81,26 @@ content:
     type: inline_entity_form_complex
     region: content
   field_report_news_source:
-    weight: 8
+    weight: 11
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_report_published_date:
-    weight: 5
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_report_report:
-    weight: 2
+    weight: 3
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_report_sections:
-    weight: 10
+    weight: 13
     settings:
       form_mode: default
       label_singular: ''
@@ -91,7 +113,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_report_summary:
-    weight: 4
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -99,13 +121,13 @@ content:
     type: text_textarea
     region: content
   field_report_tags:
-    weight: 9
+    weight: 12
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_report_volume_issue:
-    weight: 7
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -119,6 +141,27 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
+  report_button_color:
+    weight: 6
+    settings:
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  report_button_text_color:
+    weight: 5
+    settings:
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  report_download_background_color:
+    weight: 4
+    settings:
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+    third_party_settings: {  }
+    type: color_field_widget_box
     region: content
 hidden:
   compro_submitted: true
