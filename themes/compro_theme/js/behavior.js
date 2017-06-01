@@ -36,23 +36,25 @@
 
         $hamburger.on('click', function(e) {
           $(this).toggleClass('is-open');
-          $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd),
+          $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd,
                 function(e) {
-              this.removeClass(animationMenu);
-            };
-          $mobileNav.find('.menu >' +
-            ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block').toggleClass('is-open');
+              $(this).removeClass(animationMenu);
+            }
+          );
+        });
+
+        $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
+          e.preventDefault();
+          $mobileNav.toggleClass('child-open');
         });
       }
 
       //Search field
-      if($(window).width() >= 788) {
         $search_icon.on('click', function (e) {
           console.log('clicked');
           $(this).addClass('is-open');
           $(this).siblings('.block-google-cse').toggleClass('is-open');
         });
-      }
 
 
       //Scroll Triggered Slide-Ins
@@ -62,26 +64,6 @@
         var $scrollTop = $(document).scrollTop();
         var $viewportHeight = $(window).height();
         var $sponsors = $('.section-type-sponsors');
-
-
-      ////add animate classes
-        // if ($($sponsors)[0]) {
-        //   $sponsors.find('.field--name-field-sponsors-primary__label,.field--name-field-sponsors-secondary-label,.component-sponsor').addClass('animate-on-view');
-        // }
-        //
-        // //get positions of all elements that will be animated on viewport entry
-        // var $elements = $('.animate-on-view');
-        // var $elPositions = [];
-        //
-        // $.each($elements, function (index, element) {
-        //   var elPosition = $(element).position();
-        //
-        //   $elPositions.push(elPosition);
-        //   console.log(index + ": " + elPosition + "  top: " + elPosition.top)
-        // })
-        //   console.log('elements: ', $elements);
-        //   console.log('elPositions properties:  ' + Object.entries($elPositions));
-
 
         var $sponsorPrimaryLabelPos = $sponsors.find('.field--name-field-sponsors-primary__label').position().top;
         var $sponsorSecondaryLabelPos = $sponsors.find('.field--name-field-sponsors-secondary-label').position().top;
@@ -157,7 +139,7 @@
           $('header,.region-header,.region-nav').addClass('header-fixed' +
             ' animated' +
             ' slideInDown');
-          $('.layout-content').css('padding-top', '95px');
+          $('.layout-content').css('padding-top', '84px');
         }
       });
     }

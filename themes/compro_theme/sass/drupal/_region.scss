@@ -1,64 +1,145 @@
-// General
+/*
+*   #REGION - General positioning of blocks within regions
+*
+*   1) region-header - branding block, hamburger
+*   2) region-nav - email signup, search icon, main menu, search form
+*
+*
+**/
 
 
-
-// Header
+/*Header*/
 .region-header {
-  background-color: #fefefe;
-  display: inline-block;
-  padding: 30px 0 0 20px;
-  position: relative;
 
-  @media screen and(max-width: 940px) {
-    @include padding(null 0);
-    display: block;
-    height: auto;
-    min-height: 84px;
-    padding: 20px;
-    z-index: 2;
+  .block-system-branding-block {
+    display: inline-block;
   }
 
-  &.header-fixed {
-    background-color: transparent;
-    height: 95px;
-    padding: 20px 0;
+  .hamburger {
+    background-color: unset;
+    display: none;
+    float: right;
+    padding: 0;
+
+    @media all and(max-width: 940px) {
+      display: inline-block;
+    }
+
   }
 
 }
 
 .region-nav {
-  float: right;
-  padding: 30px 20px 30px 0;
 
-  &.header-fixed {
-    background-color: transparent;
-    padding-top: 10px;
+  .inner {
+    text-transform: uppercase;
+  }
 
-    &.is-open {
-      top: 95px;
+  .block-email-sign-up {      // make mixin for display, float, transform?
+    display: inline-block;
+    float: right;
+    //transform: translateY(50%);
+
+    @media all and (max-width: 940px) {
+      display: none;
+      position: relative;
+      text-align: center;
+      top: 240px;
+      width: 100%;
+      z-index: 10;
+
     }
 
   }
 
-  &.is-open {
-    background-color: rgba(250,250,250,.8);
-    display: block;
-    height: 300px;
-    padding-right: 0;
+  .menu--menu-main-menu {
+    display: inline-block;
+    float: right;
+    //transform: translateY(50%);
+    z-index: 1000;
+  }
+
+  .block-search-icon-block {
+    display: inline-block;
+    float: right;
+    margin: 0 30px 0 0;
+    //transform: translateY(50%);
+    z-index: 2;
+
+    @media all and (max-width: 940px) {
+      display: none;
+    }
+
+  }
+
+  .block-google-cse {
+    opacity: 0;
     position: absolute;
-    top: 84px;
-    transition: $base-duration;
-    width: 100%;
+      top: 124px;
+      right: 16.5%; //200px?
+    transform: translateY(-100%);
+    transition: transform 200ms cubic-bezier(.07,.25,.97,.82);
+    min-width: 25%;
+    z-index: -1;
 
-    @media screen and(max-width: 940px) {
-      width: 100vw;
+    /*States*/
+    &.is-open {
+      opacity: 1;
+      transform: unset;
+      z-index: 2;
+    }
+
+    @media all and (max-width: 940px) {
+      display: none;
+      opacity: 1;
+      position: absolute;
+      top: 175px;
+      right: unset;
+      transform: unset;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .header-fixed & {
+      min-width: 50%;
+      top: 64px;
+      right: 200px;
+
+      @media all and (max-width: 940px) {
+        top: 175px;
+        right: unset;
+      }
+
+      &.child-open {
+
+      }
+
     }
 
   }
 
-  @media screen and(max-width: 940px) {
-    display: none;
+  /*States*/
+  &.is-open {
+    .block-email-sign-up,
+    .block-google-cse,
+    .menu--menu-main-menu {
+      display: block;
+    }
+
   }
+
+  &.child-open {
+
+    .block-email-sign-up {
+      top: 300px;
+    }
+
+    .block-google-cse {
+      top: 240px;
+    }
+
+  }
+
 }
 
 .region-footer,
