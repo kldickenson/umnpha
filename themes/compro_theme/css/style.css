@@ -391,8 +391,33 @@ header.header-fixed {
       height: 400px; }
 
 .path-search .layout-content {
+  margin: 0 auto;
   max-width: 980px;
-  padding: 0 20px; }
+  padding: 40px; }
+.path-search .search-page-form {
+  padding: 50px 0 0 0; }
+.path-search .form-wrapper {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 100%; }
+  .path-search .form-wrapper label {
+    display: none; }
+.path-search .form-submit {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0; }
+.path-search .search-help-link {
+  float: right;
+  margin: 0 5% 0 0; }
+.path-search h2 {
+  clear: both; }
+.path-search .item-list li {
+  margin-left: 0px; }
+.path-search .item-list .gsc-table-cell-snippet-close,
+.path-search .item-list .gs-promotion-text-cell {
+  width: 90%; }
 
 /*
 *   #NODE

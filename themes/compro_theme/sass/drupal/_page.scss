@@ -94,10 +94,57 @@ header {
 .path-search {
 
   .layout-content {
+    margin: 0 auto;
     max-width: 980px;
-    padding: 0 20px;
+    padding: 40px;
   }
-  
+
+  .search-page-form {
+    padding: 50px 0 0 0;
+  }
+
+  .form-wrapper {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+
+    label {
+      display: none;
+    }
+
+
+  }
+
+  .form-submit {
+    margin: 0;
+    position: absolute;
+      top: 0;
+      right: 0;
+  }
+
+  .search-help-link {
+    float: right;
+    margin: 0 5% 0 0;
+  }
+
+  h2 {
+    clear: both;
+  }
+
+  .item-list {
+
+    li {
+      margin-left: 0px;
+    }
+
+    .gsc-table-cell-snippet-close,
+    .gs-promotion-text-cell {
+      width: 90%;
+    }
+
+  }
+
 }
 
 
