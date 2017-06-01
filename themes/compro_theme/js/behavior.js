@@ -56,7 +56,7 @@
         });
 
 
-      //Scroll Triggered Slide-Ins
+      //Scroll Triggered Slide-Ins   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,
       $(window).scroll(function() {
 
         //get viewport size, set top of page to variable
@@ -64,7 +64,7 @@
         var $viewportHeight = $(window).height();
         var $sponsors = $('.section-type-sponsors');
 
-        // Declare elements to be animated //Refactor to a more dynamic way to do this and wrap to only run when sponsor section is present
+        // Declare elements to be animated
         if ($('.section-type-sponsors')[0]) {
           var $sponsorPrimaryLabelPos = $sponsors.find('.field--name-field-sponsors-primary__label').position().top;
           var $sponsorSecondaryLabelPos = $sponsors.find('.field--name-field-sponsors-secondary-label').position().top;
@@ -147,6 +147,8 @@
 
       // Wrap sibling elements for node report sidebar layout
       $(".group-sidebar").next(".group-report-content").andSelf().wrapAll("<div class='node--type-report-container' />");
+
+      // Rip out items and replace items for mobile menu
 
     }
   };

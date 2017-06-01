@@ -247,7 +247,7 @@ function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $
   }
   if ($form_id == 'google_cse_search_box_form') {
     $form['query']['#attributes']['placeholder'] = t('Enter your keywords');
-    $form['#action'] = 'search/cse';
+    $form['#action'] = '/search/cse';
   }
   if ($form_id == 'search_form') {
     if (!$form['basic']['keys']['#default_value'] && isset($_GET['query'])) {
