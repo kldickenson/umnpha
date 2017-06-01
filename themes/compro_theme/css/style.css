@@ -362,7 +362,11 @@ header .region-nav {
       height: 300px;
       position: absolute;
       top: 84px;
-      transition: 250ms;
+      -webkit-transition: 250ms cubic-bezier(0.18, 0.01, 0.63, 0.98);
+      -moz-transition: 250ms cubic-bezier(0.18, 0.01, 0.63, 0.98);
+      -ms-transition: 250ms cubic-bezier(0.18, 0.01, 0.63, 0.98);
+      -o-transition: 250ms cubic-bezier(0.18, 0.01, 0.63, 0.98);
+      transition: 250ms cubic-bezier(0.18, 0.01, 0.63, 0.98);
       width: 100vw; } }
   header .region-nav.is-open {
     display: block; }
