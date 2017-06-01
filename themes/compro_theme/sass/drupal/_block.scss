@@ -454,13 +454,15 @@
   }
 }
 
-.group-report-teaser-text + a[href].learn-more.button {
+a[href].learn-more.button {
   background-color: #0f6cb6;
   color: white;
   font-size: 15px;
   font-weight: 500;
   margin: 0;
   padding: 0.575rem 1.75rem;
+  position: absolute;
+    bottom: 20px;
 
   //&::after {
   //  clear: both;

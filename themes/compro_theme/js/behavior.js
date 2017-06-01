@@ -89,7 +89,8 @@
           $mobileNav.append($search);
         }
 
-        // Move sidebar fields to best locations
+        // Move learn more to teaser group
+        $('.group-report-teaser-text').append($('.learn-more'));
 
       // Scroll Triggered Events
         // Slide ins when in viewport   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,

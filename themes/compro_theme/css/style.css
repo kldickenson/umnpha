@@ -599,7 +599,9 @@ header.header-fixed {
     float: left;
     margin: 0 25px 0 0; }
   .node--type-report.node--view-mode-teaser .group-report-teaser-text {
-    font-size: 16px; }
+    font-size: 16px;
+    padding: 0 0 50px 0;
+    position: relative; }
 .node--type-report .node--type-report-container {
   margin: 0 auto;
   max-width: 1200px;
@@ -1053,13 +1055,15 @@ footer.footer-wrapper {
   font-size: 25px;
   margin: 0 0 30px 0; }
 
-.group-report-teaser-text + a[href].learn-more.button {
+a[href].learn-more.button {
   background-color: #0f6cb6;
   color: white;
   font-size: 15px;
   font-weight: 500;
   margin: 0;
-  padding: 0.575rem 1.75rem; }
+  padding: 0.575rem 1.75rem;
+  position: absolute;
+  bottom: 20px; }
 
 .block-views-blockreport-recent-reports .field--name-field-report-summary:after {
   clear: none;
