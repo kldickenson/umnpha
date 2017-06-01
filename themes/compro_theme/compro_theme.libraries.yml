@@ -11,3 +11,10 @@ global-styling:
   dependencies:
       - core/jquery
       - core/drupal
+
+sticky-kit:
+  version: 1.x
+  js:
+    js/vendor/jquery.sticky-kit.min.js: {}
+  dependencies:
+    - core/jquery
