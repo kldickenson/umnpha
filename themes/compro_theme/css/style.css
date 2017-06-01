@@ -565,6 +565,33 @@ header.header-fixed {
     max-width: 35%; }
   .node--type-report.node--view-mode-teaser .group-report-teaser-text {
     font-size: 16px; }
+.node--type-report .node--type-report-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 40px; }
+  .node--type-report .node--type-report-container:after {
+    content: '';
+    clear: both;
+    display: table; }
+.node--type-report .group-sidebar {
+  display: inline-block;
+  font-size: 13px;
+  float: left;
+  width: 15%; }
+  .node--type-report .group-sidebar:after {
+    content: '';
+    clear: both;
+    display: table; }
+  .node--type-report .group-sidebar a {
+    font-weight: bold; }
+.node--type-report .group-report-content {
+  display: inline-block;
+  float: right;
+  width: 80%; }
+  .node--type-report .group-report-content:after {
+    content: '';
+    clear: both;
+    display: table; }
 
 /*
 *   #REGION - General positioning of blocks within regions
@@ -1217,18 +1244,13 @@ footer.footer-wrapper {
     background-color: #FFFF38;
     transition: 250ms ease-in-out; }
 
-.node--type-report .group-sidebar {
-  display: inline-block;
-  font-size: 12px;
-  float: left;
-  margin: 60px 50px 0 10%; }
-  .node--type-report .group-sidebar > .field {
-    margin: 0 0 20px 0; }
-  .node--type-report .group-sidebar .field--name-field-report-volume-issue {
-    font-size: 12px; }
-    .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
-    .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
-      display: inline-block; }
+.node--type-report .group-sidebar > .field {
+  margin: 0 0 20px 0; }
+.node--type-report .group-sidebar .field--name-field-report-volume-issue {
+  font-size: 12px; }
+  .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
+  .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
+    display: inline-block; }
 
 .node--type-report .field--name-field-title {
   color: #0f284a;

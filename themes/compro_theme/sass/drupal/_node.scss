@@ -284,6 +284,51 @@
       font-size: 16px;
     }
   }
+
+  .node--type-report-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 40px;
+
+    &:after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+
+  }
+
+  .group-sidebar {
+    display: inline-block;
+    font-size: 13px;
+    float: left;
+    width: round(percentage(180px/1200px));
+
+    &:after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+
+    a {
+      font-weight: bold;
+    }
+
+  }
+
+  .group-report-content {
+    display: inline-block;
+    float: right;
+    width: round(percentage(960px/1200px));
+
+    &:after {
+      content: '';
+      clear: both;
+      display: table;
+    }
+
+  }
+
 }
 
 
