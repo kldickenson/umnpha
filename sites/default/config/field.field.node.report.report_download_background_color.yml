@@ -1,0 +1,22 @@
+uuid: ecfb2b04-6aac-4f75-b0d6-fe1a3b512512
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.report_download_background_color
+    - node.type.report
+  module:
+    - color_field
+id: node.report.report_download_background_color
+field_name: report_download_background_color
+entity_type: node
+bundle: report
+label: 'Download Background Color'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type

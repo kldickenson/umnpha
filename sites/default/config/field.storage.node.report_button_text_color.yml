@@ -1,0 +1,20 @@
+uuid: 2a3f4dfa-eccb-4cf9-8568-186193f98f04
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - node
+id: node.report_button_text_color
+field_name: report_button_text_color
+entity_type: node
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
