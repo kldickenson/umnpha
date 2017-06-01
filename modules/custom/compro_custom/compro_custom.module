@@ -249,6 +249,14 @@ function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $
     $form['query']['#attributes']['placeholder'] = t('Enter your keywords');
     $form['#action'] = '/search/cse';
   }
+  if ($form_id == 'search_form') {
+    if (!$form['basic']['keys']['#default_value'] && isset($_GET['query'])) {
+      $response = new RedirectResponse(Url::fromUserInput('/search/cse',
+        array('query' => array('keys' => $_GET['query'])))->toString());
+      $response->send();
+      return;
+    }
+  }
 }
 
 /**
