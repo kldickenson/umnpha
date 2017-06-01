@@ -41,7 +41,7 @@ third_party_settings:
         - share
         - field_report_news_source
       parent_name: ''
-      weight: 2
+      weight: 1
       format_type: html_element
       format_settings:
         id: ''
@@ -58,7 +58,7 @@ third_party_settings:
         - field_title
         - field_report_sections
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: html_element
       format_settings:
         id: ''
