@@ -336,6 +336,361 @@ div.warning {
           margin-bottom: -1px; } }
 
 /*
+*   #Page - General positioning of regions
+*   1) Header - container, region-header, region-nav (all states)
+*   2)
+*
+**/
+header .container {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 40px 40px; }
+  @media all and (max-width: 940px) {
+    header .container {
+      padding: 20px 40px; } }
+header .region-header {
+  display: inline-block; }
+  @media all and (max-width: 940px) {
+    header .region-header {
+      display: block; } }
+header .region-nav {
+  float: right; }
+  @media all and (max-width: 940px) {
+    header .region-nav {
+      background-color: rgba(250, 250, 250, 0.85);
+      display: none;
+      height: 300px;
+      position: absolute;
+      top: 84px;
+      transition: 250ms;
+      width: 100vw; } }
+  header .region-nav.is-open {
+    display: block; }
+  header .region-nav.child-open {
+    height: 400px; }
+header.header-fixed {
+  background-color: rgba(250, 250, 250, 0.85);
+  position: fixed;
+  right: 0;
+  left: 0; }
+  @media screen and (max-width: 940px) {
+    header.header-fixed {
+      width: 100vw; } }
+  header.header-fixed .container {
+    padding: 20px 40px;
+    width: 100%;
+    z-index: 500; }
+  header.header-fixed .region-header {
+    background-color: transparent; }
+  header.header-fixed .region-nav {
+    background-color: transparent; }
+    @media all and (max-width: 940px) {
+      header.header-fixed .region-nav {
+        background-color: rgba(250, 250, 250, 0.85); } }
+    header.header-fixed .region-nav.child-open {
+      height: 400px; }
+
+/*
+*   #NODE
+*
+**/
+/*Page*/
+.path-frontpage .field--name-field-title {
+  display: none; }
+
+.node--type-page .field--name-field-page-hero {
+  margin: 0 0 60px 0; }
+  .node--type-page .field--name-field-page-hero .field-type-text {
+    display: inline-block;
+    margin: 0 auto;
+    width: 35%; }
+  .node--type-page .field--name-field-page-hero.field--type-image {
+    height: 300px;
+    max-height: 300px;
+    min-width: 100%;
+    width: 100%; }
+    .node--type-page .field--name-field-page-hero.field--type-image img {
+      background: transparent;
+      visibility: hidden;
+      max-height: 300px;
+      object-fit: cover;
+      object-position: 0 90%;
+      overflow-y: hidden;
+      width: 100%; }
+      @media screen and (max-width: 940px) {
+        .node--type-page .field--name-field-page-hero.field--type-image img {
+          visibility: visible; } }
+.node--type-page .field-group-page-hero {
+  position: relative; }
+  .node--type-page .field-group-page-hero .field--name-field-title {
+    color: #fff;
+    font-size: 2.75rem;
+    font-weight: 600;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%; }
+
+/*Webform*/
+.node--type-webform .image-form-wrapper {
+  background-color: #1dadff;
+  display: flex; }
+  @media screen and (max-width: 940px) {
+    .node--type-webform .image-form-wrapper {
+      flex-direction: column;
+      width: 100%; } }
+.node--type-webform .field--name-field-form-image,
+.node--type-webform .field-group-form-text {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%; }
+  @media screen and (max-width: 940px) {
+    .node--type-webform .field--name-field-form-image,
+    .node--type-webform .field-group-form-text {
+      width: 100%; } }
+.node--type-webform .field--name-field-form-image {
+  line-height: 0px; }
+  @media screen and (max-width: 940px) {
+    .node--type-webform .field--name-field-form-image {
+      margin: 0 0 30px 0;
+      max-width: 100%; } }
+  .node--type-webform .field--name-field-form-image img {
+    height: 100%;
+    line-height: 0px;
+    object-fit: cover; }
+.node--type-webform .field-group-form-text {
+  color: white;
+  padding: 50px 10% 50px 5%; }
+  @media screen and (max-width: 940px) {
+    .node--type-webform .field-group-form-text {
+      padding: 0 20px; } }
+.node--type-webform .field--name-field-title {
+  color: #00264b;
+  font-family: 'Montserrat Bold';
+  font-size: 2.25rem;
+  letter-spacing: 0.00625rem;
+  margin: 0 0 35px 0;
+  text-align: left;
+  text-transform: capitalize; }
+.node--type-webform .field--name-field-form-text {
+  font-family: 'Lora';
+  font-size: 1.3125rem;
+  margin: 0 0 35px 0;
+  text-align: left; }
+@media screen and (max-width: 940px) {
+  .node--type-webform .field--name-field-form-webform {
+    margin: 0 auto; } }
+.node--type-webform .field--name-field-form-webform .form-item {
+  height: 70px;
+  margin: 0 0 30px 0;
+  max-width: 85%; }
+  @media screen and (max-width: 940px) {
+    .node--type-webform .field--name-field-form-webform .form-item {
+      margin: 0 0 30px 0;
+      max-width: 100%; } }
+  .node--type-webform .field--name-field-form-webform .form-item label {
+    color: #2d2d2d;
+    font-family: "Montserrat";
+    font-size: 11px;
+    margin: 0 0 12px 0;
+    text-transform: uppercase; }
+    .node--type-webform .field--name-field-form-webform .form-item label::after {
+      content: '\003A';
+      font-size: 0.875rem;
+      position: relative;
+      bottom: 1px;
+      left: 2px; }
+  .node--type-webform .field--name-field-form-webform .form-item input {
+    background-color: #dcdcdc;
+    border-radius: unset;
+    border-stye: none;
+    border-width: 0px;
+    color: #5f5f5f;
+    font-size: 15px;
+    height: 40px;
+    padding: 10px 20px; }
+    .node--type-webform .field--name-field-form-webform .form-item input::-webkit-input-placeholder, .node--type-webform .field--name-field-form-webform .form-item input::-moz-placeholder, .node--type-webform .field--name-field-form-webform .form-item input:-ms-input-placeholder, .node--type-webform .field--name-field-form-webform .form-item input:-moz-placeholder {
+      font-family: "Lora Italic";
+      font-size: 15px; }
+.node--type-webform .field--name-field-form-webform fieldset {
+  padding: 5px;
+  height: auto !important; }
+.node--type-webform .field--name-field-form-webform .form-type-radio {
+  height: auto;
+  margin: 0; }
+  .node--type-webform .field--name-field-form-webform .form-type-radio input {
+    height: auto;
+    display: inline-block;
+    margin: 5px 4px 0;
+    vertical-align: top; }
+  .node--type-webform .field--name-field-form-webform .form-type-radio label {
+    display: inline-block;
+    width: 82%;
+    margin: 4px 0 0;
+    text-transform: none;
+    font-size: 12px; }
+    .node--type-webform .field--name-field-form-webform .form-type-radio label::after {
+      content: ''; }
+  .node--type-webform .field--name-field-form-webform .form-type-radio fieldset {
+    padding: 5px;
+    height: auto; }
+.node--type-webform .field--name-field-form-webform .form-actions {
+  margin: 0; }
+  .node--type-webform .field--name-field-form-webform .form-actions input {
+    background-color: #0f6cb6;
+    border-radius: unset;
+    font-family: 'Montserrat';
+    font-size: 0.875rem;
+    margin: 0;
+    padding: 12px 30px;
+    text-transform: uppercase; }
+    @media screen and (max-width: 940px) {
+      .node--type-webform .field--name-field-form-webform .form-actions input {
+        margin: 0 0 50px 0; } }
+    .node--type-webform .field--name-field-form-webform .form-actions input:hover {
+      background-color: #429FE9;
+      transition: 250ms ease-in-out; }
+
+/*Report*/
+.node--type-report.node--view-mode-teaser {
+  border-bottom: 2px solid #333;
+  margin: 0 0 35px 0;
+  padding: 0 0 35px 0; }
+  .node--type-report.node--view-mode-teaser > h2 {
+    display: none; }
+  .node--type-report.node--view-mode-teaser .field--name-field-report-featured-image {
+    float: left;
+    margin: 0 25px 0 0;
+    max-width: 35%; }
+  .node--type-report.node--view-mode-teaser .group-report-teaser-text {
+    font-size: 16px; }
+
+/*
+*   #REGION - General positioning of blocks within regions
+*
+*   1) region-header - branding block, hamburger
+*   2) region-nav - email signup, search icon, main menu, search form
+*
+*
+**/
+/*Header*/
+.region-header .block-system-branding-block {
+  display: inline-block;
+  margin: 0 50px 0 0; }
+.region-header .hamburger {
+  background-color: unset;
+  display: none;
+  float: right;
+  padding: 0; }
+  @media all and (max-width: 940px) {
+    .region-header .hamburger {
+      display: inline-block; } }
+@media all and (max-width: 1230px) {
+  .region-header {
+    max-width: 48%; } }
+@media all and (max-width: 940px) {
+  .region-header {
+    max-width: 100%; } }
+
+.region-nav {
+  /*States*/ }
+  .region-nav .inner {
+    text-transform: uppercase; }
+  .region-nav .block-email-sign-up {
+    display: inline-block;
+    float: right; }
+    @media all and (max-width: 940px) {
+      .region-nav .block-email-sign-up {
+        display: none;
+        position: relative;
+        text-align: center;
+        top: 240px;
+        width: 100%;
+        z-index: 10; } }
+  .region-nav .menu--menu-main-menu {
+    display: inline-block;
+    float: right;
+    z-index: 1000; }
+  .region-nav .block-search-icon-block {
+    display: inline-block;
+    float: right;
+    margin: 0 30px 0 0;
+    z-index: 2; }
+    @media all and (max-width: 1320px) {
+      .region-nav .block-search-icon-block {
+        margin: 0 2vw 0 0; } }
+    @media all and (max-width: 940px) {
+      .region-nav .block-search-icon-block {
+        display: none; } }
+  .region-nav .block-google-cse {
+    opacity: 0;
+    position: absolute;
+    top: 124px;
+    right: 16.5%;
+    transform: translateY(-100%);
+    transition: transform 200ms cubic-bezier(0.07, 0.25, 0.97, 0.82);
+    min-width: 25%;
+    z-index: -1;
+    /*States*/ }
+    .region-nav .block-google-cse.is-open {
+      opacity: 1;
+      transform: unset;
+      z-index: 2; }
+    @media all and (max-width: 940px) {
+      .region-nav .block-google-cse {
+        display: none;
+        opacity: 1;
+        position: absolute;
+        top: 175px;
+        right: unset;
+        transform: unset;
+        width: 100%;
+        z-index: 2; } }
+    .header-fixed .region-nav .block-google-cse {
+      min-width: 50%;
+      top: 64px;
+      right: 200px; }
+      @media all and (max-width: 940px) {
+        .header-fixed .region-nav .block-google-cse {
+          top: 175px;
+          right: unset; } }
+  .region-nav.is-open .block-email-sign-up,
+  .region-nav.is-open .block-google-cse,
+  .region-nav.is-open .menu--menu-main-menu {
+    display: block; }
+  .region-nav.child-open .block-email-sign-up {
+    top: 300px; }
+  .region-nav.child-open .block-google-cse {
+    top: 240px; }
+  @media all and (max-width: 1130px) {
+    .region-nav {
+      margin: 0 -20px 0 0; } }
+
+.region-footer .inner,
+.region-post-footer .inner {
+  margin: 0 auto;
+  max-width: 1340px; }
+
+.region-footer {
+  padding: 60px 3rem 35px 3rem;
+  background-color: #37383A;
+  border-bottom: 1px solid #fff; }
+  @media screen and (max-width: 940px) {
+    .region-footer {
+      padding: 30px 20px 25px 30px; } }
+
+.region-post-footer {
+  padding: 40px 3rem;
+  background-color: #292a2c; }
+  @media screen and (max-width: 940px) {
+    .region-post-footer {
+      padding: 25px 20px; } }
+
+footer.footer-wrapper {
+  color: #969696; }
+
+/*
 *   #BLOCKS
 *   1) Logo block
 *   2) Search Icon
@@ -350,12 +705,6 @@ div.warning {
 .block-system-branding-block h1 {
   line-height: 0;
   margin: 0; }
-@media screen and (max-width: 1185px) {
-  .block-system-branding-block {
-    max-width: 450px; } }
-@media screen and (max-width: 1040px) {
-  .block-system-branding-block {
-    max-width: 350px; } }
 @media screen and (max-width: 940px) {
   .block-system-branding-block {
     margin: 0;
@@ -371,8 +720,6 @@ div.warning {
   position: relative;
   top: -55px; }
 
-.hamburger:focus {
-  outline: none; }
 .hamburger .hamburger-inner:before {
   color: #00264b;
   content: '\2630';
@@ -384,6 +731,8 @@ div.warning {
   font-size: 2.5rem;
   transform: scaleX(-1);
   transition: 0.25s ease-in-out; }
+.hamburger:focus {
+  outline: none; }
 
 .block-email-sign-up a {
   background-color: #0f6cb6;
@@ -393,6 +742,10 @@ div.warning {
   .block-email-sign-up a:hover {
     transition: 250ms ease-in-out;
     background-color: #3ca0ef; }
+  @media all and (max-width: 1260px) {
+    .block-email-sign-up a {
+      font-size: 0.75rem;
+      padding: 0.4375rem 1.25rem; } }
 
 /*Search Icon*/
 .block-search-icon-block span:before {
@@ -449,7 +802,7 @@ div.warning {
 .menu--menu-main-menu.block-menu li {
   display: inline;
   font-size: 0.9375rem;
-  margin: 0 30px 0 0;
+  margin: 0 2vw 0 0;
   padding: 0 0 70px 0;
   position: relative; }
   .menu--menu-main-menu.block-menu li a {
@@ -498,12 +851,20 @@ div.warning {
     top: unset; }
   .region-nav.child-open .menu--menu-main-menu.block-menu li.menu-item--expanded:after {
     transform: rotate(45deg); }
+  .header-fixed .menu--menu-main-menu.block-menu li > .menu {
+    top: 62px; }
   .region-nav.is-open .menu--menu-main-menu.block-menu li {
     display: inline-block;
     margin: 0 0 20px 0;
     padding: 0;
     text-align: center;
     width: 100%; }
+  @media all and (max-width: 1320px) {
+    .menu--menu-main-menu.block-menu li {
+      font-size: 0.875rem; } }
+  @media all and (max-width: 1130px) {
+    .menu--menu-main-menu.block-menu li {
+      margin: 0 1.5vw 0 0; } }
 
 /*Footer Menu*/
 .footer-wrapper .block-menu {
@@ -797,354 +1158,6 @@ div.warning {
   @media screen and (max-width: 940px) {
     .section-type-infographic {
       margin: 0 20px 40px 20px; } }
-
-/*
-*
- */
-/*Page*/
-.path-frontpage .field--name-field-title {
-  display: none; }
-
-.node--type-page .field--name-field-page-hero {
-  margin: 0 0 60px 0; }
-  .node--type-page .field--name-field-page-hero .field-type-text {
-    display: inline-block;
-    margin: 0 auto;
-    width: 35%; }
-  .node--type-page .field--name-field-page-hero.field--type-image {
-    height: 300px;
-    max-height: 300px;
-    min-width: 100%;
-    width: 100%; }
-    .node--type-page .field--name-field-page-hero.field--type-image img {
-      background: transparent;
-      visibility: hidden;
-      max-height: 300px;
-      object-fit: cover;
-      object-position: 0 90%;
-      overflow-y: hidden;
-      width: 100%; }
-      @media screen and (max-width: 940px) {
-        .node--type-page .field--name-field-page-hero.field--type-image img {
-          visibility: visible; } }
-.node--type-page .field-group-page-hero {
-  position: relative; }
-  .node--type-page .field-group-page-hero .field--name-field-title {
-    color: #fff;
-    font-size: 2.75rem;
-    font-weight: 600;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%; }
-
-/*Webform*/
-.node--type-webform .image-form-wrapper {
-  background-color: #1dadff;
-  display: flex; }
-  @media screen and (max-width: 940px) {
-    .node--type-webform .image-form-wrapper {
-      flex-direction: column;
-      width: 100%; } }
-.node--type-webform .field--name-field-form-image,
-.node--type-webform .field-group-form-text {
-  display: inline-block;
-  vertical-align: middle;
-  width: 50%; }
-  @media screen and (max-width: 940px) {
-    .node--type-webform .field--name-field-form-image,
-    .node--type-webform .field-group-form-text {
-      width: 100%; } }
-.node--type-webform .field--name-field-form-image {
-  line-height: 0px; }
-  @media screen and (max-width: 940px) {
-    .node--type-webform .field--name-field-form-image {
-      margin: 0 0 30px 0;
-      max-width: 100%; } }
-  .node--type-webform .field--name-field-form-image img {
-    height: 100%;
-    line-height: 0px;
-    object-fit: cover; }
-.node--type-webform .field-group-form-text {
-  color: white;
-  padding: 50px 10% 50px 5%; }
-  @media screen and (max-width: 940px) {
-    .node--type-webform .field-group-form-text {
-      padding: 0 20px; } }
-.node--type-webform .field--name-field-title {
-  color: #00264b;
-  font-family: 'Montserrat Bold';
-  font-size: 2.25rem;
-  letter-spacing: 0.00625rem;
-  margin: 0 0 35px 0;
-  text-align: left;
-  text-transform: capitalize; }
-.node--type-webform .field--name-field-form-text {
-  font-family: 'Lora';
-  font-size: 1.3125rem;
-  margin: 0 0 35px 0;
-  text-align: left; }
-@media screen and (max-width: 940px) {
-  .node--type-webform .field--name-field-form-webform {
-    margin: 0 auto; } }
-.node--type-webform .field--name-field-form-webform .form-item {
-  height: 70px;
-  margin: 0 0 30px 0;
-  max-width: 85%; }
-  @media screen and (max-width: 940px) {
-    .node--type-webform .field--name-field-form-webform .form-item {
-      margin: 0 0 30px 0;
-      max-width: 100%; } }
-  .node--type-webform .field--name-field-form-webform .form-item label {
-    color: #2d2d2d;
-    font-family: "Montserrat";
-    font-size: 11px;
-    margin: 0 0 12px 0;
-    text-transform: uppercase; }
-    .node--type-webform .field--name-field-form-webform .form-item label::after {
-      content: '\003A';
-      font-size: 0.875rem;
-      position: relative;
-      bottom: 1px;
-      left: 2px; }
-  .node--type-webform .field--name-field-form-webform .form-item input {
-    background-color: #dcdcdc;
-    border-radius: unset;
-    border-stye: none;
-    border-width: 0px;
-    color: #5f5f5f;
-    font-size: 15px;
-    height: 40px;
-    padding: 10px 20px; }
-    .node--type-webform .field--name-field-form-webform .form-item input::-webkit-input-placeholder, .node--type-webform .field--name-field-form-webform .form-item input::-moz-placeholder, .node--type-webform .field--name-field-form-webform .form-item input:-ms-input-placeholder, .node--type-webform .field--name-field-form-webform .form-item input:-moz-placeholder {
-      font-family: "Lora Italic";
-      font-size: 15px; }
-.node--type-webform .field--name-field-form-webform fieldset {
-  padding: 5px;
-  height: auto !important; }
-.node--type-webform .field--name-field-form-webform .form-type-radio {
-  height: auto;
-  margin: 0; }
-  .node--type-webform .field--name-field-form-webform .form-type-radio input {
-    height: auto;
-    display: inline-block;
-    margin: 5px 4px 0;
-    vertical-align: top; }
-  .node--type-webform .field--name-field-form-webform .form-type-radio label {
-    display: inline-block;
-    width: 82%;
-    margin: 4px 0 0;
-    text-transform: none;
-    font-size: 12px; }
-    .node--type-webform .field--name-field-form-webform .form-type-radio label::after {
-      content: ''; }
-  .node--type-webform .field--name-field-form-webform .form-type-radio fieldset {
-    padding: 5px;
-    height: auto; }
-.node--type-webform .field--name-field-form-webform .form-actions {
-  margin: 0; }
-  .node--type-webform .field--name-field-form-webform .form-actions input {
-    background-color: #0f6cb6;
-    border-radius: unset;
-    font-family: 'Montserrat';
-    font-size: 0.875rem;
-    margin: 0;
-    padding: 12px 30px;
-    text-transform: uppercase; }
-    @media screen and (max-width: 940px) {
-      .node--type-webform .field--name-field-form-webform .form-actions input {
-        margin: 0 0 50px 0; } }
-    .node--type-webform .field--name-field-form-webform .form-actions input:hover {
-      background-color: #429FE9;
-      transition: 250ms ease-in-out; }
-
-/*Report*/
-.node--type-report.node--view-mode-teaser {
-  border-bottom: 2px solid #333;
-  margin: 0 0 35px 0;
-  padding: 0 0 35px 0; }
-  .node--type-report.node--view-mode-teaser > h2 {
-    display: none; }
-  .node--type-report.node--view-mode-teaser .field--name-field-report-featured-image {
-    float: left;
-    margin: 0 25px 0 0;
-    max-width: 35%; }
-  .node--type-report.node--view-mode-teaser .group-report-teaser-text {
-    font-size: 16px; }
-
-/*
-*   #Page - General positioning of regions
-*
-*   1) Header - container, region-header, region-nav (all states)
-*   2)
-*
-**/
-/* Weird structure here deserves explanation.
-*   1) Header tag contains region-header and region-nav.
-*   2) Logo and hamburger icon is in region-header
-*   3) All menu items live in region-nav
-*   4) Hamburger click displays region-nav in mobile
-*/
-header .container {
-  margin: 0 auto;
-  max-width: 1400px;
-  padding: 40px 40px; }
-  @media all and (max-width: 940px) {
-    header .container {
-      padding: 20px 40px; } }
-header .region-header {
-  display: inline-block; }
-  @media all and (max-width: 940px) {
-    header .region-header {
-      display: block; } }
-header .region-nav {
-  float: right; }
-  @media all and (max-width: 940px) {
-    header .region-nav {
-      background-color: rgba(250, 250, 250, 0.85);
-      display: none;
-      height: 300px;
-      position: absolute;
-      top: 84px;
-      transition: 250ms;
-      width: 100vw; } }
-  header .region-nav.is-open {
-    display: block; }
-  header .region-nav.child-open {
-    height: 400px; }
-header.header-fixed {
-  background-color: rgba(250, 250, 250, 0.85);
-  position: fixed;
-  right: 0;
-  left: 0; }
-  @media screen and (max-width: 940px) {
-    header.header-fixed {
-      width: 100vw; } }
-  header.header-fixed .container {
-    padding: 20px 40px;
-    width: 100%;
-    z-index: 500; }
-  header.header-fixed .region-header {
-    background-color: transparent; }
-  header.header-fixed .region-nav {
-    background-color: transparent; }
-    @media all and (max-width: 940px) {
-      header.header-fixed .region-nav {
-        background-color: rgba(250, 250, 250, 0.85); } }
-    header.header-fixed .region-nav.child-open {
-      height: 400px; }
-
-/*
-*   #REGION - General positioning of blocks within regions
-*
-*   1) region-header - branding block, hamburger
-*   2) region-nav - email signup, search icon, main menu, search form
-*
-*
-**/
-/*Header*/
-.region-header .block-system-branding-block {
-  display: inline-block; }
-.region-header .hamburger {
-  background-color: unset;
-  display: none;
-  float: right;
-  padding: 0; }
-  @media all and (max-width: 940px) {
-    .region-header .hamburger {
-      display: inline-block; } }
-
-.region-nav {
-  /*States*/ }
-  .region-nav .inner {
-    text-transform: uppercase; }
-  .region-nav .block-email-sign-up {
-    display: inline-block;
-    float: right; }
-    @media all and (max-width: 940px) {
-      .region-nav .block-email-sign-up {
-        display: none;
-        position: relative;
-        text-align: center;
-        top: 240px;
-        width: 100%;
-        z-index: 10; } }
-  .region-nav .menu--menu-main-menu {
-    display: inline-block;
-    float: right;
-    z-index: 1000; }
-  .region-nav .block-search-icon-block {
-    display: inline-block;
-    float: right;
-    margin: 0 30px 0 0;
-    z-index: 2; }
-    @media all and (max-width: 940px) {
-      .region-nav .block-search-icon-block {
-        display: none; } }
-  .region-nav .block-google-cse {
-    opacity: 0;
-    position: absolute;
-    top: 124px;
-    right: 16.5%;
-    transform: translateY(-100%);
-    transition: transform 200ms cubic-bezier(0.07, 0.25, 0.97, 0.82);
-    min-width: 25%;
-    z-index: -1;
-    /*States*/ }
-    .region-nav .block-google-cse.is-open {
-      opacity: 1;
-      transform: unset;
-      z-index: 2; }
-    @media all and (max-width: 940px) {
-      .region-nav .block-google-cse {
-        display: none;
-        opacity: 1;
-        position: absolute;
-        top: 175px;
-        right: unset;
-        transform: unset;
-        width: 100%;
-        z-index: 2; } }
-    .header-fixed .region-nav .block-google-cse {
-      min-width: 50%;
-      top: 64px;
-      right: 200px; }
-      @media all and (max-width: 940px) {
-        .header-fixed .region-nav .block-google-cse {
-          top: 175px;
-          right: unset; } }
-  .region-nav.is-open .block-email-sign-up,
-  .region-nav.is-open .block-google-cse,
-  .region-nav.is-open .menu--menu-main-menu {
-    display: block; }
-  .region-nav.child-open .block-email-sign-up {
-    top: 300px; }
-  .region-nav.child-open .block-google-cse {
-    top: 240px; }
-
-.region-footer .inner,
-.region-post-footer .inner {
-  margin: 0 auto;
-  max-width: 1340px; }
-
-.region-footer {
-  padding: 60px 3rem 35px 3rem;
-  background-color: #37383A;
-  border-bottom: 1px solid #fff; }
-  @media screen and (max-width: 940px) {
-    .region-footer {
-      padding: 30px 20px 25px 30px; } }
-
-.region-post-footer {
-  padding: 40px 3rem;
-  background-color: #292a2c; }
-  @media screen and (max-width: 940px) {
-    .region-post-footer {
-      padding: 25px 20px; } }
-
-footer.footer-wrapper {
-  color: #969696; }
 
 /*
 *   #FIELDS

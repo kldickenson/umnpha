@@ -140,6 +140,7 @@
             ' animated' +
             ' slideInDown');
           $('.layout-content').css('padding-top', '84px');
+          $('.parallax-mirror').css('top', '84px');
         }
       });
     }

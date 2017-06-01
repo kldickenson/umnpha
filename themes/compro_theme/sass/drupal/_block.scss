@@ -21,14 +21,6 @@
     margin: 0;
   }
 
-  @media screen and (max-width: 1185px) {
-    max-width: 450px;
-  }
-
-  @media screen and(max-width: 1040px) {
-    max-width: 350px;
-  }
-
   @media screen and(max-width: 940px) {
     margin: 0;
     max-height: 40px;
@@ -53,10 +45,6 @@
 // Hamburger Icon
 .hamburger {
 
-  &:focus {
-    outline: none;
-  }
-
   .hamburger-inner:before {
     color: $um-blue;
     content: '\2630';
@@ -76,6 +64,10 @@
 
   }
 
+  &:focus {
+    outline: none;
+  }
+
 }
 
 
@@ -92,6 +84,11 @@
     &:hover {
       transition: $base-duration $base-timing;
       background-color: lighten($arb-blue, 20%);
+    }
+
+    @media all and (max-width: 1260px) {
+      font-size: rem(12);
+      padding: rem(7) rem(20);
     }
 
   }
@@ -187,7 +184,7 @@
   li {
     display: inline;
     font-size: rem(15);
-    margin: 0 30px 0 0;
+    margin: 0 2vw 0 0;
     padding: 0 0 70px 0;
     position: relative;
 
@@ -217,7 +214,7 @@
           @media all and (max-width: 940px) {
             background-color: transparent;
           }
-          
+
         }
 
       }
@@ -273,6 +270,12 @@
 
     }
 
+    .header-fixed & {
+      > .menu {
+        top: 62px;
+      }
+    }
+
     .region-nav.is-open & {
       display: inline-block;
       margin: 0 0 20px 0;
@@ -280,6 +283,15 @@
       text-align: center;
       width: 100%;
     }
+
+    @media all and (max-width: 1320px) {
+      font-size: rem(14);
+    }
+
+    @media all and (max-width: 1130px) {
+      margin: 0 1.5vw 0 0;
+    }
+
   }
 
 }

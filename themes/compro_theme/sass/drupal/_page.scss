@@ -1,6 +1,5 @@
 /*
 *   #Page - General positioning of regions
-*
 *   1) Header - container, region-header, region-nav (all states)
 *   2)
 *
@@ -8,13 +7,7 @@
 
 
 
-// Header - gen positioning
-/* Weird structure here deserves explanation.
-*   1) Header tag contains region-header and region-nav.
-*   2) Logo and hamburger icon is in region-header
-*   3) All menu items live in region-nav
-*   4) Hamburger click displays region-nav in mobile
-*/
+// Header
 header {
 
   .container {
