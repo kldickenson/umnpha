@@ -141,6 +141,10 @@
           $('.parallax-mirror').css('top', '84px');
         }
       });
+
+      // Wrap sibling elements for node report sidebar layout
+      $(".group-sidebar").next(".group-report-content").andSelf().wrapAll("<div class='node--type-report-container' />");
+
     }
   };
 })(jQuery, Drupal);
