@@ -554,9 +554,12 @@ header.header-fixed {
 
 /*Report*/
 .node--type-report.node--view-mode-teaser {
-  border-bottom: 2px solid #333;
-  margin: 0 0 35px 0;
-  padding: 0 0 35px 0; }
+  border-top: 1.5px solid #333;
+  margin: 0 30px 0 0;
+  padding: 0 20px 0 0; }
+  .node--type-report.node--view-mode-teaser:first-child {
+    border-top: none;
+    padding-top: 0; }
   .node--type-report.node--view-mode-teaser > h2 {
     display: none; }
   .node--type-report.node--view-mode-teaser .field--name-field-report-featured-image {
@@ -811,7 +814,7 @@ footer.footer-wrapper {
   position: absolute;
   top: 0;
   right: 0;
-  text-indent: -9999px;
+  text-indent: -99999px;
   width: 40px; }
   .block-google-cse input.form-submit:focus {
     outline: none; }
@@ -987,9 +990,22 @@ footer.footer-wrapper {
     display: none; } }
 
 .block-views-blockreport-recent-reports h2 {
-  color: #0f284a;
+  color: #00264b;
   font-family: "Montserrat Bold";
-  font-size: 24px; }
+  font-size: 25px;
+  margin: 0 0 30px 0; }
+
+.group-report-teaser-text + a[href].learn-more.button {
+  background-color: #0f6cb6;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.575rem 1.75rem; }
+
+.block-views-blockreport-recent-reports .field--name-field-report-summary:after {
+  clear: none;
+  content: none; }
 
 #block-404menu {
   padding: 25px;
@@ -1141,24 +1157,24 @@ footer.footer-wrapper {
 
 /*Longtext*/
 .section-type-longtext,
-#block-views-blockreport-recent-reports {
+.block-views-blockreport-recent-reports {
   margin: 0 auto;
   max-width: 980px;
   padding: 0 20px; }
   .section-type-longtext p,
-  #block-views-blockreport-recent-reports p {
+  .block-views-blockreport-recent-reports p {
     margin-bottom: 25px; }
   .section-type-longtext p:last-child,
-  #block-views-blockreport-recent-reports p:last-child {
+  .block-views-blockreport-recent-reports p:last-child {
     margin-bottom: 40px; }
   .section-type-longtext a,
-  #block-views-blockreport-recent-reports a {
+  .block-views-blockreport-recent-reports a {
     color: #0c57aa; }
     .section-type-longtext a:hover,
-    #block-views-blockreport-recent-reports a:hover {
+    .block-views-blockreport-recent-reports a:hover {
       text-decoration: underline; }
     .section-type-longtext a:visited,
-    #block-views-blockreport-recent-reports a:visited {
+    .block-views-blockreport-recent-reports a:visited {
       color: #2d2d2d; }
 
 .section-type-longtext.add-border {
@@ -1255,7 +1271,7 @@ footer.footer-wrapper {
 .node--type-report .field--name-field-title {
   color: #0f284a;
   font-family: "Montserrat Bold";
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   margin: 0 auto 20px;
   max-width: 980px;

@@ -154,7 +154,7 @@
     position: absolute;
       top: 0;
       right: 0;
-    text-indent: -9999px;
+    text-indent: -99999px;
     width: 40px;
 
     &:focus {
@@ -458,6 +458,30 @@
   }
 }
 
+.group-report-teaser-text + a[href].learn-more.button {
+  background-color: #0f6cb6;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.575rem 1.75rem;
+
+  //&::after {
+  //  clear: both;
+  //  content: '';
+  //  display: table;
+  //}
+}
+
+.block-views-blockreport-recent-reports .field--name-field-report-summary {
+
+  &:after {
+    clear: none;
+    content: none;
+  }
+}
+
+
 // 404
 #block-404menu {
   padding: 25px;
@@ -468,3 +492,4 @@
   }
 
 }
+
