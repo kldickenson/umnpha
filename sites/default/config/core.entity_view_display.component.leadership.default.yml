@@ -13,7 +13,7 @@ dependencies:
     - field.field.component.leadership.field_leadership_summary
     - field.field.component.leadership.field_leadership_title
     - field.field.component.leadership.field_leadership_twitter
-    - image.style.large
+    - image.style.340xn
   module:
     - field_group
     - image
@@ -75,7 +75,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: large
+      image_style: 340xn
       image_link: ''
     third_party_settings: {  }
     type: image
