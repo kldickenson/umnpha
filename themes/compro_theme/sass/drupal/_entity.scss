@@ -289,7 +289,7 @@
 .entity-section-type.leadership-listing {
   margin: 0 auto;
   max-width: 980px;
-  padding: 0 20px;
+  padding: 40px 20px;
 
   &:after {
     content: '';
@@ -331,6 +331,7 @@
       font-weight: bold;
       margin: 0 0 20px 0;
     }
+
   }
 
   .group-leadership-icons {
@@ -338,5 +339,40 @@
     float: right;
     text-align: center;
     width: 35%;
+
+    > .field {
+      display: inline-block;
+      height: 25px;
+      width: 25px;
+
+      a {
+        color: $medium-gray;
+        display: inline-block;
+        height: 25px;
+        font-size: rem(24);
+        text-indent: -9999px;
+        white-space: nowrap;
+        width: 25px;
+      }
+
+    }
+
+    > .field--name-field-leadership-phone  {
+      background: url('../images/sprites/search-icon.png') no-repeat center;
+    }
+
+    .field--name-field-leadership-email {
+      background: url('../images/sprites/search-icon.png') no-repeat center;
+    }
+
+    .field--name-field-leadership-twitter {
+      background: url('../images/sprites/search-icon.png') no-repeat center;
+    }
+
+    .field--name-field-leadership-linkedin {
+      background: url('../images/sprites/search-icon.png') no-repeat center;
+    }
+
+
   }
 }
