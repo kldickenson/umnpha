@@ -4,6 +4,6 @@ status: true
 dependencies:
   config:
     - eck.eck_entity_type.section_type
-name: 'Leadership Listing'
+name: 'Mini Bio Listing'
 type: leadership_listing
-description: 'Add many leadership bios to a piece of content'
+description: 'Add many mini bios to a piece of content'

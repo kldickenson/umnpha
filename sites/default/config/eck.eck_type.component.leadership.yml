@@ -4,6 +4,6 @@ status: true
 dependencies:
   config:
     - eck.eck_entity_type.component
-name: Leadership
+name: 'Mini Bio'
 type: leadership
 description: 'A small bio that only displays in a list.'
