@@ -1268,6 +1268,44 @@ a[href].learn-more.button {
     .section-type-infographic {
       margin: 0 20px 40px 20px; } }
 
+/*Leadership Listing*/
+.entity-section-type.leadership-listing {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 0 20px; }
+  .entity-section-type.leadership-listing:after {
+    content: '';
+    clear: both;
+    display: table; }
+  .entity-section-type.leadership-listing .field--name-field-leadership-listing-leader > .field__item {
+    border-top: 1px solid #333;
+    margin: 40px 0 0 0;
+    padding: 40px 0 0 0; }
+    .entity-section-type.leadership-listing .field--name-field-leadership-listing-leader > .field__item:after {
+      content: '';
+      clear: both;
+      display: table; }
+  .entity-section-type.leadership-listing .field--name-field-leadership-image {
+    display: inline-block;
+    float: right;
+    width: 35%; }
+  .entity-section-type.leadership-listing .group-leadership-text {
+    display: inline-block;
+    float: left;
+    width: 60%; }
+    .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-name {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin: 0 0 20px 0; }
+    .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-title {
+      font-weight: bold;
+      margin: 0 0 20px 0; }
+  .entity-section-type.leadership-listing .group-leadership-icons {
+    clear: right;
+    float: right;
+    text-align: center;
+    width: 35%; }
+
 /*
 *   #FIELDS
 **/
