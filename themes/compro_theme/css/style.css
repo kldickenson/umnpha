@@ -1222,7 +1222,7 @@ a[href].learn-more.button {
 .block-views-blockreport-recent-reports {
   margin: 0 auto;
   max-width: 980px;
-  padding: 0 20px; }
+  padding: 40px 20px; }
   .section-type-longtext p,
   .block-views-blockreport-recent-reports p {
     margin-bottom: 25px; }
