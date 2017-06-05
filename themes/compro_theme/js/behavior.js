@@ -30,6 +30,7 @@
       $search_icon.on('click', function (e) {
         $(this).addClass('is-open');
         $(this).siblings('.block-google-cse').toggleClass('is-open');
+        $('#edit-query').focus();
       });
 
       // Wrap sibling elements for node report sidebar layout

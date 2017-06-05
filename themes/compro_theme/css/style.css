@@ -603,7 +603,7 @@ header.header-fixed {
     padding: 0 0 50px 0;
     position: relative; }
 .node--type-report .node--type-report-container {
-  margin: 0 auto;
+  margin: 60px auto 0;
   max-width: 1200px;
   padding: 0 40px; }
   .node--type-report .node--type-report-container:after {
@@ -1094,7 +1094,6 @@ a[href].learn-more.button {
   color: white;
   display: flex;
   justify-content: space-between;
-  margin: 0 0 60px 0;
   max-height: 500px;
   width: 100%; }
   .section-type-featured-report .featured-report-image {
