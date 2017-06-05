@@ -78,6 +78,7 @@ function compro_theme_preprocess_node(&$variables) {
   }
   if ($variables['elements']['#node']->bundle() == 'report' && $variables['elements']['#view_mode'] == 'full') {
     $variables['#attached']['library'][] = 'compro_theme/sticky-kit';
+    $variables['content']['field_report_report']['#title'] = 'Read the full report';
   }
 }
 

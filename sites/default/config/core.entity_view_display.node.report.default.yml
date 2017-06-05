@@ -30,7 +30,6 @@ third_party_settings:
   field_group:
     group_sidebar:
       children:
-        - field_report_report
         - report_download_background_color
         - report_button_text_color
         - report_button_color
@@ -40,6 +39,7 @@ third_party_settings:
         - field_report_tags
         - share
         - field_report_news_source
+        - field_report_report
       parent_name: ''
       weight: 2
       format_type: html_element
@@ -100,7 +100,7 @@ content:
     weight: 10
     label: above
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
     type: entity_reference_label
     region: content
@@ -108,13 +108,13 @@ content:
     weight: 7
     label: above
     settings:
-      format_type: medium
       timezone_override: ''
+      format_type: f_j_y
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_report_report:
-    weight: 1
+    weight: 11
     label: above
     settings:
       compro_custom_link_title: 'Download PDF'
