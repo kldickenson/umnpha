@@ -1307,6 +1307,7 @@ a[href].learn-more.button {
     .entity-section-type.leadership-listing .group-leadership-icons > .field {
       display: inline-block;
       height: 25px;
+      margin: 0 20px 0 0;
       width: 25px; }
       .entity-section-type.leadership-listing .group-leadership-icons > .field a {
         color: #969696;
@@ -1316,14 +1317,24 @@ a[href].learn-more.button {
         text-indent: -9999px;
         white-space: nowrap;
         width: 25px; }
+      .entity-section-type.leadership-listing .group-leadership-icons > .field:hover {
+        color: blue; }
     .entity-section-type.leadership-listing .group-leadership-icons > .field--name-field-leadership-phone {
-      background: url("../images/sprites/search-icon.png") no-repeat center; }
+      background: url("../images/icons/fontawesome-phone-gray.svg") no-repeat center/contain; }
+      .entity-section-type.leadership-listing .group-leadership-icons > .field--name-field-leadership-phone:hover {
+        background: url("../images/icons/fontawesome-phone-blue.svg") no-repeat center/contain; }
     .entity-section-type.leadership-listing .group-leadership-icons .field--name-field-leadership-email {
-      background: url("../images/sprites/search-icon.png") no-repeat center; }
+      background: url("../images/icons/zocial-email-gray.svg") no-repeat center/contain; }
+      .entity-section-type.leadership-listing .group-leadership-icons .field--name-field-leadership-email:hover {
+        background: url("../images/icons/zocial-email-blue.svg") no-repeat center/contain; }
     .entity-section-type.leadership-listing .group-leadership-icons .field--name-field-leadership-twitter {
-      background: url("../images/sprites/search-icon.png") no-repeat center; }
+      background: url("../images/icons/zocial-twitter-gray.svg") no-repeat center/contain; }
+      .entity-section-type.leadership-listing .group-leadership-icons .field--name-field-leadership-twitter:hover {
+        background: url("../images/icons/zocial-twitter-blue.svg") no-repeat center/contain; }
     .entity-section-type.leadership-listing .group-leadership-icons .field--name-field-leadership-linkedin {
-      background: url("../images/sprites/search-icon.png") no-repeat center; }
+      background: url("../images/icons/zocial-linkedin-gray.svg") no-repeat center/contain; }
+      .entity-section-type.leadership-listing .group-leadership-icons .field--name-field-leadership-linkedin:hover {
+        background: url("../images/icons/zocial-linkedin-blue.svg") no-repeat center/contain; }
 
 /*
 *   #FIELDS

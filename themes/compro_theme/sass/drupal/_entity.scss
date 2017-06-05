@@ -342,6 +342,7 @@
     > .field {
       display: inline-block;
       height: 25px;
+      margin: 0 20px 0 0;
       width: 25px;
 
       a {
@@ -354,24 +355,48 @@
         width: 25px;
       }
 
+      &:hover {
+        color: blue;
+      }
+
     }
 
     > .field--name-field-leadership-phone  {
-      background: url('../images/sprites/search-icon.png') no-repeat center;
+      background: url('../images/icons/fontawesome-phone-gray.svg') no-repeat center/contain;
+
+      &:hover {
+        background: url('../images/icons/fontawesome-phone-blue.svg') no-repeat center/contain;
+      }
+
     }
 
     .field--name-field-leadership-email {
-      background: url('../images/sprites/search-icon.png') no-repeat center;
+      background: url('../images/icons/zocial-email-gray.svg') no-repeat center/contain;
+
+      &:hover {
+        background: url('../images/icons/zocial-email-blue.svg') no-repeat center/contain;
+      }
+
     }
 
     .field--name-field-leadership-twitter {
-      background: url('../images/sprites/search-icon.png') no-repeat center;
+      background: url('../images/icons/zocial-twitter-gray.svg') no-repeat center/contain;
+
+      &:hover {
+        background: url('../images/icons/zocial-twitter-blue.svg') no-repeat center/contain;
+      }
+
     }
 
     .field--name-field-leadership-linkedin {
-      background: url('../images/sprites/search-icon.png') no-repeat center;
+      background: url('../images/icons/zocial-linkedin-gray.svg') no-repeat center/contain;
+
+      &:hover {
+        background: url('../images/icons/zocial-linkedin-blue.svg') no-repeat center/contain;
+      }
+      
     }
 
-
   }
+
 }
