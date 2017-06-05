@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\compro_custom\Plugin\Block\SearchIconBlock.
- */
-
 namespace Drupal\compro_custom\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
