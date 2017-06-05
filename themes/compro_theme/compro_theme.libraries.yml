@@ -4,6 +4,7 @@ global-styling:
     theme:
       css/style.css: {}
       css/vendor/animate.css: {}
+      css/umnpha-icons.css: {}
   js:
     js/behavior.js: {}
     js/vendor/modernizr-custom.js: {}
