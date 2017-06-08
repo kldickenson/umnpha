@@ -618,7 +618,7 @@ header.header-fixed {
   font-size: 0.875rem;
   float: left;
   margin: 50px 0 0 0;
-  width: 15%; }
+  width: 170px; }
   .node--type-report .group-sidebar:after {
     content: '';
     clear: both;
@@ -628,6 +628,8 @@ header.header-fixed {
   .node--type-report .group-sidebar a {
     font-weight: bold; }
     .node--type-report .group-sidebar a:before {
+      font-size: 22px;
+      padding: 5px 10px;
       -webkit-transition: all 0.15s ease-out 0s;
       -moz-transition: all 0.15s ease-out 0s;
       transition: all 0.15s ease-out 0s;
@@ -635,6 +637,18 @@ header.header-fixed {
       text-decoration: none; }
       .node--type-report .group-sidebar a:before:active, .node--type-report .group-sidebar a:before:focus, .node--type-report .group-sidebar a:before:hover {
         color: #094180; }
+  .node--type-report .group-sidebar .field--name-field-report-report {
+    padding: 25px 15px;
+    color: white; }
+    .node--type-report .group-sidebar .field--name-field-report-report .field__label {
+      padding-bottom: 25px;
+      font-weight: normal;
+      font-size: 1.6em; }
+    .node--type-report .group-sidebar .field--name-field-report-report a {
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 9px 20px;
+      font-size: 0.8em; }
   @media all and (max-width: 660px) {
     .node--type-report .group-sidebar {
       float: none;
@@ -644,11 +658,14 @@ header.header-fixed {
 .node--type-report .group-report-content {
   display: inline-block;
   float: right;
-  width: 80%; }
+  width: 78%; }
   .node--type-report .group-report-content:after {
     content: '';
     clear: both;
     display: table; }
+  @media all and (max-width: 940px) {
+    .node--type-report .group-report-content {
+      width: 70%; } }
   @media all and (max-width: 660px) {
     .node--type-report .group-report-content {
       float: none;
