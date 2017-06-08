@@ -308,16 +308,19 @@
     padding-bottom: 50px;
   }
 
-  .field--name-field-leadership-image {
-    display: inline-block;
+  .field-group-image-icons {
     float: right;
-    width: 35%;
+    padding-left: 10px;
+
+    @media all and (max-width: 660px) {
+      float: none;
+      padding: 0 0 10px 0;
+      text-align: center;
+    }
+
   }
 
   .group-leadership-text {
-    display: inline-block;
-    float: left;
-    width: 60%;
 
     .field--name-field-leadership-name {
       font-size: rem(20);
@@ -333,10 +336,7 @@
   }
 
   .group-leadership-icons {
-    clear: right;
-    float: right;
     text-align: center;
-    width: 35%;
     padding-top: 25px;
 
     > .field {

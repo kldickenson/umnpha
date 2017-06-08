@@ -1315,26 +1315,23 @@ a[href].learn-more.button {
     border-bottom: 1px solid #333;
     margin-bottom: 75px;
     padding-bottom: 50px; }
-  .entity-section-type.leadership-listing .field--name-field-leadership-image {
-    display: inline-block;
+  .entity-section-type.leadership-listing .field-group-image-icons {
     float: right;
-    width: 35%; }
-  .entity-section-type.leadership-listing .group-leadership-text {
-    display: inline-block;
-    float: left;
-    width: 60%; }
-    .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-name {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin: 0 0 20px 0; }
-    .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-title {
-      font-weight: bold;
-      margin: 0 0 20px 0; }
+    padding-left: 10px; }
+    @media all and (max-width: 660px) {
+      .entity-section-type.leadership-listing .field-group-image-icons {
+        float: none;
+        padding: 0 0 10px 0;
+        text-align: center; } }
+  .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0 0 20px 0; }
+  .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-title {
+    font-weight: bold;
+    margin: 0 0 20px 0; }
   .entity-section-type.leadership-listing .group-leadership-icons {
-    clear: right;
-    float: right;
     text-align: center;
-    width: 35%;
     padding-top: 25px; }
     .entity-section-type.leadership-listing .group-leadership-icons > .field {
       display: inline-block;
