@@ -309,16 +309,25 @@
     }
   }
 
-  .field--name-field-leadership-image {
-    display: inline-block;
+  .field--name-field-leadership-listing-leader > .field__item:last-child {
+    border-bottom: 1px solid #333;
+    margin-bottom: 75px;
+    padding-bottom: 50px;
+  }
+
+  .field-group-image-icons {
     float: right;
-    width: 35%;
+    padding-left: 10px;
+
+    @media all and (max-width: 660px) {
+      float: none;
+      padding: 0 0 10px 0;
+      text-align: center;
+    }
+
   }
 
   .group-leadership-text {
-    display: inline-block;
-    float: left;
-    width: 60%;
 
     .field--name-field-leadership-name {
       font-size: rem(20);
@@ -334,10 +343,8 @@
   }
 
   .group-leadership-icons {
-    clear: right;
-    float: right;
     text-align: center;
-    width: 35%;
+    padding-top: 25px;
 
     > .field {
       display: inline-block;
@@ -359,6 +366,10 @@
         color: blue;
       }
 
+    }
+
+    > .field:last-child {
+      margin: 0;
     }
 
     > .field--name-field-leadership-phone  {

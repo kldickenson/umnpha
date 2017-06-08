@@ -638,16 +638,40 @@ header.header-fixed {
       padding: 0 40px; } }
 .node--type-report .group-sidebar {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   float: left;
   margin: 50px 0 0 0;
-  width: 15%; }
+  width: 170px; }
   .node--type-report .group-sidebar:after {
     content: '';
     clear: both;
     display: table; }
+  .node--type-report .group-sidebar .sidebar-share-text {
+    font-weight: bold; }
   .node--type-report .group-sidebar a {
     font-weight: bold; }
+    .node--type-report .group-sidebar a:before {
+      font-size: 22px;
+      padding: 5px 10px;
+      -webkit-transition: all 0.15s ease-out 0s;
+      -moz-transition: all 0.15s ease-out 0s;
+      transition: all 0.15s ease-out 0s;
+      color: #0c57aa;
+      text-decoration: none; }
+      .node--type-report .group-sidebar a:before:active, .node--type-report .group-sidebar a:before:focus, .node--type-report .group-sidebar a:before:hover {
+        color: #094180; }
+  .node--type-report .group-sidebar .field--name-field-report-report {
+    padding: 25px 15px;
+    color: white; }
+    .node--type-report .group-sidebar .field--name-field-report-report .field__label {
+      padding-bottom: 25px;
+      font-weight: normal;
+      font-size: 1.6em; }
+    .node--type-report .group-sidebar .field--name-field-report-report a {
+      text-transform: uppercase;
+      font-weight: bold;
+      padding: 9px 20px;
+      font-size: 0.8em; }
   @media all and (max-width: 660px) {
     .node--type-report .group-sidebar {
       float: none;
@@ -657,11 +681,14 @@ header.header-fixed {
 .node--type-report .group-report-content {
   display: inline-block;
   float: right;
-  width: 80%; }
+  width: 78%; }
   .node--type-report .group-report-content:after {
     content: '';
     clear: both;
     display: table; }
+  @media all and (max-width: 940px) {
+    .node--type-report .group-report-content {
+      width: 70%; } }
   @media all and (max-width: 660px) {
     .node--type-report .group-report-content {
       float: none;
@@ -1341,26 +1368,28 @@ a[href].learn-more.button {
       content: '';
       clear: both;
       display: table; }
-  .entity-section-type.leadership-listing .field--name-field-leadership-image {
-    display: inline-block;
+  .entity-section-type.leadership-listing .field--name-field-leadership-listing-leader > .field__item:last-child {
+    border-bottom: 1px solid #333;
+    margin-bottom: 75px;
+    padding-bottom: 50px; }
+  .entity-section-type.leadership-listing .field-group-image-icons {
     float: right;
-    width: 35%; }
-  .entity-section-type.leadership-listing .group-leadership-text {
-    display: inline-block;
-    float: left;
-    width: 60%; }
-    .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-name {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin: 0 0 20px 0; }
-    .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-title {
-      font-weight: bold;
-      margin: 0 0 20px 0; }
+    padding-left: 10px; }
+    @media all and (max-width: 660px) {
+      .entity-section-type.leadership-listing .field-group-image-icons {
+        float: none;
+        padding: 0 0 10px 0;
+        text-align: center; } }
+  .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0 0 20px 0; }
+  .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-title {
+    font-weight: bold;
+    margin: 0 0 20px 0; }
   .entity-section-type.leadership-listing .group-leadership-icons {
-    clear: right;
-    float: right;
     text-align: center;
-    width: 35%; }
+    padding-top: 25px; }
     .entity-section-type.leadership-listing .group-leadership-icons > .field {
       display: inline-block;
       height: 25px;
@@ -1376,6 +1405,8 @@ a[href].learn-more.button {
         width: 25px; }
       .entity-section-type.leadership-listing .group-leadership-icons > .field:hover {
         color: blue; }
+    .entity-section-type.leadership-listing .group-leadership-icons > .field:last-child {
+      margin: 0; }
     .entity-section-type.leadership-listing .group-leadership-icons > .field--name-field-leadership-phone {
       background: url("../images/icons/fontawesome-phone-gray.svg") no-repeat center/contain; }
       .entity-section-type.leadership-listing .group-leadership-icons > .field--name-field-leadership-phone:hover {
@@ -1455,15 +1486,13 @@ a[href].learn-more.button {
     -o-transition: 250ms ease-in-out;
     transition: 250ms ease-in-out; }
 
-.node--type-report .group-sidebar .field--name-field-report-volume-issue {
-  font-size: 12px; }
-  .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
-  .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
-    display: inline-block; }
-    @media all and (max-width: 660px) {
-      .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
-      .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
-        display: block; } }
+.node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
+.node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
+  display: inline-block; }
+  @media all and (max-width: 660px) {
+    .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
+    .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
+      display: block; } }
 
 .node--type-report .field--name-field-title {
   color: #0f284a;
@@ -1743,8 +1772,10 @@ a[href].learn-more.button {
     vertical-align: middle; }
 
 .field--name-field-infographic-caption {
-  font-family: 'Lora';
-  font-size: 0.75rem; }
+  padding-top: 10px;
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-size: 0.8125rem; }
 
 body .gutter__xsm_top {
   padding-top: 0.625rem; }
