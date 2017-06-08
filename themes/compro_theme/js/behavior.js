@@ -43,17 +43,17 @@
         $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
       }
 
-      //Parallax on hero images
-      if ($body.hasClass('node--type-page')) {
-        var imageUrl = $body.find('.field-group-page-hero >' +
-          ' .field--name-field-page-hero > img').prop('src');
-        $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
-      }
-      if ($body.hasClass('node--type-report')) {
-        var imageUrl = $body.find('.field-group-page-hero >' +
-          ' .field--name-field-page-hero > img').prop('src');
-        $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
-      }
+      // //Parallax on hero images
+      // if ($body.hasClass('node--type-page')) {
+      //   var imageUrl = $body.find('.field-group-page-hero >' +
+      //     ' .field--name-field-page-hero > img').prop('src');
+      //   $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
+      // }
+      // if ($body.hasClass('node--type-report')) {
+      //   var imageUrl = $body.find('.field-group-page-hero >' +
+      //     ' .field--name-field-page-hero > img').prop('src');
+      //   $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
+      // }
 
       // Mobile only
         //Mobile Menu

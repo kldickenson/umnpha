@@ -203,36 +203,31 @@
       color: $blue;
     }
 
-    &.menu-item--expanded {
+    @media all and (max-width: 940px) {
+      &.menu-item--expanded {
 
-      &:hover {
+        &:hover {
 
-        > .menu {
-          opacity: 1;
-          max-height: 400px;
-
-          @media all and (max-width: 940px) {
+          > .menu {
+            opacity: 1;
+            max-height: 400px;
             background-color: transparent;
           }
 
         }
 
+
+          &:after {
+            border-bottom: 2px solid $um-blue;
+            border-right: 2px solid $um-blue;
+            content: '';
+            margin-left: 40px;
+            padding: 4px;
+            position: absolute;
+            bottom: 5px;
+            transform: rotate(-45deg);
+          }
       }
-
-      @media all and (max-width: 940px) {
-        &:after {
-          border-bottom: 2px solid $um-blue;
-          border-right: 2px solid $um-blue;
-          content: '';
-          margin-left: 40px;
-          padding: 4px;
-          position: absolute;
-          bottom: 5px;
-          transform: rotate(-45deg);
-        }
-
-      }
-
     }
 
     > .menu {
