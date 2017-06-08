@@ -615,7 +615,7 @@ header.header-fixed {
       padding: 0 20px; } }
 .node--type-report .group-sidebar {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   float: left;
   margin: 50px 0 0 0;
   width: 15%; }
@@ -623,8 +623,18 @@ header.header-fixed {
     content: '';
     clear: both;
     display: table; }
+  .node--type-report .group-sidebar .sidebar-share-text {
+    font-weight: bold; }
   .node--type-report .group-sidebar a {
     font-weight: bold; }
+    .node--type-report .group-sidebar a:before {
+      -webkit-transition: all 0.15s ease-out 0s;
+      -moz-transition: all 0.15s ease-out 0s;
+      transition: all 0.15s ease-out 0s;
+      color: #0c57aa;
+      text-decoration: none; }
+      .node--type-report .group-sidebar a:before:active, .node--type-report .group-sidebar a:before:focus, .node--type-report .group-sidebar a:before:hover {
+        color: #094180; }
   @media all and (max-width: 660px) {
     .node--type-report .group-sidebar {
       float: none;
@@ -1394,15 +1404,13 @@ a[href].learn-more.button {
     background-color: #FFFF38;
     transition: 250ms ease-in-out; }
 
-.node--type-report .group-sidebar .field--name-field-report-volume-issue {
-  font-size: 12px; }
-  .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
-  .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
-    display: inline-block; }
-    @media all and (max-width: 660px) {
-      .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
-      .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
-        display: block; } }
+.node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
+.node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
+  display: inline-block; }
+  @media all and (max-width: 660px) {
+    .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
+    .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
+      display: block; } }
 
 .node--type-report .field--name-field-title {
   color: #0f284a;
