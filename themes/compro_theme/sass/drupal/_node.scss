@@ -306,7 +306,7 @@
 
   .group-sidebar {
     display: inline-block;
-    font-size: rem(12);
+    font-size: rem(14);
     float: left;
     margin: 50px 0 0 0;
     width: round(percentage(180px/1200px));
@@ -317,8 +317,27 @@
       display: table;
     }
 
+    .sidebar-share-text {
+      font-weight: bold;
+    }
+
     a {
       font-weight: bold;
+
+      &:before {
+
+        @include transition();
+        color: $action-color;
+        text-decoration: none;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: shade($action-color, 25%);
+        }
+        
+      }
+
     }
 
     @media all and (max-width: 660px) {
