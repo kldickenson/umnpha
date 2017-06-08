@@ -1699,8 +1699,10 @@ a[href].learn-more.button {
     vertical-align: middle; }
 
 .field--name-field-infographic-caption {
-  font-family: 'Lora';
-  font-size: 0.75rem; }
+  padding-top: 10px;
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-size: 0.8125rem; }
 
 body .gutter__xsm_top {
   padding-top: 0.625rem; }
