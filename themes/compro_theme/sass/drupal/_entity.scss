@@ -302,6 +302,12 @@
     }
   }
 
+  .field--name-field-leadership-listing-leader > .field__item:last-child {
+    border-bottom: 1px solid #333;
+    margin-bottom: 75px;
+    padding-bottom: 50px;
+  }
+
   .field--name-field-leadership-image {
     display: inline-block;
     float: right;
@@ -331,6 +337,7 @@
     float: right;
     text-align: center;
     width: 35%;
+    padding-top: 25px;
 
     > .field {
       display: inline-block;
@@ -352,6 +359,10 @@
         color: blue;
       }
 
+    }
+
+    > .field:last-child {
+      margin: 0;
     }
 
     > .field--name-field-leadership-phone  {

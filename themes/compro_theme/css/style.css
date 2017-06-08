@@ -1311,6 +1311,10 @@ a[href].learn-more.button {
       content: '';
       clear: both;
       display: table; }
+  .entity-section-type.leadership-listing .field--name-field-leadership-listing-leader > .field__item:last-child {
+    border-bottom: 1px solid #333;
+    margin-bottom: 75px;
+    padding-bottom: 50px; }
   .entity-section-type.leadership-listing .field--name-field-leadership-image {
     display: inline-block;
     float: right;
@@ -1330,7 +1334,8 @@ a[href].learn-more.button {
     clear: right;
     float: right;
     text-align: center;
-    width: 35%; }
+    width: 35%;
+    padding-top: 25px; }
     .entity-section-type.leadership-listing .group-leadership-icons > .field {
       display: inline-block;
       height: 25px;
@@ -1346,6 +1351,8 @@ a[href].learn-more.button {
         width: 25px; }
       .entity-section-type.leadership-listing .group-leadership-icons > .field:hover {
         color: blue; }
+    .entity-section-type.leadership-listing .group-leadership-icons > .field:last-child {
+      margin: 0; }
     .entity-section-type.leadership-listing .group-leadership-icons > .field--name-field-leadership-phone {
       background: url("../images/icons/fontawesome-phone-gray.svg") no-repeat center/contain; }
       .entity-section-type.leadership-listing .group-leadership-icons > .field--name-field-leadership-phone:hover {
