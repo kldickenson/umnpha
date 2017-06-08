@@ -163,7 +163,7 @@
         });
 
         // Sticky Side bar
-        if($(window).width() >= 660 && $('.group-sidebar')[0]) {
+        if($(window).width() > 660 && $('.group-sidebar')[0]) {
           $(window).scroll(function(e) {
             $('.group-sidebar').stick_in_parent({offset_top: 100});
           });

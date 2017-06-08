@@ -309,7 +309,7 @@
     font-size: rem(14);
     float: left;
     margin: 50px 0 0 0;
-    width: round(percentage(180px/1200px));
+    width: 170px;
 
     &:after {
       content: '';
@@ -325,7 +325,8 @@
       font-weight: bold;
 
       &:before {
-
+        font-size: 22px;
+        padding: 5px 10px;
         @include transition();
         color: $action-color;
         text-decoration: none;
@@ -335,7 +336,26 @@
         &:hover {
           color: shade($action-color, 25%);
         }
-        
+
+      }
+
+    }
+
+    .field--name-field-report-report {
+      padding: 25px 15px;
+      color: white;
+
+      .field__label {
+        padding-bottom: 25px;
+        font-weight: normal;
+        font-size: 1.6em;
+      }
+
+      a {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 9px 20px;
+        font-size: 0.8em;
       }
 
     }
@@ -352,12 +372,16 @@
   .group-report-content {
     display: inline-block;
     float: right;
-    width: round(percentage(960px/1200px));
+    width: 78%;
 
     &:after {
       content: '';
       clear: both;
       display: table;
+    }
+
+    @media all and (max-width: $medium-screen) {
+      width: 70%;
     }
 
     @media all and (max-width: 660px) {
