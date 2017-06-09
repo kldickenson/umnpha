@@ -48,7 +48,7 @@
   .hamburger-inner:before {
     color: $um-blue;
     content: '\2630';
-    font-size: 2.55rem;
+    font-size: 1.8rem;
     transition: 0.25s ease-in-out;
   }
 
@@ -57,7 +57,7 @@
     .hamburger-inner::before {
       color: $um-blue;
       content: '\2715';
-      font-size: 2.5rem;
+      font-size: 1.8rem;
       transform: scaleX(-1);
       transition: 0.25s ease-in-out;
     }
@@ -203,30 +203,31 @@
       color: $blue;
     }
 
-    @media all and (max-width: 940px) {
-      &.menu-item--expanded {
+    &.menu-item--expanded {
 
-        &:hover {
+      &:hover {
 
-          > .menu {
-            opacity: 1;
-            max-height: 400px;
+        > .menu {
+          opacity: 1;
+          max-height: 400px;
+
+          @media all and (max-width: 940px) {
             background-color: transparent;
           }
-
         }
+      }
 
-
-          &:after {
-            border-bottom: 2px solid $um-blue;
-            border-right: 2px solid $um-blue;
-            content: '';
-            margin-left: 40px;
-            padding: 4px;
-            position: absolute;
-            bottom: 5px;
-            transform: rotate(-45deg);
-          }
+      @media all and (max-width: 940px) {
+        &:after {
+          border-bottom: 2px solid $um-blue;
+          border-right: 2px solid $um-blue;
+          content: '';
+          margin-left: 40px;
+          padding: 4px;
+          position: absolute;
+          bottom: 5px;
+          transform: rotate(-45deg);
+        }
       }
     }
 
