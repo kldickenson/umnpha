@@ -48,3 +48,10 @@ function compro_custom_update_8004() {
 function compro_custom_update_8005() {
   \Drupal::service('module_installer')->install(['ckeditor_font']);
 }
+
+/**
+ * Install background_image module.
+ */
+function compro_custom_update_8006() {
+  \Drupal::service('module_installer')->install(['background_image_formatter']);
+}
