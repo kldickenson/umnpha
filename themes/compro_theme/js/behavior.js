@@ -94,7 +94,7 @@
         $('.group-report-teaser-text').append($('.learn-more'));
 
       // Scroll Triggered Events
-        // Slide ins when in viewport   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,
+      //   Slide ins when in viewport   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,
         $(window).scroll(function(e) {
 
           //get viewport size, set top of page

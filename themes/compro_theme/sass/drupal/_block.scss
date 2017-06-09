@@ -213,6 +213,7 @@
 
           @media all and (max-width: 940px) {
             background-color: transparent;
+            max-height: 0;
           }
         }
       }
@@ -228,6 +229,7 @@
           bottom: 5px;
           transform: rotate(-45deg);
         }
+
       }
     }
 
@@ -252,6 +254,7 @@
       > .menu {
         background-color: transparent;
         font-size: rem(15);
+        max-height: none;
         opacity: 1;
         top: unset;
       }
@@ -261,9 +264,7 @@
         &:after {
           transform: rotate(45deg);
         }
-
       }
-
     }
 
     .header-fixed & {

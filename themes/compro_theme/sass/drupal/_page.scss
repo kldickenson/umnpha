@@ -9,6 +9,7 @@
 
 // Header
 header {
+  z-index: 1;
 
   .container {
     height: 120px;
@@ -61,9 +62,9 @@ header {
       display: block;
     }
 
-    &.child-open {
-      height: 400px;
-    }
+    //&.child-open {
+    //  height: 400px;
+    //}
 
   }
 
