@@ -17,13 +17,17 @@
   .field--name-field-page-hero {
     margin: 0 0 60px 0;
 
+
     .field-type-text {
       display: inline-block;
       margin: 0 auto;
       width: 35%;
     }
 
-    &.field--type-image {
+    > div {
+      background-position: 0 90%;
+      background-repeat: no-repeat;
+      background-size: cover;
       height: 300px;
       max-height: 300px;
       min-width: 100%;
@@ -34,7 +38,7 @@
         //visibility: hidden;
         max-height: 300px;
         object-fit: cover;
-        object-position: 0 90%;
+
         overflow-y: hidden;
         width: 100%;
 
@@ -50,6 +54,7 @@
 
   .field-group-page-hero {
     position: relative;
+    z-index: -1;
 
     .field--name-field-title {
       color: #fff;

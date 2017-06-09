@@ -14,6 +14,10 @@
   .block-system-branding-block {
     display: inline-block;
     margin: 0 50px 0 0;
+
+    @media all and (max-width: 940px) {
+      margin: 0;
+    }
   }
 
   .hamburger {
