@@ -217,20 +217,6 @@
           }
         }
       }
-
-      @media all and (max-width: 940px) {
-        &:after {
-          border-bottom: 2px solid $um-blue;
-          border-right: 2px solid $um-blue;
-          content: '';
-          margin-left: 40px;
-          padding: 4px;
-          position: absolute;
-          bottom: 5px;
-          transform: rotate(-45deg);
-        }
-
-      }
     }
 
     > .menu {
@@ -259,11 +245,8 @@
         top: unset;
       }
 
-      &.menu-item--expanded {
-
-        &:after {
-          transform: rotate(45deg);
-        }
+      .toggle {
+        transform: rotate(45deg);
       }
     }
 
@@ -288,7 +271,19 @@
     @media all and (max-width: 1130px) {
       margin: 0 1.5vw 0 0;
     }
+  }
 
+  @media all and (max-width: 940px) {
+    .toggle {
+      border-bottom: 2px solid $um-blue;
+      border-right: 2px solid $um-blue;
+      content: '';
+      padding: 4px;
+      position: absolute;
+        right: 20%;
+        bottom: 35px;
+      transform: rotate(-45deg);
+    }
   }
 
 }
