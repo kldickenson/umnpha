@@ -212,6 +212,7 @@
           max-height: 400px;
 
           @media all and (max-width: 940px) {
+            opacity: 0;
             background-color: transparent;
             max-height: 0;
           }

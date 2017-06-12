@@ -383,7 +383,7 @@ header {
       header .region-nav {
         background-color: rgba(250, 250, 250, 0.85);
         display: none;
-        height: 300px;
+        height: 350px;
         position: absolute;
         top: 84px;
         -webkit-transition: 250ms cubic-bezier(0.18, 0.01, 0.63, 0.98);
@@ -624,6 +624,10 @@ header {
   border-top: 1.5px solid #333;
   margin: 0 30px 0 0;
   padding: 0 20px 0 0; }
+  @media all and (max-width: 500px) {
+    .node--type-report.node--view-mode-teaser {
+      margin: 0;
+      padding: 0; } }
   .node--type-report.node--view-mode-teaser:first-child {
     border-top: none;
     padding-top: 0; }
@@ -646,7 +650,9 @@ header {
     display: table; }
   @media all and (max-width: 500px) {
     .node--type-report .node--type-report-container {
-      padding: 0 40px; } }
+      padding: 0; }
+      .node--type-report .node--type-report-container .field--name-field-title {
+        padding: 0 20px; } }
 .node--type-report .group-sidebar {
   display: inline-block;
   font-size: 0.875rem;
@@ -992,6 +998,7 @@ footer.footer-wrapper {
     max-height: 400px; }
     @media all and (max-width: 940px) {
       .menu--menu-main-menu.block-menu li.menu-item--expanded:hover > .menu {
+        opacity: 0;
         background-color: transparent;
         max-height: 0; } }
   .menu--menu-main-menu.block-menu li > .menu {
@@ -1342,7 +1349,15 @@ a[href].learn-more.button {
   @media all and (max-width: 500px) {
     .section-type-longtext,
     .block-views-blockreport-recent-reports {
-      padding: 0; } }
+      padding: 0 20px; } }
+
+@media all and (max-width: 500px) {
+  .entity-section-type.block h2,
+  .entity-section-type.block .field--name-field-report-featured-image,
+  .entity-section-type.block .field--name-field-title {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-right: 0; } }
 
 .section-type-longtext.add-border {
   border-top: solid 1px #5f5f5f;
@@ -1402,9 +1417,15 @@ a[href].learn-more.button {
     font-size: 1.25rem;
     font-weight: bold;
     margin: 0 0 20px 0; }
+    @media all and (max-width: 500px) {
+      .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-name {
+        text-align: center; } }
   .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-title {
     font-weight: bold;
     margin: 0 0 20px 0; }
+    @media all and (max-width: 500px) {
+      .entity-section-type.leadership-listing .group-leadership-text .field--name-field-leadership-title {
+        text-align: center; } }
   .entity-section-type.leadership-listing .group-leadership-icons {
     text-align: center;
     padding-top: 25px; }
@@ -1764,7 +1785,7 @@ a[href].learn-more.button {
   -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
-  z-index: 99; }
+  z-index: 0; }
   .share-and-download-wrapper .share-links {
     display: inline-block;
     padding-top: 4px;
