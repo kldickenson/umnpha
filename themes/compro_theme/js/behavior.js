@@ -77,7 +77,10 @@
           $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
             e.preventDefault();
             $mobileNav.toggleClass('child-open');
+            $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').toggleClass('is-open');
+            $(this).unbind(e);
           });
+
         }
 
         // Move items for mobile menu
