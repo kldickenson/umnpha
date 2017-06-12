@@ -234,7 +234,23 @@
   }
 
   @media all and (max-width: 500px) {
-    padding: 0;
+    padding: 0 20px;
+  }
+
+}
+
+.entity-section-type.block {
+
+  @media all and (max-width: 500px) {
+
+    h2,
+    .field--name-field-report-featured-image,
+    .field--name-field-title {
+      text-align: center;
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+
   }
 
 }
@@ -326,11 +342,21 @@
       font-size: rem(20);
       font-weight: bold;
       margin: 0 0 20px 0;
+
+      @media all and (max-width: 500px) {
+        text-align: center;
+      }
+
     }
 
     .field--name-field-leadership-title {
       font-weight: bold;
       margin: 0 0 20px 0;
+
+      @media all and (max-width: 500px) {
+        text-align: center;
+      }
+
     }
 
   }
