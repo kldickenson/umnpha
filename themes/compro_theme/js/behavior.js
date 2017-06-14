@@ -43,17 +43,9 @@
         $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
       }
 
-      // //Parallax on hero images
-      // if ($body.hasClass('node--type-page')) {
-      //   var imageUrl = $body.find('.field-group-page-hero >' +
-      //     ' .field--name-field-page-hero > img').prop('src');
-      //   $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
-      // }
-      // if ($body.hasClass('node--type-report')) {
-      //   var imageUrl = $body.find('.field-group-page-hero >' +
-      //     ' .field--name-field-page-hero > img').prop('src');
-      //   $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
-      // }
+      /* PARALLAX CODE MISSING - This code is maybe still necessary, parallax plugin cannot recalculate adjusted
+      header height. Looking into plugin that will do this.
+       */
 
       // Mobile only
         //Mobile Menu
@@ -80,14 +72,12 @@
             $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').toggleClass('is-open');
             $(this).unbind(e);
           });
-
         }
 
         // Move items for mobile menu
         if($(window).width() <= 950) {
           var $email = $('.block-email-sign-up');
           var $search = $('.block-google-cse');
-          // var $menu = $('.menu--menu-main-menu');
 
           $mobileNav.append($email);
           $mobileNav.append($search);
@@ -112,7 +102,7 @@
             var $sponsorPrimaryImagePos = $sponsors.find('.field--name-field-sponsors-primary-sponsors').position().top;
             var $sponsorFirstSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').position().top;
             var $sponsorSecondSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').position().top;
-            var $sponsorHeight = $sponsors.outerHeight();
+            // if want to animate once entire height of div is in window get .outerHeight()
 
             //Animate on viewport entry --> REFACTOR INTO LOOP!
             if(($sponsorPrimaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
@@ -136,7 +126,7 @@
           if ($('.section-type-testimonial')[0]){
             var $testimonial = $('.section-type-testimonial');
             var $testimonialPosition = $testimonial.position().top;
-            var $testimonialHeight = $testimonial.outerHeight();
+            // if want to animate once entire height of div is in window get .outerHeight()
 
             // Animate when section-type enters viewport
             if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
