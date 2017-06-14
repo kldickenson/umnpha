@@ -364,7 +364,7 @@ header {
     padding: 40px 40px; }
     @media all and (max-width: 940px) {
       header .container {
-        height: 80px;
+        height: 85px;
         padding: 20px 40px; } }
     @media all and (max-width: 720px) {
       header .container {
@@ -950,6 +950,10 @@ footer.footer-wrapper {
     .block-email-sign-up a {
       font-size: 0.75rem;
       padding: 0.4375rem 1.25rem; } }
+  @media all and (max-width: 940px) {
+    .block-email-sign-up a {
+      font-size: 1rem;
+      padding: 0.4375rem 1.875rem; } }
 
 /*Search Icon*/
 .block-search-icon-block span:before {
@@ -965,7 +969,8 @@ footer.footer-wrapper {
   @media all and (max-width: 940px) {
     .block-google-cse .google-cse-search-box-form {
       margin: 0 auto;
-      width: 45%; } }
+      min-width: 210px;
+      width: 50%; } }
 .block-google-cse .form-item {
   color: white;
   font-size: 0.875rem;
@@ -1028,6 +1033,9 @@ footer.footer-wrapper {
         background-color: transparent;
         max-height: 0; } }
   @media all and (max-width: 940px) {
+    .menu--menu-main-menu.block-menu li.menu-item--expanded > a {
+      display: inline-block;
+      width: 100%; }
     .menu--menu-main-menu.block-menu li.menu-item--expanded > .menu {
       opacity: 0;
       background-color: transparent;
