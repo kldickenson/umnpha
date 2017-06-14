@@ -30,6 +30,7 @@ third_party_settings:
   field_group:
     group_sidebar:
       children:
+        - field_report_report
         - report_download_background_color
         - report_button_text_color
         - report_button_color
@@ -39,7 +40,6 @@ third_party_settings:
         - field_report_tags
         - share
         - field_report_news_source
-        - field_report_report
       parent_name: ''
       weight: 2
       format_type: html_element
@@ -76,7 +76,7 @@ bundle: report
 mode: default
 content:
   field_report_contributers:
-    weight: 6
+    weight: 16
     label: above
     settings:
       trim_length: 80
@@ -97,7 +97,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_report_news_source:
-    weight: 10
+    weight: 20
     label: above
     settings:
       link: false
@@ -105,7 +105,7 @@ content:
     type: entity_reference_label
     region: content
   field_report_published_date:
-    weight: 7
+    weight: 17
     label: above
     settings:
       timezone_override: ''
@@ -137,7 +137,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_report_tags:
-    weight: 8
+    weight: 18
     label: above
     settings:
       link: true
@@ -145,7 +145,7 @@ content:
     type: entity_reference_label
     region: content
   field_report_volume_issue:
-    weight: 5
+    weight: 15
     label: above
     settings:
       link_to_entity: false
@@ -161,7 +161,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   report_button_color:
-    weight: 4
+    weight: 14
     label: hidden
     settings:
       selector: .download-pdf.button
@@ -172,7 +172,7 @@ content:
     type: color_field_formatter_css
     region: content
   report_button_text_color:
-    weight: 3
+    weight: 13
     label: hidden
     settings:
       selector: .download-pdf.button
@@ -183,7 +183,7 @@ content:
     type: color_field_formatter_css
     region: content
   report_download_background_color:
-    weight: 2
+    weight: 12
     label: hidden
     settings:
       selector: .field--name-field-report-report
@@ -194,7 +194,7 @@ content:
     type: color_field_formatter_css
     region: content
   share:
-    weight: 9
+    weight: 19
     region: content
     settings: {  }
     third_party_settings: {  }
