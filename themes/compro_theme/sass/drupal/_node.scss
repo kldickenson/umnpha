@@ -337,6 +337,7 @@
     }
 
     a {
+      color: $arb-blue;
       font-weight: bold;
 
       &:before {
@@ -412,11 +413,35 @@
 .node--type-report .group-sidebar > .sidebar-share-wrapper {
   margin: 0 0 20px 0;
 
+  > .field__label {
+    font-weight: 300;
+  }
+
+  > .field__item,
+  > .field__items {
+    font-family: 'Montserrat Bold';
+    font-weight: 700;
+
+    a {
+      font-family: 'Montserrat Bold';
+    }
+
+  }
+
   @media all and (max-width: 660px) {
     font-size: rem(14);
     text-align: center;
   }
 
+}
+
+.field--name-field-report-news-source > .field__items > .field__item{
+  font-style: italic;
+}
+
+.field--name-field-report-report > .field__label {
+  font-family: 'Lora';
+  font-weight: 300;
 }
 
 .node--type-report .group-sidebar > .field:last-child {
