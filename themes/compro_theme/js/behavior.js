@@ -33,6 +33,8 @@
         $('#edit-query').focus();
       });
 
+      /* Split js into other files depending on whether or not it loads on one
+      page or specific page. */
       // Wrap sibling elements for node report sidebar layout
       $(".group-report-content").next(".group-sidebar").andSelf().wrapAll("<div class='node--type-report-container' />");
 
@@ -67,10 +69,17 @@
 
           // Add class for dropdown
           $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
-            e.preventDefault();
-            $mobileNav.toggleClass('child-open');
-            $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').toggleClass('is-open');
-            $(this).unbind(e);
+            if(!($(this).parents('li').hasClass('is-open'))) {
+              e.preventDefault();
+              $mobileNav.addClass('child-open');
+              $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded').addClass('is-open');
+            }
+          });
+
+          // Close Dropdown
+          $mobileNav.find('.menu--menu-main-menu.block-menu .menu > span.toggle').on('click', function (e) {
+            $mobileNav.find('li.menu-item--expanded.is-open').removeClass('is-open');
+            $mobileNav.removeClass('child-open');
           });
         }
 
@@ -150,8 +159,8 @@
             $('header,.region-header,.region-nav').addClass('header-fixed' +
               ' animated' +
               ' slideInDown');
-            $('.layout-content').css('padding-top', '84px');
-            $('.parallax-mirror').css('top', '84px');
+            $('.layout-content').css('padding-top', '85px');
+            // $('.parallax-mirror').css('top', '85px');
           }
         });
 
