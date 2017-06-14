@@ -91,6 +91,11 @@
       padding: rem(7) rem(20);
     }
 
+    @media all and (max-width: 940px) {
+      font-size: rem(16);
+      padding: rem(7) rem(30);
+    }
+
   }
 
 }
@@ -120,7 +125,8 @@
 
     @media all and (max-width: 940px) {
       margin: 0 auto;
-      width: 45%;
+      min-width: 210px;
+      width: 50%;
     }
 
   }
@@ -223,6 +229,11 @@
 
       @media all and (max-width: 940px) {
 
+        > a {
+          display: inline-block;
+          width: 100%;
+        }
+        
         > .menu {
           opacity: 0;
           background-color: transparent;
