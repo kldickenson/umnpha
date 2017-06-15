@@ -5,6 +5,70 @@
 *
 **/
 
+// Admin Fixes
+// Contextual Regions in the way
+body.user-logged-in {
+
+  #block-searchicon,
+  #block-compro-theme-branding,
+  #block-mainmenu {
+
+    &.contextual-region {
+      position: static;
+    }
+
+  }
+
+  @media all and (max-width: 940px) {
+
+    header .region-nav {
+      top: 124px;
+    }
+
+    header.header-fixed {
+      top: 40px;
+
+      .region-nav {
+        top: 45px;
+      }
+
+    }
+
+  }
+
+}
+
+// Toolbar in the way
+body.toolbar-tray-open {
+
+  header.header-fixed {
+    top: 80px;
+
+    @media all and (max-width: 940px) {
+      top: 40px;
+    }
+
+    #block-googlecse {
+      top: 65px;
+
+      @media all and (max-width: 940px) {
+        top: 180px;
+      }
+
+    }
+
+    .region-nav.child-open #block-googlecse {
+      top: 220px;
+    }
+
+  }
+
+  #block-googlecse {
+    top: 200px;
+  }
+
+}
+
 
 
 // Header

@@ -233,7 +233,7 @@
           display: inline-block;
           width: 100%;
         }
-        
+
         > .menu {
           opacity: 0;
           background-color: transparent;
@@ -242,6 +242,7 @@
           li a {
             display: inline-block;
             width: 100%;
+            transition: unset;
           }
 
         }
@@ -261,6 +262,14 @@
       left: 0;
       transform: translateY(100%);
       transition: max-height, opacity 300ms ease-in-out;
+
+      @media all and (max-width: 940px) {
+        background-color: transparent;
+        opacity: 1;
+        transform: unset;
+        transition: unset;
+      }
+
     }
 
     &.is-open.menu-item--expanded {
@@ -303,9 +312,11 @@
     @media all and (max-width: 1130px) {
       margin: 0 1.5vw 0 0;
     }
+
   }
 
   @media all and (max-width: 940px) {
+
     .toggle {
       border-bottom: 2px solid $um-blue;
       border-right: 2px solid $um-blue;
@@ -316,7 +327,9 @@
         bottom: 35px;
       transform: rotate(-45deg);
     }
+
   }
+
 }
 
 

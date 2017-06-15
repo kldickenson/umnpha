@@ -135,7 +135,7 @@
           if ($('.section-type-testimonial')[0]){
             var $testimonial = $('.section-type-testimonial');
             var $testimonialPosition = $testimonial.position().top;
-            // if want to animate once entire height of div is in window get .outerHeight()
+            // to animate once entire height of div is in window get .outerHeight()
 
             // Animate when section-type enters viewport
             if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
