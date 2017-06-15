@@ -341,6 +341,33 @@ div.warning {
 *   2) Search Page
 *
 **/
+body.user-logged-in #block-searchicon.contextual-region,
+body.user-logged-in #block-compro-theme-branding.contextual-region,
+body.user-logged-in #block-mainmenu.contextual-region {
+  position: static; }
+@media all and (max-width: 940px) {
+  body.user-logged-in header .region-nav {
+    top: 124px; }
+  body.user-logged-in header.header-fixed {
+    top: 40px; }
+    body.user-logged-in header.header-fixed .region-nav {
+      top: 45px; } }
+
+body.toolbar-tray-open header.header-fixed {
+  top: 80px; }
+  @media all and (max-width: 940px) {
+    body.toolbar-tray-open header.header-fixed {
+      top: 40px; } }
+  body.toolbar-tray-open header.header-fixed #block-googlecse {
+    top: 65px; }
+    @media all and (max-width: 940px) {
+      body.toolbar-tray-open header.header-fixed #block-googlecse {
+        top: 180px; } }
+  body.toolbar-tray-open header.header-fixed .region-nav.child-open #block-googlecse {
+    top: 220px; }
+body.toolbar-tray-open #block-googlecse {
+  top: 200px; }
+
 header {
   z-index: 1; }
   header .container {
@@ -812,7 +839,7 @@ header {
         z-index: 2; } }
     .header-fixed .region-nav .block-google-cse {
       min-width: 50%;
-      top: 64px;
+      top: 65px;
       right: 200px; }
       @media all and (max-width: 940px) {
         .header-fixed .region-nav .block-google-cse {
@@ -999,7 +1026,10 @@ footer.footer-wrapper {
       max-height: 0; }
       .menu--menu-main-menu.block-menu li.menu-item--expanded > .menu li a {
         display: inline-block;
-        width: 100%; } }
+        width: 100%;
+        -webkit-transition: unset;
+        -o-transition: unset;
+        transition: unset; } }
   .menu--menu-main-menu.block-menu li > .menu {
     background-color: rgba(250, 250, 250, 0.85);
     max-height: 0;
@@ -1017,6 +1047,16 @@ footer.footer-wrapper {
     -ms-transition: max-height, opacity 300ms ease-in-out;
     -o-transition: max-height, opacity 300ms ease-in-out;
     transition: max-height, opacity 300ms ease-in-out; }
+    @media all and (max-width: 940px) {
+      .menu--menu-main-menu.block-menu li > .menu {
+        background-color: transparent;
+        opacity: 1;
+        -webkit-transform: unset;
+            -ms-transform: unset;
+                transform: unset;
+        -webkit-transition: unset;
+        -o-transition: unset;
+        transition: unset; } }
   .menu--menu-main-menu.block-menu li.is-open.menu-item--expanded > .menu {
     background-color: transparent;
     font-size: 0.9375rem;
