@@ -346,7 +346,7 @@ function compro_custom_download_and_share_content($entity) {
   // Gather some basic defaults.
   $page_title = $entity->get('field_infographic_image')[0]->get('title')
     ->getCastedValue();
-  $caption = $entity->get('field_infographic_caption')->getValue()[0]['value'];
+//  $caption = $entity->get('field_infographic_caption')->getValue()[0]['value'];
 
   // Twitter.
   $twitter_url = _build_url('https://twitter.com/intent/tweet', $file->url(), $page_title);
