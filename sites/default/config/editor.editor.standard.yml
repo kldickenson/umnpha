@@ -54,10 +54,10 @@ settings:
             - Source
             - RemoveFormat
   plugins:
-    language:
-      language_list: un
     stylescombo:
       styles: ''
+    language:
+      language_list: un
     font:
       font_names: ''
       font_sizes: "10px|10\r\n12px|12\r\n14px|14\r\n16px|16\r\n18px|18\r\n20px|20\r\n22px|22"
