@@ -1,0 +1,23 @@
+uuid: 71a20a2f-14ec-4cbe-9f6a-1ab29583a96e
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.leadership_listing
+    - field.field.section_type.leadership_listing.field_leadership_listing_leader
+id: section_type.leadership_listing.default
+targetEntityType: section_type
+bundle: leadership_listing
+mode: default
+content:
+  field_leadership_listing_leader:
+    weight: 0
+    label: hidden
+    settings:
+      link: true
+      view_mode: default
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden:
+  title: true

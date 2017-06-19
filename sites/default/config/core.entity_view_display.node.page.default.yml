@@ -8,8 +8,8 @@ dependencies:
     - field.field.node.page.field_title
     - node.type.page
   module:
+    - background_image_formatter
     - field_group
-    - image
     - user
 third_party_settings:
   field_group:
@@ -37,12 +37,13 @@ bundle: page
 mode: default
 content:
   field_page_hero:
-    type: image
+    type: background_image_formatter
     weight: 2
     label: hidden
     settings:
-      image_link: ''
       image_style: ''
+      background_image_output_type: inline
+      background_image_selector: field--type-image
     third_party_settings: {  }
     region: content
   field_page_sections:

@@ -6,7 +6,6 @@
  */
 
 use Drupal\Core\Entity\Display\EntityDisplayInterface;
-use Drupal\Core\Field\FieldFilteredMarkup;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Link;
 use Drupal\Core\StringTranslation\TranslatableMarkup;
@@ -171,6 +170,17 @@ function compro_custom_entity_extra_field_info() {
     ),
   );
 
+  // Add the share div to the Report content type.
+  $extra['node']['report'] = array(
+    'display' => array(
+      'share' => array(
+        'label' => t('Share'),
+        'description' => t('Share'),
+        'weight' => 0,
+      ),
+    ),
+  );
+
   return $extra;
 }
 
@@ -195,12 +205,17 @@ function compro_custom_node_view(array &$build, EntityInterface $entity, EntityV
   if ($display->getComponent('compro_links')) {
     $build['compro_links'] = $build['links'];
   }
+
+  // Add the share div to the Report content type.
+  if ($display->getComponent('share')) {
+    $build['share'] = compro_custom_share_content($entity);
+  }
 }
 
 /**
  * Implements hook_entity_view().
  */
-function compro_custom_entity_view(array &$build, \Drupal\Core\Entity\EntityInterface $entity, \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display, $view_mode) {
+function compro_custom_entity_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
   if ($display->getComponent('download_and_share')) {
     $build['download_and_share'] = compro_custom_download_and_share_content($entity);
   }
@@ -222,18 +237,19 @@ function compro_custom_entity_view_alter(&$build, EntityInterface $entity, Entit
 /**
  * Implements hook_form_alter().
  */
-function compro_custom_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+function compro_custom_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if ($form_id == 'node_webform_edit_form' || $form_id == 'node_page_edit_form'
-    || $form_id == 'node_webform_form' || $form_id == 'node_page_form') {
+    || $form_id == 'node_webform_form' || $form_id == 'node_page_form'
+    || $form_id == 'node_report_form' || $form_id == 'node_report_edit_form') {
     $form['title']['#access'] = FALSE;
     $form['#validate'][] = 'compro_custom_title_update';
   }
   if ($form_id == 'google_cse_search_box_form') {
     $form['query']['#attributes']['placeholder'] = t('Enter your keywords');
-    $form['#action'] = 'search/cse';
+    $form['#action'] = '/search/cse';
   }
   if ($form_id == 'search_form') {
-    if (!$form['basic']['keys']['#default_value']) {
+    if (!$form['basic']['keys']['#default_value'] && isset($_GET['query'])) {
       $response = new RedirectResponse(Url::fromUserInput('/search/cse',
         array('query' => array('keys' => $_GET['query'])))->toString());
       $response->send();
@@ -257,6 +273,48 @@ function compro_custom_title_update(&$form, FormStateInterface &$form_state) {
   // Update the built-in title with the user-entered title.
   $user_title = $form_state->getValue(array('field_title'));
   $form_state->setValue('title', $user_title);
+}
+
+/**
+ * Build the div with the report share links.
+ */
+function compro_custom_share_content($node) {
+  if (!$node || $node->bundle() != 'report') {
+    return array();
+  }
+
+  // Render the share div.
+  $share_text = '<span class="sidebar-share-text">Share</span>';
+
+  // Gather some basic defaults.
+  $page_url = Url::fromUri('internal:/node/' . $node->id())->setAbsolute()->toString();
+  $page_title = $node->get('title')->value;
+
+  // Twitter.
+  $twitter_url = _build_url('https://twitter.com/intent/tweet', $page_url, $page_title);
+  $twitter_link = Link::fromTextAndUrl(t('Twitter'), $twitter_url);
+
+  // Linkedin.
+  $linkedin_url = _build_url('http://www.linkedin.com/shareArticle', $page_url, $page_title);
+  $linkedin_link = Link::fromTextAndUrl(t('LinkedIn'), $linkedin_url);
+
+  $render = array(
+    '#type' => 'container',
+    '#attributes' => array('class' => array('sidebar-share-wrapper')),
+    'share_text' => array('#markup' => $share_text),
+    'share' => array(
+      '#type' => 'container',
+      '#attributes' => array('class' => array('social', 'share-links')),
+      'twitter' => array(
+        '#markup' => $twitter_link->toString(),
+      ),
+      'linkedin' => array(
+        '#markup' => $linkedin_link->toString(),
+      ),
+    ),
+  );
+
+  return $render;
 }
 
 /**
@@ -288,14 +346,13 @@ function compro_custom_download_and_share_content($entity) {
   // Gather some basic defaults.
   $page_title = $entity->get('field_infographic_image')[0]->get('title')
     ->getCastedValue();
-  $caption = $entity->get('field_infographic_caption')->getValue()[0]['value'];
-  $page_summary = isset($caption) ? substr(strip_tags($caption), 0, 300) . '...' : '';
+//  $caption = $entity->get('field_infographic_caption')->getValue()[0]['value'];
 
   // Twitter.
   $twitter_url = _build_url('https://twitter.com/intent/tweet', $file->url(), $page_title);
   $twitter_link = Link::fromTextAndUrl(t('Twitter'), $twitter_url);
 
-  // Linkedin.
+  // LinkedIn.
   $linkedin_url = _build_url('http://www.linkedin.com/shareArticle', $file->url(), $page_title);
   $linkedin_link = Link::fromTextAndUrl(t('LinkedIn'), $linkedin_url);
 

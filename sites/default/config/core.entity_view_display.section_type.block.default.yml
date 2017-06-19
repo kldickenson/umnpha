@@ -1,0 +1,23 @@
+uuid: b6a4c45e-784f-42d5-b994-03e67befc312
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.block
+    - field.field.section_type.block.field_block_block
+  module:
+    - block_field
+id: section_type.block.default
+targetEntityType: section_type
+bundle: block
+mode: default
+content:
+  field_block_block:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: block_field
+    region: content
+hidden:
+  title: true

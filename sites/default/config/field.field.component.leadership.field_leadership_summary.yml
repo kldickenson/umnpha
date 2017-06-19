@@ -1,0 +1,21 @@
+uuid: 13452b9d-59de-4260-8213-3beca2c35e83
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.component.leadership
+    - field.storage.component.field_leadership_summary
+  module:
+    - text
+id: component.leadership.field_leadership_summary
+field_name: field_leadership_summary
+entity_type: component
+bundle: leadership
+label: Summary
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

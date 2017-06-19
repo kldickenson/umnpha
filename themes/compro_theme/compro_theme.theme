@@ -4,6 +4,8 @@
  * @file
  * Functions to support theming in the compro_theme theme.
  */
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_preprocess_HOOK().
@@ -69,7 +71,15 @@ function compro_theme_theme_suggestions_fieldset_alter(array &$suggestions, arra
  * Implements hook_preprocess_node().
  */
 function compro_theme_preprocess_node(&$variables) {
-
+  if ($variables['elements']['#node']->bundle() == 'report' && $variables['elements']['#view_mode'] == 'teaser') {
+    $variables['content']['links'] = Link::fromTextAndUrl(t('Learn More'), Url::fromUri('internal:/node/' . $variables['elements']['#node']->nid->value))->toRenderable();
+    $variables['content']['links']['#weight'] = 4;
+    $variables['content']['links']['#attributes']['class'] = array('learn-more', 'button');
+  }
+  if ($variables['elements']['#node']->bundle() == 'report' && $variables['elements']['#view_mode'] == 'full') {
+    $variables['#attached']['library'][] = 'compro_theme/sticky-kit';
+    $variables['content']['field_report_report']['#title'] = 'Read the full report';
+  }
 }
 
 /**
@@ -140,6 +150,13 @@ function compro_theme_preprocess_eck_entity(&$variables) {
       'entity-component',
       str_replace('_', '-', $variables['entity']['#component']->bundle()),
     );
+  }
+
+  if (isset($variables['entity']['#section_type'])
+    && $variables['entity']['#section_type']->bundle() == 'section_type_longtext') {
+    if ($variables['entity']['#section_type']->hasField('longtext_top_border') && $variables['entity']['#section_type']->get('longtext_top_border')->value == 1) {
+      $variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['add-border']);
+    }
   }
 }
 

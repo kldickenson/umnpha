@@ -6,5 +6,5 @@ _core:
   default_config_hash: SmcjNBxZx1nWiJlEB_-uBF7E1bSSmGIqlYFhjXR5Ni8
 name: Passthrough
 format: passthrough
-weight: 0
+weight: -8
 filters: {  }

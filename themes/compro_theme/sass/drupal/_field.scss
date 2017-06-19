@@ -80,6 +80,39 @@
 
 }
 
+.node--type-report .group-sidebar {
+
+  //> .field {
+  //  margin: 0 0 20px 0;
+  //}
+
+  .field--name-field-report-volume-issue {
+
+    .field__label,
+    .field__item {
+      display: inline-block;
+
+      @media all and (max-width: 660px) {
+        display: block;
+      }
+    }
+  }
+}
+
+.node--type-report .field--name-field-title {
+  color: $blue-zodiac;
+  font-family: $heading-font-family;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 auto 20px;
+  max-width: 980px;
+  padding: 0 20px;
+
+  @media all and (max-width: 500px) {
+    padding: 0;
+  }
+}
+
 
 
 
@@ -427,7 +460,7 @@
   right: 0;
   text-transform: uppercase;
   transform: translateY(-100%);
-  z-index: 99;
+  z-index: 0;
 
   .share-links {
     display: inline-block;
@@ -473,6 +506,8 @@
 }
 
 .field--name-field-infographic-caption {
-  font-family: 'Lora';
-  font-size: rem(12);
+  padding-top: 10px;
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-size: rem(13);
 }

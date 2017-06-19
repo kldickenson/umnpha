@@ -13,7 +13,7 @@
         }
       });
 
-
+      // Global variables
       var $body = $('body');
       var $mobileNav = $('.region-nav');
       var $hamburger = $('.hamburger');
@@ -26,130 +26,150 @@
         e.preventDefault();
       });
 
+      // Search field desktop
+      $search_icon.on('click', function (e) {
+        $(this).addClass('is-open');
+        $(this).siblings('.block-google-cse').toggleClass('is-open');
+        $('#edit-query').focus();
+      });
 
-      //Mobile Menu
-      if($(window).width() <= 950) {
+      /* Split js into other files depending on whether or not it loads on one
+      page or specific page. */
+      // Wrap sibling elements for node report sidebar layout
+      $(".group-report-content").next(".group-sidebar").andSelf().wrapAll("<div class='node--type-report-container' />");
 
-        var animationMenu = "animated slideInDown";
-        var animationEnd = 'webkitTransitionEnd otransitionend' +
-          ' oTransitionEnd msTransitionEnd transitionend';
 
-        $hamburger.on('click', function(e) {
-          $(this).toggleClass('is-open');
-          $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd),
-                function(e) {
-              this.removeClass(animationMenu);
-            };
-          $mobileNav.find('.menu >' +
-            ' li,.menu--menu-main-menu,#block-emailsignup,.block-system-branding-block').toggleClass('is-open');
-        })
+      // Hero images
+      // Animate page title on page load
+      if ($body.hasClass('node--type-page')) {
+        $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
       }
 
+      /* PARALLAX CODE MISSING - This code is maybe still necessary, parallax plugin cannot recalculate adjusted
+      header height. Looking into plugin that will do this.
+       */
 
-      //Scroll Triggered Slide-Ins
-      $(window).scroll(function() {
+      // Mobile only
+        //Mobile Menu
+        if($(window).width() <= 950) {
 
-        //get viewport size, set top of page to variable
-        var $scrollTop = $(document).scrollTop();
-        var $viewportHeight = $(window).height();
-        var $sponsors = $('.section-type-sponsors');
+          var animationMenu = "animated slideInDown";
+          var animationEnd = 'webkitTransitionEnd otransitionend' +
+            ' oTransitionEnd msTransitionEnd transitionend';
 
+          // Show menu
+          $hamburger.on('click', function(e) {
+            $(this).toggleClass('is-open');
+            $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd,
+                  function(e) {
+                $(this).removeClass(animationMenu);
+              }
+            );
+          });
 
-      ////add animate classes
-        // if ($($sponsors)[0]) {
-        //   $sponsors.find('.field--name-field-sponsors-primary__label,.field--name-field-sponsors-secondary-label,.component-sponsor').addClass('animate-on-view');
-        // }
-        //
-        // //get positions of all elements that will be animated on viewport entry
-        // var $elements = $('.animate-on-view');
-        // var $elPositions = [];
-        //
-        // $.each($elements, function (index, element) {
-        //   var elPosition = $(element).position();
-        //
-        //   $elPositions.push(elPosition);
-        //   console.log(index + ": " + elPosition + "  top: " + elPosition.top)
-        // })
-        //   console.log('elements: ', $elements);
-        //   console.log('elPositions properties:  ' + Object.entries($elPositions));
+          // Add class for dropdown
+          $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
+            if(!($(this).parents('li').hasClass('is-open'))) {
+              e.preventDefault();
+              $mobileNav.addClass('child-open');
+              $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded').addClass('is-open');
+            }
+          });
 
-
-        var $sponsorPrimaryLabelPos = $sponsors.find('.field--name-field-sponsors-primary__label').position().top;
-        var $sponsorSecondaryLabelPos = $sponsors.find('.field--name-field-sponsors-secondary-label').position().top;
-        var $sponsorPrimaryImagePos = $sponsors.find('.field--name-field-sponsors-primary-sponsors').position().top;
-        var $sponsorFirstSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').position().top;
-        var $sponsorSecondSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').position().top;
-        var $sponsorHeight = $sponsors.outerHeight();
-
-        //Animate when relevant div enters viewport
-        if(($sponsorPrimaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-primary__label').addClass('animated slideInRight');
-        };
-
-        if(($sponsorSecondaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-secondary-label').addClass('animated slideInRight');
-        };
-
-        if(($sponsorPrimaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-primary-sponsors').addClass('animated slideInRight');
-        };
-
-        if(($sponsorFirstSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').addClass('animated slideInRight');
-        };
-
-        if(($sponsorSecondSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
-          $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').addClass('animated slideInRight');
-        };
-
-
-        //get variables for Testimonial sections
-        if ($('.section-type-testimonial')[0]){
-          var $testimonial = $('.section-type-testimonial');
-          var $testimonialPosition = $testimonial.position().top;
-          var $testimonialHeight = $testimonial.outerHeight();
-
-          // Animate when section-type enters viewport
-          if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
-            $testimonial.find('.testimonial-image').addClass('animated ' +
-              'slideInRight')
-            $testimonial.find('.field--name-field-testimonial-quote').addClass('animated ' +
-              'slideInRight').delay(1000);
-            $testimonial.find('.field--name-field-testimonial-author').addClass('animated ' +
-              'slideInRight').delay(1500);
-            $testimonial.find('.field--name-field-testimonial-credentials').addClass('animated ' +
-              'slideInRight').delay(2000);
-          };
-        };
-      });
-
-
-      //Hero Page Title
-
-        //Animate on page load
-        if ($body.hasClass('node--type-page')) {
-          $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
-        };
-
-        //Parallax on image
-        if ($body.hasClass('node--type-page')) {
-          var imageUrl = $body.find('.field-group-page-hero >' +
-            ' .field--name-field-page-hero > img').prop('src');
-          $('.field-group-page-hero .field--name-field-page-hero img').parallax({imageSrc: imageUrl, position: '0 -800%'});
+          // Close Dropdown
+          $mobileNav.find('.menu--menu-main-menu.block-menu .menu > span.toggle').on('click', function (e) {
+            $mobileNav.find('li.menu-item--expanded.is-open').removeClass('is-open');
+            $mobileNav.removeClass('child-open');
+          });
         }
 
-      //Sticky Nav
-      $(window).scroll(function() {
-        var position = $(window).scrollTop();
+        // Move items for mobile menu
+        if($(window).width() <= 950) {
+          var $email = $('.block-email-sign-up');
+          var $search = $('.block-google-cse');
 
-        // Header fix.
-        if (position > 0) {
-          $('header,.region-header,.region-nav').addClass('header-fixed' +
-            ' animated' +
-            ' slideInDown');
-          $('.layout-content').css('padding-top', '95px');
+          $mobileNav.append($email);
+          $mobileNav.append($search);
         }
-      });
+
+        // Move learn more to teaser group
+        $('.group-report-teaser-text').append($('.learn-more'));
+
+      // Scroll Triggered Events
+      //   Slide ins when in viewport   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,
+        $(window).scroll(function(e) {
+
+          //get viewport size, set top of page
+          var $scrollTop = $(document).scrollTop();
+          var $viewportHeight = $(window).height();
+
+          // Sponsors Section Animation
+          if ($('.section-type-sponsors')[0]) {
+            var $sponsors = $('.section-type-sponsors');
+            var $sponsorPrimaryLabelPos = $sponsors.find('.field--name-field-sponsors-primary__label').position().top;
+            var $sponsorSecondaryLabelPos = $sponsors.find('.field--name-field-sponsors-secondary-label').position().top;
+            var $sponsorPrimaryImagePos = $sponsors.find('.field--name-field-sponsors-primary-sponsors').position().top;
+            var $sponsorFirstSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').position().top;
+            var $sponsorSecondSecondaryImagePos = $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').position().top;
+            // if want to animate once entire height of div is in window get .outerHeight()
+
+            //Animate on viewport entry --> REFACTOR INTO LOOP!
+            if(($sponsorPrimaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
+              $sponsors.find('.field--name-field-sponsors-primary__label').addClass('animated slideInRight');
+            }
+            if(($sponsorSecondaryLabelPos) <= ($scrollTop + $viewportHeight + 80)) {
+              $sponsors.find('.field--name-field-sponsors-secondary-label').addClass('animated slideInRight');
+            }
+            if(($sponsorPrimaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
+              $sponsors.find('.field--name-field-sponsors-primary-sponsors').addClass('animated slideInRight');
+            }
+            if(($sponsorFirstSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
+              $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':first').addClass('animated slideInRight');
+            }
+            if(($sponsorSecondSecondaryImagePos) <= ($scrollTop + $viewportHeight + 80)) {
+              $sponsors.find('.field--name-field-sponsors-secondary-sponsor').filter(':nth-child(2)').addClass('animated slideInRight');
+            }
+          }
+
+          // Testimonial Section animation
+          if ($('.section-type-testimonial')[0]){
+            var $testimonial = $('.section-type-testimonial');
+            var $testimonialPosition = $testimonial.position().top;
+            // to animate once entire height of div is in window get .outerHeight()
+
+            // Animate when section-type enters viewport
+            if ($testimonialPosition <= ($scrollTop + $viewportHeight + 80)) {
+              $testimonial.find('.testimonial-image').addClass('animated ' +
+                'slideInRight');
+              $testimonial.find('.field--name-field-testimonial-quote').addClass('animated ' +
+                'slideInRight').delay(1000);
+              $testimonial.find('.field--name-field-testimonial-author').addClass('animated ' +
+                'slideInRight').delay(1500);
+              $testimonial.find('.field--name-field-testimonial-credentials').addClass('animated ' +
+                'slideInRight').delay(2000);
+            }
+          }
+        });
+
+        // Sticky Nav
+        $(window).scroll(function(e) {
+          var position = $(window).scrollTop();
+          // Fix Header
+          if (position > 0) {
+            $('header,.region-header,.region-nav').addClass('header-fixed' +
+              ' animated' +
+              ' slideInDown');
+            $('.layout-content').css('padding-top', '85px');
+            // $('.parallax-mirror').css('top', '85px');
+          }
+        });
+
+        // Sticky Side bar
+        if($(window).width() > 660 && $('.group-sidebar')[0]) {
+          $(window).scroll(function(e) {
+            $('.group-sidebar').stick_in_parent({offset_top: 100});
+          });
+        }
     }
   };
 })(jQuery, Drupal);

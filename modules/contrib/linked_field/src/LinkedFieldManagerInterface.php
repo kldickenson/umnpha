@@ -2,11 +2,13 @@
 
 namespace Drupal\linked_field;
 
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 
 /**
- * Interface LinkedFieldManagerInterface
+ * Interface LinkedFieldManagerInterface.
+ *
  * @package Drupal\linked_field
  */
 interface LinkedFieldManagerInterface {
@@ -43,6 +45,8 @@ interface LinkedFieldManagerInterface {
   /**
    * Get Linked Field display settings for a given entity.
    *
+   * @deprecated No longer used by internal code and not recommended.
+   *
    * @param \Drupal\Core\Entity\EntityInterface $entity
    *   The entity being viewed.
    * @param string $view_mode
@@ -53,6 +57,18 @@ interface LinkedFieldManagerInterface {
    * @return array
    */
   public function getDisplaySettings(EntityInterface $entity, $view_mode, $field_name);
+
+  /**
+   * Get display settings for a given field.
+   *
+   * @param \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display
+   *   The entity view display.
+   * @param string $field_name
+   *   The field name.
+   *
+   * @return array
+   */
+  public function getFieldDisplaySettings(EntityViewDisplayInterface $display, $field_name);
 
   /**
    * Get the destination for a set field or custom text.
@@ -125,4 +141,5 @@ interface LinkedFieldManagerInterface {
    * @return string
    */
   public function linkHtml($html, $attributes);
+
 }

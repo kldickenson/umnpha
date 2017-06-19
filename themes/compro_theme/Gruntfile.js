@@ -1,4 +1,5 @@
 
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
@@ -8,7 +9,7 @@ module.exports = function(grunt) {
 
       css: {
         files: ['sass/**/*.scss'],
-        tasks: ['sass']
+        tasks: ['sass', 'postcss']
       },
 
       templates: {
@@ -25,7 +26,10 @@ module.exports = function(grunt) {
           src: ['**/*.scss'],
           dest: 'css/',
           ext: '.css'
-        }]
+        }],
+        options: {
+          sourcemap: 'auto'
+        }
       }
     },
 
@@ -47,6 +51,19 @@ module.exports = function(grunt) {
       cc_theme_registry: {
         args: ['cc', 'theme-registry']
       }
+    },
+
+    postcss: {
+      options: {
+        map: true, // inline sourcemaps
+
+        processors: [
+          require('autoprefixer') // add vendor prefixes
+        ]
+      },
+      dist: {
+        src: 'css/*.css'
+      }
     }
 
   });
@@ -55,6 +72,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-drush');
+  grunt.loadNpmTasks('grunt-postcss');
 
   grunt.registerTask('default', ['browserSync', 'watch']);
 

@@ -1,0 +1,96 @@
+uuid: a2b01019-0464-43f8-9de0-744995a25c23
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.report.field_report_contributers
+    - field.field.node.report.field_report_featured_image
+    - field.field.node.report.field_report_featured_report
+    - field.field.node.report.field_report_news_source
+    - field.field.node.report.field_report_published_date
+    - field.field.node.report.field_report_report
+    - field.field.node.report.field_report_sections
+    - field.field.node.report.field_report_summary
+    - field.field.node.report.field_report_tags
+    - field.field.node.report.field_report_volume_issue
+    - field.field.node.report.field_title
+    - field.field.node.report.report_button_color
+    - field.field.node.report.report_button_text_color
+    - field.field.node.report.report_download_background_color
+    - image.style.340xn
+    - node.type.report
+  module:
+    - field_group
+    - image
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_report_teaser_text:
+      children:
+        - field_title
+        - field_report_summary
+        - links
+      parent_name: ''
+      weight: 2
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: group-report-teaser-text
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: Text
+id: node.report.teaser
+targetEntityType: node
+bundle: report
+mode: teaser
+content:
+  field_report_featured_image:
+    type: image
+    weight: 0
+    region: content
+    label: hidden
+    settings:
+      image_style: 340xn
+      image_link: content
+    third_party_settings: {  }
+  field_report_summary:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  field_title:
+    type: string
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+  links:
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  compro_links: true
+  compro_submitted: true
+  field_report_contributers: true
+  field_report_featured_report: true
+  field_report_news_source: true
+  field_report_published_date: true
+  field_report_report: true
+  field_report_sections: true
+  field_report_tags: true
+  field_report_volume_issue: true
+  report_button_color: true
+  report_button_text_color: true
+  report_download_background_color: true
+  share: true

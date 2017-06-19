@@ -9,6 +9,7 @@ template: false
 id: email_sign_up
 title: 'Email Sign Up'
 description: ''
+category: ''
 elements: "first_name:\n  '#type': textfield\n  '#title': 'First Name'\nlast_name:\n  '#type': textfield\n  '#title': 'Last Name'\nemail:\n  '#type': email\n  '#title': 'Email Address'\n"
 css: ''
 javascript: ''

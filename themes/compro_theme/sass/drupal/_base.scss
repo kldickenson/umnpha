@@ -1,8 +1,8 @@
 // Imports all Drupal specific files
+@import "page";
+@import "node";
+@import "region";
 @import "block";
 @import "entity";
-@import "node";
-@import "page";
-@import "region";
 @import "view";
 @import "field";

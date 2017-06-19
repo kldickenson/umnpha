@@ -1,0 +1,20 @@
+uuid: 26232e5b-2311-4d67-9b1d-71f6a4cb5097
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - node
+id: node.field_report_sections
+field_name: field_report_sections
+entity_type: node
+type: entity_reference
+settings:
+  target_type: section_type
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

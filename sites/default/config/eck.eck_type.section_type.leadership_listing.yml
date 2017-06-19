@@ -1,0 +1,9 @@
+uuid: a450f081-8129-4af2-bcd7-57688a4500a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: 'Mini Bio Listing'
+type: leadership_listing
+description: 'Add many mini bios to a piece of content'

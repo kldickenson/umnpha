@@ -1,0 +1,8 @@
+uuid: 4450ec52-74ac-4326-b9ed-c66ee95b2d7d
+langcode: en
+status: true
+dependencies: {  }
+id: f_j_y
+label: 'F j, Y'
+locked: false
+pattern: 'F j, Y'

@@ -1,0 +1,19 @@
+uuid: 34cc48bd-6183-4c35-88e7-c5fe8c032742
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - telephone
+id: component.field_leadership_phone
+field_name: field_leadership_phone
+entity_type: component
+type: telephone
+settings: {  }
+module: telephone
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

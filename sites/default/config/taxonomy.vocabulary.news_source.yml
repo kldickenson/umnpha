@@ -1,0 +1,9 @@
+uuid: 894adbbe-7062-45a7-9e47-b24efffea6bd
+langcode: en
+status: true
+dependencies: {  }
+name: 'News Source'
+vid: news_source
+description: 'The different publications that a report might be featured in.'
+hierarchy: 0
+weight: 0
