@@ -46,18 +46,10 @@
 
 
 
-/*
-*
-* Sponsors
-*
-**/
+// Sponsors
 .section-type-sponsors {
   border-top: 1px solid $medium-gray;
   padding: 40px 20px 60px;
-
-  @media screen and(max-width: 1170px) {
-    padding: 40px 0 60px;
-  }
 
   @media screen and(max-width: 940px) {
     padding: 30px 2rem 25px 2rem;
