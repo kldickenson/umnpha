@@ -1496,6 +1496,9 @@ a[href].learn-more.button {
 /*
 *   #FIELDS
 **/
+.field--type-image {
+  line-height: 0; }
+
 /*Featured Report*/
 .field--name-field-featured-report-image {
   height: 100%;
