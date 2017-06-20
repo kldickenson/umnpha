@@ -145,6 +145,12 @@
       height: 40px;
       margin: 0;
       padding: 0 rem(20);
+
+      @media all and (max-width: 940px) {
+        background-color: #fff !important;
+        border: 1px solid #ccc;
+      }
+      
     }
 
     label[for=edit-query] {

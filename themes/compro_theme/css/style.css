@@ -1011,6 +1011,10 @@ footer.footer-wrapper {
     height: 40px;
     margin: 0;
     padding: 0 1.25rem; }
+    @media all and (max-width: 940px) {
+      .block-google-cse .form-item .form-text {
+        background-color: #fff !important;
+        border: 1px solid #ccc; } }
   .block-google-cse .form-item label[for=edit-query] {
     display: none; }
 .block-google-cse input.form-submit {
@@ -1303,17 +1307,9 @@ a[href].learn-more.button {
         padding: 25px 20px;
         width: 100%; } }
 
-/*
-*
-* Sponsors
-*
-**/
 .section-type-sponsors {
   border-top: 1px solid #969696;
   padding: 40px 20px 60px; }
-  @media screen and (max-width: 1170px) {
-    .section-type-sponsors {
-      padding: 40px 0 60px; } }
   @media screen and (max-width: 940px) {
     .section-type-sponsors {
       padding: 30px 2rem 25px 2rem; } }
