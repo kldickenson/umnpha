@@ -26,7 +26,17 @@
 
   }
 
+  // Flexbug workaround for Safari, flex added to featured-report-image, this field, child img needs height: auto
+  display: flex;
+  height: auto;
+
+  img {
+    height: auto;
+  }
+
 }
+
+
 
 .field--name-field-featured-report-title {
   font-size: rem(40);
