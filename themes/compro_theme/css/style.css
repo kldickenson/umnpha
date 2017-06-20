@@ -1289,6 +1289,10 @@ a[href].learn-more.button {
   max-height: 500px;
   width: 100%; }
   .section-type-featured-report .featured-report-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: auto;
     width: 45%; }
   .section-type-featured-report .featured-report-text {
     padding: 0 10% 4% 0;
@@ -1558,7 +1562,11 @@ a[href].learn-more.button {
 .field--name-field-featured-report-image {
   height: 100%;
   line-height: 0px;
-  width: 100%; }
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto; }
   .field--name-field-featured-report-image img {
     height: 100%;
     line-height: 0px;
@@ -1569,6 +1577,8 @@ a[href].learn-more.button {
       .field--name-field-featured-report-image img {
         -o-object-fit: cover;
            object-fit: cover; } }
+  .field--name-field-featured-report-image img {
+    height: auto; }
 
 .field--name-field-featured-report-title {
   font-size: 2.5rem;
