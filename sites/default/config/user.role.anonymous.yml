@@ -12,7 +12,6 @@ permissions:
   - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
-  - 'never autoplay videos'
   - 'search Google CSE'
   - 'search content'
   - 'view any component entities'
