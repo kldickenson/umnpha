@@ -237,7 +237,6 @@
 
         > a {
           display: inline-block;
-          width: 100%;
         }
 
         > .menu {
@@ -289,7 +288,7 @@
       }
 
       + .toggle {
-        transform: rotate(45deg);
+        transform: rotate(-135deg);
         z-index: 200;
       }
 
@@ -327,11 +326,16 @@
       border-bottom: 2px solid $um-blue;
       border-right: 2px solid $um-blue;
       content: '';
-      padding: 4px;
+      padding: 6px;
       position: absolute;
-        right: 20%;
+        left: 60%;
         bottom: 35px;
-      transform: rotate(-45deg);
+      transform: rotate(45deg);
+
+      @media all and (max-width: 490px) {
+        left: 65%;
+      }
+
     }
 
   }
