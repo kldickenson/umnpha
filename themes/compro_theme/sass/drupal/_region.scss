@@ -100,7 +100,7 @@
     z-index: -1;
 
     /*States*/
-    &.is-open {
+    &.nav-open {
       opacity: 1;
       transform: unset;
       z-index: 2;
@@ -132,7 +132,7 @@
   }
 
   /*States*/
-  &.is-open {
+  &.nav-open {
     .block-email-sign-up,
     .block-google-cse,
     .menu--menu-main-menu {
@@ -144,11 +144,14 @@
   &.child-open {
 
     .block-email-sign-up {
-      top: 300px;
+      bottom: 15px;
+      top: unset;
+      position: absolute;
     }
 
     .block-google-cse {
-      top: 240px;
+      bottom: 65px;
+      top: unset;
     }
 
   }
