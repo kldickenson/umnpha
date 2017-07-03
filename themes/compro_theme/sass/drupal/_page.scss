@@ -118,12 +118,12 @@ header {
       width: 100vw;
     }
 
-    &.is-open {
+    &.nav-open {
       display: block;
     }
 
     &.child-open {
-      height: 375px;
+      height: 440px; /*TODO: would really like to remove this height so that the div auto fits however many sub-nav items get added*/
     }
 
   }

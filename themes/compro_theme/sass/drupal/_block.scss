@@ -32,7 +32,7 @@
     padding-top: 10px;
   }
 
-  &.is-open {
+  &.nav-open {
     left: 20px;
     max-width: 83%;
     position: relative;
@@ -52,7 +52,7 @@
     transition: 0.25s ease-in-out;
   }
 
-  &.is-open {
+  &.nav-open {
 
     .hamburger-inner::before {
       color: $um-blue;
@@ -215,6 +215,10 @@
       color: $blue;
     }
 
+    &.menu-item--active-trail > ul a {
+      color: $um-blue;
+    }
+
     &.menu-item--expanded {
 
       &:hover {
@@ -234,10 +238,20 @@
 
       }
 
+      &.child-open {
+
+        > .menu {
+          max-height: 400px;
+          opacity: 1;
+        }
+
+      }
+
       @media all and (max-width: 940px) {
 
         > a {
           display: inline-block;
+          z-index: 2;
         }
 
         > .menu {
@@ -290,17 +304,22 @@
       transition: max-height, opacity 300ms ease-in-out;
 
       @media all and (max-width: 940px) {
+        box-shadow: unset;
         background-color: transparent;
+        left: 0;
         opacity: 1;
+        top: 0;
         transform: unset;
         transition: unset;
       }
 
     }
 
-    &.is-open.menu-item--expanded {
+    &.child-open {
 
       > .menu {
+        @include margin(30px null null null);
+        @include padding(0px null 15px null);
         background-color: transparent;
         font-size: rem(15);
         max-height: none;
@@ -323,7 +342,7 @@
 
     }
 
-    .region-nav.is-open & {
+    .region-nav.nav-open & {
       display: inline-block;
       margin: 0 0 20px 0;
       padding: 0;
