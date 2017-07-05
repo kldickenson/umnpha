@@ -22,7 +22,7 @@
       );
     });
 
-    // Close menu on clicks outside of menu
+    // Close menu on clicks outside of menu /*TODO: close menu on clicks outside of menu*/
 
     
     // Close/Open Dropdown

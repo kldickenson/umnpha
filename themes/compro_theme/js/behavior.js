@@ -136,6 +136,7 @@
           var position = $(window).scrollTop();
           // Fix Header
           if (position > 0) {
+            console.log('scrollin');
             $('header,.region-header,.region-nav').addClass('header-fixed' +
               ' animated' +
               ' slideInDown');
