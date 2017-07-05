@@ -283,6 +283,11 @@
         &:hover {
           background-color: #ccf5ff;
           color: $blue;
+
+          @media all and (max-width: 950px) {
+            background-color: unset;
+          }
+
         }
 
       }

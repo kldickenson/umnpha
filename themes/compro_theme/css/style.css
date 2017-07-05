@@ -1100,6 +1100,9 @@ footer.footer-wrapper {
     .menu--menu-main-menu.block-menu li.menu-item--expanded li:hover {
       background-color: #ccf5ff;
       color: #0c57aa; }
+      @media all and (max-width: 950px) {
+        .menu--menu-main-menu.block-menu li.menu-item--expanded li:hover {
+          background-color: unset; } }
   .menu--menu-main-menu.block-menu li > .menu {
     background-color: white;
     -webkit-box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.25);
