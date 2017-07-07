@@ -20,8 +20,21 @@
   color: white;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 4rem;
   max-height: 500px;
   width: 100%;
+
+  @media all and (max-width: 1275px) {
+    max-height: 550px;
+  }
+
+  @media all and (max-width: 1085px) {
+    max-height: 600px;
+  }
+
+  @media all and (max-width: 1000px) {
+    max-height: 650px;
+  }
 
   .featured-report-image {
     display: flex;

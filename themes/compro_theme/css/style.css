@@ -692,7 +692,7 @@ header {
   display: inline-block;
   font-size: 0.875rem;
   float: left;
-  margin: 50px 0 0 0;
+  margin: 95px 0 0 30px;
   width: 170px; }
   .node--type-report .group-sidebar:after {
     content: '';
@@ -779,6 +779,9 @@ header {
 
 .node--type-report .group-sidebar > .field:last-child {
   margin-bottom: 40px; }
+
+.region-content {
+  overflow: hidden; }
 
 /*
 *   #REGION - General positioning of blocks within regions
@@ -1318,8 +1321,18 @@ a[href].learn-more.button {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 4rem;
   max-height: 500px;
   width: 100%; }
+  @media all and (max-width: 1275px) {
+    .section-type-featured-report {
+      max-height: 550px; } }
+  @media all and (max-width: 1085px) {
+    .section-type-featured-report {
+      max-height: 600px; } }
+  @media all and (max-width: 1000px) {
+    .section-type-featured-report {
+      max-height: 650px; } }
   .section-type-featured-report .featured-report-image {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1673,7 +1686,7 @@ a[href].learn-more.button {
   padding: 0 20px; }
   @media all and (max-width: 500px) {
     .node--type-report .field--name-field-title {
-      padding: 0; } }
+      padding: 0 20px; } }
 
 /*Sponsors*/
 .field-group-sponsors-primary {

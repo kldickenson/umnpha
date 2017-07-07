@@ -13,7 +13,7 @@
         }
       });
 
-      // Global variables /*TODO: 1 top-level variable 'var $body', move the rest to their relevant sections*/
+      // Global variables
       var $body = $('body');
       var $mobileNav = $('.region-nav');
       var $hamburger = $('.hamburger');
@@ -21,7 +21,6 @@
 
       // Resizing Event
       var resizeTimer;
-      var windowWidth;
 
       $(window).on('resize', function(e) {
 
@@ -70,6 +69,48 @@
       TODO: See if I can fix the parallax issue modifying this pen http://www.minimit.com/demos/parallax-backgrounds-with-centered-content
        */
 
+      // Mobile only
+      // Show Menu
+      $hamburger.on('click', function(e) {
+        console.log('clicked');
+        $(this).toggleClass('is-open');
+        $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd,
+          function(e) {
+            $(this).removeClass(animationMenu);
+          }
+        );
+      });
+
+      // Close/Open Dropdown
+      if($(window).width() <= 950) {
+        var animationMenu = "animated slideInDown";
+        var animationEnd = 'webkitTransitionEnd otransitionend' +
+          ' oTransitionEnd msTransitionEnd transitionend';
+
+        // Add class for dropdown
+        $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
+          if(!($(this).parents('li').hasClass('is-open'))) {
+            e.preventDefault();
+            $mobileNav.addClass('child-open');
+            $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded').addClass('is-open');
+          }
+        });
+
+        // Close Dropdown
+        $mobileNav.find('.menu--menu-main-menu.block-menu .menu > span.toggle').on('click', function (e) {
+          $mobileNav.find('li.menu-item--expanded.is-open').removeClass('is-open');
+          $mobileNav.removeClass('child-open');
+        });
+      }
+
+      // Move items for mobile menu
+      if($(window).width() <= 950) {
+        var $email = $('.block-email-sign-up');
+        var $search = $('.block-google-cse');
+
+        $mobileNav.append($email);
+        $mobileNav.append($search);
+      } /*FIXME: Find best spot to do this *before* it gets to DOM*/
 
       // Move learn more to teaser group
       $('.group-report-teaser-text').append($('.learn-more')); /*FIXME: Find best spot to do this *before* it gets to DOM, unless it's already done??*/
@@ -136,7 +177,6 @@
           var position = $(window).scrollTop();
           // Fix Header
           if (position > 0) {
-            console.log('scrollin');
             $('header,.region-header,.region-nav').addClass('header-fixed' +
               ' animated' +
               ' slideInDown');
