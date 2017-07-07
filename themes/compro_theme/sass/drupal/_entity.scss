@@ -20,10 +20,25 @@
   color: white;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 4rem;
   max-height: 500px;
   width: 100%;
 
+  @media all and (max-width: 1275px) {
+    max-height: 550px;
+  }
+
+  @media all and (max-width: 1085px) {
+    max-height: 600px;
+  }
+
+  @media all and (max-width: 1000px) {
+    max-height: 650px;
+  }
+
   .featured-report-image {
+    display: flex;
+    height: auto;
     width: 45%;
   }
 
@@ -53,18 +68,10 @@
 
 
 
-/*
-*
-* Sponsors
-*
-**/
+// Sponsors
 .section-type-sponsors {
   border-top: 1px solid $medium-gray;
   padding: 40px 20px 60px;
-
-  @media screen and(max-width: 1170px) {
-    padding: 40px 0 60px;
-  }
 
   @media screen and(max-width: 940px) {
     padding: 30px 2rem 25px 2rem;

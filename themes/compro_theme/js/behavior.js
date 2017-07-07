@@ -19,6 +19,25 @@
       var $hamburger = $('.hamburger');
       var $search_icon = $('#block-searchicon');
 
+      // Resizing Event
+      var resizeTimer;
+
+      $(window).on('resize', function(e) {
+
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+
+          if($(window).width() <= 920) {
+            $body.removeClass('desktop-layout');
+            $body.addClass('mobile-layout');
+          } else if($(window).width() >= 920) {
+            $body.removeClass('mobile-layout');
+            $body.addClass('desktop-layout');
+          }
+
+        }, 250);
+      });
+
 
       // Sliding panel
       $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
@@ -37,7 +56,7 @@
       page or specific page. */
       // Wrap sibling elements for node report sidebar layout
       $(".group-report-content").next(".group-sidebar").andSelf().wrapAll("<div class='node--type-report-container' />");
-
+      /*FIXME: Find best place to put this wrapping *before* it gets to DOM*/
 
       // Hero images
       // Animate page title on page load
@@ -47,56 +66,58 @@
 
       /* PARALLAX CODE MISSING - This code is maybe still necessary, parallax plugin cannot recalculate adjusted
       header height. Looking into plugin that will do this.
+      TODO: See if I can fix the parallax issue modifying this pen http://www.minimit.com/demos/parallax-backgrounds-with-centered-content
        */
 
       // Mobile only
-        //Mobile Menu
-        if($(window).width() <= 950) {
+      // Show Menu
+      $hamburger.on('click', function(e) {
+        console.log('clicked');
+        $(this).toggleClass('is-open');
+        $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd,
+          function(e) {
+            $(this).removeClass(animationMenu);
+          }
+        );
+      });
 
-          var animationMenu = "animated slideInDown";
-          var animationEnd = 'webkitTransitionEnd otransitionend' +
-            ' oTransitionEnd msTransitionEnd transitionend';
+      // Close/Open Dropdown
+      if($(window).width() <= 950) {
+        var animationMenu = "animated slideInDown";
+        var animationEnd = 'webkitTransitionEnd otransitionend' +
+          ' oTransitionEnd msTransitionEnd transitionend';
 
-          // Show menu
-          $hamburger.on('click', function(e) {
-            $(this).toggleClass('is-open');
-            $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd,
-                  function(e) {
-                $(this).removeClass(animationMenu);
-              }
-            );
-          });
+        // Add class for dropdown
+        $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
+          if(!($(this).parents('li').hasClass('is-open'))) {
+            e.preventDefault();
+            $mobileNav.addClass('child-open');
+            $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded').addClass('is-open');
+          }
+        });
 
-          // Add class for dropdown
-          $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
-            if(!($(this).parents('li').hasClass('is-open'))) {
-              e.preventDefault();
-              $mobileNav.addClass('child-open');
-              $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded').addClass('is-open');
-            }
-          });
+        // Close Dropdown
+        $mobileNav.find('.menu--menu-main-menu.block-menu .menu > span.toggle').on('click', function (e) {
+          $mobileNav.find('li.menu-item--expanded.is-open').removeClass('is-open');
+          $mobileNav.removeClass('child-open');
+        });
+      }
 
-          // Close Dropdown
-          $mobileNav.find('.menu--menu-main-menu.block-menu .menu > span.toggle').on('click', function (e) {
-            $mobileNav.find('li.menu-item--expanded.is-open').removeClass('is-open');
-            $mobileNav.removeClass('child-open');
-          });
-        }
+      // Move items for mobile menu
+      if($(window).width() <= 950) {
+        var $email = $('.block-email-sign-up');
+        var $search = $('.block-google-cse');
 
-        // Move items for mobile menu
-        if($(window).width() <= 950) {
-          var $email = $('.block-email-sign-up');
-          var $search = $('.block-google-cse');
+        $mobileNav.append($email);
+        $mobileNav.append($search);
+      } /*FIXME: Find best spot to do this *before* it gets to DOM*/
 
-          $mobileNav.append($email);
-          $mobileNav.append($search);
-        }
-
-        // Move learn more to teaser group
-        $('.group-report-teaser-text').append($('.learn-more'));
+      // Move learn more to teaser group
+      $('.group-report-teaser-text').append($('.learn-more')); /*FIXME: Find best spot to do this *before* it gets to DOM, unless it's already done??*/
 
       // Scroll Triggered Events
-      //   Slide ins when in viewport   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,
+      //   Slide ins when in viewport
+      /* FIXME: Give each one of these elements a class in the UI or by default in its config, target that class and run the necessary functions on each element in that class*/
         $(window).scroll(function(e) {
 
           //get viewport size, set top of page
