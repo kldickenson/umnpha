@@ -7,7 +7,6 @@ global-styling:
       css/umnpha-icons.css: {}
   js:
     js/behavior.js: {}
-    js/menu.js: {}
     js/vendor/modernizr-custom.js: {}
   dependencies:
       - core/jquery
