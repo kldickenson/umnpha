@@ -1032,6 +1032,8 @@ footer.footer-wrapper {
         opacity: 0;
         background-color: transparent;
         max-height: 0; } }
+  .menu--menu-main-menu.block-menu li.menu-item--expanded:hover > a {
+    cursor: pointer; }
   .menu--menu-main-menu.block-menu li.menu-item--expanded.child-open > .menu {
     max-height: 400px;
     opacity: 1; }
@@ -1042,7 +1044,9 @@ footer.footer-wrapper {
     .menu--menu-main-menu.block-menu li.menu-item--expanded > .menu {
       opacity: 0;
       background-color: transparent;
-      max-height: 0; }
+      max-height: 0;
+      overflow: hidden;
+      padding: 0; }
       .menu--menu-main-menu.block-menu li.menu-item--expanded > .menu li a {
         display: inline-block;
         width: 100%;
