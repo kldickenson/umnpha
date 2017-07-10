@@ -236,6 +236,10 @@
 
         }
 
+        > a {
+          cursor: pointer;
+        }
+
       }
 
       &.child-open {
@@ -258,6 +262,8 @@
           opacity: 0;
           background-color: transparent;
           max-height: 0;
+          overflow: hidden;
+          padding: 0;
 
           li a {
             display: inline-block;
@@ -335,14 +341,6 @@
       + .toggle {
         transform: rotate(-135deg);
         z-index: 200;
-      }
-
-    }
-
-    .header-fixed & {
-
-      > .menu {
-        //transform: translateY(79%);
       }
 
     }

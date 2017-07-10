@@ -15,9 +15,9 @@
 
       // Global variables
       var $body = $('body');
-      var $mobileNav = $('.region-nav');
-      var $hamburger = $('.hamburger');
-      var $search_icon = $('#block-searchicon');
+      var animationMenu = "animated slideInDown";
+      var animationEnd = 'webkitTransitionEnd otransitionend' +
+        ' oTransitionEnd msTransitionEnd transitionend';
 
       // Resizing Event
       var resizeTimer;
@@ -38,7 +38,6 @@
         }, 250);
       });
 
-
       // Sliding panel
       $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
         $('.sliding-panel-content,.sliding-panel-fade-screen').toggleClass('is-visible');
@@ -46,19 +45,17 @@
       });
 
       // Search field desktop
+      var $search_icon = $('#block-searchicon');
+
       $search_icon.on('click', function (e) {
         $(this).addClass('is-open');
         $(this).siblings('.block-google-cse').toggleClass('is-open');
         $('#edit-query').focus();
       });
 
-      /* Split js into other files depending on whether or not it loads on one
-      page or specific page. */
       // Wrap sibling elements for node report sidebar layout
       $(".group-report-content").next(".group-sidebar").andSelf().wrapAll("<div class='node--type-report-container' />");
-      /*FIXME: Find best place to put this wrapping *before* it gets to DOM*/
 
-      // Hero images
       // Animate page title on page load
       if ($body.hasClass('node--type-page')) {
         $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
@@ -69,37 +66,39 @@
       TODO: See if I can fix the parallax issue modifying this pen http://www.minimit.com/demos/parallax-backgrounds-with-centered-content
        */
 
-      // Mobile only
-      // Show Menu
+      // Show Menu on Mobile
+      var $mobileNav = $('.region-nav');
+      var $hamburger = $('.hamburger');
+
       $hamburger.on('click', function(e) {
-        console.log('clicked');
-        $(this).toggleClass('is-open');
-        $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd,
+        $(this).toggleClass('nav-open');
+        $mobileNav.toggleClass('nav-open').addClass(animationMenu).one(animationEnd,
           function(e) {
             $(this).removeClass(animationMenu);
           }
         );
+        $mobileNav.find('.menu--menu-main-menu').toggleClass('nav-open');
+        $body.toggleClass('nav-open');
       });
 
-      // Close/Open Dropdown
+      // Close/Open Dropdown Mobile
       if($(window).width() <= 950) {
-        var animationMenu = "animated slideInDown";
-        var animationEnd = 'webkitTransitionEnd otransitionend' +
-          ' oTransitionEnd msTransitionEnd transitionend';
 
-        // Add class for dropdown
+        // Open Dropdown
         $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
-          if(!($(this).parents('li').hasClass('is-open'))) {
+          if(!($(this).parent().hasClass('child-open'))) {
             e.preventDefault();
             $mobileNav.addClass('child-open');
-            $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded').addClass('is-open');
+            $(this).parent().addClass('child-open');
+            $mobileNav.find('.menu--menu-main-menu').addClass('child-open');
           }
         });
 
         // Close Dropdown
         $mobileNav.find('.menu--menu-main-menu.block-menu .menu > span.toggle').on('click', function (e) {
-          $mobileNav.find('li.menu-item--expanded.is-open').removeClass('is-open');
+          $mobileNav.find('li.menu-item--expanded.child-open').removeClass('child-open');
           $mobileNav.removeClass('child-open');
+          $mobileNav.find('.menu--menu-main-menu').removeClass('child-open');
         });
       }
 
@@ -110,10 +109,10 @@
 
         $mobileNav.append($email);
         $mobileNav.append($search);
-      } /*FIXME: Find best spot to do this *before* it gets to DOM*/
+      }
 
       // Move learn more to teaser group
-      $('.group-report-teaser-text').append($('.learn-more')); /*FIXME: Find best spot to do this *before* it gets to DOM, unless it's already done??*/
+      $('.group-report-teaser-text').append($('.learn-more'));
 
       // Scroll Triggered Events
       //   Slide ins when in viewport
