@@ -408,7 +408,7 @@ header {
     header .region-nav.nav-open {
       display: block; }
     header .region-nav.child-open {
-      height: 440px;
+      height: 375px;
       /*TODO: would really like to remove this height so that the div auto fits however many sub-nav items get added*/ }
   header.header-fixed {
     background-color: rgba(250, 250, 250, 0.85);
