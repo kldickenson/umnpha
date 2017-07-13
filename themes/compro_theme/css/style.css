@@ -842,7 +842,9 @@ header {
         right: unset;
         transform: unset;
         width: 100%;
-        z-index: 2; } }
+        z-index: 2; }
+      .region-nav .block-google-cse.is-open {
+        display: block; }}
     .header-fixed .region-nav .block-google-cse {
       min-width: 50%;
       top: 65px;

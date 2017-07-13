@@ -115,6 +115,11 @@
       transform: unset;
       width: 100%;
       z-index: 2;
+
+      &.is-open {
+        display: block;
+      }
+
     }
 
     .header-fixed & {

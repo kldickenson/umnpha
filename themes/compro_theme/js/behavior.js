@@ -79,6 +79,7 @@
         );
         $mobileNav.find('.menu--menu-main-menu').toggleClass('nav-open');
         $body.toggleClass('nav-open');
+        $mobileNav.find('#block-googlecse').toggleClass('.is-open');
       });
 
       // Close/Open Dropdown Mobile
