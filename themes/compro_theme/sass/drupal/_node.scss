@@ -323,7 +323,7 @@
     display: inline-block;
     font-size: rem(14);
     float: left;
-    margin: 50px 0 0 0;
+    margin: 95px 0 0 30px;
     width: 170px;
 
     &:after {
@@ -446,6 +446,10 @@
 
 .node--type-report .group-sidebar > .field:last-child {
   margin-bottom: 40px;
+}
+
+.region-content {
+  overflow: hidden;
 }
 
 

@@ -4,6 +4,9 @@
 
 
 
+.field--type-image {
+  line-height: 0;
+}
 
 /*Featured Report*/
 .field--name-field-featured-report-image {
@@ -21,6 +24,14 @@
       object-fit: cover;
     }
 
+  }
+
+  // Flexbug workaround for Safari, flex added to featured-report-image, this field, child img needs height: auto
+  display: flex;
+  height: auto;
+
+  img {
+    height: auto;
   }
 
 }
@@ -109,7 +120,7 @@
   padding: 0 20px;
 
   @media all and (max-width: 500px) {
-    padding: 0;
+    padding: 0 20px;
   }
 }
 

@@ -111,15 +111,19 @@ header {
     @media all and (max-width: 940px) {
       background-color: rgba(250,250,250,0.85);
       display: none;
-      height: 400px;
+      height: 300px;
       position: absolute;
         top: 85px;
       transition: 250ms cubic-bezier(.18,.01,.63,.98);
       width: 100vw;
     }
 
-    &.is-open {
+    &.nav-open {
       display: block;
+    }
+
+    &.child-open {
+      height: 375px; /*TODO: would really like to remove this height so that the div auto fits however many sub-nav items get added*/
     }
 
   }
@@ -161,7 +165,7 @@ header {
       }
 
       &.child-open {
-        height: 400px;
+        height: 375px;
       }
 
     }
@@ -224,5 +228,7 @@ header {
   }
 
 }
+
+
 
 

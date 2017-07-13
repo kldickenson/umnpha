@@ -15,10 +15,28 @@
 
       // Global variables
       var $body = $('body');
-      var $mobileNav = $('.region-nav');
-      var $hamburger = $('.hamburger');
-      var $search_icon = $('#block-searchicon');
+      var animationMenu = "animated slideInDown";
+      var animationEnd = 'webkitTransitionEnd otransitionend' +
+        ' oTransitionEnd msTransitionEnd transitionend';
 
+      // Resizing Event
+      var resizeTimer;
+
+      $(window).on('resize', function(e) {
+
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+
+          if($(window).width() <= 920) {
+            $body.removeClass('desktop-layout');
+            $body.addClass('mobile-layout');
+          } else if($(window).width() >= 920) {
+            $body.removeClass('mobile-layout');
+            $body.addClass('desktop-layout');
+          }
+
+        }, 250);
+      });
 
       // Sliding panel
       $('.sliding-panel-button,.sliding-panel-fade-screen,.sliding-panel-close').on('click touchstart',function (e) {
@@ -27,19 +45,17 @@
       });
 
       // Search field desktop
+      var $search_icon = $('#block-searchicon');
+
       $search_icon.on('click', function (e) {
         $(this).addClass('is-open');
         $(this).siblings('.block-google-cse').toggleClass('is-open');
         $('#edit-query').focus();
       });
 
-      /* Split js into other files depending on whether or not it loads on one
-      page or specific page. */
       // Wrap sibling elements for node report sidebar layout
       $(".group-report-content").next(".group-sidebar").andSelf().wrapAll("<div class='node--type-report-container' />");
 
-
-      // Hero images
       // Animate page title on page load
       if ($body.hasClass('node--type-page')) {
         $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
@@ -47,56 +63,60 @@
 
       /* PARALLAX CODE MISSING - This code is maybe still necessary, parallax plugin cannot recalculate adjusted
       header height. Looking into plugin that will do this.
+      TODO: See if I can fix the parallax issue modifying this pen http://www.minimit.com/demos/parallax-backgrounds-with-centered-content
        */
 
-      // Mobile only
-        //Mobile Menu
-        if($(window).width() <= 950) {
+      // Show Menu on Mobile
+      var $mobileNav = $('.region-nav');
+      var $hamburger = $('.hamburger');
 
-          var animationMenu = "animated slideInDown";
-          var animationEnd = 'webkitTransitionEnd otransitionend' +
-            ' oTransitionEnd msTransitionEnd transitionend';
+      $hamburger.on('click', function(e) {
+        $(this).toggleClass('nav-open');
+        $mobileNav.toggleClass('nav-open').addClass(animationMenu).one(animationEnd,
+          function(e) {
+            $(this).removeClass(animationMenu);
+          }
+        );
+        $mobileNav.find('.menu--menu-main-menu').toggleClass('nav-open');
+        $body.toggleClass('nav-open');
+      });
 
-          // Show menu
-          $hamburger.on('click', function(e) {
-            $(this).toggleClass('is-open');
-            $mobileNav.toggleClass('is-open').addClass(animationMenu).one(animationEnd,
-                  function(e) {
-                $(this).removeClass(animationMenu);
-              }
-            );
-          });
+      // Close/Open Dropdown Mobile
+      if($(window).width() <= 950) {
 
-          // Add class for dropdown
-          $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
-            if(!($(this).parents('li').hasClass('is-open'))) {
-              e.preventDefault();
-              $mobileNav.addClass('child-open');
-              $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded').addClass('is-open');
-            }
-          });
+        // Open Dropdown
+        $mobileNav.find('.menu--menu-main-menu.block-menu li.menu-item--expanded > a').on('click', function (e) {
+          if(!($(this).parent().hasClass('child-open'))) {
+            e.preventDefault();
+            $mobileNav.addClass('child-open');
+            $(this).parent().addClass('child-open');
+            $mobileNav.find('.menu--menu-main-menu').addClass('child-open');
+          }
+        });
 
-          // Close Dropdown
-          $mobileNav.find('.menu--menu-main-menu.block-menu .menu > span.toggle').on('click', function (e) {
-            $mobileNav.find('li.menu-item--expanded.is-open').removeClass('is-open');
-            $mobileNav.removeClass('child-open');
-          });
-        }
+        // Close Dropdown
+        $mobileNav.find('.menu--menu-main-menu.block-menu .menu > span.toggle').on('click', function (e) {
+          $mobileNav.find('li.menu-item--expanded.child-open').removeClass('child-open');
+          $mobileNav.removeClass('child-open');
+          $mobileNav.find('.menu--menu-main-menu').removeClass('child-open');
+        });
+      }
 
-        // Move items for mobile menu
-        if($(window).width() <= 950) {
-          var $email = $('.block-email-sign-up');
-          var $search = $('.block-google-cse');
+      // Move items for mobile menu
+      if($(window).width() <= 950) {
+        var $email = $('.block-email-sign-up');
+        var $search = $('.block-google-cse');
 
-          $mobileNav.append($email);
-          $mobileNav.append($search);
-        }
+        $mobileNav.append($email);
+        $mobileNav.append($search);
+      }
 
-        // Move learn more to teaser group
-        $('.group-report-teaser-text').append($('.learn-more'));
+      // Move learn more to teaser group
+      $('.group-report-teaser-text').append($('.learn-more'));
 
       // Scroll Triggered Events
-      //   Slide ins when in viewport   --> THIS SECTION NEEDS MEGA RE-FACTOR TO DO THESE THINGS DYNAMICALLY,
+      //   Slide ins when in viewport
+      /* FIXME: Give each one of these elements a class in the UI or by default in its config, target that class and run the necessary functions on each element in that class*/
         $(window).scroll(function(e) {
 
           //get viewport size, set top of page
