@@ -100,7 +100,7 @@
     z-index: -1;
 
     /*States*/
-    &.nav-open {
+    &.is-open {
       opacity: 1;
       transform: unset;
       z-index: 2;

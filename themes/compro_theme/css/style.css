@@ -858,7 +858,7 @@ header {
     min-width: 25%;
     z-index: -1;
     /*States*/ }
-    .region-nav .block-google-cse.nav-open {
+    .region-nav .block-google-cse.is-open {
       opacity: 1;
       -webkit-transform: unset;
           -ms-transform: unset;
