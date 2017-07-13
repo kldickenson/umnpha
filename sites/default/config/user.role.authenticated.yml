@@ -15,6 +15,7 @@ permissions:
   - 'access shortcuts'
   - 'access site-wide contact form'
   - 'administer eck entity types'
+  - 'never autoplay videos'
   - 'post comments'
   - 'search Google CSE'
   - 'search content'
