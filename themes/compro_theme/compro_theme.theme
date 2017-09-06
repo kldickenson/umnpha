@@ -5,6 +5,7 @@
  * Functions to support theming in the compro_theme theme.
  */
 use Drupal\Core\Link;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
 use Drupal\Core\Url;
 
 /**
@@ -71,14 +72,20 @@ function compro_theme_theme_suggestions_fieldset_alter(array &$suggestions, arra
  * Implements hook_preprocess_node().
  */
 function compro_theme_preprocess_node(&$variables) {
-  if ($variables['elements']['#node']->bundle() == 'report' && $variables['elements']['#view_mode'] == 'teaser') {
-    $variables['content']['links'] = Link::fromTextAndUrl(t('Learn More'), Url::fromUri('internal:/node/' . $variables['elements']['#node']->nid->value))->toRenderable();
-    $variables['content']['links']['#weight'] = 4;
-    $variables['content']['links']['#attributes']['class'] = array('learn-more', 'button');
-  }
   if ($variables['elements']['#node']->bundle() == 'report' && $variables['elements']['#view_mode'] == 'full') {
     $variables['#attached']['library'][] = 'compro_theme/sticky-kit';
     $variables['content']['field_report_report']['#title'] = 'Read the full report';
+  }
+}
+
+/**
+ * Implements hook_preprocess_links().
+ */
+function compro_theme_preprocess_links(&$variables) {
+  if (isset($variables['links']['node-readmore'])) {
+    $variables['links']['node-readmore']['link']['#title'] = new TranslatableMarkup('Learn More');
+    $variables['links']['node-readmore']['link']['#options']['attributes']['class'][] = 'learn-more';
+    $variables['links']['node-readmore']['link']['#options']['attributes']['class'][] = 'button';
   }
 }
 
