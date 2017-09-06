@@ -112,9 +112,6 @@
         $mobileNav.append($search);
       }
 
-      // Move learn more to teaser group
-      $('.group-report-teaser-text').append($('.learn-more'));
-
       // Scroll Triggered Events
       //   Slide ins when in viewport
       /* FIXME: Give each one of these elements a class in the UI or by default in its config, target that class and run the necessary functions on each element in that class*/
