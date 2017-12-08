@@ -53,9 +53,6 @@
         $('#edit-query').focus();
       });
 
-      // Wrap sibling elements for node report sidebar layout
-      $(".group-report-content").next(".group-sidebar").andSelf().wrapAll("<div class='node--type-report-container' />");
-
       // Animate page title on page load
       if ($body.hasClass('node--type-page')) {
         $('.field-group-page-hero .field--name-field-title').addClass('animated fadeIn');
