@@ -3,7 +3,7 @@
 namespace Drupal\webform\Plugin\WebformElement;
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\webform\WebformElementBase;
+use Drupal\webform\Plugin\WebformElementBase;
 use Drupal\webform\WebformInterface;
 use Drupal\webform\WebformSubmissionInterface;
 
@@ -23,18 +23,21 @@ class WebformSignature extends WebformElementBase {
    * {@inheritdoc}
    */
   public function getDefaultProperties() {
-    return [
+    $properties = [
       // General settings.
       'description' => $this->t('Sign above'),
     ] + parent::getDefaultProperties();
+    unset($properties['disabled']);
+    return $properties;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function prepare(array &$element, WebformSubmissionInterface $webform_submission) {
+  public function prepare(array &$element, WebformSubmissionInterface $webform_submission = NULL) {
     if (empty($element['#description'])) {
       $element['#description'] = $this->t('Sign above');
+      $element['#description_display'] = 'after';
     }
     parent::prepare($element, $webform_submission);
   }
@@ -42,7 +45,9 @@ class WebformSignature extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  public function formatHtmlItem(array $element, $value, array $options = []) {
+  public function formatHtmlItem(array $element, WebformSubmissionInterface $webform_submission, array $options = []) {
+    $value = $this->getValue($element, $webform_submission, $options);
+
     $format = $this->getItemFormat($element);
 
     switch ($format) {
@@ -69,22 +74,23 @@ class WebformSignature extends WebformElementBase {
         ];
 
       default:
-        return parent::formatHtmlItem($element, $value, $options);
+        return parent::formatHtmlItem($element, $webform_submission, $options);
     }
   }
 
   /**
    * {@inheritdoc}
    */
-  public function formatTextItem(array $element, $value, array $options = []) {
+  public function formatTextItem(array $element, WebformSubmissionInterface $webform_submission, array $options = []) {
     $format = $this->getItemFormat($element);
     switch ($format) {
       case 'image':
       case 'status':
-        $value = ($value) ? '[' . $this->t('signed') . ']' : '[' . $this->t('not signed') . ']';
+        $value = $this->getValue($element, $webform_submission, $options);
+        return ($value) ? '[' . $this->t('signed') . ']' : '[' . $this->t('not signed') . ']';
     }
 
-    return parent::formatTextItem($element, $value, $options);
+    return parent::formatTextItem($element, $webform_submission, $options);
   }
 
   /**
@@ -132,8 +138,8 @@ class WebformSignature extends WebformElementBase {
       '#type' => 'radios',
       '#title' => $this->t('Signature format'),
       '#options' => [
-        'image' => $this->t('Image: The signature\'s <a href=":href">Data URI</a>.', [':href' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs']),
-        'status' => $this->t("Status: 'signed' or 'no signed'."),
+        'image' => $this->t('Image, the signature\'s <a href=":href">Data URI</a>.', [':href' => 'https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URIs']),
+        'status' => $this->t("Status, displays 'signed' or 'no signed'"),
       ],
       '#default_value' => $export_options['signature_format'],
     ];
@@ -142,9 +148,9 @@ class WebformSignature extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  public function buildExportRecord(array $element, $value, array $export_options) {
+  public function buildExportRecord(array $element, WebformSubmissionInterface $webform_submission, array $export_options) {
     $element['#format'] = ($export_options['signature_format'] == 'status') ? 'image' : 'raw';
-    return [$this->formatText($element, $value, $export_options)];
+    return [$this->formatText($element, $webform_submission, $export_options)];
   }
 
   /**

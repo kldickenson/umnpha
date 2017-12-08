@@ -4,12 +4,14 @@ namespace Drupal\webform\Plugin\WebformElement;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Mail\MailFormatHelper;
+use Drupal\webform\WebformSubmissionInterface;
 
 /**
  * Provides a 'webform_markup' element.
  *
  * @WebformElement(
  *   id = "webform_markup",
+ *   default_key = "markup",
  *   label = @Translation("Basic HTML"),
  *   description = @Translation("Provides an element to render basic HTML markup."),
  *   category = @Translation("Markup elements"),
@@ -22,18 +24,19 @@ class WebformMarkup extends WebformMarkupBase {
    * {@inheritdoc}
    */
   public function getDefaultProperties() {
-    return parent::getDefaultProperties() + [
+    return [
+      'wrapper_attributes' => [],
       // Markup settings.
       'markup' => '',
-    ];
+    ] + parent::getDefaultProperties();
   }
 
   /**
    * {@inheritdoc}
    */
-  public function buildText(array $element, $value, array $options = []) {
+  public function buildText(array $element, WebformSubmissionInterface $webform_submission, array $options = []) {
     $element['#markup'] = MailFormatHelper::htmlToText($element['#markup']);
-    return parent::buildText($element, $value, $options);
+    return parent::buildText($element, $webform_submission, $options);
   }
 
   /**
