@@ -10,6 +10,11 @@ use Drupal\webform\Utility\WebformYaml;
 /**
  * Provides a webform element for HTML, YAML, or Plain text using CodeMirror.
  *
+ * Known Issues/Feature Requests:
+ *
+ * - Mixed Twig Mode #3292
+ *   https://github.com/codemirror/CodeMirror/issues/3292
+ *
  * @FormElement("webform_codemirror")
  */
 class WebformCodeMirror extends Textarea {
@@ -22,9 +27,12 @@ class WebformCodeMirror extends Textarea {
   protected static $modes = [
     'css' => 'text/css',
     'html' => 'text/html',
+    'htmlmixed' => 'htmlmixed',
     'javascript' => 'text/javascript',
     'text' => 'text/plain',
     'yaml' => 'text/x-yaml',
+    'php' => 'text/x-php',
+    'twig' => 'twig',
   ];
 
   /**
@@ -76,7 +84,7 @@ class WebformCodeMirror extends Textarea {
    */
   public static function processWebformCodeMirror(&$element, FormStateInterface $form_state, &$complete_form) {
     // Check that mode is defined and valid, if not default to (plain) text.
-    if (empty($element['#mode']) || !isset(self::$modes[$element['#mode']])) {
+    if (empty($element['#mode']) || !isset(static::$modes[$element['#mode']])) {
       $element['#mode'] = 'text';
     }
 
@@ -169,11 +177,25 @@ class WebformCodeMirror extends Textarea {
 
       case 'yaml':
         try {
-          $value = trim($element['#value']);
+          $value = $element['#value'];
           $data = Yaml::decode($value);
           if (!is_array($data) && $value) {
             throw new \Exception(t('YAML must contain an associative array of elements.'));
           }
+          return NULL;
+        }
+        catch (\Exception $exception) {
+          return [$exception->getMessage()];
+        }
+
+      case 'twig':
+        try {
+          $build = [
+            '#type' => 'inline_template',
+            '#template' => $element['#value'],
+            '#context' => [],
+          ];
+          \Drupal::service('renderer')->renderPlain($build);
           return NULL;
         }
         catch (\Exception $exception) {

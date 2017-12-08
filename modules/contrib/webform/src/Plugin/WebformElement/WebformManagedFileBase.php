@@ -9,7 +9,7 @@ use Drupal\Core\Link;
 use Drupal\file\Entity\File;
 use Drupal\file\FileInterface;
 use Drupal\webform\Entity\WebformSubmission;
-use Drupal\webform\WebformElementBase;
+use Drupal\webform\Plugin\WebformElementBase;
 use Drupal\Component\Utility\Bytes;
 use Drupal\webform\WebformInterface;
 use Drupal\webform\WebformSubmissionInterface;
@@ -20,6 +20,18 @@ use Drupal\webform\WebformSubmissionInterface;
 abstract class WebformManagedFileBase extends WebformElementBase {
 
   /**
+   * List of blacklisted mime types that must be downloaded.
+   *
+   * @var array
+   */
+  static protected $blacklistedMimeTypes = [
+    'application/pdf',
+    'application/xml',
+    'image/svg+xml',
+    'text/html',
+  ];
+
+  /**
    * {@inheritdoc}
    */
   public function getDefaultProperties() {
@@ -27,12 +39,18 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     $max_filesize = Bytes::toInt($max_filesize);
     $max_filesize = ($max_filesize / 1024 / 1024);
     $file_extensions = $this->getFileExtensions();
-    return parent::getDefaultProperties() + [
+    $properties = parent::getDefaultProperties() + [
       'multiple' => FALSE,
       'max_filesize' => $max_filesize,
       'file_extensions' => $file_extensions,
       'uri_scheme' => 'private',
+      'button' => FALSE,
+      'button__title' => '',
+      'button__attributes' => [],
     ];
+    // File uploads can't have default files.
+    unset($properties['default_value']);
+    return $properties;
   }
 
   /**
@@ -70,7 +88,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     }
 
     // Disable File element is there are no visible stream wrappers.
-    $scheme_options = self::getVisibleStreamWrappers();
+    $scheme_options = static::getVisibleStreamWrappers();
     return (empty($scheme_options)) ? FALSE : TRUE;
   }
 
@@ -84,7 +102,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     }
     else {
       // Display 'managed_file' stream wrappers warning.
-      $scheme_options = self::getVisibleStreamWrappers();
+      $scheme_options = static::getVisibleStreamWrappers();
       $uri_scheme = $this->getUriScheme($element);
       if (!isset($scheme_options[$uri_scheme]) && $this->currentUser->hasPermission('administer webform')) {
         drupal_set_message($this->t('The \'File\' element is unavailable because a <a href="https://www.drupal.org/documentation/modules/file">private files directory</a> has not been configured and public file uploads have not been enabled. For more information see: <a href="https://www.drupal.org/psa-2016-003">DRUPAL-PSA-2016-003</a>'), 'warning');
@@ -99,9 +117,9 @@ abstract class WebformManagedFileBase extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  public function prepare(array &$element, WebformSubmissionInterface $webform_submission) {
+  public function prepare(array &$element, WebformSubmissionInterface $webform_submission = NULL) {
     // Track if this element has been processed because the work-around below
-    // for 'Issue #2705471: Webform states File fields' which nests  the
+    // for 'Issue #2705471: Webform states File fields' which nests the
     // 'managed_file' element in a basic container, which triggers this element
     // to processed a second time.
     if (!empty($element['#webform_managed_file_processed'])) {
@@ -113,7 +131,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     parent::prepare($element, $webform_submission);
 
     // Check if the URI scheme exists and can be used the upload location.
-    $scheme_options = self::getVisibleStreamWrappers();
+    $scheme_options = static::getVisibleStreamWrappers();
     $uri_scheme = $this->getUriScheme($element);
     if (!isset($scheme_options[$uri_scheme])) {
       $element['#access'] = FALSE;
@@ -160,28 +178,16 @@ abstract class WebformManagedFileBase extends WebformElementBase {
    * {@inheritdoc}
    */
   public function setDefaultValue(array &$element) {
-    if (!empty($element['#default_value']) && !is_array($element['#default_value'])) {
-      $element['#default_value'] = [$element['#default_value']];
+    if (!empty($element['#default_value'])) {
+      $element['#default_value'] = (array) $element['#default_value'];
     }
   }
 
   /**
    * {@inheritdoc}
    */
-  public function format($type, array &$element, $value, array $options = []) {
-    if ($this->hasMultipleValues($element)) {
-      $value = $this->getFiles($element, $value, $options);
-    }
-    else {
-      $value = $this->getFile($element, $value, $options);
-    }
-    return parent::format($type, $element, $value, $options);
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  protected function formatHtmlItem(array $element, $value, array $options = []) {
+  protected function formatHtmlItem(array $element, WebformSubmissionInterface $webform_submission, array $options = []) {
+    $value = $this->getValue($element, $webform_submission, $options);
     $file = $this->getFile($element, $value, $options);
     $format = $this->getItemFormat($element);
     switch ($format) {
@@ -189,7 +195,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
       case 'url':
       case 'value':
       case 'raw':
-        return $this->formatTextItem($element, $value, $options);
+        return $this->formatTextItem($element, $webform_submission, $options);
 
       case 'link':
         return [
@@ -215,7 +221,8 @@ abstract class WebformManagedFileBase extends WebformElementBase {
   /**
    * {@inheritdoc}
    */
-  protected function formatTextItem(array $element, $value, array $options = []) {
+  protected function formatTextItem(array $element, WebformSubmissionInterface $webform_submission, array $options = []) {
+    $value = $this->getValue($element, $webform_submission, $options);
     $file = $this->getFile($element, $value, $options);
     $format = $this->getItemFormat($element);
     switch ($format) {
@@ -505,7 +512,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     if (isset($element['#uri_scheme'])) {
       return $element['#uri_scheme'];
     }
-    $scheme_options = self::getVisibleStreamWrappers();
+    $scheme_options = static::getVisibleStreamWrappers();
     if (isset($scheme_options['private'])) {
       return 'private';
     }
@@ -557,7 +564,7 @@ abstract class WebformManagedFileBase extends WebformElementBase {
       '#type' => 'fieldset',
       '#title' => $this->t('File settings'),
     ];
-    $scheme_options = self::getVisibleStreamWrappers();
+    $scheme_options = static::getVisibleStreamWrappers();
 
     $form['file']['uri_scheme'] = [
       '#type' => 'radios',
@@ -600,16 +607,47 @@ abstract class WebformManagedFileBase extends WebformElementBase {
     ];
     $form['file']['file_extensions'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('File extensions'),
-      '#description' => $this->t('A list of additional file extensions for this upload field, separated by spaces.'),
+      '#title' => $this->t('Allowed file extensions'),
+      '#description' => $this->t('Separate extensions with a space and do not include the leading dot. '),
       '#maxlength' => 255,
     ];
     $form['file']['multiple'] = [
-      '#title' => $this->t('Multiple'),
       '#type' => 'checkbox',
+      '#title' => $this->t('Multiple'),
       '#description' => $this->t('Check this option if the user should be allowed to upload multiple files.'),
       '#return_value' => TRUE,
     ];
+
+    // Button.
+    // @see webform_preprocess_file_managed_file()
+    $form['file']['button'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Replace file upload input with an upload button'),
+      '#description' => $this->t('If checked the file upload input will be replaced with click-able label styled as button.'),
+      '#return_value' => TRUE,
+    ];
+    $form['file']['button__title'] = [
+      '#type' => 'textfield',
+      '#title' => $this->t('Upload button title'),
+      '#description' => $this->t('Defaults to: %value', ['%value' => $this->t('Choose file')]),
+      '#states' => [
+        'visible' => [
+          ':input[name="properties[button]"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+    $form['file']['button__attributes'] = [
+      '#type' => 'webform_element_attributes',
+      '#title' => $this->t('Upload button attributes'),
+      '#classes' => $this->configFactory->get('webform.settings')->get('settings.button_classes'),
+      '#class__description' => $this->t("Apply classes to the button. Button classes default to 'button button-primary'."),
+      '#states' => [
+        'visible' => [
+          ':input[name="properties[button]"]' => ['checked' => TRUE],
+        ],
+      ],
+    ];
+
     return $form;
   }
 
@@ -670,7 +708,14 @@ abstract class WebformManagedFileBase extends WebformElementBase {
         }
 
         // Return file content headers.
-        return file_get_content_headers($file);
+        $headers = file_get_content_headers($file);
+
+        // Force blacklisted files to be downloaded.
+        if (in_array($headers['Content-Type'], static::$blacklistedMimeTypes)) {
+          $headers['Content-Disposition'] = 'attachment';
+        }
+
+        return $headers;
       }
     }
     return NULL;
