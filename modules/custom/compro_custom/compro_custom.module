@@ -245,10 +245,14 @@ function compro_custom_form_alter(&$form, FormStateInterface $form_state, $form_
     $form['#validate'][] = 'compro_custom_title_update';
   }
   if ($form_id == 'google_cse_search_box_form') {
+    // Disable form cache.
+    $form['#cache'] = ['max-age' => 0];
     $form['query']['#attributes']['placeholder'] = t('Enter your keywords');
     $form['#action'] = '/search/cse';
   }
   if ($form_id == 'search_form') {
+    // Disable form cache.
+    $form['#cache'] = ['max-age' => 0];
     if (!$form['basic']['keys']['#default_value'] && isset($_GET['query'])) {
       $response = new RedirectResponse(Url::fromUserInput('/search/cse',
         array('query' => array('keys' => $_GET['query'])))->toString());

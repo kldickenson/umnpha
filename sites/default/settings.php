@@ -35,8 +35,10 @@ if (defined('PANTHEON_ENVIRONMENT')) {
     # Replace value with custom domain(s) added in the site Dashboard
     $settings['trusted_host_patterns'][] = '^.+\.healthyagingpoll\.org$';
     $settings['trusted_host_patterns'][] = '^healthyagingpoll\.org$';
-    $settings['trusted_host_patterns'][] = '^localhost$';
   }
+}
+else {
+  $settings['trusted_host_patterns'][] = '^localhost$';
 }
 
 // Redirect all traffic to non-www. For example healthyagingpoll.org
