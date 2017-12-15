@@ -42,15 +42,27 @@ else {
 }
 
 // Redirect all traffic to https www.
-if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && ($_SERVER['PANTHEON_ENVIRONMENT'] === 'live') && (php_sapi_name() != "cli")) {
-  if ($_SERVER['HTTP_HOST'] == 'live-umnpha.pantheonsite.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.pantheon.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.getpantheon.io' || $_SERVER['HTTP_HOST'] == 'live-umnpha.panth.io') {
-    header('HTTP/1.0 301 Moved Permanently');
-    header('Location: https://www.healthyagingpoll.org' . $_SERVER['REQUEST_URI']);
-    exit();
+if (isset($_SERVER['PANTHEON_ENVIRONMENT']) && php_sapi_name() != 'cli') {
+  // Redirect to https://$primary_domain in the Live environment.
+  if ($_ENV['PANTHEON_ENVIRONMENT'] === 'live') {
+    $primary_domain = 'www.healthyagingpoll.org';
   }
-  if ($_SERVER['HTTP_HOST'] == 'healthyagingpoll.org') {
+  else {
+    // Redirect to HTTPS on every Pantheon environment.
+    $primary_domain = $_SERVER['HTTP_HOST'];
+  }
+
+  if ($_SERVER['HTTP_HOST'] != $primary_domain
+    || !isset($_SERVER['HTTP_X_SSL'])
+    || $_SERVER['HTTP_X_SSL'] != 'ON') {
+
+    // Name transaction "redirect" in New Relic for improved reporting (optional).
+    if (extension_loaded('newrelic')) {
+      newrelic_name_transaction("redirect");
+    }
+
     header('HTTP/1.0 301 Moved Permanently');
-    header('Location: https://www.healthyagingpoll.org' . $_SERVER['REQUEST_URI']);
+    header('Location: https://' . $primary_domain . $_SERVER['REQUEST_URI']);
     exit();
   }
 }
