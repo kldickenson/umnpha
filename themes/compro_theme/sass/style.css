@@ -1716,32 +1716,21 @@ a[href].learn-more.button {
 
 .field--name-field-highlight-title {
   color: #0f284a;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin: 0 0 25px 0;
+  margin: 0 0 1rem 0;
   max-width: 185px; }
-  @media screen and (max-width: 940px) {
-    .field--name-field-highlight-title {
-      font-size: 1.5rem;
-      margin: 0 0 24px 0; } }
 
 .field--name-field-highlight-text {
-  font-size: 1.125rem;
-  margin: 0 0 63px 0; }
-  @media screen and (max-width: 1120px) {
-    .field--name-field-highlight-text {
-      font-size: 1rem;
-      margin: 0 0 35px 0; } }
-  @media screen and (max-width: 940px) {
-    .field--name-field-highlight-text {
-      font-size: 0.75rem;
-      margin: 0 0 35px 0; } }
+  color: #272727;
+  font-size: 14px;
+  margin: 0 0 1.5rem 0; }
 
 .field--name-field-highlight-button a {
   background-color: #0f6cb6;
   color: white;
   font-size: 0.8125rem;
-  padding: 0.8125rem 2.03125rem;
+  padding: .5rem 1rem;
   text-align: center;
   text-transform: uppercase; }
   .field--name-field-highlight-button a:hover {
