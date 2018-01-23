@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_FactoryRuntimeLoader', 'Twig\RuntimeLoader\FactoryRuntimeLoader', false);

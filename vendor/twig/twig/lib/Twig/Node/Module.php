@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_Module', 'Twig\Node\ModuleNode', false);

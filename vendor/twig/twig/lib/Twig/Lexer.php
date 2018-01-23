@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Lexer', 'Twig\Lexer', false);

@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_Expression_Constant', 'Twig\Node\Expression\ConstantExpression', false);

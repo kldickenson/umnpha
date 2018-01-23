@@ -296,10 +296,7 @@ class Rss extends Renderer\AbstractRenderer implements Renderer\RendererInterfac
         }
         $text = $dom->createTextNode($this->getDataContainer()->getId());
         $id->appendChild($text);
-
-        $uri = Uri::factory($this->getDataContainer()->getId());
-        if (! $uri->isValid() || ! $uri->isAbsolute()) {
-            /** @see http://www.rssboard.org/rss-profile#element-channel-item-guid */
+        if (! Uri::factory($this->getDataContainer()->getId())->isValid()) {
             $id->setAttribute('isPermaLink', 'false');
         }
     }

@@ -478,7 +478,7 @@ final class Mbstring
     {
         $encoding = self::getEncoding($encoding);
         if ('CP850' === $encoding || 'ASCII' === $encoding) {
-            return \strlen($s);
+            return strlen($s);
         }
 
         return @iconv_strlen($s, $encoding);
@@ -575,7 +575,7 @@ final class Mbstring
     {
         $encoding = self::getEncoding($encoding);
         if ('CP850' === $encoding || 'ASCII' === $encoding) {
-            return (string) substr($s, $start, null === $length ? 2147483647 : $length);
+            return substr($s, $start, null === $length ? 2147483647 : $length);
         }
 
         if ($start < 0) {

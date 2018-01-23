@@ -126,7 +126,10 @@ class TraceableUrlMatcher extends UrlMatcher
                 continue;
             }
 
-            $status = $this->handleRouteRequirements($pathinfo, $name, $route);
+            // check condition
+            if ($condition = $route->getCondition()) {
+                if (!$this->getExpressionLanguage()->evaluate($condition, array('context' => $this->context, 'request' => $this->request ?: $this->createRequest($pathinfo)))) {
+                    $this->addTrace(sprintf('Condition "%s" does not evaluate to "true"', $condition), self::ROUTE_ALMOST_MATCHES, $name, $route);
 
             if (self::REQUIREMENT_MISMATCH === $status[0]) {
                 if ($route->getCondition()) {

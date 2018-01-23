@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_Expression_Binary_NotEqual', 'Twig\Node\Expression\Binary\NotEqualBinary', false);

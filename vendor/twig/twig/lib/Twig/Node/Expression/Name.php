@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_Expression_Name', 'Twig\Node\Expression\NameExpression', false);

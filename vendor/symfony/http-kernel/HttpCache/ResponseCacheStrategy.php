@@ -58,11 +58,15 @@ class ResponseCacheStrategy implements ResponseCacheStrategyInterface
      */
     public function add(Response $response)
     {
-        ++$this->embeddedResponses;
+        if (!$response->isFresh() || !$response->isCacheable()) {
+            $this->cacheable = false;
+        } else {
+            $maxAge = $response->getMaxAge();
+            $this->ttls[] = $response->getTtl();
+            $this->maxAges[] = $maxAge;
 
-        foreach (self::$overrideDirectives as $directive) {
-            if ($response->headers->hasCacheControlDirective($directive)) {
-                $this->flagDirectives[$directive] = true;
+            if (null === $maxAge) {
+                $this->isNotCacheableResponseEmbedded = true;
             }
         }
 
@@ -99,15 +103,17 @@ class ResponseCacheStrategy implements ResponseCacheStrategyInterface
             return;
         }
 
-        // Remove validation related headers of the master response,
-        // because some of the response content comes from at least
-        // one embedded response (which likely has a different caching strategy).
-        $response->setEtag(null);
-        $response->setLastModified(null);
+        // Remove validation related headers in order to avoid browsers using
+        // their own cache, because some of the response content comes from
+        // at least one embedded response (which likely has a different caching strategy).
+        if ($response->isValidateable()) {
+            $response->setEtag(null);
+            $response->setLastModified(null);
+        }
 
-        $this->add($response);
-
-        $response->headers->set('Age', $this->age);
+        if (!$response->isFresh()) {
+            $this->cacheable = false;
+        }
 
         if ($this->isNotCacheableResponseEmbedded) {
             $response->setExpires($response->getDate());

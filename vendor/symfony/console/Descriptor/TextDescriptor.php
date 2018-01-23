@@ -280,7 +280,7 @@ class TextDescriptor extends Descriptor
             return 'INF';
         }
 
-        if (\is_string($default)) {
+        if (is_string($default)) {
             $default = OutputFormatter::escape($default);
         } elseif (\is_array($default)) {
             foreach ($default as $key => $value) {

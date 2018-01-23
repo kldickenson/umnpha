@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_Expression_Binary_Or', 'Twig\Node\Expression\Binary\OrBinary', false);

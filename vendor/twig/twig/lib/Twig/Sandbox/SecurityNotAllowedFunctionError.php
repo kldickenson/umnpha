@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Sandbox_SecurityNotAllowedFunctionError', 'Twig\Sandbox\SecurityNotAllowedFunctionError', false);

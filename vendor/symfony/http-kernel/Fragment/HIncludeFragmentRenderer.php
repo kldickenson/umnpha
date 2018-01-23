@@ -15,11 +15,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Controller\ControllerReference;
 use Symfony\Component\HttpKernel\UriSigner;
-use Symfony\Component\Templating\EngineInterface;
 use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Loader\ExistsLoaderInterface;
-use Twig\Loader\SourceContextLoaderInterface;
 
 /**
  * Implements the Hinclude rendering strategy.
@@ -34,6 +32,8 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
     private $charset;
 
     /**
+     * Constructor.
+     *
      * @param EngineInterface|Environment $templating            An EngineInterface or a Twig instance
      * @param UriSigner                   $signer                A UriSigner instance
      * @param string                      $globalDefaultTemplate The global default content (it can be a template name or the content)
@@ -138,6 +138,9 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
         }
 
         $loader = $this->templating->getLoader();
+        if ($loader instanceof ExistsLoaderInterface || method_exists($loader, 'exists')) {
+            return $loader->exists($template);
+        }
 
         if (1 === Environment::MAJOR_VERSION && !$loader instanceof ExistsLoaderInterface) {
             try {
@@ -151,7 +154,8 @@ class HIncludeFragmentRenderer extends RoutableFragmentRenderer
             } catch (LoaderError $e) {
             }
 
-            return false;
+            return true;
+        } catch (LoaderError $e) {
         }
 
         return $loader->exists($template);

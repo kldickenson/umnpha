@@ -28,10 +28,8 @@ class Definition
     private $shared = true;
     private $deprecated = false;
     private $deprecationTemplate;
-    private $properties = [];
-    private $calls = [];
-    private $instanceof = [];
-    private $autoconfigured = false;
+    private $properties = array();
+    private $calls = array();
     private $configurator;
     private $tags = [];
     private $public = true;
@@ -46,9 +44,9 @@ class Definition
     private $bindings = [];
     private $errors = [];
 
-    protected $arguments = [];
-
     private static $defaultDeprecationTemplate = 'The "%service_id%" service is deprecated. You should stop using it, as it will soon be removed.';
+
+    protected $arguments;
 
     /**
      * @param string|null $class     The service class

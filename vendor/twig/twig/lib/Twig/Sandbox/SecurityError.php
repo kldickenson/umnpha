@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Sandbox_SecurityError', 'Twig\Sandbox\SecurityError', false);

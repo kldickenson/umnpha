@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Error_Runtime', 'Twig\Error\RuntimeError', false);

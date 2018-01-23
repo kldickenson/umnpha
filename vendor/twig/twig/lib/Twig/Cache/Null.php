@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Cache_Null', 'Twig\Cache\NullCache', false);

@@ -25,7 +25,7 @@ class SilencedErrorContext implements \JsonSerializable
     private $line;
     private $trace;
 
-    public function __construct($severity, $file, $line, array $trace = [], $count = 1)
+    public function __construct($severity, $file, $line, array $trace = array(), $count = 1)
     {
         $this->severity = $severity;
         $this->file = $file;
@@ -54,7 +54,7 @@ class SilencedErrorContext implements \JsonSerializable
         return $this->trace;
     }
 
-    public function jsonSerialize()
+    public function JsonSerialize()
     {
         return [
             'severity' => $this->severity,
@@ -62,6 +62,6 @@ class SilencedErrorContext implements \JsonSerializable
             'line' => $this->line,
             'trace' => $this->trace,
             'count' => $this->count,
-        ];
+        );
     }
 }

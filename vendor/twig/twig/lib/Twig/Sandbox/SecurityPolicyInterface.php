@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Sandbox_SecurityPolicyInterface', 'Twig\Sandbox\SecurityPolicyInterface', false);

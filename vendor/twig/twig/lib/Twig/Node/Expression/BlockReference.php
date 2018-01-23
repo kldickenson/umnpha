@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_Expression_BlockReference', 'Twig\Node\Expression\BlockReferenceExpression', false);

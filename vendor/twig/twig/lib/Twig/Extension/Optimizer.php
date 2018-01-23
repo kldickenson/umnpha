@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Extension_Optimizer', 'Twig\Extension\OptimizerExtension', false);

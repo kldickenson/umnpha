@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_NodeTraverser', 'Twig\NodeTraverser', false);

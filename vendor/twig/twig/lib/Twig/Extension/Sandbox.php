@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Extension_Sandbox', 'Twig\Extension\SandboxExtension', false);

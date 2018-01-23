@@ -13,8 +13,8 @@ sites/*/settings.local.php
 
 # Note that services.local.yml is not loaded by default. If you would like
 # to use this file add the following to your settings.local.php file:
-#   $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
-sites/*/services.local.yml
+#   $settings['container_yamls'][] = __DIR__ . '/local.services.yml';
+sites/*/local.services.yml
 
 # ** Only works in OSs that support newer versions of fnmatch (Bash 4+)
 /sites/default/**/files
@@ -45,9 +45,11 @@ sites/simpletest
 ######################
 .DS_Store*
 ehthumbs.db
+Icon
+.idea/
 
 Thumbs.db
-._*
+._*compo
 
 # Vim generated files #
 ######################
@@ -56,6 +58,16 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# Style maps #
+##############
+*ss.map
+
+# Keeping things that build out of git #
+#####################################
+node_modules/
+bower_components/
+vendor/
 
 # Things in the core directory that Drupal 8 commits in the repository.
 !core/**/*.gz

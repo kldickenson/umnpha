@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_Expression_Filter_Default', 'Twig\Node\Expression\Filter\DefaultFilter', false);

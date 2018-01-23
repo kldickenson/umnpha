@@ -169,7 +169,7 @@ class Feed
      */
     public function setItunesImage($value)
     {
-        if (! is_string($value) || ! Uri::factory($value)->isValid()) {
+        if (! Uri::factory($value)->isValid()) {
             throw new Writer\Exception\InvalidArgumentException('invalid parameter: "image" may only'
             . ' be a valid URI/IRI');
         }
@@ -405,7 +405,6 @@ class Feed
                 'invalid method: ' . $method
             );
         }
-
         if (! array_key_exists($point, $this->data) || empty($this->data[$point])) {
             return;
         }

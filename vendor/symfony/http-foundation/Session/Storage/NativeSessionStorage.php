@@ -354,9 +354,9 @@ class NativeSessionStorage implements SessionStorageInterface
             'serialize_handler', 'use_strict_mode', 'use_cookies',
             'use_only_cookies', 'use_trans_sid', 'upload_progress.enabled',
             'upload_progress.cleanup', 'upload_progress.prefix', 'upload_progress.name',
-            'upload_progress.freq', 'upload_progress.min_freq', 'url_rewriter.tags',
+            'upload_progress.freq', 'upload_progress.min-freq', 'url_rewriter.tags',
             'sid_length', 'sid_bits_per_character', 'trans_sid_hosts', 'trans_sid_tags',
-        ]);
+        ));
 
         foreach ($options as $key => $value) {
             if (isset($validOptions[$key])) {

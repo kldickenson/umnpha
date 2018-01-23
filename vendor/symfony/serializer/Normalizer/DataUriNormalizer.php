@@ -85,9 +85,6 @@ class DataUriNormalizer implements NormalizerInterface, DenormalizerInterface
      * Regex adapted from Brian Grinstead code.
      *
      * @see https://gist.github.com/bgrins/6194623
-     *
-     * @throws InvalidArgumentException
-     * @throws NotNormalizableValueException
      */
     public function denormalize($data, $type, $format = null, array $context = [])
     {

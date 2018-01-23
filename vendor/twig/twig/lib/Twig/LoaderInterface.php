@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_LoaderInterface', 'Twig\Loader\LoaderInterface', false);

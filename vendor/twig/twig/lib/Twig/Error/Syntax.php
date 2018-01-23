@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Error_Syntax', 'Twig\Error\SyntaxError', false);

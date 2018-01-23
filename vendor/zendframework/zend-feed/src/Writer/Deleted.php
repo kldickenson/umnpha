@@ -144,8 +144,7 @@ class Deleted
         }
         if (is_int($date)) {
             $date = new DateTime('@' . $date);
-        }
-        if (! $date instanceof DateTimeInterface) {
+        } elseif (! $date instanceof DateTime) {
             throw new Exception\InvalidArgumentException('Invalid DateTime object or UNIX Timestamp'
             . ' passed as parameter');
         }

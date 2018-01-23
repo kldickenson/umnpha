@@ -34,6 +34,8 @@ class IbanValidator extends ConstraintValidator
      * included within it, a bank identifier with a fixed position and a fixed length per country
      *
      * @see https://www.swift.com/sites/default/files/resources/iban_registry.pdf
+     *
+     * @var array
      */
     private static $formats = [
         'AD' => 'AD\d{2}\d{4}\d{4}[\dA-Z]{12}', // Andorra
@@ -129,7 +131,6 @@ class IbanValidator extends ConstraintValidator
         'TN' => 'TN59\d{2}\d{3}\d{13}\d{2}', // Tunisia
         'TR' => 'TR\d{2}\d{5}[\dA-Z]{1}[\dA-Z]{16}', // Turkey
         'UA' => 'UA\d{2}\d{6}[\dA-Z]{19}', // Ukraine
-        'VA' => 'VA\d{2}\d{3}\d{15}', // Vatican City State
         'VG' => 'VG\d{2}[A-Z]{4}\d{16}', // Virgin Islands, British
         'WF' => 'FR\d{2}\d{5}\d{5}[\dA-Z]{11}\d{2}', // Wallis and Futuna Islands
         'XK' => 'XK\d{2}\d{4}\d{10}\d{2}', // Republic of Kosovo

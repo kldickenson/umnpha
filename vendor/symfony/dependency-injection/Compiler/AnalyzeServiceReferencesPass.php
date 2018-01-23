@@ -15,9 +15,9 @@ use Symfony\Component\DependencyInjection\Argument\ArgumentInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\Exception\RuntimeException;
 use Symfony\Component\DependencyInjection\ExpressionLanguage;
 use Symfony\Component\DependencyInjection\Reference;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\ExpressionLanguage\Expression;
 
 /**
@@ -34,10 +34,7 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
     private $graph;
     private $currentDefinition;
     private $onlyConstructorArguments;
-    private $hasProxyDumper;
-    private $lazy;
     private $expressionLanguage;
-    private $byConstructor;
 
     /**
      * @param bool $onlyConstructorArguments Sets this Service Reference pass to ignore method calls
@@ -89,31 +86,34 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
         if ($value instanceof Expression) {
             $this->getExpressionLanguage()->compile((string) $value, ['this' => 'container']);
 
-            return $value;
-        }
-        if ($value instanceof Reference) {
-            $targetId = $this->getDefinitionId((string) $value);
-            $targetDefinition = $this->getDefinition($targetId);
+    /**
+     * Processes service definitions for arguments to find relationships for the service graph.
+     *
+     * @param array $arguments An array of Reference or Definition objects relating to service definitions
+     */
+    private function processArguments(array $arguments)
+    {
+        foreach ($arguments as $argument) {
+            if (is_array($argument)) {
+                $this->processArguments($argument);
+            } elseif ($argument instanceof Expression) {
+                $this->getExpressionLanguage()->compile((string) $argument, array('this' => 'container'));
+            } elseif ($argument instanceof Reference) {
+                $this->graph->connect(
+                    $this->currentId,
+                    $this->currentDefinition,
+                    $this->getDefinitionId((string) $argument),
+                    $this->getDefinition((string) $argument),
+                    $argument
+                );
+            } elseif ($argument instanceof Definition) {
+                $this->processArguments($argument->getArguments());
+                $this->processArguments($argument->getMethodCalls());
+                $this->processArguments($argument->getProperties());
 
-            $this->graph->connect(
-                $this->currentId,
-                $this->currentDefinition,
-                $targetId,
-                $targetDefinition,
-                $value,
-                $this->lazy || ($this->hasProxyDumper && $targetDefinition && $targetDefinition->isLazy()),
-                ContainerInterface::IGNORE_ON_UNINITIALIZED_REFERENCE === $value->getInvalidBehavior(),
-                $this->byConstructor
-            );
-
-            return $value;
-        }
-        if (!$value instanceof Definition) {
-            return parent::processValue($value, $isRoot);
-        }
-        if ($isRoot) {
-            if ($value->isSynthetic() || $value->isAbstract()) {
-                return $value;
+                if (is_array($argument->getFactory())) {
+                    $this->processArguments($argument->getFactory());
+                }
             }
             $this->currentDefinition = $value;
         } elseif ($this->currentDefinition === $value) {
@@ -179,6 +179,29 @@ class AnalyzeServiceReferencesPass extends AbstractRecursivePass implements Repe
                         $this->currentId,
                         $this->currentDefinition,
                         $id,
+                        $this->getDefinition($id)
+                    );
+                }
+
+                return sprintf('$this->get(%s)', $arg);
+            });
+        }
+
+        return $this->expressionLanguage;
+    }
+
+    private function getExpressionLanguage()
+    {
+        if (null === $this->expressionLanguage) {
+            $providers = $this->container->getExpressionLanguageProviders();
+            $this->expressionLanguage = new ExpressionLanguage(null, $providers, function ($arg) {
+                if ('""' === substr_replace($arg, '', 1, -1)) {
+                    $id = stripcslashes(substr($arg, 1, -1));
+
+                    $this->graph->connect(
+                        $this->currentId,
+                        $this->currentDefinition,
+                        $this->getDefinitionId($id),
                         $this->getDefinition($id)
                     );
                 }

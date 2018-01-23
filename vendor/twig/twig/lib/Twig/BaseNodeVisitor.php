@@ -9,3 +9,7 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_BaseNodeVisitor', 'Twig\NodeVisitor\AbstractNodeVisitor', false);
+class_exists('Twig_Environment');
+class_exists('Twig_Node');

@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_Macro', 'Twig\Node\MacroNode', false);

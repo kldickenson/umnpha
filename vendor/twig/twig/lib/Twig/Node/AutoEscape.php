@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Node_AutoEscape', 'Twig\Node\AutoEscapeNode', false);

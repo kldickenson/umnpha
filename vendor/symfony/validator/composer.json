@@ -52,7 +52,6 @@
         "symfony/yaml": "",
         "symfony/config": "",
         "egulias/email-validator": "Strict (RFC compliant) email validation",
-        "symfony/property-access": "For accessing properties within comparison constraints",
         "symfony/expression-language": "For using the Expression validator"
     },
     "autoload": {

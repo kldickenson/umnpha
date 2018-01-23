@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_RuntimeLoaderInterface', 'Twig\RuntimeLoader\RuntimeLoaderInterface', false);

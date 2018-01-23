@@ -585,9 +585,9 @@ class Reader implements ReaderImportInterface
             ));
         }
 
-        // Return early if already registered.
-        if (static::isRegistered($name)) {
-            return;
+        if (! $manager->has($feedName) && ! $manager->has($entryName)) {
+            throw new Exception\RuntimeException('Could not load extension: ' . $name
+                . ' using Plugin Loader. Check prefix paths are configured and extension exists.');
         }
 
         $manager   = static::getExtensionManager();

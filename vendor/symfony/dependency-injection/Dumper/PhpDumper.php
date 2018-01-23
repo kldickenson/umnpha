@@ -424,9 +424,11 @@ EOF;
     /**
      * Generates the require_once statement for service includes.
      *
+     * @param Definition $definition
+     *
      * @return string
      */
-    private function addServiceInclude($cId, Definition $definition)
+    private function addServiceInclude($definition)
     {
         $code = '';
 
@@ -452,7 +454,31 @@ EOF;
             foreach (array_diff_key(array_flip($lineage), $this->inlinedRequires) as $file => $class) {
                 $code .= sprintf("        include_once %s;\n", $file);
             }
-        }
+            $processed->offsetSet($sDefinition);
+
+            $class = $this->dumpValue($sDefinition->getClass());
+            if ($nbOccurrences->offsetGet($sDefinition) > 1 || $sDefinition->getMethodCalls() || $sDefinition->getProperties() || null !== $sDefinition->getConfigurator() || false !== strpos($class, '$')) {
+                $name = $this->getNextVariableName();
+                $variableMap->offsetSet($sDefinition, new Variable($name));
+
+                // a construct like:
+                // $a = new ServiceA(ServiceB $b); $b = new ServiceB(ServiceA $a);
+                // this is an indication for a wrong implementation, you can circumvent this problem
+                // by setting up your service structure like this:
+                // $b = new ServiceB();
+                // $a = new ServiceA(ServiceB $b);
+                // $b->setServiceA(ServiceA $a);
+                if ($this->hasReference($id, $sDefinition->getArguments())) {
+                    throw new ServiceCircularReferenceException($id, array($id));
+                }
+
+                $code .= $this->addNewInstance($sDefinition, '$'.$name, ' = ', $id);
+
+                if (!$this->hasReference($id, $sDefinition->getMethodCalls(), true) && !$this->hasReference($id, $sDefinition->getProperties(), true)) {
+                    $code .= $this->addServiceProperties($sDefinition, $name);
+                    $code .= $this->addServiceMethodCalls($sDefinition, $name);
+                    $code .= $this->addServiceConfigurator($sDefinition, $name);
+                }
 
         foreach ($this->inlinedDefinitions as $def) {
             if ($file = $def->getFile()) {
@@ -551,7 +577,8 @@ EOF;
     /**
      * Adds method calls to a service definition.
      *
-     * @param string $variableName
+     * @param Definition $definition
+     * @param string     $variableName
      *
      * @return string
      */
@@ -581,9 +608,55 @@ EOF;
     }
 
     /**
+     * Generates the inline definition setup.
+     *
+     * @param string     $id
+     * @param Definition $definition
+     *
+     * @return string
+     *
+     * @throws ServiceCircularReferenceException when the container contains a circular reference
+     */
+    private function addServiceInlinedDefinitionsSetup($id, Definition $definition)
+    {
+        $this->referenceVariables[$id] = new Variable('instance');
+
+        $code = '';
+        $processed = new \SplObjectStorage();
+        foreach ($this->getInlinedDefinitions($definition) as $iDefinition) {
+            if ($processed->contains($iDefinition)) {
+                continue;
+            }
+            $processed->offsetSet($iDefinition);
+
+            if (!$this->hasReference($id, $iDefinition->getMethodCalls(), true) && !$this->hasReference($id, $iDefinition->getProperties(), true)) {
+                continue;
+            }
+
+            // if the instance is simple, the return statement has already been generated
+            // so, the only possible way to get there is because of a circular reference
+            if ($this->isSimpleInstance($id, $definition)) {
+                throw new ServiceCircularReferenceException($id, array($id));
+            }
+
+            $name = (string) $this->definitionVariables->offsetGet($iDefinition);
+            $code .= $this->addServiceProperties($iDefinition, $name);
+            $code .= $this->addServiceMethodCalls($iDefinition, $name);
+            $code .= $this->addServiceConfigurator($iDefinition, $name);
+        }
+
+        if ('' !== $code) {
+            $code .= "\n";
+        }
+
+        return $code;
+    }
+
+    /**
      * Adds configurator definition.
      *
-     * @param string $variableName
+     * @param Definition $definition
+     * @param string     $variableName
      *
      * @return string
      */
@@ -633,8 +706,10 @@ EOF;
 
         $return = [];
 
-        if ($class = $definition->getClass()) {
-            $class = $class instanceof Parameter ? '%'.$class.'%' : $this->container->resolveEnvPlaceholders($class);
+        if ($definition->isSynthetic()) {
+            $return[] = '@throws RuntimeException always since this service is expected to be injected dynamically';
+        } elseif ($class = $definition->getClass()) {
+            $class = $this->container->resolveEnvPlaceholders($class);
             $return[] = sprintf(0 === strpos($class, '%') ? '@return object A %1$s instance' : '@return \%s', ltrim($class, '\\'));
         } elseif ($definition->getFactory()) {
             $factory = $definition->getFactory();
@@ -668,57 +743,15 @@ EOF;
             $lazyInitialization = '';
         }
 
-        $asFile = $this->asFiles && $definition->isShared() && !$this->isHotPath($definition);
-        $methodName = $this->generateMethodName($id);
-        if ($asFile) {
-            $file = $methodName.'.php';
-            $code = "        // Returns the $public '$id'$shared$autowired service.\n\n";
-        } else {
-            $code = <<<EOF
+        $this->definitionVariables = $this->inlinedDefinitions = null;
+        $this->referenceVariables = $this->serviceCalls = null;
 
     /*{$this->docStar}
      * Gets the $public '$id'$shared$autowired service.
      *
      * $return
-EOF;
-            $code = str_replace('*/', ' ', $code).<<<EOF
-
      */
-    protected function {$methodName}($lazyInitialization)
-    {
-
-EOF;
-        }
-
-        $this->serviceCalls = [];
-        $this->inlinedDefinitions = $this->getDefinitionsFromArguments([$definition], null, $this->serviceCalls);
-
-        $code .= $this->addServiceInclude($id, $definition);
-
-        if ($this->getProxyDumper()->isProxyCandidate($definition)) {
-            $factoryCode = $asFile ? "\$this->load('%s.php', false)" : '$this->%s(false)';
-            $code .= $this->getProxyDumper()->getProxyFactoryCode($definition, $id, sprintf($factoryCode, $methodName, $this->doExport($id)));
-        }
-
-        if ($definition->isDeprecated()) {
-            $code .= sprintf("        @trigger_error(%s, E_USER_DEPRECATED);\n\n", $this->export($definition->getDeprecationMessage($id)));
-        }
-
-        $code .= $this->addInlineService($id, $definition);
-
-        if ($asFile) {
-            $code = implode("\n", array_map(function ($line) { return $line ? substr($line, 8) : $line; }, explode("\n", $code)));
-        } else {
-            $code .= "    }\n";
-        }
-
-        $this->definitionVariables = $this->inlinedDefinitions = null;
-        $this->referenceVariables = $this->serviceCalls = null;
-
-        return $code;
-    }
-
-    private function addInlineVariables($id, Definition $definition, array $arguments, $forConstructor)
+    {$visibility} function {$methodName}($lazyInitialization)
     {
         $code = '';
 
@@ -800,8 +833,17 @@ EOTXT
             }
         }
 
-        if (isset($this->definitionVariables[$inlineDef = $inlineDef ?: $definition])) {
-            return $code;
+            $code .=
+                $this->addServiceInclude($definition).
+                $this->addServiceLocalTempVariables($id, $definition).
+                $this->addServiceInlinedDefinitions($id, $definition).
+                $this->addServiceInstance($id, $definition).
+                $this->addServiceInlinedDefinitionsSetup($id, $definition).
+                $this->addServiceProperties($definition).
+                $this->addServiceMethodCalls($definition).
+                $this->addServiceConfigurator($definition).
+                $this->addServiceReturn($id, $definition)
+            ;
         }
 
         $arguments = [$inlineDef->getArguments(), $inlineDef->getFactory()];
@@ -941,8 +983,8 @@ EOTXT
      */
     private function startClass($class, $baseClass, $baseClassWithNamespace)
     {
-        $bagClass = $this->container->isCompiled() ? 'use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;' : 'use Symfony\Component\DependencyInjection\ParameterBag\\ParameterBag;';
-        $namespaceLine = !$this->asFiles && $this->namespace ? "\nnamespace {$this->namespace};\n" : '';
+        $bagClass = $this->container->isFrozen() ? 'use Symfony\Component\DependencyInjection\ParameterBag\FrozenParameterBag;' : 'use Symfony\Component\DependencyInjection\ParameterBag\\ParameterBag;';
+        $namespaceLine = $namespace ? "\nnamespace $namespace;\n" : '';
 
         $code = <<<EOF
 <?php
@@ -1525,6 +1567,19 @@ EOF;
             return $code;
         }
 
+        $conditions = array();
+        foreach ($services as $service) {
+            if ($this->container->hasDefinition($service) && !$this->container->getDefinition($service)->isPublic()) {
+                continue;
+            }
+
+            $conditions[] = sprintf("\$this->has('%s')", $service);
+        }
+
+        if (!$conditions) {
+            return $code;
+        }
+
         // re-indent the wrapped code
         $code = implode("\n", array_map(function ($line) { return $line ? '    '.$line : $line; }, explode("\n", $code)));
 
@@ -1833,7 +1888,6 @@ EOF;
         while ($this->container->hasAlias($id)) {
             $id = (string) $this->container->getAlias($id);
         }
-        $id = $this->container->normalizeId($id);
 
         if ('service_container' === $id) {
             return '$this';
@@ -1866,9 +1920,7 @@ EOF;
             $code = sprintf('$this->get(%s)', $this->doExport($id));
         }
 
-        // The following is PHP 5.5 syntax for what could be written as "(\$this->services['$id'] ?? $code)" on PHP>=7.0
-
-        return sprintf("\${(\$_ = isset(\$this->services[%s]) ? \$this->services[%1\$s] : %s) && false ?: '_'}", $this->doExport($id), $code);
+        return sprintf('$this->get(\'%s\')', $id);
     }
 
     /**

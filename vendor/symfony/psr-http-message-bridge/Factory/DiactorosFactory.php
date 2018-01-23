@@ -61,7 +61,7 @@ class DiactorosFactory implements HttpMessageFactoryInterface
 
         $request = new ServerRequest(
             $server,
-            $files,
+            DiactorosRequestFactory::normalizeFiles($this->getFiles($symfonyRequest->files->all())),
             $symfonyRequest->getSchemeAndHttpHost().$symfonyRequest->getRequestUri(),
             $symfonyRequest->getMethod(),
             $body,

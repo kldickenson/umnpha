@@ -211,14 +211,26 @@ abstract class AbstractCallback implements CallbackInterface
     protected function _detectCallbackUrl()
     {
         // @codingStandardsIgnoreEnd
-        $callbackUrl = null;
-
-        // IIS7 with URL Rewrite: make sure we get the unencoded url
-        // (double slash problem).
-        $iisUrlRewritten = isset($_SERVER['IIS_WasUrlRewritten']) ? $_SERVER['IIS_WasUrlRewritten'] : null;
-        $unencodedUrl    = isset($_SERVER['UNENCODED_URL']) ? $_SERVER['UNENCODED_URL'] : null;
-        if ('1' == $iisUrlRewritten && ! empty($unencodedUrl)) {
-            return $unencodedUrl;
+        $callbackUrl = '';
+        if (isset($_SERVER['HTTP_X_ORIGINAL_URL'])) {
+            $callbackUrl = $_SERVER['HTTP_X_ORIGINAL_URL'];
+        } elseif (isset($_SERVER['HTTP_X_REWRITE_URL'])) {
+            $callbackUrl = $_SERVER['HTTP_X_REWRITE_URL'];
+        } elseif (isset($_SERVER['REQUEST_URI'])) {
+            $callbackUrl = $_SERVER['REQUEST_URI'];
+            $scheme = 'http';
+            if ($_SERVER['HTTPS'] == 'on') {
+                $scheme = 'https';
+            }
+            $schemeAndHttpHost = $scheme . '://' . $this->_getHttpHost();
+            if (strpos($callbackUrl, $schemeAndHttpHost) === 0) {
+                $callbackUrl = substr($callbackUrl, strlen($schemeAndHttpHost));
+            }
+        } elseif (isset($_SERVER['ORIG_PATH_INFO'])) {
+            $callbackUrl = $_SERVER['ORIG_PATH_INFO'];
+            if (! empty($_SERVER['QUERY_STRING'])) {
+                $callbackUrl .= '?' . $_SERVER['QUERY_STRING'];
+            }
         }
 
         // HTTP proxy requests setup request URI with scheme and host [and port]
@@ -301,25 +313,9 @@ abstract class AbstractCallback implements CallbackInterface
     protected function _getRawBody()
     {
         // @codingStandardsIgnoreEnd
-        $body = is_resource($this->inputStream)
-            ? stream_get_contents($this->inputStream)
-            : file_get_contents($this->inputStream);
-
-        return strlen(trim($body)) > 0 ? $body : false;
-    }
-
-    /**
-     * Build the callback URL from the REQUEST_URI server parameter.
-     *
-     * @return string
-     */
-    private function buildCallbackUrlFromRequestUri()
-    {
-        $callbackUrl = $_SERVER['REQUEST_URI'];
-        $https = isset($_SERVER['HTTPS']) ? $_SERVER['HTTPS'] : null;
-        $scheme = $https === 'on' ? 'https' : 'http';
-        if ($https === 'on') {
-            $scheme = 'https';
+        $body = file_get_contents('php://input');
+        if (strlen(trim($body)) == 0 && isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
+            $body = $GLOBALS['HTTP_RAW_POST_DATA'];
         }
         $schemeAndHttpHost = $scheme . '://' . $this->_getHttpHost();
         if (strpos($callbackUrl, $schemeAndHttpHost) === 0) {

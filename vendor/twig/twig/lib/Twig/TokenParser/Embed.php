@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_TokenParser_Embed', 'Twig\TokenParser\EmbedTokenParser', false);

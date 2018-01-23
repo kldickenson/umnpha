@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Loader_Chain', 'Twig\Loader\ChainLoader', false);

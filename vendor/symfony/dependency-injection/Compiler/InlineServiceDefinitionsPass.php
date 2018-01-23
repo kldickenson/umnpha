@@ -114,7 +114,7 @@ class InlineServiceDefinitionsPass extends AbstractRecursivePass implements Repe
             return true;
         }
 
-        if ($definition->isPublic() || $definition->isPrivate()) {
+        if ($definition->isDeprecated() || $definition->isPublic() || $definition->isLazy()) {
             return false;
         }
 

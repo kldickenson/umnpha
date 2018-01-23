@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Extension_Escaper', 'Twig\Extension\EscaperExtension', false);

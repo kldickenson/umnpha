@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_TokenParser_Macro', 'Twig\TokenParser\MacroTokenParser', false);

@@ -100,7 +100,7 @@ class ErrorHandler
     private static $stackedErrors = [];
     private static $stackedErrorLevels = [];
     private static $toStringException = null;
-    private static $silencedErrorCache = [];
+    private static $silencedErrorCache = array();
     private static $silencedErrorCount = 0;
     private static $exitCode = 0;
 
@@ -430,26 +430,26 @@ class ErrorHandler
             self::$toStringException = null;
         } elseif (!$throw && !($type & $level)) {
             if (!isset(self::$silencedErrorCache[$id = $file.':'.$line])) {
-                $lightTrace = $this->tracedErrors & $type ? $this->cleanTrace(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 3), $type, $file, $line, false) : [];
+                $lightTrace = $this->tracedErrors & $type ? $this->cleanTrace(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS, 3), $type, $file, $line, false) : array();
                 $errorAsException = new SilencedErrorContext($type, $file, $line, $lightTrace);
             } elseif (isset(self::$silencedErrorCache[$id][$message])) {
                 $lightTrace = null;
                 $errorAsException = self::$silencedErrorCache[$id][$message];
                 ++$errorAsException->count;
             } else {
-                $lightTrace = [];
+                $lightTrace = array();
                 $errorAsException = null;
             }
 
             if (100 < ++self::$silencedErrorCount) {
-                self::$silencedErrorCache = $lightTrace = [];
+                self::$silencedErrorCache = $lightTrace = array();
                 self::$silencedErrorCount = 1;
             }
             if ($errorAsException) {
                 self::$silencedErrorCache[$id][$message] = $errorAsException;
             }
             if (null === $lightTrace) {
-                return true;
+                return;
             }
         } else {
             if ($scope) {
@@ -518,8 +518,8 @@ class ErrorHandler
                 $this->loggers[$type][0],
                 ($type & $level) ? $this->loggers[$type][1] : LogLevel::DEBUG,
                 $logMessage,
-                $errorAsException ? ['exception' => $errorAsException] : [],
-            ];
+                $errorAsException ? array('exception' => $errorAsException) : array(),
+            );
         } else {
             if (!\defined('HHVM_VERSION')) {
                 $currentErrorHandler = set_error_handler('var_dump');
@@ -529,7 +529,7 @@ class ErrorHandler
             try {
                 $this->isRecursive = true;
                 $level = ($type & $level) ? $this->loggers[$type][1] : LogLevel::DEBUG;
-                $this->loggers[$type][0]->log($level, $logMessage, $errorAsException ? ['exception' => $errorAsException] : []);
+                $this->loggers[$type][0]->log($level, $logMessage, $errorAsException ? array('exception' => $errorAsException) : array());
             } finally {
                 $this->isRecursive = false;
 
@@ -594,18 +594,15 @@ class ErrorHandler
                 }
             }
         }
-        $exceptionHandler = $this->exceptionHandler;
-        $this->exceptionHandler = null;
         try {
-            if (null !== $exceptionHandler) {
-                $exceptionHandler($exception);
-
-                return;
+            if (null !== $this->exceptionHandler) {
+                return \call_user_func($this->exceptionHandler, $exception);
             }
             $handlerException = $handlerException ?: $exception;
         } catch (\Exception $handlerException) {
         } catch (\Throwable $handlerException) {
         }
+        $this->exceptionHandler = null;
         if ($exception === $handlerException) {
             self::$reservedMemory = null; // Disable the fatal error handler
             throw $exception; // Give back $exception to the native handler
@@ -627,11 +624,9 @@ class ErrorHandler
         }
 
         $handler = self::$reservedMemory = null;
-        $handlers = [];
-        $previousHandler = null;
-        $sameHandlerLimit = 10;
+        $handlers = array();
 
-        while (!\is_array($handler) || !$handler[0] instanceof self) {
+        while (!is_array($handler) || !$handler[0] instanceof self) {
             $handler = set_exception_handler('var_dump');
             restore_exception_handler();
 
@@ -639,14 +634,7 @@ class ErrorHandler
                 break;
             }
             restore_exception_handler();
-
-            if ($handler !== $previousHandler) {
-                array_unshift($handlers, $handler);
-                $previousHandler = $handler;
-            } elseif (0 === --$sameHandlerLimit) {
-                $handler = null;
-                break;
-            }
+            array_unshift($handlers, $handler);
         }
         foreach ($handlers as $h) {
             set_exception_handler($h);
@@ -658,7 +646,7 @@ class ErrorHandler
             $handler[0]->setExceptionHandler($h);
         }
         $handler = $handler[0];
-        $handlers = [];
+        $handlers = array();
 
         if ($exit = null === $error) {
             $error = error_get_last();
@@ -773,6 +761,25 @@ class ErrorHandler
         for ($i = 0; isset($backtrace[$i]); ++$i) {
             if (isset($backtrace[$i]['file'], $backtrace[$i]['line']) && $backtrace[$i]['line'] === $line && $backtrace[$i]['file'] === $file) {
                 $lightTrace = \array_slice($lightTrace, 1 + $i);
+                break;
+            }
+        }
+        if (!($throw || $this->scopedErrors & $type)) {
+            for ($i = 0; isset($lightTrace[$i]); ++$i) {
+                unset($lightTrace[$i]['args'], $lightTrace[$i]['object']);
+            }
+        }
+
+        return $lightTrace;
+    }
+
+    private function cleanTrace($backtrace, $type, $file, $line, $throw)
+    {
+        $lightTrace = $backtrace;
+
+        for ($i = 0; isset($backtrace[$i]); ++$i) {
+            if (isset($backtrace[$i]['file'], $backtrace[$i]['line']) && $backtrace[$i]['line'] === $line && $backtrace[$i]['file'] === $file) {
+                $lightTrace = array_slice($lightTrace, 1 + $i);
                 break;
             }
         }

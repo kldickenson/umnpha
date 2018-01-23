@@ -52,7 +52,7 @@ class IcuResFileDumper extends FileDumper
 
         $resOffset = $this->getPosition($data);
 
-        $data .= pack('v', \count($messages->all($domain)))
+        $data .= pack('v', count($messages->all($domain)))
             .$indexes
             .$this->writePadding($data)
             .$resources
@@ -66,7 +66,7 @@ class IcuResFileDumper extends FileDumper
             $keyTop,                        // Index keys top
             $bundleTop,                     // Index resources top
             $bundleTop,                     // Index bundle top
-            \count($messages->all($domain)), // Index max table length
+            count($messages->all($domain)), // Index max table length
             0                               // Index attributes
         );
 

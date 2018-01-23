@@ -190,8 +190,7 @@ class Entry
         }
         if (is_int($date)) {
             $date = new DateTime('@' . $date);
-        }
-        if (! $date instanceof DateTimeInterface) {
+        } elseif (! $date instanceof DateTime) {
             throw new Exception\InvalidArgumentException(
                 'Invalid DateTime object or UNIX Timestamp passed as parameter'
             );
@@ -215,8 +214,7 @@ class Entry
         }
         if (is_int($date)) {
             $date = new DateTime('@' . $date);
-        }
-        if (! $date instanceof DateTimeInterface) {
+        } elseif (! $date instanceof DateTime) {
             throw new Exception\InvalidArgumentException(
                 'Invalid DateTime object or UNIX Timestamp passed as parameter'
             );
@@ -369,7 +367,7 @@ class Entry
      */
     public function setTitle($title)
     {
-        if ((empty($title) && ! is_numeric($title)) || ! is_string($title)) {
+        if (empty($title) || ! is_string($title)) {
             throw new Exception\InvalidArgumentException('Invalid parameter: parameter must be a non-empty string');
         }
         $this->data['title'] = $title;

@@ -9,3 +9,5 @@ if (\false) {
     {
     }
 }
+
+class_alias('Twig_Util_TemplateDirIterator', 'Twig\Util\TemplateDirIterator', false);

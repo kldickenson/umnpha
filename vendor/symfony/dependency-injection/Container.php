@@ -25,8 +25,19 @@ use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
  *
  * It gives access to object instances (services).
  * Services and parameters are simple key/pair stores.
- * The container can have four possible behaviors when a service
- * does not exist (or is not initialized for the last case):
+ *
+ * Parameter and service keys are case insensitive.
+ *
+ * A service can also be defined by creating a method named
+ * getXXXService(), where XXX is the camelized version of the id:
+ *
+ * <ul>
+ *   <li>request -> getRequestService()</li>
+ *   <li>mysql_session_storage -> getMysqlSessionStorageService()</li>
+ *   <li>symfony.mysql_session_storage -> getSymfony_MysqlSessionStorageService()</li>
+ * </ul>
+ *
+ * The container can have three possible behaviors when a service does not exist:
  *
  *  * EXCEPTION_ON_INVALID_REFERENCE: Throws an exception (the default)
  *  * NULL_ON_INVALID_REFERENCE:      Returns null
@@ -48,10 +59,18 @@ class Container implements ResettableContainerInterface
     protected $resolving = [];
     protected $syntheticIds = [];
 
+    protected $services = array();
+    protected $methodMap = array();
+    protected $aliases = array();
+    protected $loading = array();
+
     /**
      * @internal
      */
-    protected $privates = [];
+    protected $privates = array();
+
+    private $underscoreMap = array('_' => '', '.' => '_', '\\' => '_');
+    private $envCache = array();
 
     /**
      * @internal
@@ -221,19 +240,17 @@ class Container implements ResettableContainerInterface
     {
         for ($i = 2;;) {
             if (isset($this->privates[$id])) {
-                @trigger_error(sprintf('The "%s" service is private, checking for its existence is deprecated since Symfony 3.2 and will fail in 4.0.', $id), E_USER_DEPRECATED);
+                @trigger_error(sprintf('Checking for the existence of the "%s" private service is deprecated since Symfony 3.2 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
             }
-            if (isset($this->aliases[$id])) {
-                $id = $this->aliases[$id];
-            }
-            if (isset($this->services[$id])) {
-                return true;
-            }
-            if ('service_container' === $id) {
+
+            if ('service_container' === $id
+                || isset($this->aliases[$id])
+                || isset($this->services[$id])
+            ) {
                 return true;
             }
 
-            if (isset($this->fileMap[$id]) || isset($this->methodMap[$id])) {
+            if (isset($this->methodMap[$id])) {
                 return true;
             }
 
@@ -279,7 +296,7 @@ class Container implements ResettableContainerInterface
         // calling $this->normalizeId($id) unless necessary.
         for ($i = 2;;) {
             if (isset($this->privates[$id])) {
-                @trigger_error(sprintf('The "%s" service is private, getting it from the container is deprecated since Symfony 3.2 and will fail in 4.0. You should either make the service public, or stop using the container directly and use dependency injection instead.', $id), E_USER_DEPRECATED);
+                @trigger_error(sprintf('Requesting the "%s" private service is deprecated since Symfony 3.2 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
             }
             if (isset($this->aliases[$id])) {
                 $id = $this->aliases[$id];
@@ -294,7 +311,37 @@ class Container implements ResettableContainerInterface
             }
 
             if (isset($this->loading[$id])) {
-                throw new ServiceCircularReferenceException($id, array_merge(array_keys($this->loading), [$id]));
+                throw new ServiceCircularReferenceException($id, array_keys($this->loading));
+            }
+
+            if (isset($this->methodMap[$id])) {
+                $method = $this->methodMap[$id];
+            } elseif (--$i && $id !== $lcId = strtolower($id)) {
+                $id = $lcId;
+                continue;
+            } elseif (!$this->methodMap && !$this instanceof ContainerBuilder && __CLASS__ !== static::class && method_exists($this, $method = 'get'.strtr($id, $this->underscoreMap).'Service')) {
+                // We only check the convention-based factory in a compiled container (i.e. a child class other than a ContainerBuilder,
+                // and only when the dumper has not generated the method map (otherwise the method map is considered to be fully populated by the dumper)
+                @trigger_error('Generating a dumped container without populating the method map is deprecated since 3.2 and will be unsupported in 4.0. Update your dumper to generate the method map.', E_USER_DEPRECATED);
+                // $method is set to the right value, proceed
+            } else {
+                if (self::EXCEPTION_ON_INVALID_REFERENCE === $invalidBehavior) {
+                    if (!$id) {
+                        throw new ServiceNotFoundException($id);
+                    }
+
+                    $alternatives = array();
+                    foreach ($this->getServiceIds() as $knownId) {
+                        $lev = levenshtein($id, $knownId);
+                        if ($lev <= strlen($id) / 3 || false !== strpos($knownId, $id)) {
+                            $alternatives[] = $knownId;
+                        }
+                    }
+
+                    throw new ServiceNotFoundException($id, null, null, $alternatives);
+                }
+
+                return;
             }
 
             $this->loading[$id] = true;
@@ -359,10 +406,6 @@ class Container implements ResettableContainerInterface
     public function initialized($id)
     {
         $id = $this->normalizeId($id);
-
-        if (isset($this->privates[$id])) {
-            @trigger_error(sprintf('Checking for the initialization of the "%s" private service is deprecated since Symfony 3.4 and won\'t be supported anymore in Symfony 4.0.', $id), E_USER_DEPRECATED);
-        }
 
         if (isset($this->aliases[$id])) {
             $id = $this->aliases[$id];
