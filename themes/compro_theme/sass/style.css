@@ -646,7 +646,6 @@ header {
     margin: 0 25px 0 0; }
   .node--type-report.node--view-mode-teaser .group-report-teaser-text {
     font-size: 16px;
-    padding: 0 0 50px 0;
     position: relative; }
 .node--type-report .node--type-report-container {
   margin: 60px auto 0;
@@ -1536,6 +1535,9 @@ a[href].learn-more.button {
   background-color: #3ca0ef;
   text-decoration: none;
   transition: 250ms ease-in-out; }
+
+.view-id-report .views-infinite-scroll-content-wrapper .views-row {
+  margin-bottom: 2rem; }
 
 .view-id-report .views-infinite-scroll-content-wrapper .views-row:after {
   clear: both;
