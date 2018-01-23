@@ -14,6 +14,10 @@
   transition: 250ms ease-in-out;
 }
 
+.view-id-report .views-infinite-scroll-content-wrapper .views-row {
+  margin-bottom: 2rem;
+}
+
 .view-id-report .views-infinite-scroll-content-wrapper .views-row:after {
   clear: both;
   content: '';
