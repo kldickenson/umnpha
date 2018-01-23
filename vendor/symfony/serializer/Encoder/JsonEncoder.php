@@ -20,7 +20,14 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
 {
     const FORMAT = 'json';
 
+    /**
+     * @var JsonEncode
+     */
     protected $encodingImpl;
+
+    /**
+     * @var JsonDecode
+     */
     protected $decodingImpl;
 
     public function __construct(JsonEncode $encodingImpl = null, JsonDecode $decodingImpl = null)
@@ -32,7 +39,7 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
     /**
      * {@inheritdoc}
      */
-    public function encode($data, $format, array $context = [])
+    public function encode($data, $format, array $context = array())
     {
         return $this->encodingImpl->encode($data, self::FORMAT, $context);
     }
@@ -40,7 +47,7 @@ class JsonEncoder implements EncoderInterface, DecoderInterface
     /**
      * {@inheritdoc}
      */
-    public function decode($data, $format, array $context = [])
+    public function decode($data, $format, array $context = array())
     {
         return $this->decodingImpl->decode($data, self::FORMAT, $context);
     }

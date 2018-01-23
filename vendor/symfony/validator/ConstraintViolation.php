@@ -18,15 +18,54 @@ namespace Symfony\Component\Validator;
  */
 class ConstraintViolation implements ConstraintViolationInterface
 {
+    /**
+     * @var string
+     */
     private $message;
+
+    /**
+     * @var string
+     */
     private $messageTemplate;
+
+    /**
+     * @var array
+     */
     private $parameters;
+
+    /**
+     * @var int|null
+     */
     private $plural;
+
+    /**
+     * @var mixed
+     */
     private $root;
+
+    /**
+     * @var string
+     */
     private $propertyPath;
+
+    /**
+     * @var mixed
+     */
     private $invalidValue;
+
+    /**
+     * @var Constraint|null
+     */
     private $constraint;
+
+    /**
+     * @var mixed
+     */
     private $code;
+
+    /**
+     * @var mixed
+     */
     private $cause;
 
     /**
@@ -70,22 +109,22 @@ class ConstraintViolation implements ConstraintViolationInterface
      */
     public function __toString()
     {
-        if (\is_object($this->root)) {
-            $class = 'Object('.\get_class($this->root).')';
-        } elseif (\is_array($this->root)) {
+        if (is_object($this->root)) {
+            $class = 'Object('.get_class($this->root).')';
+        } elseif (is_array($this->root)) {
             $class = 'Array';
         } else {
             $class = (string) $this->root;
         }
 
         $propertyPath = (string) $this->propertyPath;
-        $code = (string) $this->code;
+        $code = $this->code;
 
         if ('' !== $propertyPath && '[' !== $propertyPath[0] && '' !== $class) {
             $class .= '.';
         }
 
-        if ('' !== $code) {
+        if (!empty($code)) {
             $code = ' (code '.$code.')';
         }
 

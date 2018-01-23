@@ -1,8 +1,25 @@
 <?php
 
-use Twig\Profiler\Profile;
+/*
+ * This file is part of Twig.
+ *
+ * (c) Fabien Potencier
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-class_exists('Twig\Profiler\Profile');
+/**
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @final
+ */
+class Twig_Profiler_Profile implements IteratorAggregate, Serializable
+{
+    const ROOT = 'ROOT';
+    const BLOCK = 'block';
+    const TEMPLATE = 'template';
+    const MACRO = 'macro';
 
     private $template;
     private $name;
@@ -128,12 +145,6 @@ class_exists('Twig\Profiler\Profile');
         );
     }
 
-    public function reset()
-    {
-        $this->starts = $this->ends = $this->profiles = array();
-        $this->enter();
-    }
-
     public function getIterator()
     {
         return new ArrayIterator($this->profiles);
@@ -146,7 +157,6 @@ class_exists('Twig\Profiler\Profile');
 
     public function unserialize($data)
     {
+        list($this->template, $this->name, $this->type, $this->starts, $this->ends, $this->profiles) = unserialize($data);
     }
 }
-
-class_alias('Twig_Profiler_Profile', 'Twig\Profiler\Profile', false);

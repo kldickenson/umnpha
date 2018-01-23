@@ -11,7 +11,6 @@
 
 namespace Symfony\Component\Validator\Constraints;
 
-use Symfony\Component\PropertyAccess\PropertyAccess;
 use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 
@@ -25,17 +24,12 @@ abstract class AbstractComparison extends Constraint
 {
     public $message;
     public $value;
-    public $propertyPath;
 
     /**
      * {@inheritdoc}
      */
     public function __construct($options = null)
     {
-        if (null === $options) {
-            $options = array();
-        }
-
         if (is_array($options) && !isset($options['value'])) {
             throw new ConstraintDefinitionException(sprintf(
                 'The %s constraint requires the "value" option to be set.',

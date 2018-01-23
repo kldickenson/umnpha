@@ -19,6 +19,8 @@ namespace Symfony\Component\Serializer\Mapping;
 class ClassMetadata implements ClassMetadataInterface
 {
     /**
+     * @var string
+     *
      * @internal This property is public in order to reduce the size of the
      *           class' serialized representation. Do not access it. Use
      *           {@link getName()} instead.
@@ -32,7 +34,7 @@ class ClassMetadata implements ClassMetadataInterface
      *           class' serialized representation. Do not access it. Use
      *           {@link getAttributesMetadata()} instead.
      */
-    public $attributesMetadata = [];
+    public $attributesMetadata = array();
 
     /**
      * @var \ReflectionClass
@@ -106,9 +108,9 @@ class ClassMetadata implements ClassMetadataInterface
      */
     public function __sleep()
     {
-        return [
+        return array(
             'name',
             'attributesMetadata',
-        ];
+        );
     }
 }

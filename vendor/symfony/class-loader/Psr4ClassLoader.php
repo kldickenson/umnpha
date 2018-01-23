@@ -11,20 +11,19 @@
 
 namespace Symfony\Component\ClassLoader;
 
-@trigger_error('The '.__NAMESPACE__.'\Psr4ClassLoader class is deprecated since Symfony 3.3 and will be removed in 4.0. Use Composer instead.', E_USER_DEPRECATED);
-
 /**
  * A PSR-4 compatible class loader.
  *
  * See http://www.php-fig.org/psr/psr-4/
  *
  * @author Alexander M. Turek <me@derrabus.de>
- *
- * @deprecated since version 3.3, to be removed in 4.0.
  */
 class Psr4ClassLoader
 {
-    private $prefixes = [];
+    /**
+     * @var array
+     */
+    private $prefixes = array();
 
     /**
      * @param string $prefix
@@ -33,8 +32,8 @@ class Psr4ClassLoader
     public function addPrefix($prefix, $baseDir)
     {
         $prefix = trim($prefix, '\\').'\\';
-        $baseDir = rtrim($baseDir, \DIRECTORY_SEPARATOR).\DIRECTORY_SEPARATOR;
-        $this->prefixes[] = [$prefix, $baseDir];
+        $baseDir = rtrim($baseDir, DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+        $this->prefixes[] = array($prefix, $baseDir);
     }
 
     /**
@@ -48,15 +47,13 @@ class Psr4ClassLoader
 
         foreach ($this->prefixes as list($currentPrefix, $currentBaseDir)) {
             if (0 === strpos($class, $currentPrefix)) {
-                $classWithoutPrefix = substr($class, \strlen($currentPrefix));
-                $file = $currentBaseDir.str_replace('\\', \DIRECTORY_SEPARATOR, $classWithoutPrefix).'.php';
+                $classWithoutPrefix = substr($class, strlen($currentPrefix));
+                $file = $currentBaseDir.str_replace('\\', DIRECTORY_SEPARATOR, $classWithoutPrefix).'.php';
                 if (file_exists($file)) {
                     return $file;
                 }
             }
         }
-
-        return null;
     }
 
     /**
@@ -83,7 +80,7 @@ class Psr4ClassLoader
      */
     public function register($prepend = false)
     {
-        spl_autoload_register([$this, 'loadClass'], true, $prepend);
+        spl_autoload_register(array($this, 'loadClass'), true, $prepend);
     }
 
     /**
@@ -91,6 +88,6 @@ class Psr4ClassLoader
      */
     public function unregister()
     {
-        spl_autoload_unregister([$this, 'loadClass']);
+        spl_autoload_unregister(array($this, 'loadClass'));
     }
 }

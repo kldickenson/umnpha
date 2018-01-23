@@ -1,11 +1,153 @@
 <?php
 
-use Twig\Template;
+/*
+ * This file is part of Twig.
+ *
+ * (c) Fabien Potencier
+ * (c) Armin Ronacher
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-class_exists('Twig\Template');
+/**
+ * Default base class for compiled templates.
+ *
+ * This class is an implementation detail of how template compilation currently
+ * works, which might change. It should never be used directly. Use $twig->load()
+ * instead, which returns an instance of Twig_TemplateWrapper.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ *
+ * @internal
+ */
+abstract class Twig_Template implements Twig_TemplateInterface
+{
+    /**
+     * @internal
+     */
+    protected static $cache = array();
 
-if (\false) {
-    class Twig_Template extends Template
+    protected $parent;
+    protected $parents = array();
+    protected $env;
+    protected $blocks = array();
+    protected $traits = array();
+
+    public function __construct(Twig_Environment $env)
+    {
+        $this->env = $env;
+    }
+
+    /**
+     * @internal this method will be removed in 2.0 and is only used internally to provide an upgrade path from 1.x to 2.0
+     */
+    public function __toString()
+    {
+        return $this->getTemplateName();
+    }
+
+    /**
+     * Returns the template name.
+     *
+     * @return string The template name
+     */
+    abstract public function getTemplateName();
+
+    /**
+     * Returns debug information about the template.
+     *
+     * @return array Debug information
+     *
+     * @internal
+     */
+    public function getDebugInfo()
+    {
+        return array();
+    }
+
+    /**
+     * Returns the template source code.
+     *
+     * @return string The template source code
+     *
+     * @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead
+     */
+    public function getSource()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getSourceContext() instead.', E_USER_DEPRECATED);
+
+        return '';
+    }
+
+    /**
+     * Returns information about the original template source code.
+     *
+     * @return Twig_Source
+     */
+    public function getSourceContext()
+    {
+        return new Twig_Source('', $this->getTemplateName());
+    }
+
+    /**
+     * @deprecated since 1.20 (to be removed in 2.0)
+     */
+    public function getEnvironment()
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.20 and will be removed in 2.0.', E_USER_DEPRECATED);
+
+        return $this->env;
+    }
+
+    /**
+     * Returns the parent template.
+     *
+     * This method is for internal use only and should never be called
+     * directly.
+     *
+     * @param array $context
+     *
+     * @return Twig_TemplateInterface|false The parent template or false if there is no parent
+     *
+     * @internal
+     */
+    public function getParent(array $context)
+    {
+        if (null !== $this->parent) {
+            return $this->parent;
+        }
+
+        try {
+            $parent = $this->doGetParent($context);
+
+            if (false === $parent) {
+                return false;
+            }
+
+            if ($parent instanceof self) {
+                return $this->parents[$parent->getTemplateName()] = $parent;
+            }
+
+            if (!isset($this->parents[$parent])) {
+                $this->parents[$parent] = $this->loadTemplate($parent);
+            }
+        } catch (Twig_Error_Loader $e) {
+            $e->setSourceContext(null);
+            $e->guess();
+
+            throw $e;
+        }
+
+        return $this->parents[$parent];
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return false;
+    }
+
+    public function isTraitable()
     {
         return true;
     }
@@ -485,14 +627,11 @@ if (\false) {
                     continue;
                 }
 
-                // skip get() and is() methods (in which case, $name is empty)
-                if ($name) {
-                    if (!isset($cache[$name])) {
-                        $cache[$name] = $method;
-                    }
-                    if (!isset($cache[$lcName])) {
-                        $cache[$lcName] = $method;
-                    }
+                if (!isset($cache[$name])) {
+                    $cache[$name] = $method;
+                }
+                if (!isset($cache[$lcName])) {
+                    $cache[$lcName] = $method;
                 }
             }
             self::$cache[$class] = $cache;
@@ -560,5 +699,3 @@ if (\false) {
         return $ret;
     }
 }
-
-class_alias('Twig_Template', 'Twig\Template', false);

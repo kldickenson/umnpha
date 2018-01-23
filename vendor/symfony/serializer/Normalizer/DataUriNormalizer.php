@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesser;
 use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesserInterface;
 use Symfony\Component\Serializer\Exception\InvalidArgumentException;
-use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
+use Symfony\Component\Serializer\Exception\UnexpectedValueException;
 
 /**
  * Normalizes an {@see \SplFileInfo} object to a data URI.
@@ -25,14 +25,8 @@ use Symfony\Component\Serializer\Exception\NotNormalizableValueException;
  */
 class DataUriNormalizer implements NormalizerInterface, DenormalizerInterface
 {
-    private static $supportedTypes = [
-        \SplFileInfo::class => true,
-        \SplFileObject::class => true,
-        File::class => true,
-    ];
-
     /**
-     * @var MimeTypeGuesserInterface|null
+     * @var MimeTypeGuesserInterface
      */
     private $mimeTypeGuesser;
 
@@ -48,7 +42,7 @@ class DataUriNormalizer implements NormalizerInterface, DenormalizerInterface
     /**
      * {@inheritdoc}
      */
-    public function normalize($object, $format = null, array $context = [])
+    public function normalize($object, $format = null, array $context = array())
     {
         if (!$object instanceof \SplFileInfo) {
             throw new InvalidArgumentException('The object must be an instance of "\SplFileInfo".');
@@ -85,15 +79,18 @@ class DataUriNormalizer implements NormalizerInterface, DenormalizerInterface
      * Regex adapted from Brian Grinstead code.
      *
      * @see https://gist.github.com/bgrins/6194623
+     *
+     * @throws InvalidArgumentException
+     * @throws UnexpectedValueException
      */
-    public function denormalize($data, $type, $format = null, array $context = [])
+    public function denormalize($data, $class, $format = null, array $context = array())
     {
         if (!preg_match('/^data:([a-z0-9][a-z0-9\!\#\$\&\-\^\_\+\.]{0,126}\/[a-z0-9][a-z0-9\!\#\$\&\-\^\_\+\.]{0,126}(;[a-z0-9\-]+\=[a-z0-9\-]+)?)?(;base64)?,[a-z0-9\!\$\&\\\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i', $data)) {
-            throw new NotNormalizableValueException('The provided "data:" URI is not valid.');
+            throw new UnexpectedValueException('The provided "data:" URI is not valid.');
         }
 
         try {
-            switch ($type) {
+            switch ($class) {
                 case 'Symfony\Component\HttpFoundation\File\File':
                     return new File($data, false);
 
@@ -102,10 +99,10 @@ class DataUriNormalizer implements NormalizerInterface, DenormalizerInterface
                     return new \SplFileObject($data);
             }
         } catch (\RuntimeException $exception) {
-            throw new NotNormalizableValueException($exception->getMessage(), $exception->getCode(), $exception);
+            throw new UnexpectedValueException($exception->getMessage(), $exception->getCode(), $exception);
         }
 
-        throw new InvalidArgumentException(sprintf('The class parameter "%s" is not supported. It must be one of "SplFileInfo", "SplFileObject" or "Symfony\Component\HttpFoundation\File\File".', $type));
+        throw new InvalidArgumentException(sprintf('The class parameter "%s" is not supported. It must be one of "SplFileInfo", "SplFileObject" or "Symfony\Component\HttpFoundation\File\File".', $class));
     }
 
     /**
@@ -113,11 +110,19 @@ class DataUriNormalizer implements NormalizerInterface, DenormalizerInterface
      */
     public function supportsDenormalization($data, $type, $format = null)
     {
-        return isset(self::$supportedTypes[$type]);
+        $supportedTypes = array(
+            \SplFileInfo::class => true,
+            \SplFileObject::class => true,
+            'Symfony\Component\HttpFoundation\File\File' => true,
+        );
+
+        return isset($supportedTypes[$type]);
     }
 
     /**
      * Gets the mime type of the object. Defaults to application/octet-stream.
+     *
+     * @param \SplFileInfo $object
      *
      * @return string
      */
@@ -136,6 +141,8 @@ class DataUriNormalizer implements NormalizerInterface, DenormalizerInterface
 
     /**
      * Returns the \SplFileObject instance associated with the given \SplFileInfo instance.
+     *
+     * @param \SplFileInfo $object
      *
      * @return \SplFileObject
      */

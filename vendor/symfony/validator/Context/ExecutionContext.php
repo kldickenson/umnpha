@@ -16,8 +16,8 @@ use Symfony\Component\Validator\Constraint;
 use Symfony\Component\Validator\ConstraintViolation;
 use Symfony\Component\Validator\ConstraintViolationList;
 use Symfony\Component\Validator\Mapping\ClassMetadataInterface;
-use Symfony\Component\Validator\Mapping\MemberMetadata;
 use Symfony\Component\Validator\Mapping\MetadataInterface;
+use Symfony\Component\Validator\Mapping\MemberMetadata;
 use Symfony\Component\Validator\Mapping\PropertyMetadataInterface;
 use Symfony\Component\Validator\Util\PropertyPath;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -30,7 +30,8 @@ use Symfony\Component\Validator\Violation\ConstraintViolationBuilder;
  *
  * @see ExecutionContextInterface
  *
- * @internal since version 2.5. Code against ExecutionContextInterface instead.
+ * @internal You should not instantiate or use this class. Code against
+ *           {@link ExecutionContextInterface} instead.
  */
 class ExecutionContext implements ExecutionContextInterface
 {
@@ -110,14 +111,14 @@ class ExecutionContext implements ExecutionContextInterface
      *
      * @var array
      */
-    private $validatedObjects = [];
+    private $validatedObjects = array();
 
     /**
      * Stores which class constraint has been validated for which object.
      *
      * @var array
      */
-    private $validatedConstraints = [];
+    private $validatedConstraints = array();
 
     /**
      * Stores which objects have been initialized.
@@ -179,7 +180,7 @@ class ExecutionContext implements ExecutionContextInterface
     /**
      * {@inheritdoc}
      */
-    public function addViolation($message, array $parameters = [])
+    public function addViolation($message, array $parameters = array())
     {
         $this->violations->add(new ConstraintViolation(
             $this->translator->trans($message, $parameters, $this->translationDomain),
@@ -197,7 +198,7 @@ class ExecutionContext implements ExecutionContextInterface
     /**
      * {@inheritdoc}
      */
-    public function buildViolation($message, array $parameters = [])
+    public function buildViolation($message, array $parameters = array())
     {
         return new ConstraintViolationBuilder(
             $this->violations,
@@ -303,7 +304,7 @@ class ExecutionContext implements ExecutionContextInterface
     public function markGroupAsValidated($cacheKey, $groupHash)
     {
         if (!isset($this->validatedObjects[$cacheKey])) {
-            $this->validatedObjects[$cacheKey] = [];
+            $this->validatedObjects[$cacheKey] = array();
         }
 
         $this->validatedObjects[$cacheKey][$groupHash] = true;

@@ -19,15 +19,13 @@ use Symfony\Component\Serializer\Exception\RuntimeException;
  * @author Jordi Boggiano <j.boggiano@seld.be>
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>
  * @author Lukas Kahwe Smith <smith@pooteeweet.org>
- *
- * @final since version 3.3.
  */
-class ChainEncoder implements EncoderInterface /*, ContextAwareEncoderInterface*/
+class ChainEncoder implements EncoderInterface
 {
-    protected $encoders = [];
-    protected $encoderByFormat = [];
+    protected $encoders = array();
+    protected $encoderByFormat = array();
 
-    public function __construct(array $encoders = [])
+    public function __construct(array $encoders = array())
     {
         $this->encoders = $encoders;
     }
@@ -35,20 +33,18 @@ class ChainEncoder implements EncoderInterface /*, ContextAwareEncoderInterface*
     /**
      * {@inheritdoc}
      */
-    final public function encode($data, $format, array $context = [])
+    final public function encode($data, $format, array $context = array())
     {
-        return $this->getEncoder($format, $context)->encode($data, $format, $context);
+        return $this->getEncoder($format)->encode($data, $format, $context);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function supportsEncoding($format/*, array $context = []*/)
+    public function supportsEncoding($format)
     {
-        $context = \func_num_args() > 1 ? func_get_arg(1) : [];
-
         try {
-            $this->getEncoder($format, $context);
+            $this->getEncoder($format);
         } catch (RuntimeException $e) {
             return false;
         }
@@ -63,17 +59,16 @@ class ChainEncoder implements EncoderInterface /*, ContextAwareEncoderInterface*
      *
      * @return bool
      */
-    public function needsNormalization($format/*, array $context = []*/)
+    public function needsNormalization($format)
     {
-        $context = \func_num_args() > 1 ? func_get_arg(1) : [];
-        $encoder = $this->getEncoder($format, $context);
+        $encoder = $this->getEncoder($format);
 
         if (!$encoder instanceof NormalizationAwareInterface) {
             return true;
         }
 
         if ($encoder instanceof self) {
-            return $encoder->needsNormalization($format, $context);
+            return $encoder->needsNormalization($format);
         }
 
         return false;
@@ -88,7 +83,7 @@ class ChainEncoder implements EncoderInterface /*, ContextAwareEncoderInterface*
      *
      * @throws RuntimeException if no encoder is found
      */
-    private function getEncoder($format, array $context)
+    private function getEncoder($format)
     {
         if (isset($this->encoderByFormat[$format])
             && isset($this->encoders[$this->encoderByFormat[$format]])
@@ -97,7 +92,7 @@ class ChainEncoder implements EncoderInterface /*, ContextAwareEncoderInterface*
         }
 
         foreach ($this->encoders as $i => $encoder) {
-            if ($encoder->supportsEncoding($format, $context)) {
+            if ($encoder->supportsEncoding($format)) {
                 $this->encoderByFormat[$format] = $i;
 
                 return $encoder;

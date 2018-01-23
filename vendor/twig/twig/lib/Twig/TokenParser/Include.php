@@ -1,6 +1,14 @@
 <?php
 
-use Twig\TokenParser\IncludeTokenParser;
+/*
+ * This file is part of Twig.
+ *
+ * (c) Fabien Potencier
+ * (c) Armin Ronacher
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 /**
  * Includes a template.
@@ -10,6 +18,8 @@ use Twig\TokenParser\IncludeTokenParser;
  *     Body
  *   {% include 'footer.html' %}
  * </pre>
+ *
+ * @final
  */
 class Twig_TokenParser_Include extends Twig_TokenParser
 {
@@ -48,10 +58,8 @@ class Twig_TokenParser_Include extends Twig_TokenParser
         return array($variables, $only, $ignoreMissing);
     }
 
-if (\false) {
-    class Twig_TokenParser_Include extends IncludeTokenParser
+    public function getTag()
     {
+        return 'include';
     }
 }
-
-class_alias('Twig_TokenParser_Include', 'Twig\TokenParser\IncludeTokenParser', false);

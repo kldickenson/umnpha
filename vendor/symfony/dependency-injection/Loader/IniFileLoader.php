@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Loader;
 
+use Symfony\Component\Config\Resource\FileResource;
 use Symfony\Component\Config\Util\XmlUtils;
 use Symfony\Component\DependencyInjection\Exception\InvalidArgumentException;
 
@@ -28,18 +29,18 @@ class IniFileLoader extends FileLoader
     {
         $path = $this->locator->locate($resource);
 
-        $this->container->fileExists($path);
+        $this->container->addResource(new FileResource($path));
 
         // first pass to catch parsing errors
         $result = parse_ini_file($path, true);
-        if (false === $result || [] === $result) {
+        if (false === $result || array() === $result) {
             throw new InvalidArgumentException(sprintf('The "%s" file is not valid.', $resource));
         }
 
         // real raw parsing
         $result = parse_ini_file($path, true, INI_SCANNER_RAW);
 
-        if (isset($result['parameters']) && \is_array($result['parameters'])) {
+        if (isset($result['parameters']) && is_array($result['parameters'])) {
             foreach ($result['parameters'] as $key => $value) {
                 $this->container->setParameter($key, $this->phpize($value));
             }
@@ -51,15 +52,7 @@ class IniFileLoader extends FileLoader
      */
     public function supports($resource, $type = null)
     {
-        if (!\is_string($resource)) {
-            return false;
-        }
-
-        if (null === $type && 'ini' === pathinfo($resource, PATHINFO_EXTENSION)) {
-            return true;
-        }
-
-        return 'ini' === $type;
+        return is_string($resource) && 'ini' === pathinfo($resource, PATHINFO_EXTENSION);
     }
 
     /**
@@ -70,21 +63,19 @@ class IniFileLoader extends FileLoader
     private function phpize($value)
     {
         // trim on the right as comments removal keep whitespaces
-        if ($value !== $v = rtrim($value)) {
-            $value = '""' === substr_replace($v, '', 1, -1) ? substr($v, 1, -1) : $v;
-        }
+        $value = rtrim($value);
         $lowercaseValue = strtolower($value);
 
         switch (true) {
-            case \defined($value):
-                return \constant($value);
+            case defined($value):
+                return constant($value);
             case 'yes' === $lowercaseValue || 'on' === $lowercaseValue:
                 return true;
             case 'no' === $lowercaseValue || 'off' === $lowercaseValue || 'none' === $lowercaseValue:
                 return false;
             case isset($value[1]) && (
-                ("'" === $value[0] && "'" === $value[\strlen($value) - 1]) ||
-                ('"' === $value[0] && '"' === $value[\strlen($value) - 1])
+                ("'" === $value[0] && "'" === $value[strlen($value) - 1]) ||
+                ('"' === $value[0] && '"' === $value[strlen($value) - 1])
             ):
                 // quoted string
                 return substr($value, 1, -1);

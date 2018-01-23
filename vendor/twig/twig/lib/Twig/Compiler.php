@@ -1,11 +1,32 @@
 <?php
 
-use Twig\Compiler;
+/*
+ * This file is part of Twig.
+ *
+ * (c) Fabien Potencier
+ * (c) Armin Ronacher
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
-class_exists('Twig\Compiler');
+/**
+ * Compiles a node to PHP code.
+ *
+ * @author Fabien Potencier <fabien@symfony.com>
+ */
+class Twig_Compiler implements Twig_CompilerInterface
+{
+    protected $lastLine;
+    protected $source;
+    protected $indentation;
+    protected $env;
+    protected $debugInfo = array();
+    protected $sourceOffset;
+    protected $sourceLine;
+    protected $filename;
 
-if (\false) {
-    class Twig_Compiler extends Compiler
+    public function __construct(Twig_Environment $env)
     {
         $this->env = $env;
     }
@@ -148,7 +169,7 @@ if (\false) {
     public function repr($value)
     {
         if (is_int($value) || is_float($value)) {
-            if (false !== $locale = setlocale(LC_NUMERIC, '0')) {
+            if (false !== $locale = setlocale(LC_NUMERIC, 0)) {
                 setlocale(LC_NUMERIC, 'C');
             }
 
@@ -258,6 +279,3 @@ if (\false) {
         return sprintf('__internal_%s', hash('sha256', uniqid(mt_rand(), true), false));
     }
 }
-
-class_alias('Twig_Compiler', 'Twig\Compiler', false);
-class_exists('Twig_Node');

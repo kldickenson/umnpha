@@ -18,11 +18,18 @@ namespace Symfony\Component\Serializer\NameConverter;
  */
 class CamelCaseToSnakeCaseNameConverter implements NameConverterInterface
 {
+    /**
+     * @var array|null
+     */
     private $attributes;
+
+    /**
+     * @var bool
+     */
     private $lowerCamelCase;
 
     /**
-     * @param array|null $attributes     The list of attributes to rename or null for all attributes
+     * @param null|array $attributes     The list of attributes to rename or null for all attributes
      * @param bool       $lowerCamelCase Use lowerCamelCase style
      */
     public function __construct(array $attributes = null, $lowerCamelCase = true)
@@ -36,8 +43,20 @@ class CamelCaseToSnakeCaseNameConverter implements NameConverterInterface
      */
     public function normalize($propertyName)
     {
-        if (null === $this->attributes || \in_array($propertyName, $this->attributes)) {
-            return strtolower(preg_replace('/[A-Z]/', '_\\0', lcfirst($propertyName)));
+        if (null === $this->attributes || in_array($propertyName, $this->attributes)) {
+            $lcPropertyName = lcfirst($propertyName);
+            $snakeCasedName = '';
+
+            $len = strlen($lcPropertyName);
+            for ($i = 0; $i < $len; ++$i) {
+                if (ctype_upper($lcPropertyName[$i])) {
+                    $snakeCasedName .= '_'.strtolower($lcPropertyName[$i]);
+                } else {
+                    $snakeCasedName .= strtolower($lcPropertyName[$i]);
+                }
+            }
+
+            return $snakeCasedName;
         }
 
         return $propertyName;
@@ -56,7 +75,7 @@ class CamelCaseToSnakeCaseNameConverter implements NameConverterInterface
             $camelCasedName = lcfirst($camelCasedName);
         }
 
-        if (null === $this->attributes || \in_array($camelCasedName, $this->attributes)) {
+        if (null === $this->attributes || in_array($camelCasedName, $this->attributes)) {
             return $camelCasedName;
         }
 
