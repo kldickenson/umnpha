@@ -1,0 +1,15 @@
+.view-id-report ul {
+  text-align: center;
+}
+
+.view-id-report .pager__item a {
+  background-color: $blue;
+  color: white;
+  padding: .5rem 1rem;
+}
+
+.view-id-report .pager__item a:hover {
+  background-color: #3ca0ef;
+  text-decoration: none;
+  transition: 250ms ease-in-out;
+}
