@@ -303,7 +303,7 @@ function compro_custom_share_content($node) {
   $linkedin_link = Link::fromTextAndUrl(t('LinkedIn'), $linkedin_url);
 
   // Facebook
-  $facebook_url = _build_url('http://facebook.com/sharer/sharer.php', $page_url, $page_title);
+  $facebook_url = _build_url('http://facebook.com/share', $page_url, $page_title);
   $facebook_link = Link::fromTextAndUrl(t('Facebook'), $facebook_url);
 
   $render = array(
