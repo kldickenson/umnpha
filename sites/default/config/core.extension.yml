@@ -39,6 +39,7 @@ module:
   features: 0
   field: 0
   field_group: 0
+  field_ui: 0
   file: 0
   filter: 0
   google_analytics: 0
@@ -48,6 +49,7 @@ module:
   image: 0
   inline_entity_form: 0
   inline_form_errors: 0
+  layout_discovery: 0
   libraries: 0
   link: 0
   linked_field: 0
