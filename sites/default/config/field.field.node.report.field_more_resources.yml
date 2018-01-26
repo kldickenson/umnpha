@@ -1,0 +1,27 @@
+uuid: 6583714e-baf3-436b-a55f-563601b8d02b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_more_resources
+    - node.type.report
+  module:
+    - file
+id: node.report.field_more_resources
+field_name: field_more_resources
+entity_type: node
+bundle: report
+label: 'More Resources'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt pdf'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

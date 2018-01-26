@@ -3,6 +3,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.report.field_more_resources
     - field.field.node.report.field_report_contributers
     - field.field.node.report.field_report_featured_image
     - field.field.node.report.field_report_featured_report
@@ -23,6 +24,7 @@ dependencies:
     - compro_custom
     - datetime
     - field_group
+    - file
     - link
     - linked_field
     - user
@@ -38,6 +40,7 @@ third_party_settings:
         - field_report_contributers
         - field_report_published_date
         - field_report_tags
+        - field_more_resources
         - share
         - field_report_news_source
       parent_name: group_report_container
@@ -92,6 +95,13 @@ targetEntityType: node
 bundle: report
 mode: default
 content:
+  field_more_resources:
+    weight: 19
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: file_default
+    region: content
   field_report_contributers:
     weight: 16
     label: above
@@ -114,7 +124,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_report_news_source:
-    weight: 20
+    weight: 21
     label: above
     settings:
       link: false
@@ -211,7 +221,7 @@ content:
     type: color_field_formatter_css
     region: content
   share:
-    weight: 19
+    weight: 20
     region: content
     settings: {  }
     third_party_settings: {  }

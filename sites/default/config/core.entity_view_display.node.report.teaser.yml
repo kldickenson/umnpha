@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.report.field_more_resources
     - field.field.node.report.field_report_contributers
     - field.field.node.report.field_report_featured_image
     - field.field.node.report.field_report_featured_report
@@ -76,6 +77,7 @@ content:
 hidden:
   compro_links: true
   compro_submitted: true
+  field_more_resources: true
   field_report_contributers: true
   field_report_featured_report: true
   field_report_news_source: true

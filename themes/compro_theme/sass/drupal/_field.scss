@@ -108,6 +108,12 @@
       }
     }
   }
+
+  .field--name-field-more-resources .file {
+    background-image: none;
+    margin-bottom: .25rem;
+    padding-left: 0;
+  }
 }
 
 .node--type-report .field--name-field-title {
@@ -300,9 +306,8 @@
 }
 
 
-/*Testimonial*\
-*[1]   her hair starts to get chopped off around 1745px wide
-*[2]   This takes care of white space at btm of img file, probably need to remove later
+/*Testimonial
+*
 **/
 
 .field--name-field-testimonial-quote {
@@ -505,4 +510,12 @@
   font-family: 'Montserrat';
   font-style: italic;
   font-size: rem(13);
+}
+
+
+/* More Resources Link in sidebar */
+.file {
+  background-image: none !important;
+  margin-bottom: .25rem !important;
+  padding-left: 0 !important;
 }

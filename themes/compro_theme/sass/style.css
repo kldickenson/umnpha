@@ -1616,6 +1616,10 @@ a[href].learn-more.button {
     .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
     .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
       display: block; } }
+.node--type-report .group-sidebar .field--name-field-more-resources .file {
+  background-image: none;
+  margin-bottom: .25rem;
+  padding-left: 0; }
 
 .node--type-report .field--name-field-title {
   color: #0f284a;
@@ -1741,9 +1745,8 @@ a[href].learn-more.button {
       font-size: 0.6875rem;
       padding: 0.6875rem 1.875rem; } }
 
-/*Testimonial*\
-*[1]   her hair starts to get chopped off around 1745px wide
-*[2]   This takes care of white space at btm of img file, probably need to remove later
+/*Testimonial
+*
 **/
 .field--name-field-testimonial-quote {
   color: #00264b;
@@ -1880,6 +1883,12 @@ a[href].learn-more.button {
   font-family: 'Montserrat';
   font-style: italic;
   font-size: 0.8125rem; }
+
+/* More Resources Link in sidebar */
+.file {
+  background-image: none !important;
+  margin-bottom: .25rem !important;
+  padding-left: 0 !important; }
 
 body .gutter__xsm_top {
   padding-top: 0.625rem; }
