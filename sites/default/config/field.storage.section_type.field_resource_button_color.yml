@@ -1,0 +1,20 @@
+uuid: a3b4819d-8347-4a48-bde7-d96e5ec92be5
+langcode: en
+status: true
+dependencies:
+  module:
+    - color_field
+    - eck
+id: section_type.field_resource_button_color
+field_name: field_resource_button_color
+entity_type: section_type
+type: color_field_type
+settings:
+  format: '#HEXHEX'
+module: color_field
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
