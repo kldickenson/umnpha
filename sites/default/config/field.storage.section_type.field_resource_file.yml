@@ -1,0 +1,23 @@
+uuid: 3bc37cd9-90ba-44b9-ae78-92daa4a9cd46
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+    - file
+id: section_type.field_resource_file
+field_name: field_resource_file
+entity_type: section_type
+type: file
+settings:
+  display_field: false
+  display_default: false
+  uri_scheme: public
+  target_type: file
+module: file
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

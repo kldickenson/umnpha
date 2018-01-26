@@ -1,0 +1,22 @@
+uuid: e7648936-94da-4975-a4b3-7c59d2b8eb8d
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.resource_download
+    - field.storage.section_type.field_resource_color
+  module:
+    - color_field
+id: section_type.resource_download.field_resource_color
+field_name: field_resource_color
+entity_type: section_type
+bundle: resource_download
+label: 'Resource Color'
+description: 'Color for the text and border display'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type
