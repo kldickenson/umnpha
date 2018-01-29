@@ -437,3 +437,60 @@
   }
 
 }
+
+
+//Resource Download
+.entity-section-type.resource-download {
+  border: 2px solid;
+  border-color: inherit;
+  margin: 1rem 0;
+  padding: 30px;
+  width: 75%;
+}
+
+.entity-section-type.resource-download:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.resource-download .field--name-field-resources-text {
+  display: inline-block;
+  font-size: 28px;
+  float: left;
+  margin-right: 1rem;
+  max-width: 70%;
+}
+
+.resource-download .field--name-field-resources-text:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.resource-download .field--name-field-resource-file {
+  display: inline-block;
+  margin-top: .5em;
+}
+
+.field--name-field-resource-file span {
+  width: 100%;
+}
+
+.field--name-field-resource-file span a {
+  color: inherit;
+  font-size: 0.8em;
+  font-weight: 600;
+  padding: 9px 20px;
+  text-transform: uppercase;
+}
+
+@media all and (max-width: 1140px) {
+
+  .resource-download .field--name-field-resources-text {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    max-width: 100%;
+  }
+}
