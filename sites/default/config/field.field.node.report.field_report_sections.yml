@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - eck.eck_type.section_type.leadership_listing
+    - eck.eck_type.section_type.resource_download
     - eck.eck_type.section_type.section_type_featured_report
     - eck.eck_type.section_type.section_type_heading
     - eck.eck_type.section_type.section_type_highlight
@@ -33,10 +34,11 @@ settings:
       section_type_heading: section_type_heading
       section_type_highlight: section_type_highlight
       section_type_infographic: section_type_infographic
-      leadership_listing: leadership_listing
       section_type_longtext: section_type_longtext
       section_type_media: section_type_media
+      leadership_listing: leadership_listing
       section_type_pull_quote: section_type_pull_quote
+      resource_download: resource_download
       section_type_sponsors: section_type_sponsors
       section_type_testimonial: section_type_testimonial
     sort:

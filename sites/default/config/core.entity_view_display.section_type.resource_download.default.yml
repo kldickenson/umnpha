@@ -22,7 +22,7 @@ content:
     weight: 3
     label: hidden
     settings:
-      selector: .download-pdf
+      selector: .field--name-field-resource-file
       property: background-color
       important: '1'
       opacity: '1'
@@ -33,7 +33,7 @@ content:
     weight: 4
     label: hidden
     settings:
-      selector: .download-pdf
+      selector: .field--name-field-resource-file
       property: color
       important: '1'
       opacity: '1'
@@ -44,7 +44,7 @@ content:
     weight: 1
     label: hidden
     settings:
-      selector: .section-type-resource
+      selector: .entity-section-type.resource-download
       property: color
       important: '1'
       opacity: '1'
