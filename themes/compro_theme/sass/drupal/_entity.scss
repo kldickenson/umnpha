@@ -443,7 +443,7 @@
 .entity-section-type.resource-download {
   border: 2px solid;
   border-color: inherit;
-  margin: 1rem 0;
+  margin: 1rem 0 1rem 20px;
   padding: 30px;
   width: 75%;
 }
@@ -456,7 +456,8 @@
 
 .resource-download .field--name-field-resources-text {
   display: inline-block;
-  font-size: 28px;
+  font-family: "Lora", serif;
+  font-size: 24px;
   float: left;
   margin-right: 1rem;
   max-width: 70%;
@@ -470,7 +471,8 @@
 
 .resource-download .field--name-field-resource-file {
   display: inline-block;
-  margin-top: .5em;
+  float: right;
+  padding: .5rem 1.25rem;
 }
 
 .field--name-field-resource-file span {
@@ -481,16 +483,26 @@
   color: inherit;
   font-size: 0.8em;
   font-weight: 600;
-  padding: 9px 20px;
+  padding: .5rem;
   text-transform: uppercase;
 }
 
 @media all and (max-width: 1140px) {
 
   .resource-download .field--name-field-resources-text {
+    display: block;
     float: none;
     margin-right: 0;
     margin-bottom: 1rem;
     max-width: 100%;
+    text-align: center;
+  }
+
+  .resource-download .field--name-field-resource-file {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    max-width: 200px;
+    text-align: center;
   }
 }
