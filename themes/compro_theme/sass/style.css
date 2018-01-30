@@ -1526,7 +1526,7 @@ a[href].learn-more.button {
 .entity-section-type.resource-download {
   border: 2px solid;
   border-color: inherit;
-  margin: 1rem 0;
+  margin: 1rem 0 1rem 20px;
   padding: 30px;
   width: 75%; }
 
@@ -1560,6 +1560,7 @@ a[href].learn-more.button {
   color: inherit;
   font-size: 0.8em;
   font-weight: 600;
+  letter-spacing: 1px;
   padding: .5rem;
   text-transform: uppercase; }
 
