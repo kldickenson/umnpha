@@ -18,8 +18,11 @@
     "tests"
   ],
   "dependencies": {
-    "bourbon": "~4.2.6",
+    "bourbon": "^5.0.0",
     "neat": "~1.7.2",
     "normalize-css": "normalize.css#~3.0.3"
+  },
+  "devDependencies": {
+    "bourbon": "~4.2.6"
   }
 }

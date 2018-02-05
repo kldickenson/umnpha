@@ -1,0 +1,64 @@
+uuid: 8aec706c-2ffc-46fa-86ac-686e1f0f3fd3
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.resource_download
+    - field.field.section_type.resource_download.field_resource_button_color
+    - field.field.section_type.resource_download.field_resource_button_text_color
+    - field.field.section_type.resource_download.field_resource_color
+    - field.field.section_type.resource_download.field_resource_file
+    - field.field.section_type.resource_download.field_resources_text
+  module:
+    - color_field
+    - file
+id: section_type.resource_download.default
+targetEntityType: section_type
+bundle: resource_download
+mode: default
+content:
+  field_resource_button_color:
+    weight: 4
+    settings:
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_resource_button_text_color:
+    weight: 5
+    settings:
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_resource_color:
+    weight: 2
+    settings:
+      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+    third_party_settings: {  }
+    type: color_field_widget_box
+    region: content
+  field_resource_file:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+    type: file_generic
+    region: content
+  field_resources_text:
+    weight: 1
+    settings:
+      size: 80
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  title:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

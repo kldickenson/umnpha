@@ -1,0 +1,9 @@
+uuid: 0bc2478c-c0df-4200-b2aa-ec67a5c6f363
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.section_type
+name: 'Resource Download'
+type: resource_download
+description: 'Creates a bordered box with configurable colors that will give the user the ability to download an extra resource attached to a report'

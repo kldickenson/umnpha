@@ -1,0 +1,27 @@
+uuid: 3d7e3598-982c-4ae3-99b6-e438d21deb70
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.resource_download
+    - field.storage.section_type.field_resource_file
+  module:
+    - file
+id: section_type.resource_download.field_resource_file
+field_name: field_resource_file
+entity_type: section_type
+bundle: resource_download
+label: 'Resource File'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc docx pdf'
+  max_filesize: ''
+  description_field: true
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file
