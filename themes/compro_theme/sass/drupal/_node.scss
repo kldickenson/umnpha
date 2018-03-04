@@ -337,6 +337,7 @@
 
     a {
       color: $arb-blue;
+      font-family: 'Montserrat Bold';
       font-weight: bold;
 
       &:before {
@@ -409,7 +410,8 @@
 }
 
 .node--type-report .group-sidebar > .field,
-.node--type-report .group-sidebar > .sidebar-share-wrapper {
+.node--type-report .group-sidebar > .sidebar-share-wrapper,
+.node--type-report .group-sidebar > .field--name-field-report-news-source-link {
   margin: 0 0 20px 0;
 
   > .field__label {
