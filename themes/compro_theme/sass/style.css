@@ -674,6 +674,7 @@ header {
     font-weight: bold; }
   .node--type-report .group-sidebar a {
     color: #0f6cb6;
+    font-family: 'Montserrat Bold';
     font-weight: bold; }
     .node--type-report .group-sidebar a:before {
       font-size: 22px;
@@ -720,25 +721,32 @@ header {
       width: 100%; } }
 
 .node--type-report .group-sidebar > .field,
-.node--type-report .group-sidebar > .sidebar-share-wrapper {
+.node--type-report .group-sidebar > .sidebar-share-wrapper,
+.node--type-report .group-sidebar > .field--name-field-report-news-source-link {
   margin: 0 0 20px 0; }
   .node--type-report .group-sidebar > .field > .field__label,
-  .node--type-report .group-sidebar > .sidebar-share-wrapper > .field__label {
+  .node--type-report .group-sidebar > .sidebar-share-wrapper > .field__label,
+  .node--type-report .group-sidebar > .field--name-field-report-news-source-link > .field__label {
     font-weight: 300; }
   .node--type-report .group-sidebar > .field > .field__item,
   .node--type-report .group-sidebar > .field > .field__items,
   .node--type-report .group-sidebar > .sidebar-share-wrapper > .field__item,
-  .node--type-report .group-sidebar > .sidebar-share-wrapper > .field__items {
+  .node--type-report .group-sidebar > .sidebar-share-wrapper > .field__items,
+  .node--type-report .group-sidebar > .field--name-field-report-news-source-link > .field__item,
+  .node--type-report .group-sidebar > .field--name-field-report-news-source-link > .field__items {
     font-family: 'Montserrat Bold';
     font-weight: 700; }
     .node--type-report .group-sidebar > .field > .field__item a,
     .node--type-report .group-sidebar > .field > .field__items a,
     .node--type-report .group-sidebar > .sidebar-share-wrapper > .field__item a,
-    .node--type-report .group-sidebar > .sidebar-share-wrapper > .field__items a {
+    .node--type-report .group-sidebar > .sidebar-share-wrapper > .field__items a,
+    .node--type-report .group-sidebar > .field--name-field-report-news-source-link > .field__item a,
+    .node--type-report .group-sidebar > .field--name-field-report-news-source-link > .field__items a {
       font-family: 'Montserrat Bold'; }
   @media all and (max-width: 660px) {
     .node--type-report .group-sidebar > .field,
-    .node--type-report .group-sidebar > .sidebar-share-wrapper {
+    .node--type-report .group-sidebar > .sidebar-share-wrapper,
+    .node--type-report .group-sidebar > .field--name-field-report-news-source-link {
       font-size: 0.875rem;
       text-align: center; } }
 
