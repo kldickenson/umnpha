@@ -31,21 +31,6 @@ function _compro_custom_get_options() {
   );
 }
 
-/**
- * Implements hook_preprocess().
- */
-function compro_custom_preprocess_node(&$variables, $hook, $node) {
-  //Hook into full reports only
-  if ($variables['node']-> getType() == 'report' && $variables['view_mode'] == "full"){
-    $variables = $variables;
-    $node_fields = $variables['node']->getFields();
-    //Decide if new news source field has content
-    if (!empty($node_fields['field_report_news_source_link']->getValue())){
-
-      $node_fields['field_report_news_source'];
-    }
-  }
-}
 
 /**
  * Implements hook_page_attachments().
