@@ -1,0 +1,23 @@
+uuid: a01e3a19-d331-41e3-9103-1d2b6c209fc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_report_news_source_link
+    - node.type.report
+  module:
+    - link
+id: node.report.field_report_news_source_link
+field_name: field_report_news_source_link
+entity_type: node
+bundle: report
+label: 'Featured In Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link
