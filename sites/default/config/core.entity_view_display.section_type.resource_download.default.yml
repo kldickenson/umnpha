@@ -1,0 +1,77 @@
+uuid: 017c1d49-c442-4990-af68-e124ca4cd1a2
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.resource_download
+    - field.field.section_type.resource_download.field_resource_button_color
+    - field.field.section_type.resource_download.field_resource_button_text_color
+    - field.field.section_type.resource_download.field_resource_color
+    - field.field.section_type.resource_download.field_resource_file
+    - field.field.section_type.resource_download.field_resources_text
+  module:
+    - color_field
+    - file
+    - linked_field
+id: section_type.resource_download.default
+targetEntityType: section_type
+bundle: resource_download
+mode: default
+content:
+  field_resource_button_color:
+    weight: 3
+    label: hidden
+    settings:
+      selector: .field--name-field-resource-file
+      property: background-color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+  field_resource_button_text_color:
+    weight: 4
+    label: hidden
+    settings:
+      selector: .field--name-field-resource-file
+      property: color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+  field_resource_color:
+    weight: 1
+    label: hidden
+    settings:
+      selector: .entity-section-type.resource-download
+      property: color
+      important: '1'
+      opacity: '1'
+    third_party_settings: {  }
+    type: color_field_formatter_css
+    region: content
+  field_resource_file:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[section_type:field_resource_file:entity]'
+        advanced:
+          title: 'Download PDF'
+          class: 'download-pdf button'
+    type: file_default
+    region: content
+  field_resources_text:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  title: true

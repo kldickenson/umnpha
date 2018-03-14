@@ -108,6 +108,12 @@
       }
     }
   }
+
+  .field--name-field-more-resources .file {
+    background-image: none;
+    margin-bottom: .25rem;
+    padding-left: 0;
+  }
 }
 
 .node--type-report .field--name-field-title {
@@ -263,32 +269,16 @@
 
 .field--name-field-highlight-title {
   color: $blue-zodiac;
-  font-size: rem(22);
+  font-size: 1.25rem;
   font-weight: 600;
-  margin: 0 0 25px 0;
+  margin: 0 0 1rem 0;
   max-width: 185px;
-
-  @media screen and(max-width: 940px) {
-    font-size: rem(24);
-    margin: 0 0 24px 0;
-  }
-
 }
 
 .field--name-field-highlight-text {
-  font-size: rem(18px);
-  margin: 0 0 63px 0;
-
-  @media screen and (max-width: 1120px) {
-    font-size: rem(16px);
-    margin: 0 0 35px 0;
-  }
-
-  @media screen and(max-width: 940px) {
-    font-size: rem(12px);
-    margin: 0 0 35px 0;
-  }
-
+  color: #272727;
+  font-size: 14px;
+  margin: 0 0 1.5rem 0;
 }
 
 .field--name-field-highlight-button {
@@ -297,7 +287,7 @@
     background-color: $arb-blue;
     color: white;
     font-size: rem(13);
-    padding: rem(13) rem(32.5);
+    padding: .5rem 1rem;
     text-align: center;
     text-transform: uppercase;
 
@@ -316,9 +306,8 @@
 }
 
 
-/*Testimonial*\
-*[1]   her hair starts to get chopped off around 1745px wide
-*[2]   This takes care of white space at btm of img file, probably need to remove later
+/*Testimonial
+*
 **/
 
 .field--name-field-testimonial-quote {
@@ -521,4 +510,12 @@
   font-family: 'Montserrat';
   font-style: italic;
   font-size: rem(13);
+}
+
+
+/* More Resources Link in sidebar */
+.file {
+  background-image: none !important;
+  margin-bottom: .25rem !important;
+  padding-left: 0 !important;
 }

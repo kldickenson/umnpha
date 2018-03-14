@@ -158,27 +158,27 @@ th {
 
 @font-face {
   font-family: "open-sans";
-  font-style: normal;
+  font-style: true;
   font-weight: normal;
   src: url("../fonts/opensans/opensans/opensans.eot?#iefix") format("embedded-opentype"), url("../fonts/opensans/opensans/opensans.woff2") format("woff2"), url("../fonts/opensans/opensans/opensans.woff") format("woff"); }
 @font-face {
   font-family: "Montserrat";
-  font-style: normal;
+  font-style: true;
   font-weight: normal;
   src: url("../fonts/Montserrat/Montserrat-Regular.ttf") format("truetype"); }
 @font-face {
   font-family: "Montserrat Bold";
-  font-style: normal;
+  font-style: true;
   font-weight: bold;
   src: url("../fonts/Montserrat/Montserrat-Bold.ttf") format("truetype"); }
 @font-face {
   font-family: "Lora";
-  font-style: normal;
+  font-style: true;
   font-weight: normal;
   src: url("../fonts/Lora/Lora-Regular.ttf") format("truetype"); }
 @font-face {
   font-family: "Lora Italic";
-  font-style: normal;
+  font-style: true;
   font-weight: italic;
   src: url("../fonts/Lora/Lora-Italic.ttf") format("truetype"); }
 body {
@@ -673,7 +673,6 @@ header {
     margin: 0 25px 0 0; }
   .node--type-report.node--view-mode-teaser .group-report-teaser-text {
     font-size: 16px;
-    padding: 0 0 50px 0;
     position: relative; }
 .node--type-report .node--type-report-container {
   margin: 60px auto 0;
@@ -1603,6 +1602,85 @@ a[href].learn-more.button {
       .entity-section-type.leadership-listing .group-leadership-icons .field--name-field-leadership-linkedin:hover {
         background: url("../images/icons/zocial-linkedin-blue.svg") no-repeat center/contain; }
 
+.entity-section-type.resource-download {
+  border: 2px solid;
+  border-color: inherit;
+  margin: 1rem 0 1rem 20px;
+  padding: 30px;
+  width: 75%; }
+
+.entity-section-type.resource-download:after {
+  clear: both;
+  content: '';
+  display: table; }
+
+.resource-download .field--name-field-resources-text {
+  display: inline-block;
+  font-family: "Lora", serif;
+  font-size: 24px;
+  float: left;
+  margin-right: 1rem;
+  max-width: 70%; }
+
+.resource-download .field--name-field-resources-text:after {
+  clear: both;
+  content: '';
+  display: table; }
+
+.resource-download .field--name-field-resource-file {
+  display: inline-block;
+  float: right;
+  padding: .5rem 1.25rem; }
+
+.field--name-field-resource-file span {
+  width: 100%; }
+
+.field--name-field-resource-file span a {
+  color: inherit;
+  font-size: 0.8em;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: .5rem;
+  text-transform: uppercase; }
+
+@media all and (max-width: 1140px) {
+  .resource-download .field--name-field-resources-text {
+    display: block;
+    float: none;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    text-align: center; }
+
+  .resource-download .field--name-field-resource-file {
+    display: block;
+    float: none;
+    margin: 0 auto;
+    max-width: 200px;
+    text-align: center; } }
+.view-id-report ul {
+  text-align: center; }
+
+.view-id-report .pager__item a {
+  background-color: #0c57aa;
+  color: white;
+  padding: .5rem 1rem; }
+
+.view-id-report .pager__item a:hover {
+  background-color: #3ca0ef;
+  text-decoration: none;
+  -webkit-transition: 250ms ease-in-out;
+  -o-transition: 250ms ease-in-out;
+  transition: 250ms ease-in-out; }
+
+.view-id-report .views-infinite-scroll-content-wrapper .views-row {
+  margin-bottom: 2rem; }
+
+.view-id-report .views-infinite-scroll-content-wrapper .views-row:after {
+  clear: both;
+  content: '';
+  display: table; }
+
 /*
 *   #FIELDS
 **/
@@ -1681,6 +1759,10 @@ a[href].learn-more.button {
     .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__label,
     .node--type-report .group-sidebar .field--name-field-report-volume-issue .field__item {
       display: block; } }
+.node--type-report .group-sidebar .field--name-field-more-resources .file {
+  background-image: none;
+  margin-bottom: .25rem;
+  padding-left: 0; }
 
 .node--type-report .field--name-field-title {
   color: #0f284a;
@@ -1783,32 +1865,21 @@ a[href].learn-more.button {
 
 .field--name-field-highlight-title {
   color: #0f284a;
-  font-size: 1.375rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  margin: 0 0 25px 0;
+  margin: 0 0 1rem 0;
   max-width: 185px; }
-  @media screen and (max-width: 940px) {
-    .field--name-field-highlight-title {
-      font-size: 1.5rem;
-      margin: 0 0 24px 0; } }
 
 .field--name-field-highlight-text {
-  font-size: 1.125rem;
-  margin: 0 0 63px 0; }
-  @media screen and (max-width: 1120px) {
-    .field--name-field-highlight-text {
-      font-size: 1rem;
-      margin: 0 0 35px 0; } }
-  @media screen and (max-width: 940px) {
-    .field--name-field-highlight-text {
-      font-size: 0.75rem;
-      margin: 0 0 35px 0; } }
+  color: #272727;
+  font-size: 14px;
+  margin: 0 0 1.5rem 0; }
 
 .field--name-field-highlight-button a {
   background-color: #0f6cb6;
   color: white;
   font-size: 0.8125rem;
-  padding: 0.8125rem 2.03125rem;
+  padding: .5rem 1rem;
   text-align: center;
   text-transform: uppercase; }
   .field--name-field-highlight-button a:hover {
@@ -1821,9 +1892,8 @@ a[href].learn-more.button {
       font-size: 0.6875rem;
       padding: 0.6875rem 1.875rem; } }
 
-/*Testimonial*\
-*[1]   her hair starts to get chopped off around 1745px wide
-*[2]   This takes care of white space at btm of img file, probably need to remove later
+/*Testimonial
+*
 **/
 .field--name-field-testimonial-quote {
   color: #00264b;
@@ -1964,6 +2034,12 @@ a[href].learn-more.button {
   font-family: 'Montserrat';
   font-style: italic;
   font-size: 0.8125rem; }
+
+/* More Resources Link in sidebar */
+.file {
+  background-image: none !important;
+  margin-bottom: .25rem !important;
+  padding-left: 0 !important; }
 
 body .gutter__xsm_top {
   padding-top: 0.625rem; }

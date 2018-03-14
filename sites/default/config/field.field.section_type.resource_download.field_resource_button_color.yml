@@ -1,0 +1,22 @@
+uuid: 2ae9ca82-18af-404e-8c86-895c950d04aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.resource_download
+    - field.storage.section_type.field_resource_button_color
+  module:
+    - color_field
+id: section_type.resource_download.field_resource_button_color
+field_name: field_resource_button_color
+entity_type: section_type
+bundle: resource_download
+label: 'Resource Button Color'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  opacity: 0
+field_type: color_field_type
