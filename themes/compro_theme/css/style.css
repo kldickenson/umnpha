@@ -670,7 +670,13 @@ header {
     display: none; }
   .node--type-report.node--view-mode-teaser .field--name-field-report-featured-image {
     float: left;
-    margin: 0 25px 0 0; }
+    margin: 0 25px 0 0;
+    max-height: 200px;
+    max-width: 300px;
+    overflow: hidden; }
+    .node--type-report.node--view-mode-teaser .field--name-field-report-featured-image img {
+      -o-object-fit: contain;
+         object-fit: contain; }
   .node--type-report.node--view-mode-teaser .group-report-teaser-text {
     font-size: 16px;
     position: relative; }
@@ -1684,7 +1690,7 @@ a[href].learn-more.button {
   transition: 250ms ease-in-out; }
 
 .view-id-report .views-infinite-scroll-content-wrapper .views-row {
-  margin-bottom: 2rem; }
+  margin-bottom: 3rem; }
 
 .view-id-report .views-infinite-scroll-content-wrapper .views-row:after {
   clear: both;
