@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.report.field_report_featured_image
     - field.field.node.report.field_report_featured_report
     - field.field.node.report.field_report_news_source
+    - field.field.node.report.field_report_news_source_link
     - field.field.node.report.field_report_published_date
     - field.field.node.report.field_report_report
     - field.field.node.report.field_report_sections
@@ -53,7 +54,7 @@ bundle: report
 mode: default
 content:
   field_more_resources:
-    weight: 26
+    weight: 13
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
@@ -94,6 +95,14 @@ content:
     third_party_settings: {  }
     type: chosen_select
     region: content
+  field_report_news_source_link:
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
   field_report_published_date:
     weight: 5
     settings: {  }
@@ -129,7 +138,7 @@ content:
     type: text_textarea
     region: content
   field_report_tags:
-    weight: 9
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
