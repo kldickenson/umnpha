@@ -13,6 +13,19 @@ $aliases['stage'] = array(
   ),
 );
 
+$aliases['build'] = array(
+  'uri' => 'build-umnpha.pantheonsite.io',
+  'db-url' => 'mysql://pantheon:c080d3ac1f3148ea852d11637638e803@dbserver.build.6d63fa88-8632-4f72-84ec-f0b61ea7b0f5.drush.in:21879/pantheon',
+  'db-allows-remote' => TRUE,
+  'remote-host' => 'appserver.build.6d63fa88-8632-4f72-84ec-f0b61ea7b0f5.drush.in',
+  'remote-user' => 'build.6d63fa88-8632-4f72-84ec-f0b61ea7b0f5',
+  'ssh-options' => '-p 2222 -o "AddressFamily inet"',
+  'path-aliases' => array(
+    '%files' => 'files',
+    '%drush-script' => 'drush',
+  ),
+);
+
 $aliases['dev'] = array(
   'uri' => 'dev-umnpha.pantheonsite.io',
   'db-url' => 'mysql://pantheon:4e246c8fcdaf4c2994af638c4519f5ba@dbserver.dev.6d63fa88-8632-4f72-84ec-f0b61ea7b0f5.drush.in:10871/pantheon',
