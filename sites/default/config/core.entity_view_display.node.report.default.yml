@@ -175,7 +175,7 @@ content:
     weight: 11
     label: above
     settings:
-      compro_custom_link_title: 'Download PDF'
+      compro_custom_link_title: 'Download the Report'
       compro_custom_link_class: 'download-pdf button'
     third_party_settings:
       linked_field:

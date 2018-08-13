@@ -755,6 +755,10 @@ header {
       float: none;
       width: 100%; } }
 
+.node--type-report .group-sidebar .download-pdf {
+  display: block;
+  text-align: center; }
+
 .node--type-report .group-sidebar > .field,
 .node--type-report .group-sidebar > .sidebar-share-wrapper,
 .node--type-report .group-sidebar > .field--name-field-report-news-source-link {
