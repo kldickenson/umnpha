@@ -53,7 +53,7 @@ display:
       pager:
         type: infinite_scroll
         options:
-          items_per_page: 3
+          items_per_page: 10
           offset: 0
           id: 0
           total_pages: null
@@ -186,6 +186,8 @@ display:
       display_extenders: {  }
       block_description: 'Recent Reports'
       display_description: ''
+      allow:
+        items_per_page: false
     cache_metadata:
       max-age: -1
       contexts:
