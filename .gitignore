@@ -44,8 +44,7 @@ sites/simpletest
 ######################
 .DS_Store*
 ehthumbs.db
-Icon
-.idea/
+Icon?
 
 Thumbs.db
 ._*compo
