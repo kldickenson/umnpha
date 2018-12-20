@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\webform\Controller;
+namespace Drupal\webform_submission_log\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Database\Connection;
@@ -42,7 +42,7 @@ class WebformSubmissionLogController extends ControllerBase {
   /**
    * The webform storage.
    *
-   * @var \Drupal\webform\WebformStorageInterface
+   * @var \Drupal\webform\WebformEntityStorageInterface
    */
   protected $webformStorage;
 
@@ -143,6 +143,7 @@ class WebformSubmissionLogController extends ControllerBase {
       'handler_id',
       'operation',
       'message',
+      'variables',
       'timestamp',
     ]);
     $query->fields('ws', [
@@ -208,7 +209,7 @@ class WebformSubmissionLogController extends ControllerBase {
       $row['operation'] = $log->operation;
       $row['message'] = [
         'data' => [
-          '#markup' => $log->message,
+          '#markup' => $this->t($log->message, unserialize($log->variables)),
         ],
       ];
       $row['uid'] = [
@@ -231,6 +232,13 @@ class WebformSubmissionLogController extends ControllerBase {
     ];
     $build['pager'] = ['#type' => 'pager'];
     return $build;
+  }
+
+  /**
+   * Wrapper that allows the $node to be used as $source_entity.
+   */
+  public function nodeOverview(WebformInterface $webform = NULL, WebformSubmissionInterface $webform_submission = NULL, EntityInterface $node = NULL) {
+    return $this->overview($webform, $webform_submission, $node);
   }
 
 }
