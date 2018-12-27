@@ -3,79 +3,23 @@ status: open
 dependencies:
   enforced:
     module:
-      - webform_test
+      - webform_scheduled_email_test_translation
+  module:
+    - webform_scheduled_email
 open: null
 close: null
 weight: 0
 uid: null
 template: false
 archive: false
-id: test_states_server_comp
-title: 'Test: Form API #states server-side composite elements'
-description: 'Test Drupal''s #states API for composite elements via server-side.'
-category: 'Test: Form API #states'
+id: test_handler_scheduled_translate
+title: 'Test: Handler: Test scheduled email translation'
+description: 'Test webform schedule email handler translation.'
+category: null
 elements: |
-  webform_name_trigger:
-    '#type': checkbox
-    '#title': webform_name_trigger
-    '#default_value': false
-  webform_name:
-    '#type': webform_name
-    '#title': webform_name
-    '#states':
-      visible:
-        ':input[name="webform_name_trigger"]':
-          checked: true
-    '#first__required': true
-    '#last__required': true
-    '#last__required_error': 'Custom error message for ''last'' element.'
-  webform_name_multiple_trigger:
-    '#type': checkbox
-    '#title': webform_name_multiple_trigger
-    '#default_value': false
-  webform_name_multiple:
-    '#type': webform_name
-    '#title': webform_name_multiple_header
-    '#multiple': true
-    '#first__required': true
-    '#last__required': true
-    '#states':
-      visible:
-        ':input[name="webform_name_multiple_trigger"]':
-          checked: true
-  webform_name_multiple_header_trigger:
-    '#type': checkbox
-    '#title': webform_name_multiple_header_trigger
-    '#default_value': false
-  webform_name_multiple_header:
-    '#type': webform_name
-    '#title': webform_name_multiple_header
-    '#multiple': true
-    '#multiple__header': true
-    '#first__required': true
-    '#last__required': true
-    '#states':
-      visible:
-        ':input[name="webform_name_multiple_header_trigger"]':
-          checked: true
-  webform_name_nested_trigger:
-    '#type': checkbox
-    '#title': webform_name_nested_trigger
-    '#default_value': false
-  webform_name_nested_trigger_fieldset:
-    '#type': fieldset
-    '#title': webform_name_nested_fieldset
-    '#states':
-      visible:
-        ':input[name="webform_name_nested_trigger"]':
-          checked: true
-    webform_name_nested:
-      '#type': webform_name
-      '#title': webform_name_nested
-      '#first__required': true
-      '#first__title': webform_name_nested_first
-      '#last__required': true
-      '#last__title': webform_name_nested_last
+  value:
+    '#type': textfield
+    '#title': value
 css: ''
 javascript: ''
 settings:
@@ -114,7 +58,7 @@ settings:
   form_access_denied_attributes: {  }
   form_file_limit: ''
   submission_label: ''
-  submission_log: false
+  submission_log: true
   submission_views: {  }
   submission_views_replace: {  }
   submission_user_columns: {  }
@@ -155,7 +99,7 @@ settings:
   draft_auto_save: false
   draft_saved_message: ''
   draft_loaded_message: ''
-  confirmation_type: message
+  confirmation_type: page
   confirmation_title: ''
   confirmation_message: ''
   confirmation_url: ''
@@ -179,8 +123,8 @@ settings:
   entity_limit_user_interval: null
   purge: none
   purge_days: null
-  results_disabled: true
-  results_disabled_ignore: true
+  results_disabled: false
+  results_disabled_ignore: false
   token_update: false
 access:
   create:
@@ -229,4 +173,43 @@ access:
     roles: {  }
     users: {  }
     permissions: {  }
-handlers: {  }
+handlers:
+  yesterday:
+    id: scheduled_email
+    label: Yesterday
+    handler_id: yesterday
+    status: true
+    conditions: {  }
+    weight: -50
+    settings:
+      states:
+        - completed
+      to_mail: _default
+      to_options: {  }
+      cc_mail: ''
+      cc_options: {  }
+      bcc_mail: ''
+      bcc_options: {  }
+      from_mail: _default
+      from_options: {  }
+      from_name: _default
+      subject: 'English Subject'
+      body: 'English Body'
+      excluded_elements: {  }
+      ignore_access: false
+      exclude_empty: true
+      exclude_empty_checkbox: false
+      html: true
+      attachments: false
+      twig: false
+      theme_name: ''
+      debug: true
+      reply_to: ''
+      return_path: ''
+      sender_mail: ''
+      sender_name: ''
+      send: '[webform_submission:completed:html_datetime]'
+      days: -1
+      unschedule: false
+      ignore_past: false
+      test_send: false
