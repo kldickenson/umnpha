@@ -187,6 +187,11 @@ content:
     weight: 12
     third_party_settings: {  }
     region: content
+  url_redirects:
+    weight: 50
+    settings: {  }
+    third_party_settings: {  }
+    region: content
 hidden:
   compro_submitted: true
   created: true

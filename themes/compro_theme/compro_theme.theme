@@ -143,25 +143,25 @@ function compro_theme_preprocess_menu_local_task(&$variables) {
  * Implements hook_preprocess_entity().
  */
 function compro_theme_preprocess_eck_entity(&$variables) {
-  if (isset($variables['entity']['#section_type'])) {
+  if ($variables['eck_entity']->getEntityTypeId() == 'section_type') {
     $variables['attributes']['class'] = array(
       'entity',
       'entity-section-type',
-      str_replace('_', '-', $variables['entity']['#section_type']->bundle()),
+      str_replace('_', '-', $variables['eck_entity']->bundle()),
     );
   }
 
-  if (isset($variables['entity']['#component'])) {
+  if ($variables['eck_entity']->getEntityTypeId() == 'component') {
     $variables['attributes']['class'] = array(
       'entity',
       'entity-component',
-      str_replace('_', '-', $variables['entity']['#component']->bundle()),
+      str_replace('_', '-', $variables['eck_entity']->bundle()),
     );
   }
 
-  if (isset($variables['entity']['#section_type'])
-    && $variables['entity']['#section_type']->bundle() == 'section_type_longtext') {
-    if ($variables['entity']['#section_type']->hasField('longtext_top_border') && $variables['entity']['#section_type']->get('longtext_top_border')->value == 1) {
+  if ($variables['eck_entity']->getEntityTypeId() == 'section_type'
+    && $variables['eck_entity']->bundle() == 'section_type_longtext') {
+    if ($variables['eck_entity']->get('longtext_top_border')->getValue() && $variables['eck_entity']->get('longtext_top_border')->value == 1) {
       $variables['attributes']['class'] = array_merge($variables['attributes']['class'], ['add-border']);
     }
   }
