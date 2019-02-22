@@ -28,7 +28,7 @@ third_party_settings:
         - field_leadership_title
         - field_leadership_summary
       parent_name: ''
-      weight: 0
+      weight: 1
       format_type: html_element
       format_settings:
         id: ''
@@ -64,7 +64,7 @@ third_party_settings:
         - field_leadership_image
         - group_leadership_icons
       parent_name: ''
-      weight: 1
+      weight: 0
       format_type: html_element
       format_settings:
         id: ''
