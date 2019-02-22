@@ -72,3 +72,5 @@ bower_components/
 # Things in the core directory that Drupal 8 commits in the repository.
 !core/**/*.gz
 
+# PHPStorm Files
+.idea/
