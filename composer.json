@@ -9,7 +9,7 @@
         "drupal/stage_file_proxy": "^1.0@alpha"
     },
     "replace": {
-        "drupal/core": "^8.6"
+        "drupal/core": "^8.7"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
