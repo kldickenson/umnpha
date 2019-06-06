@@ -230,18 +230,34 @@
   a {
     color: $blue;
 
-    &:hover {
+    &:hover,
+    &:focus {
       text-decoration: underline;
     }
 
     &:visited {
-      color: $mine-shaft;
+      color: tint($blue, 20%);
     }
 
   }
 
   @media all and (max-width: 500px) {
     padding: 0 20px;
+  }
+
+}
+
+.section-type-longtext,
+.field--type-text-long {
+
+  a {
+    text-decoration: underline;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
   }
 
 }
