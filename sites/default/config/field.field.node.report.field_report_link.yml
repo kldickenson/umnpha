@@ -1,0 +1,23 @@
+uuid: 5f12bbab-f64d-4ddf-be55-d99b36d59495
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_report_link
+    - node.type.report
+  module:
+    - link
+id: node.report.field_report_link
+field_name: field_report_link
+entity_type: node
+bundle: report
+label: 'Report link'
+description: 'If report is an external site, please provide URL here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 2
+field_type: link

@@ -294,7 +294,7 @@
       img {
         object-fit: contain;
       }
-      
+
     }
 
     .group-report-teaser-text {
@@ -421,11 +421,46 @@
 
 }
 
+.node--type-report .title-download-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.node--type-report .field--name-field-report-report a,
+.node--type-report .field--name-field-report-link a {
+  background-color: $yellow;
+  color: $blue;
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: $blue;
+    color: #fff;
+  }
+
+}
+
+@media all and (max-width: 940px) {
+  .node--type-report .title-download-wrapper {
+    display: block;
+  }
+}
+
 .node--type-report .group-sidebar .download-pdf {
   display: block;
   text-align: center;
 }
 
+.field--name-field-report-link,
 .node--type-report .group-sidebar > .field,
 .node--type-report .group-sidebar > .sidebar-share-wrapper,
 .node--type-report .group-sidebar > .field--name-field-report-news-source-link {
@@ -448,7 +483,6 @@
 
   @media all and (max-width: 660px) {
     font-size: rem(14);
-    text-align: center;
   }
 
 }

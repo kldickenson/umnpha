@@ -7,6 +7,7 @@ dependencies:
     - field.field.node.report.field_report_contributers
     - field.field.node.report.field_report_featured_image
     - field.field.node.report.field_report_featured_report
+    - field.field.node.report.field_report_link
     - field.field.node.report.field_report_news_source
     - field.field.node.report.field_report_news_source_link
     - field.field.node.report.field_report_published_date
@@ -33,7 +34,6 @@ third_party_settings:
   field_group:
     group_sidebar:
       children:
-        - field_report_report
         - report_download_background_color
         - report_button_text_color
         - report_button_color
@@ -60,7 +60,7 @@ third_party_settings:
       label: Sidebar
     group_report_content:
       children:
-        - field_title
+        - group_title_download
         - field_report_sections
       parent_name: group_report_container
       weight: 2
@@ -80,7 +80,7 @@ third_party_settings:
         - group_report_content
         - group_sidebar
       parent_name: ''
-      weight: 1
+      weight: 2
       format_type: html_element
       format_settings:
         id: ''
@@ -96,7 +96,7 @@ third_party_settings:
       children:
         - field_report_news_source_link
       parent_name: group_sidebar
-      weight: 21
+      weight: 14
       format_type: html_element
       format_settings:
         label: 'Featured in'
@@ -109,20 +109,39 @@ third_party_settings:
         id: ''
         classes: featured-in-label
       label: 'Featured in'
+    group_title_download:
+      children:
+        - field_title
+        - field_report_report
+        - field_report_link
+      parent_name: group_report_content
+      weight: 20
+      format_type: html_element
+      format_settings:
+        id: ''
+        classes: title-download-wrapper
+        element: div
+        show_label: false
+        label_element: h3
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Title / Download'
 id: node.report.default
 targetEntityType: node
 bundle: report
 mode: default
 content:
   field_more_resources:
-    weight: 19
+    weight: 12
     label: above
-    settings: {  }
+    settings:
+      use_description_as_link_text: true
     third_party_settings: {  }
     type: file_default
     region: content
   field_report_contributers:
-    weight: 16
+    weight: 9
     label: above
     settings:
       trim_length: 80
@@ -142,8 +161,20 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: content
-  field_report_news_source:
+  field_report_link:
     weight: 23
+    label: hidden
+    settings:
+      trim_length: 80
+      url_plain: true
+      url_only: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_report_news_source:
+    weight: 15
     label: above
     settings:
       link: false
@@ -163,7 +194,7 @@ content:
     type: link
     region: content
   field_report_published_date:
-    weight: 17
+    weight: 10
     label: above
     settings:
       timezone_override: ''
@@ -172,8 +203,8 @@ content:
     type: datetime_default
     region: content
   field_report_report:
-    weight: 11
-    label: above
+    weight: 22
+    label: hidden
     settings:
       compro_custom_link_title: 'Download the Report'
       compro_custom_link_class: 'download-pdf button'
@@ -186,7 +217,7 @@ content:
     type: compro_custom_file_link
     region: content
   field_report_sections:
-    weight: 4
+    weight: 23
     label: hidden
     settings:
       link: true
@@ -195,7 +226,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_report_tags:
-    weight: 18
+    weight: 11
     label: above
     settings:
       link: true
@@ -203,7 +234,7 @@ content:
     type: entity_reference_label
     region: content
   field_report_volume_issue:
-    weight: 15
+    weight: 8
     label: above
     settings:
       link_to_entity: false
@@ -212,14 +243,14 @@ content:
     region: content
   field_title:
     type: string
-    weight: 3
+    weight: 21
     region: content
     label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
   report_button_color:
-    weight: 14
+    weight: 7
     label: hidden
     settings:
       selector: .download-pdf.button
@@ -230,7 +261,7 @@ content:
     type: color_field_formatter_css
     region: content
   report_button_text_color:
-    weight: 13
+    weight: 6
     label: hidden
     settings:
       selector: .download-pdf.button
@@ -241,7 +272,7 @@ content:
     type: color_field_formatter_css
     region: content
   report_download_background_color:
-    weight: 12
+    weight: 5
     label: hidden
     settings:
       selector: .field--name-field-report-report
@@ -252,7 +283,7 @@ content:
     type: color_field_formatter_css
     region: content
   share:
-    weight: 20
+    weight: 13
     region: content
     settings: {  }
     third_party_settings: {  }
