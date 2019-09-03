@@ -5,5 +5,4 @@ dependencies: {  }
 name: 'News Source'
 vid: news_source
 description: 'The different publications that a report might be featured in.'
-hierarchy: 0
 weight: 0
