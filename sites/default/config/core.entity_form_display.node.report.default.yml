@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.report.field_report_link
     - field.field.node.report.field_report_news_source
     - field.field.node.report.field_report_news_source_link
+    - field.field.node.report.field_report_press_release
     - field.field.node.report.field_report_published_date
     - field.field.node.report.field_report_report
     - field.field.node.report.field_report_sections
@@ -31,6 +32,7 @@ dependencies:
     - image
     - inline_entity_form
     - link
+    - scheduler
     - text
 third_party_settings:
   field_group:
@@ -42,7 +44,7 @@ third_party_settings:
         - report_button_text_color
         - report_button_color
       parent_name: ''
-      weight: 4
+      weight: 2
       format_type: fieldset
       format_settings:
         id: ''
@@ -56,14 +58,14 @@ bundle: report
 mode: default
 content:
   field_more_resources:
-    weight: 15
+    weight: 13
     settings:
       progress_indicator: throbber
     third_party_settings: {  }
     type: file_generic
     region: content
   field_report_contributers:
-    weight: 8
+    weight: 6
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -72,7 +74,7 @@ content:
     region: content
   field_report_featured_image:
     type: image_image
-    weight: 5
+    weight: 3
     region: content
     settings:
       progress_indicator: throbber
@@ -103,13 +105,21 @@ content:
     type: link_default
     region: content
   field_report_news_source:
-    weight: 10
+    weight: 8
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_report_news_source_link:
-    weight: 11
+    weight: 9
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_report_press_release:
+    weight: 14
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -117,7 +127,7 @@ content:
     type: link_default
     region: content
   field_report_published_date:
-    weight: 7
+    weight: 5
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
@@ -130,7 +140,7 @@ content:
     type: file_generic
     region: content
   field_report_sections:
-    weight: 13
+    weight: 11
     settings:
       form_mode: default
       label_singular: ''
@@ -146,7 +156,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_report_summary:
-    weight: 6
+    weight: 4
     settings:
       rows: 5
       placeholder: ''
@@ -154,13 +164,13 @@ content:
     type: text_textarea
     region: content
   field_report_tags:
-    weight: 12
+    weight: 10
     settings: {  }
     third_party_settings: {  }
     type: chosen_select
     region: content
   field_report_volume_issue:
-    weight: 9
+    weight: 7
     settings:
       size: 60
       placeholder: ''
@@ -175,6 +185,12 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 17
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   report_button_color:
     weight: 6
     settings:
@@ -196,15 +212,26 @@ content:
     third_party_settings: {  }
     type: color_field_widget_box
     region: content
+  scheduler_settings:
+    weight: 16
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 14
+    weight: 12
     third_party_settings: {  }
     region: content
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 18
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   url_redirects:
-    weight: 16
+    weight: 15
     region: content
     settings: {  }
     third_party_settings: {  }

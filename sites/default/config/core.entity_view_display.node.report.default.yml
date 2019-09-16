@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.report.field_report_link
     - field.field.node.report.field_report_news_source
     - field.field.node.report.field_report_news_source_link
+    - field.field.node.report.field_report_press_release
     - field.field.node.report.field_report_published_date
     - field.field.node.report.field_report_report
     - field.field.node.report.field_report_sections
@@ -42,6 +43,7 @@ third_party_settings:
         - field_report_published_date
         - field_report_tags
         - field_more_resources
+        - field_report_press_release
         - share
         - group_featured_in_link
         - field_report_news_source
@@ -96,7 +98,7 @@ third_party_settings:
       children:
         - field_report_news_source_link
       parent_name: group_sidebar
-      weight: 14
+      weight: 15
       format_type: html_element
       format_settings:
         label: 'Featured in'
@@ -174,7 +176,7 @@ content:
     type: link
     region: content
   field_report_news_source:
-    weight: 15
+    weight: 16
     label: above
     settings:
       link: false
@@ -193,6 +195,18 @@ content:
     third_party_settings: {  }
     type: link
     region: content
+  field_report_press_release:
+    weight: 13
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
   field_report_published_date:
     weight: 10
     label: above
@@ -206,7 +220,7 @@ content:
     weight: 22
     label: hidden
     settings:
-      compro_custom_link_title: 'Download the Report'
+      compro_custom_link_title: 'Download the Report PDF'
       compro_custom_link_class: 'download-pdf button'
     third_party_settings:
       linked_field:
@@ -283,7 +297,7 @@ content:
     type: color_field_formatter_css
     region: content
   share:
-    weight: 13
+    weight: 14
     region: content
     settings: {  }
     third_party_settings: {  }
