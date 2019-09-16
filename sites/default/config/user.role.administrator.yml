@@ -33,6 +33,7 @@ permissions:
   - 'administer users'
   - 'administer webform submission'
   - 'bypass eck entity access'
+  - 'bypass node access'
   - 'create component entities'
   - 'create media'
   - 'create page content'
