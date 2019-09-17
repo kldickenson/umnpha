@@ -23,3 +23,45 @@
   content: '';
   display: table;
 }
+
+.views-exposed-form {
+  margin-bottom: 1rem;
+
+  .form--inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+  }
+
+  .form-item {
+    max-width: 200px;
+    min-width: 150px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .form-actions {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  label {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  select {
+    font-size: 1em;
+    padding: 0.5em;
+    height: 37px;
+  }
+
+  .bef-datepicker {
+    margin-bottom: 1.5em;
+  }
+
+  input[type="submit"] {
+   margin-top: 2em;
+  }
+
+}

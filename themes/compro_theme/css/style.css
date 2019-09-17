@@ -2233,6 +2233,44 @@ a[href].learn-more.button {
   display: table;
 }
 
+.views-exposed-form {
+  margin-bottom: 1rem;
+}
+.views-exposed-form .form--inline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+}
+.views-exposed-form .form-item {
+  max-width: 200px;
+  min-width: 150px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.views-exposed-form .form-actions {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.views-exposed-form label {
+  font-size: 18px;
+  font-weight: 700;
+}
+.views-exposed-form select {
+  font-size: 1em;
+  padding: 0.5em;
+  height: 37px;
+}
+.views-exposed-form .bef-datepicker {
+  margin-bottom: 1.5em;
+}
+.views-exposed-form input[type=submit] {
+  margin-top: 2em;
+}
+
 /*
 *   #FIELDS
 **/
