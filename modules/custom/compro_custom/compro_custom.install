@@ -55,3 +55,7 @@ function compro_custom_update_8005() {
 function compro_custom_update_8006() {
   \Drupal::service('module_installer')->install(['background_image_formatter']);
 }
+
+function compro_custom_update_8007() {
+  \Drupal::service('module_installer')->install(['better_exposed_filters']);
+}
