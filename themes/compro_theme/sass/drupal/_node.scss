@@ -449,6 +449,28 @@
 
 }
 
+.node--type-report.node--view-mode-teaser .field--name-field-report-report,
+.node--type-report.node--view-mode-teaser .field--name-field-report-link {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.node--type-report.node--view-mode-teaser a.download-pdf,
+.node--type-report.node--view-mode-teaser .field--name-field-report-link a {
+  background-color: transparent;
+  border: 1px solid $blue;
+  color: $blue;
+  padding: 0.75rem;
+  margin: 0;
+  font-size: 0.7rem;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $yellow;
+  }
+}
+
 @media all and (max-width: 940px) {
   .node--type-report .title-download-wrapper {
     display: block;

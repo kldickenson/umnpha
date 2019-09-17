@@ -220,8 +220,7 @@
 
 
 /*Longtext*/
-.section-type-longtext,
-.block-views-blockreport-recent-reports {
+.section-type-longtext {
   margin: 0 auto;
   max-width: 980px;
   padding: 40px 20px;
@@ -454,11 +453,18 @@
       &:hover {
         background: url('../images/icons/zocial-linkedin-blue.svg') no-repeat center/contain;
       }
-      
+
     }
 
   }
 
+}
+
+// Reports
+.block-views-blockreport-recent-reports {
+  margin: 0 auto;
+  max-width: 980px;
+  padding: 40px 20px;
 }
 
 

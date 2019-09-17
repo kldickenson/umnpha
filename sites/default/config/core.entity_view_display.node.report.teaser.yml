@@ -8,7 +8,10 @@ dependencies:
     - field.field.node.report.field_report_contributers
     - field.field.node.report.field_report_featured_image
     - field.field.node.report.field_report_featured_report
+    - field.field.node.report.field_report_link
     - field.field.node.report.field_report_news_source
+    - field.field.node.report.field_report_news_source_link
+    - field.field.node.report.field_report_press_release
     - field.field.node.report.field_report_published_date
     - field.field.node.report.field_report_report
     - field.field.node.report.field_report_sections
@@ -22,8 +25,11 @@ dependencies:
     - image.style.340xn
     - node.type.report
   module:
+    - compro_custom
     - field_group
     - image
+    - link
+    - linked_field
     - text
     - user
 third_party_settings:
@@ -59,6 +65,32 @@ content:
       image_style: 340xn
       image_link: content
     third_party_settings: {  }
+  field_report_link:
+    type: link
+    weight: 3
+    region: content
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+  field_report_report:
+    type: compro_custom_file_link
+    weight: 2
+    region: content
+    label: hidden
+    settings:
+      compro_custom_link_title: 'Download the Report PDF'
+      compro_custom_link_class: 'download-pdf button'
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[node:field_report_report:entity]'
+        advanced: {  }
   field_report_summary:
     type: text_default
     weight: 3
@@ -81,8 +113,9 @@ hidden:
   field_report_contributers: true
   field_report_featured_report: true
   field_report_news_source: true
+  field_report_news_source_link: true
+  field_report_press_release: true
   field_report_published_date: true
-  field_report_report: true
   field_report_sections: true
   field_report_tags: true
   field_report_volume_issue: true
