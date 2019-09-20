@@ -56,6 +56,10 @@ function compro_custom_update_8006() {
   \Drupal::service('module_installer')->install(['background_image_formatter']);
 }
 
+/**
+ * Install scheduler and better_exposed_filters modules.
+ */
 function compro_custom_update_8007() {
+  \Drupal::service('module_installer')->install(['scheduler']);
   \Drupal::service('module_installer')->install(['better_exposed_filters']);
 }
