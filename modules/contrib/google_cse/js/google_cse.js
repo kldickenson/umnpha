@@ -8,6 +8,9 @@
 
   Drupal.behaviors.googleCSECustomSearch = {
     attach: function (context, settings) {
+      if (!drupalSettings.googleCSE.isDefault) {
+        return;
+      }
       var getWatermarkBackground = function (value) {
         var googleCSEBaseUrl = 'https://www.google.com/cse/intl/';
         var googleCSEImageUrl = 'images/google_custom_search_watermark.gif';

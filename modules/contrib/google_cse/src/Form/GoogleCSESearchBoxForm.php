@@ -70,7 +70,7 @@ class GoogleCSESearchBoxForm extends FormBase {
       $cof = $config->get('configuration')['cof_here'];
     }
     else {
-      $form['#action'] = 'http://' . $config->get('configuration')['domain'] . '/cse';
+      $form['#action'] = $this->googleCSEServices->getProtocol() . $config->get('configuration')['domain'] . '/cse';
       $cof = $config->get('configuration')['cof_google'];
     }
     $form['#method'] = 'get';

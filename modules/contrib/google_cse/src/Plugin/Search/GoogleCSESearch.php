@@ -204,11 +204,11 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
 
     if ($this->requestStack->getCurrentRequest()->query->has('page')) {
       $current_page = $this->requestStack->getCurrentRequest()->query->get('page');
-      $number_results = t('Results @from to @to of @total matches.', array(
+      $number_results = t('Results @from to @to of @total matches.', [
         '@from' => $current_page * 10,
         '@to' => $current_page * 10 + 10,
         '@total' => $GLOBALS['pager_total_items'][0],
-      ));
+      ]);
       $output['prefix']['#markup'] = $number_results . '<ol class="search-results">';
     }
 
@@ -275,10 +275,11 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['cx'] = [
       '#title' => $this->t('Google Custom Search Engine ID'),
       '#type' => 'textfield',
-      '#default_value' => $this->configuration['cx'],
+      '#default_value' => $this->configuration['cx'] ?? '',
       '#description' => $this->t('Enter your @google (click on control panel).', [
         '@google' => Link::fromTextAndUrl('Google CSE unique ID', Url::fromUri('http://www.google.com/cse/manage/all'))->toString(),
       ]),
+      '#required' => TRUE,
     ];
 
     $form['google_cse']['results_tab'] = [
@@ -289,7 +290,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#description' => $this->t('Enter a custom name of the tab where search results are displayed (defaults to %google).', [
         '%google' => $this->t('Google'),
       ]),
-      '#default_value' => $this->configuration['results_tab'],
+      '#default_value' => $this->configuration['results_tab'] ?? '',
     ];
 
     $form['google_cse']['results_width'] = [
@@ -298,13 +299,13 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#maxlength' => 4,
       '#size' => 6,
       '#description' => $this->t('Enter the desired width, in pixels, of the search frame.'),
-      '#default_value' => $this->configuration['results_width'],
+      '#default_value' => $this->configuration['results_width'] ?? '',
     ];
 
     $form['google_cse']['cof_here'] = [
       '#title' => $this->t('Ad format on this site'),
       '#type' => 'radios',
-      '#default_value' => $this->configuration['cof_here'],
+      '#default_value' => $this->configuration['cof_here'] ?? '',
       '#options' => [
         'FORID:9' => $this->t('Right'),
         'FORID:10' => $this->t('Top and right'),
@@ -316,7 +317,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['cof_google'] = [
       '#title' => $this->t('Ad format on Google'),
       '#type' => 'radios',
-      '#default_value' => $this->configuration['cof_google'],
+      '#default_value' => $this->configuration['cof_google'] ?? '',
       '#options' => [
         'FORID:0' => $this->t('Right'),
         'FORID:1' => $this->t('Top and bottom'),
@@ -330,7 +331,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#cols' => 50,
       '#rows' => 4,
       '#description' => $this->t('Enter text to appear on the search page before the search form.'),
-      '#default_value' => $this->configuration['results_prefix'],
+      '#default_value' => $this->configuration['results_prefix'] ?? '',
     ];
 
     $form['google_cse']['results_suffix'] = [
@@ -339,7 +340,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#cols' => 50,
       '#rows' => 4,
       '#description' => $this->t('Enter text to appear on the search page after the search form and results.'),
-      '#default_value' => $this->configuration['results_suffix'],
+      '#default_value' => $this->configuration['results_suffix'] ?? '',
     ];
 
     $form['google_cse']['results_searchbox_width'] = [
@@ -348,25 +349,47 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#maxlength' => 4,
       '#size' => 6,
       '#description' => $this->t('Enter the desired width, in characters, of the searchbox on the Google CSE block.'),
-      '#default_value' => $this->configuration['results_searchbox_width'],
+      '#default_value' => $this->configuration['results_searchbox_width'] ?? '',
     ];
 
     $form['google_cse']['results_display'] = [
       '#title' => $this->t('Display search results'),
       '#type' => 'radios',
-      '#default_value' => $this->configuration['results_display'],
+      '#default_value' => $this->configuration['results_display'] ?? 'here',
       '#options' => [
         'here' => $this->t('On this site (requires JavaScript)'),
         'google' => $this->t('On Google'),
       ],
       '#description' => $this->t('Search results for the Google CSE block can be displayed on this site, using JavaScript, or on Google, which does not require JavaScript.'),
+      '#required' => TRUE,
+    ];
+
+    $cx = isset($this->configuration['cx']) ? (string) $this->configuration['cx'] : '';
+
+    $form['google_cse']['custom_results_display'] = [
+      '#title' => $this->t('Layout of Search Engine'),
+      '#type' => 'radios',
+      '#default_value' => $this->configuration['custom_results_display'] ?? 'results-only',
+      '#options' => [
+        'overlay' => $this->t('Overlay'),
+        'two-page' => $this->t('Two page'),
+        'full-width' => $this->t('Full width'),
+        'two-column' => $this->t('Two column'),
+        'compact' => $this->t('Compact'),
+        'results-only' => $this->t('Results only'),
+        'google-hosted' => $this->t('Google hosted'),
+      ],
+      '#description' => $this->t('Set the search engine layout, as found in the Layout tab of @url.', [
+        '@url' => Link::fromTextAndUrl('Custom Search settings', Url::fromUri('https://www.google.com/cse/lookandfeel/layout?cx=' . $cx))->toString(),
+      ]),
+      '#required' => TRUE,
     ];
 
     $form['google_cse']['results_display_images'] = [
       '#title' => $this->t('Display thumbnail images in the search results'),
       '#type' => 'checkbox',
       '#description' => $this->t('If set, search result snippets will contain a thumbnail image'),
-      '#default_value' => $this->configuration['results_display_images'],
+      '#default_value' => $this->configuration['results_display_images'] ?? '',
     ];
 
     $form['google_cse']['no_results_message'] = [
@@ -375,7 +398,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#cols' => 50,
       '#rows' => 4,
       '#description' => $this->t('Enter the message to be displayed when search yield no results.'),
-      '#default_value' => $this->configuration['no_results_message'],
+      '#default_value' => $this->configuration['no_results_message'] ?? '',
     ];
 
     $form['google_cse']['sitesearch'] = [
@@ -392,7 +415,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#description' => $this->t('If set, users will be presented with the option of searching only on the domain(s) specified rather than using the CSE. Enter one domain or URL path followed by a description (e.g. %example) on each line.', [
         '%example' => 'example.com/user Search users',
       ]),
-      '#default_value' => $this->configuration['sitesearch'],
+      '#default_value' => $this->configuration['sitesearch'] ?? '',
     ];
 
     $form['google_cse']['sitesearch']['sitesearch_form'] = [
@@ -403,7 +426,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
         'select' => $this->t('Select'),
       ],
       '#description' => $this->t('Select the type of form element used to present the SiteSearch option(s).'),
-      '#default_value' => $this->configuration['sitesearch_form'],
+      '#default_value' => $this->configuration['sitesearch_form'] ?? '',
     ];
 
     $form['google_cse']['sitesearch']['sitesearch_option'] = [
@@ -414,14 +437,14 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#description' => $this->t('Customize the label for CSE search if SiteSearch is enabled (defaults to %search-web).', [
         '%search-web' => 'Search the web',
       ]),
-      '#default_value' => $this->configuration['sitesearch_option'],
+      '#default_value' => $this->configuration['sitesearch_option'] ?? '',
     ];
 
     $form['google_cse']['sitesearch']['sitesearch_default'] = [
       '#title' => $this->t('Default to using the SiteSearch domain'),
       '#type' => 'checkbox',
       '#description' => $this->t('If set, searches will default to using the first listed SiteSearch domain rather than the CSE.'),
-      '#default_value' => $this->configuration['sitesearch_default'],
+      '#default_value' => $this->configuration['sitesearch_default'] ?? '',
     ];
 
     $form['google_cse']['advanced'] = [
@@ -437,7 +460,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#description' => $this->t('Enter the Google domain to use for search results, e.g. %google.', [
         '%google' => 'www.google.com',
       ]),
-      '#default_value' => $this->configuration['domain'],
+      '#default_value' => $this->configuration['domain'] ?? '',
     ];
 
     $form['google_cse']['advanced']['limit_domain'] = [
@@ -447,13 +470,13 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
       '#description' => $this->t('Enter the domain to limit results on (only display results for this domain) %google.', [
         '%google' => 'www.google.com',
       ]),
-      '#default_value' => $this->configuration['limit_domain'],
+      '#default_value' => $this->configuration['limit_domain'] ?? '',
     ];
 
     $form['google_cse']['advanced']['cr'] = [
       '#title' => $this->t('Country restriction'),
       '#type' => 'textfield',
-      '#default_value' => $this->configuration['cr'],
+      '#default_value' => $this->configuration['cr'] ?? '',
       '#description' => $this->t('Enter a 9-letter country code, e.g. %countryNZ, and optional boolean operators, to restrict search results to documents (not) originating in particular countries. See the @crparameter.', [
         '%countryNZ' => 'countryNZ',
         '@crparameter' => Link::fromTextAndUrl($this->t('%cr parameter', ['%cr' => 'cr']), Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#crsp'))->toString(),
@@ -463,7 +486,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['advanced']['gl'] = [
       '#title' => $this->t('Country boost'),
       '#type' => 'textfield',
-      '#default_value' => $this->configuration['gl'],
+      '#default_value' => $this->configuration['gl'] ?? '',
       '#description' => $this->t('Enter a 2-letter country code, e.g. %uk, to boost documents written in a particular country. See the @glparameter.', [
         '%uk' => 'uk',
         '@glparameter' => Link::fromTextAndUrl($this->t('%gl parameter', ['%gl' => 'gl']), Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#glsp'))->toString(),
@@ -473,7 +496,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['advanced']['hl'] = [
       '#title' => $this->t('Interface language'),
       '#type' => 'textfield',
-      '#default_value' => $this->configuration['hl'],
+      '#default_value' => $this->configuration['hl'] ?? '',
       '#description' => $this->t('Enter a supported 2- or 5-character language code, e.g. %fr, to set the language of the user interface. See the @hlparameter.', [
         '%fr' => 'fr',
         '@hlparameter' => Link::fromTextAndUrl($this->t('%hl parameter', ['%hl' => 'hl']), Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#hlsp'))->toString(),
@@ -483,7 +506,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['advanced']['locale_hl'] = [
       '#title' => $this->t('Set interface language dynamically'),
       '#type' => 'checkbox',
-      '#default_value' => $this->configuration['locale_hl'],
+      '#default_value' => $this->configuration['locale_hl'] ?? '',
       '#description' => $this->t('The language restriction can be set dynamically if the locale module is enabled. Note the locale language code must match one of the @google.', [
         '@google' => Link::fromTextAndUrl('supported language codes', Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#interfaceLanguages'))->toString(),
       ]),
@@ -492,7 +515,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['advanced']['ie'] = [
       '#title' => $this->t('Input encoding'),
       '#type' => 'textfield',
-      '#default_value' => $this->configuration['ie'],
+      '#default_value' => $this->configuration['ie'] ?? '',
       '#description' => $this->t('The default %utf8 is recommended. See the @ieparameter.', [
         '%utf8' => 'utf-8',
         '@ieparameter' => Link::fromTextAndUrl($this->t('%ie parameter', ['%ie' => 'ie']), Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#iesp'))->toString(),
@@ -502,7 +525,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['advanced']['lr'] = [
       '#title' => $this->t('Language restriction'),
       '#type' => 'textfield',
-      '#default_value' => $this->configuration['lr'],
+      '#default_value' => $this->configuration['lr'] ?? '',
       '#description' => $this->t('Enter a supported 7- or 10-character language code, e.g. %lang_en, and optional boolean operators, to restrict search results to documents (not) written in particular languages. See the @lrparameter.', [
         '%langen' => 'lang_en',
         '@lrparameter' => Link::fromTextAndUrl($this->t('%lr parameter', ['%lr' => 'lr']), Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#lrsp'))->toString(),
@@ -512,7 +535,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['advanced']['locale_lr'] = [
       '#title' => $this->t('Set language restriction dynamically'),
       '#type' => 'checkbox',
-      '#default_value' => $this->configuration['locale_lr'],
+      '#default_value' => $this->configuration['locale_lr'] ?? '',
       '#description' => $this->t('The language restriction can be set dynamically if the locale module is enabled. Note the locale language code must match one of the @supported.', [
         '@supported' => Link::fromTextAndUrl('supported language codes', Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#languageCollections'))->toString(),
       ]),
@@ -521,7 +544,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['advanced']['oe'] = [
       '#title' => $this->t('Output encoding'),
       '#type' => 'textfield',
-      '#default_value' => $this->configuration['oe'],
+      '#default_value' => $this->configuration['oe'] ?? '',
       '#description' => $this->t('The default %utf is recommended. See the @oeparameter.', [
         '%utf' => 'utf-8',
         '@oeparameter' => Link::fromTextAndUrl($this->t('%oe parameter', ['%oe' => 'oe']), Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#oesp'))->toString(),
@@ -537,7 +560,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
         'medium' => $this->t('Medium'),
         'high' => $this->t('High'),
       ],
-      '#default_value' => $this->configuration['safe'],
+      '#default_value' => $this->configuration['safe'] ?? '',
       '#description' => $this->t('SafeSearch filters search results for adult content. See the @safeparameter.', [
         '@safeparameter' => Link::fromTextAndUrl('safe parameter', Url::fromUri('https://developers.google.com/custom-search/docs/xml_results#safesp'))->toString(),
       ]),
@@ -546,27 +569,9 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse']['advanced']['custom_css'] = [
       '#title' => t('Stylesheet Override'),
       '#type' => 'textfield',
-      '#default_value' => $this->configuration['custom_css'],
+      '#default_value' => $this->configuration['custom_css'] ?? '',
       '#description' => $this->t('Set a custom stylesheet to override or add any styles not allowed in the CSE settings (such as "background-color: none;"). Include <span style="color:red; font-weight:bold;">!important</span> for overrides.<br/>Example: %replace', [
         '%replace' => '//replacewithrealsite.com/sites/all/modules/google_cse/default.css',
-      ]),
-    ];
-
-    $form['google_cse']['advanced']['custom_results_display'] = [
-      '#title' => $this->t('Layout of Search Engine'),
-      '#type' => 'radios',
-      '#default_value' => $this->configuration['custom_results_display'],
-      '#options' => [
-        'overlay' => $this->t('Overlay'),
-        'two-page' => $this->t('Two page'),
-        'full-width' => $this->t('Full width'),
-        'two-column' => $this->t('Two column'),
-        'compact' => $this->t('Compact'),
-        'results-only' => $this->t('Results only'),
-        'google-hosted' => $this->t('Google hosted'),
-      ],
-      '#description' => $this->t('Set the search engine layout, as found in the Layout tab of @url.', [
-        '@url' => Link::fromTextAndUrl('Custom Search settings', Url::fromUri('https://www.google.com/cse/lookandfeel/layout?cx=' . $this->configuration['cx']))->toString(),
       ]),
     ];
 
@@ -579,7 +584,7 @@ class GoogleCSESearch extends ConfigurableSearchPluginBase implements Accessible
     $form['google_cse_adv']['use_adv'] = [
       '#title' => t('Use advanced, ad-free version, search engine (You will need a paid account with Google)'),
       '#type' => 'checkbox',
-      '#default_value' => $this->configuration['use_adv'],
+      '#default_value' => $this->configuration['use_adv'] ?? '',
       '#description' => $this->t('If enabled, search results will be fetch using Adv engine.'),
     ];
 

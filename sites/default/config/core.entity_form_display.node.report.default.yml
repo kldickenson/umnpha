@@ -194,21 +194,21 @@ content:
   report_button_color:
     weight: 6
     settings:
-      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+      default_colors: '#FFCA05,#00264B,#79111B,#CB6500,#0F6CB6,#6F2A8E,#00A1B0,#645951,#B5985A,#7D722E'
     third_party_settings: {  }
     type: color_field_widget_box
     region: content
   report_button_text_color:
     weight: 5
     settings:
-      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+      default_colors: '#FFCA05,#00264B,#79111B,#CB6500,#0F6CB6,#6F2A8E,#00A1B0,#645951,#B5985A,#7D722E'
     third_party_settings: {  }
     type: color_field_widget_box
     region: content
   report_download_background_color:
     weight: 4
     settings:
-      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e'
+      default_colors: '#FFCA05,#00264B,#79111B,#CB6500,#0F6CB6,#6F2A8E,#00A1B0,#645951,#B5985A,#7D722E'
     third_party_settings: {  }
     type: color_field_widget_box
     region: content
