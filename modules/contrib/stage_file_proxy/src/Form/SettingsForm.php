@@ -2,14 +2,41 @@
 
 namespace Drupal\stage_file_proxy\Form;
 
+use Drupal\Core\Config\ConfigFactoryInterface;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Component\Utility\Unicode;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provide settings for Stage File Proxy.
  */
 class SettingsForm extends ConfigFormBase {
+
+  /**
+   * The site path.
+   *
+   * @var string
+   */
+  protected $sitePath;
+
+  /**
+   * {@inheritdoc}
+   */
+  public function __construct(ConfigFactoryInterface $config_factory, string $site_path) {
+    parent::__construct($config_factory);
+
+    $this->sitePath = $site_path;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('config.factory'),
+      $container->get('site.path')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -41,19 +68,19 @@ class SettingsForm extends ConfigFormBase {
       '#required' => FALSE,
     ];
 
-    $form['verify'] = array(
+    $form['verify'] = [
       '#type' => 'checkbox',
       '#title' => t('Verify SSL.'),
       '#default_value' => $config->get('verify'),
       '#description' => t('If this is true (default) then the request will be done by doing the SSL verification if the origin is using https.'),
       '#required' => FALSE,
-    );
+    ];
 
     $stage_file_proxy_origin_dir = $config->get('origin_dir');
     if (!$stage_file_proxy_origin_dir) {
       $stage_file_proxy_origin_dir = $config->get('file_public_path');
       if (empty($stage_file_proxy_origin_dir)) {
-        $stage_file_proxy_origin_dir = \Drupal::service('site.path') . '/files';
+        $stage_file_proxy_origin_dir = $this->sitePath . '/files';
       }
     }
     $form['origin_dir'] = [
@@ -94,7 +121,7 @@ class SettingsForm extends ConfigFormBase {
       $form_state->setErrorByName('origin', 'Origin needs to be a valid URL.');
     }
 
-    if (!empty($origin) && Unicode::substr($origin, -1) === '/') {
+    if (!empty($origin) && mb_substr($origin, -1) === '/') {
       $form_state->setErrorByName('origin', 'Origin URL cannot end in slash.');
     }
 
@@ -117,6 +144,7 @@ class SettingsForm extends ConfigFormBase {
       $config->set($key, $form_state->getValue($key));
     }
     $config->save();
+    $this->messenger()->addMessage($this->t('Your settings have been saved.'));
   }
 
 }

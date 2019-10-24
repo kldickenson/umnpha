@@ -43,7 +43,7 @@ content:
     type: color_field_widget_box
     weight: 2
     settings:
-      default_colors: '#ffca05, #00264b, #79111b,#cb6500,#0f6cb6,#6f2a8e,#00a1b0,#645951,#b5985a,#7d722e, #5f5f5f, #571c0c, #ffcc05, #0f284a'
+      default_colors: '#FFCA05,#00264B,#79111B,#CB6500,#0F6CB6,#6F2A8E,#00A1B0,#645951,#B5985A,#7D722E'
     third_party_settings: {  }
     region: content
   title:

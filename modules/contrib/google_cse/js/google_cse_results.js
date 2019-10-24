@@ -22,13 +22,19 @@ window.__gcse = {
 // ("cx") from Drupal.settings.
 (function () {
   'use strict';
-  var cx = drupalSettings.googleCSE.cx;
-  var gcse = document.createElement('script');
-  gcse.type = 'text/javascript';
-  gcse.async = true;
-  gcse.src = (document.location.protocol === 'https:' ? 'https:' : 'http:') +
-    '//www.google.com/cse/cse.js?cx=' + cx;
-  var s = document.getElementsByTagName('script')[0];
-  s.parentNode.insertBefore(gcse, s);
+  if (drupalSettings.googleCSE !== undefined) {
+    var cx = drupalSettings.googleCSE.cx;
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol === 'https:' ? 'https:' : 'http:') +
+      '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  }
+  else {
+    console.log("The Google CSE Javascript settings aren't loaded. Please make sure the core 'Search form' block is placed on the page.")
+  }
+  
 }
 )();

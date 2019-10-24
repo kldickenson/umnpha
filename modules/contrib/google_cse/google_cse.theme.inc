@@ -37,7 +37,7 @@ function google_cse_get_cse_tag() {
       return '<gcse:searchbox-only gname="google_cse"></gcse:searchbox-only>';
 
     default:
-      \Drupal::logger('google_cse')->critical('Invalid custom result display %display', array('%display' => $display));
+      \Drupal::logger('google_cse')->critical('Invalid custom result display %display', ['%display' => $display]);
   }
 }
 
@@ -48,7 +48,10 @@ function template_preprocess_google_cse_results(&$variables) {
   $config = \Drupal::config('search.page.google_cse_search');
   $variables['results_searchbox_form'] = $variables['form'] ? \Drupal::formBuilder()->getForm('Drupal\google_cse\Form\GoogleCSESearchBoxForm') : '';
   $variables['cse_tag'] = google_cse_get_cse_tag();
-  $url = Url::fromUri('http://' . $config->get('configuration')['domain'] . '/cse', [
+  $configured_domain = $config->get('configuration')['domain'];
+  $domain = !empty($configured_domain) ? $configured_domain : $_SERVER['HTTP_HOST'];
+  $protocol = \Drupal::service('google_cse.services')->getProtocol();
+  $url = Url::fromUri($protocol . $domain . '/cse', [
     'query' => ['keys' => \Drupal::request()->query->get('keys')],
   ]);
   $variables['noscript'] = t('@google, or enable JavaScript to view them here.', [

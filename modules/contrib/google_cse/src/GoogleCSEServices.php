@@ -121,7 +121,7 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
     // @TODO Confirm input in UI
     $rows = (int) $this->CSEconfig->get('configuration')['google_cse_adv_results_per_page'];
 
-    $query = array(
+    $query = [
       'cx' => $this->CSEconfig->get('configuration')['cx'],
       'client' => 'google-csbe',
       'output' => 'xml_no_dtd',
@@ -132,13 +132,13 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
       'num' => $rows,
       'start' => ($offset) ? $offset : ($page * $rows),
       'as_sitesearch' => $this->CSEconfig->get('configuration')['limit_domain'],
-    );
+    ];
 
     if ($this->requestStack->getCurrentRequest()->query->has('more')) {
       $query['+more:'] = urlencode($this->requestStack->getCurrentRequest()->query->get('more'));
     }
 
-    $url = Url::fromUri('http://www.google.com/cse', ['query' => $query]);
+    $url = Url::fromUri($this->getProtocol() . 'www.google.com/cse', ['query' => $query]);
 
     // Get the google response.
     $response = $this->getResponse($url->toString());
@@ -163,6 +163,17 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
       default:
         return '';
     }
+  }
+
+  /**
+   * Returns the current protocol.
+   *
+   * @return string
+   *   Returns http or https depending on request.
+   */
+  public function getProtocol() {
+    $request = \Drupal::request();
+    return $request->isSecure() == TRUE ? 'https://' : 'http://';
   }
 
   /**
@@ -235,7 +246,7 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
         'path' => isset($image_att['value']) ? $image_att['value'] : '',
         'alt' => $title,
         'title' => $title,
-        'attributes' => array('width' => '100px'),
+        'attributes' => ['width' => '100px'],
         'getsize' => FALSE,
       ];
       return $this->renderer->render($image);
@@ -260,7 +271,7 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
    */
   public function responseResults($response, $keys, $conditions) {
     $xml = simplexml_load_string($response);
-    $results = array();
+    $results = [];
     // Number of results.
     $total = 0;
 
@@ -340,14 +351,14 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
         }
 
         // Results in a Drupal themed way for search.
-        $results[] = array(
+        $results[] = [
           'link' => (string) $result->U,
           'title' => $title,
           'snippet' => $snippet,
           'keys' => Html::escape($keys),
-          'extra' => array($extra),
+          'extra' => [$extra],
           'date' => NULL,
-        );
+        ];
       }
 
       // No pager query was executed - we have to set the pager manually.
@@ -457,11 +468,11 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
    */
   public function siteSearchForm(&$form) {
     if ($options = $this->sitesearchOptions()) {
-      $form['sitesearch'] = array(
+      $form['sitesearch'] = [
         '#type' => $this->CSEconfig->get('sitesearch_form'),
         '#options' => $options,
         '#default_value' => $this->sitesearchDefault(),
-      );
+      ];
       if ($form['sitesearch']['#type'] == 'select' && isset($form['sa'])) {
         $form['sa']['#weight'] = 10;
       }
@@ -474,14 +485,14 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
   public function sitesearchOptions() {
     static $options;
     if (!isset($options)) {
-      $options = array();
+      $options = [];
       if ($sites = preg_split('/[\n\r]+/', $this->CSEconfig->get('configuration')['sitesearch'], -1, PREG_SPLIT_NO_EMPTY)) {
         $options[''] = ($var = $this->CSEconfig->get('configuration')['sitesearch_option']) ? $var : t('Search the web');
         foreach ($sites as $site) {
           $site = preg_split('/[\s]+/', trim($site), 2, PREG_SPLIT_NO_EMPTY);
           // Select options will be HTML-escaped.
           // Radio options will be XSS-filtered.
-          $options[$site[0]] = isset($site[1]) ? $site[1] : t('Search %sitesearch', array('%sitesearch' => $site[0]));
+          $options[$site[0]] = isset($site[1]) ? $site[1] : t('Search %sitesearch', ['%sitesearch' => $site[0]]);
         }
       }
     }
@@ -508,8 +519,8 @@ class GoogleCSEServices implements ContainerFactoryPluginInterface {
    */
   public function advancedSettings() {
     $language = $this->languageManager->getCurrentLanguage()->getId();
-    $settings = array();
-    foreach (array('cr', 'gl', 'hl', 'ie', 'lr', 'oe', 'safe') as $parameter) {
+    $settings = [];
+    foreach (['cr', 'gl', 'hl', 'ie', 'lr', 'oe', 'safe'] as $parameter) {
       if ($setting = $this->CSEconfig->get('configuration')[$parameter]) {
         $settings[$parameter] = $setting;
       }
