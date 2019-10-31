@@ -30,6 +30,7 @@ third_party_settings:
         id: ''
         classes: field-group-sponsors-primary
       label: Primary
+      region: content
     group_sponsors_secondary:
       children:
         - field_sponsors_secondary_label
@@ -48,6 +49,7 @@ third_party_settings:
         id: ''
         classes: field-group-sponsors-secondary
       label: Secondary
+      region: content
     group_sponsors_wrapper:
       children:
         - group_sponsors_primary
@@ -65,6 +67,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Wrapper
+      region: content
 id: section_type.section_type_sponsors.default
 targetEntityType: section_type
 bundle: section_type_sponsors

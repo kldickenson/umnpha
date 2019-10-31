@@ -31,6 +31,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Highlight Text'
+      region: content
     group_highlight_media:
       children:
         - field_highlight_media
@@ -47,6 +48,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Highlight Media'
+      region: content
     group_highlight_wrapper:
       children:
         - group_highlight_media
@@ -64,6 +66,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Highlight Wrapper'
+      region: content
 id: section_type.section_type_highlight.default
 targetEntityType: section_type
 bundle: section_type_highlight

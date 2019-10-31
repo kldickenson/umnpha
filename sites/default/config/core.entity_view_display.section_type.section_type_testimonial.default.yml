@@ -34,6 +34,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Testimonial Text'
+      region: content
     group_testimonial_image:
       children:
         - field_testimonial_image
@@ -50,6 +51,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Testimonial Image'
+      region: content
 id: section_type.section_type_testimonial.default
 targetEntityType: section_type
 bundle: section_type_testimonial

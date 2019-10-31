@@ -37,6 +37,7 @@ third_party_settings:
         id: ''
         classes: field-group-form-text
       label: 'Form Text'
+      region: content
     group_image_form:
       children:
         - field_form_image
@@ -54,6 +55,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Image & Form'
+      region: content
 _core:
   default_config_hash: 3r1i0UMUbeNHhvmiqHDYznoS4G9XR1jq6lQ49r80lDE
 id: node.webform.default
