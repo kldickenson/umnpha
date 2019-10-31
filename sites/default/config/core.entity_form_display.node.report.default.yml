@@ -52,6 +52,7 @@ third_party_settings:
         description: ''
         required_fields: false
       label: 'Full Report Button'
+      region: content
 id: node.report.default
 targetEntityType: node
 bundle: report

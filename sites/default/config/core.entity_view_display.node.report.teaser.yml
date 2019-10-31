@@ -51,6 +51,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Text
+      region: content
 id: node.report.teaser
 targetEntityType: node
 bundle: report

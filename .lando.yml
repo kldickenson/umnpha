@@ -1,5 +1,6 @@
 name: umnpha
 recipe: drupal8
 config:
+  drush: ^8
   webroot: .
   xdebug: true

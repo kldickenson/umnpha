@@ -13,6 +13,7 @@ dependencies:
     - image
     - inline_entity_form
     - path
+    - scheduler
 third_party_settings:
   field_group:
     group_page_hero:
@@ -29,6 +30,7 @@ third_party_settings:
         classes: ''
         required_fields: false
       label: Hero
+      region: content
 id: node.page.default
 targetEntityType: node
 bundle: page
@@ -82,6 +84,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
@@ -98,6 +106,12 @@ content:
       placeholder: ''
     third_party_settings: {  }
     region: content
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   url_redirects:
     weight: 50
     settings: {  }

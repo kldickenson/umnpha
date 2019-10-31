@@ -31,6 +31,7 @@ third_party_settings:
         description: ''
         required_fields: true
       label: 'Button Settings'
+      region: content
 id: section_type.section_type_featured_report.default
 targetEntityType: section_type
 bundle: section_type_featured_report

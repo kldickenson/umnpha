@@ -31,6 +31,7 @@ third_party_settings:
         id: ''
         classes: field-group-page-hero
       label: 'Page Hero'
+      region: content
 id: node.page.default
 targetEntityType: node
 bundle: page

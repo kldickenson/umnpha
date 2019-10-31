@@ -37,6 +37,7 @@ third_party_settings:
         id: ''
         classes: featured-report-text
       label: featured_report_text
+      region: content
     group_featured_report_image:
       children:
         - field_featured_report_image
@@ -53,6 +54,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: featured_report_image
+      region: content
 id: section_type.section_type_featured_report.default
 targetEntityType: section_type
 bundle: section_type_featured_report

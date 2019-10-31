@@ -60,6 +60,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Sidebar
+      region: content
     group_report_content:
       children:
         - group_title_download
@@ -77,6 +78,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Content
+      region: content
     group_report_container:
       children:
         - group_report_content
@@ -94,6 +96,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Container
+      region: content
     group_featured_in_link:
       children:
         - field_report_news_source_link
@@ -111,6 +114,7 @@ third_party_settings:
         id: ''
         classes: featured-in-label
       label: 'Featured in'
+      region: content
     group_title_download:
       children:
         - field_title
@@ -129,6 +133,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Title / Download'
+      region: content
 id: node.report.default
 targetEntityType: node
 bundle: report

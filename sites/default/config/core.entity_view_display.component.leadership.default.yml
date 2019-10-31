@@ -40,6 +40,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Text
+      region: content
     group_leadership_icons:
       children:
         - field_leadership_phone
@@ -59,6 +60,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: Icons
+      region: content
     group_image_icons:
       children:
         - field_leadership_image
@@ -76,6 +78,7 @@ third_party_settings:
         effect: none
         speed: fast
       label: 'Image & Icons'
+      region: content
 id: component.leadership.default
 targetEntityType: component
 bundle: leadership
