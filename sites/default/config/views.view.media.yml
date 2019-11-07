@@ -6,7 +6,7 @@ dependencies:
     - image.style.thumbnail
   module:
     - image
-    - media_entity
+    - media
     - user
 id: media
 label: Media
