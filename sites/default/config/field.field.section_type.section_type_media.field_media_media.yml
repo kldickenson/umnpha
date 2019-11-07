@@ -5,8 +5,8 @@ dependencies:
   config:
     - eck.eck_type.section_type.section_type_media
     - field.storage.section_type.field_media_media
-    - media_entity.bundle.image
-    - media_entity.bundle.video_embed
+    - media.type.image
+    - media.type.video_embed
 id: section_type.section_type_media.field_media_media
 field_name: field_media_media
 entity_type: section_type

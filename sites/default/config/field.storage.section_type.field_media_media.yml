@@ -4,7 +4,7 @@ status: true
 dependencies:
   module:
     - eck
-    - media_entity
+    - media
 id: section_type.field_media_media
 field_name: field_media_media
 entity_type: section_type

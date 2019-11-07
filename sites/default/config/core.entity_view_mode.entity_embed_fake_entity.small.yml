@@ -1,0 +1,10 @@
+uuid: db14eb69-7193-4c90-a661-f569836ef174
+langcode: en
+status: true
+dependencies:
+  module:
+    - entity_embed
+id: entity_embed_fake_entity.small
+label: Small
+targetEntityType: entity_embed_fake_entity
+cache: true
