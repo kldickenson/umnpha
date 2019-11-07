@@ -63,3 +63,11 @@ function compro_custom_update_8007() {
   \Drupal::service('module_installer')->install(['scheduler']);
   \Drupal::service('module_installer')->install(['better_exposed_filters']);
 }
+
+/**
+ * Finally fix warning "The following module is missing from the file system: file_entity"
+ */
+function compro_custom_update_8008() {
+  $database = Drupal::database();
+  $database->query("DELETE FROM key_value WHERE collection='system.schema' AND name='file_entity';");
+}
