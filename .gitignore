@@ -13,7 +13,6 @@ sites/**/settings.local.php
 
 # Note that services.local.yml is not loaded by default. If you would like
 # to use this file add the following to your settings.local.php file:
-#   $settings['container_yamls'][] = __DIR__ . '/services.local.yml';
 sites/**/local.services.yml
 
 # ** Only works in OSs that support newer versions of fnmatch (Bash 4+)
@@ -45,8 +44,6 @@ sites/simpletest
 ######################
 .DS_Store*
 ehthumbs.db
-Icon
-.idea/
 
 Thumbs.db
 ._*compo

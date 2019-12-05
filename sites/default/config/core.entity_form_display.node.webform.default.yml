@@ -15,6 +15,7 @@ dependencies:
     - image
     - inline_entity_form
     - path
+    - scheduler
     - text
     - webform
 _core:
@@ -70,6 +71,8 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: 'Your name'
+      match_limit: 10
+      default_data: true
     third_party_settings: {  }
     type: webform_entity_reference_autocomplete
     region: content
@@ -93,6 +96,12 @@ content:
     settings: {  }
     third_party_settings: {  }
     region: content
+  publish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
@@ -107,8 +116,15 @@ content:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
+      match_limit: 10
     third_party_settings: {  }
     region: content
+  unpublish_on:
+    type: datetime_timestamp_no_default
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   url_redirects:
     weight: 50
     settings: {  }

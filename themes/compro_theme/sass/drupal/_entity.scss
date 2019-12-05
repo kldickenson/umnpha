@@ -1,8 +1,15 @@
 /*
 *   #Entity/Section-Types
 *
-*   - may want to move .field--.... into _field.scss and use this just for
-*     section-types now that there are classes for that
+*   1) Featured Report
+*   2) Sponsors
+*   3) Highlight
+*   4) Testimonial
+*   5) Media
+*   6) Heading
+*   7) Longtext
+*   8) Pullquote
+*   9) Infographic
 *
 **/
 
@@ -119,7 +126,7 @@
 
   .highlight-media {
     height: auto;
-    width: 200%;
+    width: 60%;
 
     @media screen and(max-width: 940px) {
       width: 100%;
