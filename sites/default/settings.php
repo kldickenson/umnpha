@@ -26,7 +26,7 @@ if (file_exists($local_settings)) {
 $settings['install_profile'] = 'standard';
 
 if (defined('PANTHEON_ENVIRONMENT')) {
-  if (in_array($_ENV['PANTHEON_ENVIRONMENT'], array('stage', 'dev', 'test', 'live'))) {
+  if (in_array($_ENV['PANTHEON_ENVIRONMENT'], array('develop', 'dev', 'test', 'live'))) {
     $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.getpantheon.io";
     $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.pantheon.io";
     $settings['trusted_host_patterns'][] = "{$_ENV['PANTHEON_ENVIRONMENT']}-{$_ENV['PANTHEON_SITE_NAME']}.pantheonsite.io";
