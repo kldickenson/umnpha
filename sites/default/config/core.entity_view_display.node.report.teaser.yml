@@ -15,8 +15,10 @@ dependencies:
     - field.field.node.report.field_report_published_date
     - field.field.node.report.field_report_report
     - field.field.node.report.field_report_sections
+    - field.field.node.report.field_report_sidebar_sections
     - field.field.node.report.field_report_summary
     - field.field.node.report.field_report_tags
+    - field.field.node.report.field_report_videos
     - field.field.node.report.field_report_volume_issue
     - field.field.node.report.field_title
     - field.field.node.report.report_button_color
@@ -118,7 +120,9 @@ hidden:
   field_report_press_release: true
   field_report_published_date: true
   field_report_sections: true
+  field_report_sidebar_sections: true
   field_report_tags: true
+  field_report_videos: true
   field_report_volume_issue: true
   links: true
   report_button_color: true

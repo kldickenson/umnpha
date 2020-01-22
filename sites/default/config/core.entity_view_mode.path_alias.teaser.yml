@@ -1,0 +1,10 @@
+uuid: 970030f0-72fe-4c44-b836-6ff405fae849
+langcode: en
+status: true
+dependencies:
+  module:
+    - path_alias
+id: path_alias.teaser
+label: Teaser
+targetEntityType: path_alias
+cache: true

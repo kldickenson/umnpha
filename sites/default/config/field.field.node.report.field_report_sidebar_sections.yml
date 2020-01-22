@@ -1,0 +1,30 @@
+uuid: d8f47215-9382-483c-86a1-ad685b341e0f
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.section_type.section_type_heading
+    - eck.eck_type.section_type.section_type_longtext
+    - field.storage.node.field_report_sidebar_sections
+    - node.type.report
+id: node.report.field_report_sidebar_sections
+field_name: field_report_sidebar_sections
+entity_type: node
+bundle: report
+label: 'Sidebar Sections'
+description: 'Free-form elements to add more depth to a report without structured taxonomies.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:section_type'
+  handler_settings:
+    target_bundles:
+      section_type_heading: section_type_heading
+      section_type_longtext: section_type_longtext
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: section_type_heading
+field_type: entity_reference

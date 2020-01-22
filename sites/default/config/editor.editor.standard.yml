@@ -24,6 +24,7 @@ settings:
             - Superscript
             - Subscript
             - FontSize
+            - Styles
         -
           name: Alignment
           items:
@@ -54,10 +55,10 @@ settings:
             - Source
             - RemoveFormat
   plugins:
-    stylescombo:
-      styles: ''
     language:
       language_list: un
+    stylescombo:
+      styles: ''
     font:
       font_names: ''
       font_sizes: "10px|10\r\n12px|12\r\n14px|14\r\n16px|16\r\n18px|18\r\n20px|20\r\n22px|22"

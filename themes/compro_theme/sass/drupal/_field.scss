@@ -93,22 +93,6 @@
 
 .node--type-report .group-sidebar {
 
-  //> .field {
-  //  margin: 0 0 20px 0;
-  //}
-
-  .field--name-field-report-volume-issue {
-
-    .field__label,
-    .field__item {
-      display: inline-block;
-
-      @media all and (max-width: 660px) {
-        display: block;
-      }
-    }
-  }
-
   .field--name-field-more-resources .file {
     background-image: none;
     margin-bottom: .25rem;

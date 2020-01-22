@@ -1,7 +1,9 @@
 uuid: 9f490e12-2e0e-4770-9258-33d15d15a283
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - media
 _core:
   default_config_hash: I_nxGITZ_BVOYe-6zV6jW3nk26s_Cp3n7YygMlYhtpM
 name: Standard
@@ -42,3 +44,12 @@ filters:
     weight: 0
     settings:
       filter_url_length: 72
+  media_embed:
+    id: media_embed
+    provider: media
+    status: false
+    weight: 100
+    settings:
+      default_view_mode: default
+      allowed_media_types: {  }
+      allowed_view_modes: {  }
