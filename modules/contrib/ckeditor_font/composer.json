@@ -1,14 +1,33 @@
 {
-  "name": "drupal/ckeditor_font",
-  "type": "drupal-module",
-  "description": "This plugin adds Font Size and Font Family dropdowns that applies as inline element style.",
-  "keywords": ["Drupal"],
-  "license": "GPL-2.0+",
-  "homepage": "https://www.drupal.org/project/ckeditor_font",
-  "minimum-stability": "dev",
-  "support": {
-    "issues": "http://drupal.org/project/issues/ckeditor_font",
-    "source": "http://cgit.drupalcode.org/ckeditor_font"
-  },
-  "require": { }
+    "name": "drupal/ckeditor_font",
+    "type": "drupal-module",
+    "description": "This plugin adds Font Size and Font Family dropdowns that applies as inline element style.",
+    "keywords": [
+        "Drupal"
+    ],
+    "license": "GPL-2.0+",
+    "homepage": "https://www.drupal.org/project/ckeditor_font",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "http://drupal.org/project/issues/ckeditor_font",
+        "source": "http://cgit.drupalcode.org/ckeditor_font"
+    },
+    "require": {
+        "ckeditor-plugin/font": "^4.13",
+        "drupal/core": "^8 || ^9"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor-plugin/font",
+                "version": "4.13.1",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.ckeditor.com/font/releases/font_4.13.1.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ]
 }

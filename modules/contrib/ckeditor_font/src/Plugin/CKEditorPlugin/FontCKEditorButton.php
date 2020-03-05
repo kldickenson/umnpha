@@ -1,10 +1,5 @@
 <?php
 
-/**
- * @file
- * Contains \Drupal\ckeditor_font\Plugin\CKEditorPlugin\FontCKEditorButton.
- */
-
 namespace Drupal\ckeditor_font\Plugin\CKEditorPlugin;
 
 use Drupal\ckeditor\CKEditorPluginBase;
@@ -39,11 +34,11 @@ class FontCKEditorButton extends CKEditorPluginBase implements CKEditorPluginCon
     $modulePath = drupal_get_path('module', 'ckeditor_font');
     return array(
       'Font' => array(
-        'label' => t('Font Families'),
+        'label' => $this->t('Font Families'),
         'image' => $modulePath . '/icons/font.png',
       ),
       'FontSize' => array(
-        'label' => t('Font ckeditor button'),
+        'label' => $this->t('Font ckeditor button'),
         'image' => $modulePath . '/icons/fontsize.png',
       ),
     );
@@ -115,20 +110,20 @@ class FontCKEditorButton extends CKEditorPluginBase implements CKEditorPluginCon
     }
 
     $form['font_names'] = array(
-      '#title' => t('Font families'),
+      '#title' => $this->t('Font families'),
       '#type' => 'textarea',
       '#default_value' => $config['font_names'],
-      '#description' => t('Enter fonts on new lines. Fonts must be added with the following syntax:<br><code>Primary font, fallback1, fallback2|Font Label</code>'),
+      '#description' => $this->t('Enter fonts on new lines. Fonts must be added with the following syntax:<br><code>Primary font, fallback1, fallback2|Font Label</code>'),
       '#element_validate' => array(
         array($this, 'validateFontValue'),
       ),
     );
 
     $form['font_sizes'] = array(
-      '#title' => t('Font sizes'),
+      '#title' => $this->t('Font sizes'),
       '#type' => 'textarea',
       '#default_value' => $config['font_sizes'],
-      '#description' => t('Enter font sizes on new lines. Sizes must be added with the following syntax:<br><code>123px|Size label</code><br><code>123em|Size label</code><br><code>123%|Size label</code>'),
+      '#description' => $this->t('Enter font sizes on new lines. Sizes must be added with the following syntax:<br><code>123px|Size label</code><br><code>123em|Size label</code><br><code>123%|Size label</code>'),
       '#element_validate' => array(
         array($this, 'validateFontSizeValue'),
       ),
@@ -198,7 +193,7 @@ class FontCKEditorButton extends CKEditorPluginBase implements CKEditorPluginCon
         case 'size':
           // Match for patterns:
           // 123px/pt/em/rem/%|Label
-          $pattern = '@^\s*[0-9]+\.?[0-9]+(px|em|%|pt|rem)\|.*$@';
+          $pattern = '@^\s*\d+(\.?\d+)?(px|em|%|pt|rem)\|.*$@';
           break;
       }
 

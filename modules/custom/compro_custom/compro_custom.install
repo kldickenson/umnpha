@@ -71,3 +71,10 @@ function compro_custom_update_8008() {
   $database = Drupal::database();
   $database->query("DELETE FROM key_value WHERE collection='system.schema' AND name='file_entity';");
 }
+
+/**
+ * Uninstall contribute module.
+ */
+function compro_custom_update_8009() {
+  \Drupal::service('module_installer')->uninstall(['contribute']);
+}
