@@ -18,12 +18,14 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  plugin_ids:
-    address: address
-    email: email
-    fax: fax
-    map: map
-    phone: phone
-    social: social
-    'views_block:report-recent_reports': 'views_block:report-recent_reports'
+  selection: blocks
+  selection_settings:
+    plugin_ids:
+      address: address
+      email: email
+      fax: fax
+      map: map
+      phone: phone
+      social: social
+      'views_block:report-recent_reports': 'views_block:report-recent_reports'
 field_type: block_field

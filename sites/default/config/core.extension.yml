@@ -89,6 +89,8 @@ module:
   video_embed_media: 0
   views_infinite_scroll: 0
   webform: 0
+  webform_jqueryui_buttons: 0
+  webform_location_geocomplete: 0
   webform_node: 0
   webform_templates: 0
   xmlsitemap: 0
