@@ -1,8 +1,8 @@
 // Run bower install in order for these to work.
 
 // Import bourbon and neat
-@import "../node_modules/bourbon/app/assets/stylesheets/bourbon";
-@import "../node_modules/bourbon-neat/app/assets/stylesheets/neat";
+@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+@import "../bower_components/neat/app/assets/stylesheets/neat";
 
 // Import variables
 @import "config/base";
@@ -21,6 +21,3 @@
 
 // Import vendor
 @import "vendor/base";
-
-// Import WTW
-@import "wtw";

@@ -24,19 +24,24 @@ dependencies:
     - field.field.node.report.report_button_color
     - field.field.node.report.report_button_text_color
     - field.field.node.report.report_download_background_color
+    - image.style.340xn
     - node.type.report
   module:
+    - compro_custom
     - field_group
     - image
     - link
+    - linked_field
     - text
     - user
 third_party_settings:
   field_group:
     group_report_teaser_text:
-      children: {  }
+      children:
+        - field_title
+        - field_report_summary
       parent_name: ''
-      weight: 22
+      weight: 1
       format_type: html_element
       format_settings:
         id: ''
@@ -48,25 +53,26 @@ third_party_settings:
         effect: none
         speed: fast
       label: Text
-      region: hidden
+      region: content
 id: node.report.teaser
 targetEntityType: node
 bundle: report
 mode: teaser
 content:
   field_report_featured_image:
-    type: image_url
+    type: image
     weight: 0
     region: content
-    label: above
+    label: hidden
     settings:
-      image_style: ''
+      image_style: 340xn
+      image_link: content
     third_party_settings: {  }
   field_report_link:
     type: link
     weight: 3
     region: content
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -74,33 +80,34 @@ content:
       rel: ''
       target: ''
     third_party_settings: {  }
-  field_report_summary:
-    type: text_default
+  field_report_report:
+    type: compro_custom_file_link
     weight: 2
     region: content
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-  field_report_videos:
-    type: entity_reference_label
-    weight: 4
-    region: content
-    label: above
+    label: hidden
     settings:
-      link: true
+      compro_custom_link_title: 'Download the Report PDF'
+      compro_custom_link_class: 'download-pdf button'
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[node:field_report_report:entity]'
+        advanced: {  }
+  field_report_summary:
+    type: text_default
+    weight: 3
+    region: content
+    label: hidden
+    settings: {  }
     third_party_settings: {  }
   field_title:
     type: string
-    weight: 1
+    weight: 2
     region: content
-    label: above
+    label: hidden
     settings:
-      link_to_entity: false
-    third_party_settings: {  }
-  share:
-    weight: 5
-    region: content
-    settings: {  }
+      link_to_entity: true
     third_party_settings: {  }
 hidden:
   compro_links: true
@@ -112,12 +119,13 @@ hidden:
   field_report_news_source_link: true
   field_report_press_release: true
   field_report_published_date: true
-  field_report_report: true
   field_report_sections: true
   field_report_sidebar_sections: true
   field_report_tags: true
+  field_report_videos: true
   field_report_volume_issue: true
   links: true
   report_button_color: true
   report_button_text_color: true
   report_download_background_color: true
+  share: true

@@ -28,5 +28,4 @@ settings:
       phone: phone
       social: social
       'views_block:report-recent_reports': 'views_block:report-recent_reports'
-      'views_block:report-recent_reports_2020': 'views_block:report-recent_reports_2020'
 field_type: block_field
