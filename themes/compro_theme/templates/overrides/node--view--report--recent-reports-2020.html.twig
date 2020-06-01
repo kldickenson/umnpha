@@ -79,40 +79,44 @@
 <article{{ attributes.addClass(classes) }}>
 
   {% if display_submitted %}
-    <footer class="node__meta">
-      {{ author_picture }}
-      <div{{ author_attributes.addClass('node__submitted') }}>
-        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
+  <footer class="node__meta">
+    {{ author_picture }}
+    <div{{ author_attributes.addClass('node__submitted') }}>
+      {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+      {{ metadata }}
       </div>
-    </footer>
+  </footer>
   {% endif %}
 
 
   {% if not page %}
-  <div{{ content_attributes.addClass('card-container') }} style="background-image: url('{{ content.field_report_featured_image.0 }}');"> <!-- good -->
+  <div{{ content_attributes.addClass('card-container') }} style="background-image: url('{{ content.field_report_featured_image.0 }}');">
+    <!-- good -->
     <div class="overlay-wrapper">
       <div class="text">
         <h3{{ title_attributes }}>
           <a href="{{ url }}" rel="bookmark">{{ label }}</a> <!-- good -->
-        </h3>
-        {{ node.field_report_summary.0.value|raw }} <!-- good -->
+          </h3>
+          {{ node.field_report_summary.0.value|raw }}
+          <!-- good -->
       </div>
       <div class="card-footer">
         <a href="{{ node.field_report_link.uri.value }}" class="report-link">&nbsp;</a> <!-- works -->
-      {% if node.field_report_videos.value %} <!-- WORKS! -->
+        {% if node.field_report_videos.value %}
+        <!-- WORKS! -->
         <a href="{{ node.field_report_videos.0.entity.field_media_video_embed_field.0.value }}" class="video-link">&nbsp;</a> <!-- GREAT! -->
-      {% endif %}
+        {% endif %}
 
-        {{ content.share }} <!-- good -->
+        {{ content.share }}
+        <!-- good -->
       </div>
     </div>
-  </div>
-  {% endif %}
+    </div>
+    {% endif %}
 
-  {% if page %}
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content }}
-  </div>
-  {% endif %}
-</article>
+    {% if page %}
+    <div{{ content_attributes.addClass('node__content') }}>
+      {{ content }}
+      </div>
+      {% endif %}
+      </article>

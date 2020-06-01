@@ -1,0 +1,21 @@
+// videos list
+.block-views-blockvideos-feature-video {
+  position: relative;
+  // max-width: calc(980px/2);
+  padding: 0 2rem 0 0;
+  border-right: 3px solid rgb(150, 150, 150);
+  border-color: $light-gray;
+
+  h2 {
+    display: none;
+  }
+
+  .views-field-name {
+    padding: 2rem 2rem .5rem;
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  .views-field-field-video-description {
+    padding: 0 2rem;
+  }
+}

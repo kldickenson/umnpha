@@ -1,0 +1,57 @@
+.node--type-report .quick-links {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #5f5f5f;
+  margin-bottom: 2rem;
+  .field  {
+    margin: 0;
+    margin-bottom: .5rem;
+    padding: 0;
+    a {
+      display: block;
+      padding: .25rem 0;
+      padding-left: 2.25rem;
+      border: none;
+      color: #0c57aa;
+      font-size: .875rem;
+      text-align: left;
+      text-transform: capitalize;
+    }
+
+  }
+  .field--name-field-report-videos  {
+    a {
+      background: url('/themes/compro_theme/images/icons/icon-watch-video-blue.png') left 50% no-repeat;
+      &:hover {
+        color: $um-maize;
+        background-image: url('/themes/compro_theme/images/icons/icon-watch-video-maize.png')
+      }
+    }
+  }
+  .field--name-field-report-link {
+    a {
+      background: transparent url('/themes/compro_theme/images/icons/icon-report-download-blue.png') left 50% no-repeat;
+      &:hover {
+        color: $um-maize;
+        background-image: url('/themes/compro_theme/images/icons/icon-report-download-maize.png')
+      }
+    }
+  }
+ .field--name-field-report-report {
+   a {
+      background: transparent url('/themes/compro_theme/images/icons/icon-report-link-blue.png') left 50% no-repeat;
+      &:hover {
+        color: $um-maize;
+        background-image: url('/themes/compro_theme/images/icons/icon-report-link-maize.png')
+      }
+    }
+  }
+  .field--name-field-report-press-release {
+   a {
+      background: transparent url('/themes/compro_theme/images/icons/icon-press-release-blue.png') left 50% no-repeat;
+      &:hover {
+        color: $um-maize;
+        background-image: url('/themes/compro_theme/images/icons/icon-press-release-maize.png')
+      }
+    }
+  }
+}

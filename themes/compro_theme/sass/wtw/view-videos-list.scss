@@ -1,0 +1,42 @@
+// videos list
+.block-views-blockvideos-list {
+  position: relative;
+  // max-width: calc(980px/2);
+  margin: 0 0 0 2rem;
+
+  h2 {
+    display: none;
+  }
+  .view-content {
+    max-height: 450px;
+    overflow: scroll;
+  }
+  .views-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgb(150, 150, 150);
+    border-color: $lighter-gray;
+    margin-bottom: 1rem;
+    padding-right: .5rem;
+  }
+  .views-field {
+    width: 50%;
+  }
+  .views-field-field-video-still-image-1 {
+    width: 45%;
+    img {
+      width: 90%;
+      height: auto;
+    }
+  }
+  .views-field-name {
+    width: 55%;
+    font-weight: bold;
+    font-size: .9rem;
+  }
+
+}

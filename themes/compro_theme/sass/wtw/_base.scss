@@ -1,0 +1,19 @@
+// - - - - - -  WTW custom styles - - - - - - - -//
+
+// import site variables
+@import "../config/variables";
+
+// import styles for report sidebar for 2020 redesign
+@import "node-report";
+
+// import styles for report list for 2020 redesign
+@import "view-reports-list";
+
+// import styles for videos page
+@import "node-videos";
+
+// import styles for videos list created 2020
+@import "view-videos-list";
+
+// import styles for feature video created 2020
+@import "view-feature-video";
