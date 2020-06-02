@@ -1,0 +1,22 @@
+div[data-quickedit-field-id="node/40/field_page_sections/en/full"] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 960px;
+  margin: 0 auto;
+}
+div[data-quickedit-field-id="node/40/field_page_sections/en/full"] > .field__item {
+  position: relative;
+  width: 100%;
+}
+div[data-quickedit-field-id="node/40/field_page_sections/en/full"] > .field__item:first-child {
+  width: 60%;
+}
+div[data-quickedit-field-id="node/40/field_page_sections/en/full"] > .field__item:nth-child(2) {
+  width: 40%;
+  max-height: 450px;
+}
+
+/*# sourceMappingURL=node-videos.css.map */
