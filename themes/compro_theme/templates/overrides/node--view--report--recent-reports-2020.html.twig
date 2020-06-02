@@ -60,13 +60,8 @@
  *
  * @see template_preprocess_node()
  *
- * @todo Remove the id attribute (or make it a class), because if that gets
- *   rendered twice on a page this is invalid CSS for example: two lists
- *   in different view modes.
- */
 #}
-{%
-  set classes = [
+{% set classes = [
     'node',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -79,44 +74,44 @@
 <article{{ attributes.addClass(classes) }}>
 
   {% if display_submitted %}
-  <footer class="node__meta">
-    {{ author_picture }}
-    <div{{ author_attributes.addClass('node__submitted') }}>
-      {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-      {{ metadata }}
+    <footer class="node__meta">
+      {{ author_picture }}
+      <div{{ author_attributes.addClass('node__submitted') }}>
+        {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
+        {{ metadata }}
       </div>
-  </footer>
+    </footer>
   {% endif %}
 
-
   {% if not page %}
-  <div{{ content_attributes.addClass('card-container') }} style="background-image: url('{{ content.field_report_featured_image.0 }}');">
-    <!-- good -->
-    <div class="overlay-wrapper">
-      <div class="text">
-        <h3{{ title_attributes }}>
-          <a href="{{ url }}" rel="bookmark">{{ label }}</a> <!-- good -->
+    <div{{ content_attributes.addClass('card-container') }}
+      style="background-image: url('{{ content.field_report_featured_image.0 }}');">
+      <div class="overlay-wrapper">
+        <div class="text">
+          <h3{{ title_attributes }}>
+            <a href="{{ url }}" rel="bookmark">{{ label }}</a> <!-- good -->
           </h3>
           {{ node.field_report_summary.0.value|raw }}
-          <!-- good -->
-      </div>
-      <div class="card-footer">
-        <a href="{{ node.field_report_link.uri.value }}" class="report-link">&nbsp;</a> <!-- works -->
-        {% if node.field_report_videos.value %}
-        <!-- WORKS! -->
-        <a href="{{ node.field_report_videos.0.entity.field_media_video_embed_field.0.value }}" class="video-link">&nbsp;</a> <!-- GREAT! -->
-        {% endif %}
+        </div>
+        <div class="card-footer">
+          {% if node.field_report_link.uri %}
+            <a href="{{ node.field_report_link.uri }}" class="report-link">&nbsp;</a>
+          {% else %}
+            <a href="{{ file_url(node.field_report_report.entity.uri.value) }}" class="report-link">&nbsp;</a>
+          {% endif %}
+          {% if node.field_report_videos.value %}
+            <a href="{{ node.field_report_videos.0.entity.field_media_video_embed_field.0.value }}" class="video-link">&nbsp;</a> <!-- GREAT! -->
+          {% endif %}
 
-        {{ content.share }}
-        <!-- good -->
+          {{ content.share }}
+        </div>
       </div>
     </div>
-    </div>
-    {% endif %}
+  {% endif %}
 
-    {% if page %}
+  {% if page %}
     <div{{ content_attributes.addClass('node__content') }}>
       {{ content }}
-      </div>
-      {% endif %}
-      </article>
+    </div>
+  {% endif %}
+</article>
