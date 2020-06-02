@@ -1,0 +1,15 @@
+uuid: 470d4360-b2bb-4800-8c54-67c79c0ce519
+langcode: en
+status: true
+dependencies: {  }
+name: report_card
+label: 'Report card'
+effects:
+  6f1309f4-6ff8-4a08-ba14-1dc5568e4d16:
+    uuid: 6f1309f4-6ff8-4a08-ba14-1dc5568e4d16
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 500
+      upscale: false

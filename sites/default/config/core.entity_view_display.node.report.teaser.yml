@@ -24,6 +24,7 @@ dependencies:
     - field.field.node.report.report_button_color
     - field.field.node.report.report_button_text_color
     - field.field.node.report.report_download_background_color
+    - image.style.report_card
     - node.type.report
   module:
     - field_group
@@ -61,7 +62,7 @@ content:
     region: content
     label: above
     settings:
-      image_style: ''
+      image_style: report_card
     third_party_settings: {  }
   field_report_link:
     type: link
