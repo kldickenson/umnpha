@@ -383,3 +383,29 @@ display:
         - 'user.node_grants:view'
         - user.permissions
       tags: {  }
+  recent_reports_2020:
+    display_plugin: block
+    id: recent_reports_2020
+    display_title: 'Recent Reports 2020'
+    position: 1
+    display_options:
+      display_extenders: {  }
+      block_description: 'Recent Reports 2020'
+      display_description: ''
+      allow:
+        items_per_page: false
+      title: 'Recent Reports 2020'
+      defaults:
+        title: false
+      block_category: 'Lists (Views)'
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_content'
+        - 'languages:language_interface'
+        - url
+        - url.query_args
+        - user
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }

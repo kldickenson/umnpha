@@ -37,8 +37,7 @@ third_party_settings:
   field_group:
     group_sidebar:
       children:
-        - field_report_report
-        - field_report_link
+        - group_quick_links
         - report_download_background_color
         - report_button_text_color
         - report_button_color
@@ -47,7 +46,6 @@ third_party_settings:
         - field_report_published_date
         - field_report_tags
         - field_more_resources
-        - field_report_press_release
         - field_report_sidebar_sections
         - share
         - group_featured_in_link
@@ -106,7 +104,7 @@ third_party_settings:
       children:
         - field_report_news_source_link
       parent_name: group_sidebar
-      weight: 35
+      weight: 32
       format_type: html_element
       format_settings:
         element: div
@@ -136,13 +134,34 @@ third_party_settings:
         speed: fast
       label: 'Title / Download'
       region: content
+    group_quick_links:
+      children:
+        - field_report_videos
+        - field_report_link
+        - field_report_press_release
+        - field_report_report
+      parent_name: group_sidebar
+      weight: 20
+      format_type: html_element
+      region: content
+      format_settings:
+        id: ''
+        classes: quick-links
+        element: div
+        show_label: false
+        label_element: h3
+        label_element_classes: ''
+        attributes: ''
+        effect: none
+        speed: fast
+      label: 'Quick Links'
 id: node.report.default
 targetEntityType: node
 bundle: report
 mode: default
 content:
   field_more_resources:
-    weight: 31
+    weight: 29
     label: above
     settings:
       use_description_as_link_text: true
@@ -150,7 +169,7 @@ content:
     type: file_default
     region: content
   field_report_contributers:
-    weight: 28
+    weight: 26
     label: above
     settings:
       trim_length: 80
@@ -183,7 +202,7 @@ content:
     type: link
     region: content
   field_report_news_source:
-    weight: 36
+    weight: 33
     label: above
     settings:
       link: false
@@ -203,7 +222,7 @@ content:
     type: link
     region: content
   field_report_press_release:
-    weight: 32
+    weight: 24
     label: hidden
     settings:
       trim_length: 80
@@ -215,7 +234,7 @@ content:
     type: link
     region: content
   field_report_published_date:
-    weight: 29
+    weight: 27
     label: above
     settings:
       timezone_override: ''
@@ -224,11 +243,11 @@ content:
     type: datetime_default
     region: content
   field_report_report:
-    weight: 22
+    weight: 25
     label: hidden
     settings:
       compro_custom_link_title: 'Download the Report PDF'
-      compro_custom_link_class: 'download-pdf button'
+      compro_custom_link_class: download-pdf
     third_party_settings:
       linked_field:
         linked: '1'
@@ -247,7 +266,7 @@ content:
     type: entity_reference_entity_view
     region: content
   field_report_sidebar_sections:
-    weight: 33
+    weight: 30
     label: hidden
     settings:
       view_mode: default
@@ -256,15 +275,29 @@ content:
     type: entity_reference_entity_view
     region: content
   field_report_tags:
-    weight: 30
+    weight: 28
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_report_videos:
+    type: entity_reference_label
+    weight: 22
+    region: content
+    label: hidden
+    settings:
+      link: false
+    third_party_settings:
+      linked_field:
+        linked: '1'
+        type: custom
+        destination: '[node:field_report_videos:0:entity:field_media_video_embed_field:0:value]'
+        advanced:
+          class: video-link
   field_report_volume_issue:
-    weight: 27
+    weight: 25
     label: above
     settings:
       link_to_entity: false
@@ -280,7 +313,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
   report_button_color:
-    weight: 26
+    weight: 24
     label: hidden
     settings:
       selector: .download-pdf.button
@@ -291,7 +324,7 @@ content:
     type: color_field_formatter_css
     region: content
   report_button_text_color:
-    weight: 25
+    weight: 23
     label: hidden
     settings:
       selector: .download-pdf.button
@@ -302,7 +335,7 @@ content:
     type: color_field_formatter_css
     region: content
   report_download_background_color:
-    weight: 24
+    weight: 22
     label: hidden
     settings:
       selector: .field--name-field-report-report
@@ -313,7 +346,7 @@ content:
     type: color_field_formatter_css
     region: content
   share:
-    weight: 34
+    weight: 31
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -322,5 +355,4 @@ hidden:
   compro_submitted: true
   field_report_featured_image: true
   field_report_summary: true
-  field_report_videos: true
   links: true
