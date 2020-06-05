@@ -303,10 +303,14 @@ function compro_custom_share_content($node) {
   $linkedin_url = _build_url('http://www.linkedin.com/shareArticle', $page_url, $page_title);
   $linkedin_link = Link::fromTextAndUrl(t('LinkedIn'), $linkedin_url);
 
-  // Facebook
-  $facebook_url = _build_url('http://facebook.com/share', $page_url, $page_title);
+  // Facebook. Updated 6/5/2020.
+  $facebook_url = Url::fromUri('http://facebook.com/sharer/sharer.php', array(
+    'query' => array(
+      'u' => $page_url,
+      'text' => $page_title,
+    ),
+  ));
   $facebook_link = Link::fromTextAndUrl(t('Facebook'), $facebook_url);
-  //@fixme: something doesn't seem right with this. it grabs url automatically on local but on stage it displays blank text field to share until u click on share button a second time
   $render = array(
     '#type' => 'container',
     '#attributes' => array('class' => array('sidebar-share-wrapper')),

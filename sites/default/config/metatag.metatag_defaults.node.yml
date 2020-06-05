@@ -9,3 +9,13 @@ label: Content
 tags:
   title: '[node:title] | [site:name]'
   description: '[node:summary]'
+  og_title: '[node:title]'
+  og_description: '[node:summary]'
+  og_image: 'https://healthyaginginpoll.org/themes/compro_theme/logo.png'
+  og_site_name: '[site:name]'
+  og_image_secure_url: 'https://healthyaginginpoll.org/themes/compro_theme/logo.png'
+  og_type: '[node:content-type]'
+  og_image_type: image/png
+  og_image_height: '37'
+  og_url: '[node:url:absolute]'
+  og_image_width: '530'
