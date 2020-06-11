@@ -93,7 +93,6 @@ class BackgroundImageFormatter extends ImageFormatter {
 
     $summary[] = $this->t('Output type: @output_type', ['@output_type' => $this->getSetting('background_image_output_type')]);
 
-
     $summary[] = $this->t('The CSS selector <code>@background_image_selector</code> will be created with the image set to the background-image property.', [
       '@background_image_selector' => $this->getSetting('background_image_selector') . '_id',
     ]);
@@ -116,7 +115,6 @@ class BackgroundImageFormatter extends ImageFormatter {
 
     $image_style = $this->getSetting('image_style');
 
-
     if (!empty($image_style)) {
       $image_style = ImageStyle::load($image_style);
     }
@@ -136,15 +134,16 @@ class BackgroundImageFormatter extends ImageFormatter {
 
         $image_url = ImageStyle::load($image_style->getName())
           ->buildUrl($image_uri);
-        // When page caching is enabled, try serving the image from the correct HTTP protocol
+        // When page caching is enabled, try serving the image
+        // from the correct HTTP protocol.
         list(, $image_path) = explode('://', $image_url, 2);
         $image_uri = '//' . $image_path;
       }
 
       $selector = strip_tags($this->getSetting('background_image_selector'));
 
-      // Only add an id when using inline styles
-      if( $this->getSetting('background_image_output_type') == 'inline' ){
+      // Only add an id when using inline styles.
+      if ($this->getSetting('background_image_output_type') == 'inline') {
         $selector .= '_' . $id;
       }
 
@@ -183,10 +182,16 @@ class BackgroundImageFormatter extends ImageFormatter {
     return $elements;
   }
 
+  /**
+   * {@inheritdoc}
+   */
   protected function isBackgroundImageDisplay() {
     return $this->getPluginId() == 'background_image_formatter';
   }
 
+  /**
+   * {@inheritdoc}
+   */
   protected function generateCssString($theme) {
     return $theme['#background_image_selector'] . ' {background-image: url("' . $theme['#image_uri'] . '");}';
   }

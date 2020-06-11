@@ -6,8 +6,10 @@ Introduction
 ------------
 
 
-This module provides an image formatter that allows you to display the image in a div as background image.
-The module extends Drupal's images field. Because settings are attached to the entity, it's very easy to setup and manage.
+This module provides an image formatter that allows you to display the image
+in a div as background image.
+The module extends Drupal's images field. Because settings are attached
+to the entity, it's very easy to setup and manage.
 
 
 
@@ -29,7 +31,8 @@ Features
 Inline Style
 ------------
 
-Instead the generating the normal img markup we now generate the div with a inline style.
+Instead the generating the normal img markup we now generate
+the div with a inline style.
 
 This
 
@@ -37,14 +40,16 @@ This
 
 is changed to
 
-<div class="[YOUR CLASS]" style="background-image: url('[ABSOLUTE PATH]')">&nbps;</div>
+<div class="[YOUR CLASS]" style="background-image:
+url('[ABSOLUTE PATH]')">&nbps;</div>
 
 
 
 CSS Selector
 ------------
 
-This option prevents the img tag from being printed to the dom and instead generates a stylesheet in the dom.
+This option prevents the img tag from being printed to the dom and instead
+generates a stylesheet in the dom.
 
 The expected out with be something like this.
 
@@ -61,9 +66,9 @@ Basic Installation
 
 2. Go to Administration >  Structure > Content Types (admin/structure/types).
 
-3. Click on Manage Display for the relevant content type. (admin/structure/types/manage/page/display)
+3. Click on Manage Display for the relevant content type.
+(admin/structure/types/manage/page/display)
 
 4. Change the Format to Background Image for the relevant image field.
 
 5. Click on the settings gear to define your settings.
-
