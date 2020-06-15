@@ -71,3 +71,6 @@ bower_components/
 
 # PHPStorm Files
 .idea/
+
+# WTW local dev files to ignore
+sites/default/drushrc.php

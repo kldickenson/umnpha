@@ -1,7 +1,12 @@
 uuid: e470476d-70e3-4057-905d-584f28834815
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  module:
+    - menu_trail_by_path
+third_party_settings:
+  menu_trail_by_path:
+    trail_source: ''
 id: menu-main-menu
 label: 'Main Menu'
 description: 'Main Menu at Top of Page'

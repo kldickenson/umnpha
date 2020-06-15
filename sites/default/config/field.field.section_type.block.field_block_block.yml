@@ -29,4 +29,5 @@ settings:
       social: social
       'views_block:report-recent_reports': 'views_block:report-recent_reports'
       'views_block:report-recent_reports_2020': 'views_block:report-recent_reports_2020'
+      'views_block:videos-block_videos_gallery': 'views_block:videos-block_videos_gallery'
 field_type: block_field

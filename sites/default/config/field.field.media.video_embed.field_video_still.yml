@@ -1,0 +1,28 @@
+uuid: 0fd8dcee-5f3d-4535-aa15-938375aabc41
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.media.field_video_still
+    - media.type.image
+    - media.type.video_embed
+id: media.video_embed.field_video_still
+field_name: field_video_still
+entity_type: media
+bundle: video_embed
+label: 'Video Still'
+description: 'JPG still shot'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

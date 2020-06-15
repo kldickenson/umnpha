@@ -1,0 +1,93 @@
+// Videos page gallery block
+.block-views-blockvideos-block-videos-gallery {
+  margin-bottom: 3rem;
+  // border: solid 1px blue;
+  .skin-default {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    width: 960px;
+    margin: 0 auto;
+
+    // featured video container
+    .views_slideshow_cycle_main {
+      position: relative;
+      width: 60%;
+      padding: 0 2rem 0 0;
+      border-right: 3px solid rgb(150, 150, 150);
+      border-color: $light-gray;
+      .field--name-name {
+        padding: 2rem 2rem .5rem;
+        font-weight: bold;
+        font-size: 1.25rem;
+        text-align: left;
+        color: $arb-blue;
+      }
+      .field--name-field-video-description {
+        padding: 0 2rem .5rem;
+      }
+      p {
+        font-size: .9rem;
+      }
+    }
+    // teasers container
+    .views-slideshow-controls-bottom {
+      width: 40%;
+      padding-left: 2rem;
+      // interior container
+      .views_slideshow_pager_field {
+        position: relative;
+        max-height: 500px;
+        overflow: scroll;
+        overflow-x: hidden;
+        background: white;
+        &:before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 0px 20px 20px -10px rgba(0,0,0,0.5);
+        }
+        &:after {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          box-shadow: inset 0px -20px 20px -10px rgba(0,0,0,0.5);
+        }
+
+
+      }
+      // item container
+      .views_slideshow_pager_field_item  {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        background: transparent;
+        padding-bottom: .75rem;
+        border-bottom: solid 1px $light-gray;
+        margin-bottom: .75rem;
+        // image
+        .views-field-field-video-still {
+          max-width: 50%;
+          order: 1;
+        }
+        // title
+        .views-field-name {
+          padding-left: 1rem;
+          order: 2;
+        }
+      }
+
+    }
+  }
+
+}
+
+// [node:field_report_videos:0:entity:field_media_video_embed_field:0:value]
